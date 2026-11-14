@@ -744,3 +744,33 @@ itpro.lt browser navigation timed out (45 s). amazon.pl `KSM64R52BD8-32HA`: **no
 **Did anything beat €4,791/128 GB net? — No.** Nineteenth pass; price floor unchanged (ibfusion €4,962/128 GB). The **stock floor moved in our favour**: verified 41–50 pcs of 64MD at senetic.de (DE) at +5.3%, plus verified 100+ pcs at CoreWave at +15% — capacity for 12× is real and purchasable, just not at the absolute cheapest number.
 
 This pass probed: senetic.de 64MD stock pairing (41–50 Stück — new), senetic.pl KSM64R52BD8 pairing audit (16MH parity finding), CoreWave price verification (lead→verified), itpro.lt (timeout), amazon.pl 32HA (not listed), plus full bests re-check.
+
+---
+
+## Pass 25 — 2026-11-14T10:2xZ (scheduled poke; + folding in delegated DE/AT/FR/IT/ES slice Pass 3)
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | browser |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | browser |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl raw |
+
+### 2. Delegated slice folded in (beam-eu-6400-obscure.md "Pass 3", node beam-obscure DACH+South)
+
+- **Galaxus.de**: first DE shop with the qualifying Kingston Server Premier 6400 singles in catalogue — 1×32 **€1.449,92** gross (≈€38.08/GB net ÷1.19), 1×16 €778,64, 1×64 €3.262,26 (≈€51/GB). Node-sourced: this host gets HTTP2-blocked on galaxus.de search + CAPTCHA product pages, so rows sit on the board as `lead`; confirm PN (listing is PN-less, form factor "DIMM") before any order.
+- **Alternate.de** finding worth recording: their whole 6400 "Registered ECC" range is **G.Skill RIMM (XMP/EXPO only)** — the €11.30/GB G.Skill Zeta R5 pricing that looks cheap in price-comparison is exactly the **JEDEC trap** (XMP 1.4 V profile, SPD 4800; plus OOS). Explains why €37.43/GB is near the floor for real JEDEC-6400 silicon.
+- Slice also verified-absent: plexcom.de, memorysolution.de (components, not DIMMs), servershop24, Happyware B2B-only, Thomas-Krenn shop paths 404.
+
+### 3. Blocked this pass
+
+Galaxus.de search from this host (ERR_HTTP2), rest as prior.
+
+### Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — No.** Twentieth pass; floor: ibfusion €4,962/128 GB (€38.79/GB, 5 pcs); volume: senetic.de 41–50 pcs at €40.83/GB; retail singles: Galaxus.de lead at €38.08/GB net est. (32 GB).
+
+This pass probed: Galaxus.de catalog (re-verify attempt — host-blocked, node rows kept as lead), delegated DACH+South Pass 3 fold-in, plus full bests re-check (browser + curl).
