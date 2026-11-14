@@ -804,3 +804,33 @@ crucial.com price nodes (JS), serverpartdeals (cookie wall), r.jina 403 on DDG.
 **Did anything beat €4,791/128 GB net? — No.** Twenty-first pass; floor stands ibfusion €4,962/128 GB (€38.79/GB, 5 pcs).
 
 This pass probed: crucial.com Micron 6400 page (exists, price unparsed), serverpartdeals browser attempt (cookie wall), QVL retry (proxy 403), plus full bests re-check (browser + curl).
+
+---
+
+## Pass 27 — 2026-11-14T11:2xZ (scheduled poke; QVL direct-DDG, UK 32MD bin, picclick-KSM mirror)
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | browser |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | browser |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl raw |
+
+### 2. New probes
+
+- **QVL `M321R8GA0PB2-CCP`, 14th retry** via direct lite-DDG (proxy-free): DDG answered **202 (bot-shield queue)** — search effectively unavailable without the proxy; state stands (smicro.eu sole EU listing, pass 9).
+- **UK 32 GB Server Premier bin spread** (Algolia, kingstonmemoryshop, GBP incl 20% VAT): `-32MD` **£2.999,99** vs `-32HA` £1.265,41 and `-32MH` £1.882,18 (passes 11/24) → the MD die-suffix bin carries a 2.4× premium over HA in the UK book. Only HA-class pricing would compete with PL, and UK is VAT-gross anyway — no EU impact.
+- **picclick.de for KSM64R52BD4**: mirror **403** this run (rate-limits after last pass's success) — Kingston 6400 eBay.de sweep deferred.
+
+### Blocked list
+
+DDG direct 202, picclick 403.
+
+### Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — No.** Twenty-second pass; floor unchanged: ibfusion €4,962/128 GB (€38.79/GB, 5 pcs).
+
+This pass probed: QVL direct-DDG (202), UK 32MD bin premium (Algolia), picclick-KSM (403), plus full bests re-check (browser + curl).
