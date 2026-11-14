@@ -37,6 +37,21 @@ for o in data["offers"]:
 best_kit = next((o for o in data["offers"] if o.get("best")), data["offers"][0])
 gen = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
 
+lad = data.get("ladder")
+if lad and lad.get("rows"):
+    lrows = "".join(
+        f"<tr><td><b>{html.escape(r['cap'])}</b><br><span class='k'>{html.escape(r['caveat'])}</span></td>"
+        f"<td>{html.escape(r['route'])}</td>"
+        f"<td class='num'>{html.escape(r['net'])}</td>"
+        f"<td class='num'>{html.escape(r['per_gb'])}</td></tr>"
+        for r in lad["rows"])
+    LADDER = (f"<h1 style='font-size:18px;margin:0 0 6px'>Capacity ladder — cheapest verified route</h1>"
+              f"<p class='sub' style='margin:0 0 10px'>{html.escape(lad.get('rule',''))} · ladder updated {html.escape(lad.get('updated',''))}</p>"
+              f"<table style='margin-bottom:22px'><thead><tr><th>Capacity</th><th>Route</th><th class='num'>Net total</th><th class='num'>€/GB</th></tr></thead>"
+              f"<tbody>{lrows}</tbody></table>")
+else:
+    LADDER = ""
+
 page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>R9700 ×4 — RAM offer board (DDR5-6400 RDIMM, JEDEC-SPD rule)</title><style>
   :root {{ --bg:#101317; --panel:#171c22; --text:#e8edf2; --muted:#96a3b2; --line:#2b3540; --accent:#f5a524; }}
@@ -69,6 +84,7 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
   <div class="card"><h2>Cheapest per GB (net)</h2><div class="big">{best_kit.get('eur_per_gb','€37.43')}</div><span class="k">baseline to beat</span></div>
   <div class="card"><h2>Updated</h2><div class="big">{gen}</div><span class="k">by the 30-min scheduler · <code>docs/research/beam-eu-6400-repoke.md</code></span></div>
 </div>
+{LADDER}
 <table>
 <thead><tr><th>Part / spec</th><th>Shop</th><th class="num">Price (net / gross)</th><th class="num">€/GB net</th><th>Stock</th><th class="num">Checked</th><th>Link</th></tr></thead>
 <tbody>

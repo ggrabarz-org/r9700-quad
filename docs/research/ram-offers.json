@@ -231,5 +231,46 @@
     "QVL part MEM-DR564MC-ER64 / Samsung M321R8GA0PB2-CCP: no EU price (4 passes, 2026-11-13).",
     "Watch: Samsung M321R8GA0EB2-CWM 5600 64 GB at senetic.de €971 net (€15.17/GB, quote-only) — fails the 6400 rule but signals shortage cracks; if an EB2 6400 variant appears at this family price, reopen everything.",
     "Renegade 6400-CL32 bins (KF564R32RBE*) are JEDEC-4800 — the trap; never buy for this board."
-  ]
+  ],
+  "ladder": {
+    "updated": "2026-11-14T12:3xZ",
+    "rule": "cheapest VERIFIED route per capacity tier; JEDEC-SPD-6400@1.1V modules only; net/VAT-less; zł @ 4.4070",
+    "rows": [
+      {
+        "cap": "64 GB",
+        "route": "1× ibfusion KSM64R52BD4-64MD",
+        "net": "€2,481",
+        "per_gb": "€38.77",
+        "caveat": "5 pcs stock"
+      },
+      {
+        "cap": "128 GB",
+        "route": "2× ibfusion 64MD",
+        "net": "€4,962",
+        "per_gb": "€38.77",
+        "caveat": "stock cap 5 pcs · kit alt: Proshop 4×32 €5,048 (€39.44/GB)"
+      },
+      {
+        "cap": "256 GB",
+        "route": "4× ibfusion 64MD",
+        "net": "€9,924",
+        "per_gb": "€38.77",
+        "caveat": "uses 4 of 5 pcs · senetic.de alt €10,453 (2.613,25 €×4)"
+      },
+      {
+        "cap": "384 GB (12×32, 12-ch)",
+        "route": "3× Proshop 4×32 kits",
+        "net": "€15,143",
+        "per_gb": "€39.44",
+        "caveat": "post-hike level · cap 2 kits/SKU"
+      },
+      {
+        "cap": "768 GB (12×64, 12-ch)",
+        "route": "12× senetic.de 64MD",
+        "net": "€31,359",
+        "per_gb": "€40.83",
+        "caveat": "41–50 pcs DE stock · mixed 5×ibfusion+7×senetic.de = €30,698"
+      }
+    ]
+  }
 }
