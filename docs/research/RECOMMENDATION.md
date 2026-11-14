@@ -1687,7 +1687,7 @@ What actually moves the needle, in order: **VRAM** (fixed at 4 cards — no fift
 slot on this board) → **RAM capacity** → **PCIe link quality for tensor
 parallel** → CPU. The CPU is last.
 
-### 9355 / 9455 instead — no, and the numbers are not close (2026-11-13)
+### 9355 / 9455 instead — the 9355 is now the clean pick, the 9455 still is not (revised 2026-11-14)
 
 AMD-verified:
 
@@ -1704,13 +1704,60 @@ strictly dominated by the 9555 — fewer cores at a *lower* clock for the same L
 The 9355's only win is **80 W** (280 vs 360) and an 11 % clock bump traded for
 **half the cores**.
 
-**And "QS" does not exist for either.** Searching the EU market returns only
-retail and used parts (`100-000001148` for the 9355, `100-000001542` for the
-9455) — the sample market is concentrated on the high-core SKUs. So there is no
-cheap route in.
+**And no 9355 sample market exists at all — which is itself the strongest
+argument for the part.** A full sweep (2026-11-14, via PicClick; eBay 403s this
+host) found **every** 9355 listing stating **3.55 GHz** — new, used, "unlocked",
+tray, and Dell-binned alike. There is no `-12`/`-13` ES or QS tier for the 9355:
+the sweep for "9355 ES"/"9355 QS" returned only watches, cars and *9354* QS
+parts. **So the whole clock-lottery problem that plagues the cheap 9555 samples
+simply does not exist on the 9355** — you always get retail clocks. OPN
+`100-000001148` (9355) / `100-000001542` (9455); the sample market is
+concentrated entirely on the high-core SKUs (9555, 9655, 9755, 9965).
 
-**Verdict: no.** 9555 QS remains, and the answer to a spilling MoE on 128 GB of
-VRAM does not change with core count, only with bytes per second.
+**Refreshed 9355 floor, 2026-11-14:** **€2,050.00** (eBay DE, new, "unlocked",
+`100-000001148`), then **€2,085–2,163** (several), **$2,130** (used, unlocked),
+$2,367–2,482 (new, unlocked), and **€2,493.72** (new, DE). The doc's earlier
+€2,379 figure was pessimistic; **€2,050 is the live floor.**
+
+### Why the 8-CCD point is the right instinct — and what it decides
+
+**The 9355 is a full 8-CCD part; the 9135 is not.** Meta's L3 arithmetic settles
+it, because each Zen 5 (Turin) CCD carries **32 MB of L3**:
+
+| SKU | Cores | L3 | CCDs (L3 ÷ 32 MB) | Cores per CCD |
+|---|---|---|---|---|
+| **9135** | 16 | 64 MB | **2** | 8 |
+| **9355** | 32 | **256 MB** | **8** | 4 |
+| 9455 | 48 | 256 MB | 8 | 6 |
+| **9555** | 64 | 256 MB | **8** | 8 |
+| 9655 | 96 | 384 MB | 12 | 8 |
+| 9755 | 128 | 512 MB | 16 | 8 |
+
+The whole ladder is self-consistent, so the derivation is safe: **the 9355 has
+the same eight CCDs and therefore the same eight fabric links to the IOD as the
+9555**, with 4 of each CCD's 8 cores enabled and the **full 32 MB L3 per CCD
+still present**. The **9135 is the odd one out at 2 CCDs** — which is exactly the
+part this document already flagged as unable to feed 614 GB/s. So the 9355 is
+**the cheapest part with the full 8-CCD fabric topology**, and its 32 cores sit
+at the low end of the estimated 24–40-core knee rather than below it.
+
+**Net for the spilling-MoE case:** the 9355 is a *cleaner* buy than a 9555 sample
+even at half the cores — retail clocks with no lottery, retail warranty, +0.35 GHz
+base (3.55 vs 3.2), −80 W (280 vs 360), and the same 8 fabric links. What it
+gives up is **prefill throughput** (32 vs 64 cores, roughly linear) and €1,000.
+The 9555 still wins on cores-per-euro *if and only if* the sample's clock is
+genuine; the 9355 removes the "if".
+
+**Verdict (revised 2026-11-14).** Both conclusions survive, but for the spilling
+MoE the **9355 at €2,050 is now the rational pick over a 9555 sample**: it is the
+cheapest part with the full **8-CCD fabric topology** (see "Why the 8-CCD point"
+above), it has **no clock lottery** — every listing is retail 3.55 GHz — it runs
+at **−80 W**, and it keeps the CPU room temperature while the GPUs own the box.
+The 9555 QS at €1,050 still buys **double the cores** for the prefill path, and
+that is a real, roughly-linear win — but only if the sample is genuinely 3.2 GHz,
+which is the one thing the market will not guarantee. **Buy the 9355 if you want
+the decision to be over; buy the 9555 sample only with a CPU-Z screenshot in
+hand.**
 
 ### Do cores and AVX-512 matter for decode, or only prefill? (2026-11-13)
 
@@ -1751,8 +1798,16 @@ Genoa board.
 
 **Practical read for this build:** the 9555's 64 cores buy **prefill speed and
 latency headroom**, not decode tokens/s. Decode is a RAM-bandwidth number and
-will be the same on all three SKUs. If decode feels slow, the fix is **more RAM
-capacity or more VRAM**, never a bigger CPU.
+will be the same across the 8-CCD SKUs. If decode feels slow, the fix is **more
+RAM capacity or more VRAM**, never a bigger CPU.
+
+**Placement of the SKUs against the knee, revised 2026-11-14:** the 24–40-core
+knee is about *fabric links and outstanding-load capacity* as much as raw core
+count, which is why the 2-CCD **9135** is disqualified rather than merely small.
+The **9355 (32 cores across the full 8 CCDs)** sits inside the knee, so it reaches
+the bandwidth ceiling; the **9555 (64 cores, same 8 CCDs)** clears it with margin
+and adds prefill throughput. Both are 8-fabric-link parts; the difference between
+them is prefill, not decode.
 
 *(These are first-principles estimates, not measurements on this box. The cheap
 way to settle it later: `llama-bench` at two core counts with `--n-cpu-moe`
@@ -3414,6 +3469,22 @@ Micron 32 GB, NEMIX, A-Tech).
   part), so buy one kit, prove 6400 × 12 channels, then the rest; Proshop shows
   a 4–5 day lead and a "max 2 per customer" banner. Also decoded: **"H14SSL-NB"
   is not a model** — `-B` is the **bulk-pack** suffix for H14SSL-N.
+- 2026-11-14T23:2xZ — **the 9355 question answered, and it changes the CPU pick
+  for a spilling MoE: prefer the retail 9355 (€2,050) over a 9555 sample.**
+  Two findings. (1) **No 9355 sample market exists** — a full PicClick eBay sweep
+  found *every* 9355 listing at **3.55 GHz** (new, used, unlocked, tray, Dell-bin);
+  "9355 ES"/"9355 QS" searches returned watches, cars and *9354* QS parts. So the
+  9355 has **no clock lottery at all**, unlike the `-12`/`-13` 9555 sample bin.
+  Live floor refreshed to **€2,050** (was €2,379 in the doc). (2) **The user's
+  8-CCD instinct is correct and load-bearing.** Zen 5 (Turin) CCDs carry **32 MB
+  L3**, so the ladder decodes as 9135 = **2 CCDs**, 9355/9455/9555 = **8 CCDs**,
+  9655 = 12, 9755 = 16. The 9355 is therefore **the cheapest part with the full
+  8-CCD fabric topology** — same eight IOD links as the 9555, full 32 MB L3 per
+  CCD — while the 9135's 2 CCDs are exactly why this doc already rejected it for
+  feeding 614 GB/s. Weighs: 9355 = retail clocks, no lottery, warranty, +0.35 GHz
+  base, −80 W, inside the 24–40-core knee. 9555 = double the cores (≈2× prefill)
+  for €1,000 less, *if* the sample is genuinely 3.2 GHz. Verdict revised in the
+  9355/9455 section and in the decode/prefill placement note.
 - 2026-11-14T23:0xZ — **the 9555 clock question has an answer below retail:
   the used "Dell locked" bin at ~$1,500, with the usual vendor-lock caveat.**
   Fresh eBay sweep (PicClick route; eBay direct 403s this host) sorted the whole
