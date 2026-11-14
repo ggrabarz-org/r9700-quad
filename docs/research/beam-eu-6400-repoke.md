@@ -834,3 +834,31 @@ DDG direct 202, picclick 403.
 **Did anything beat €4,791/128 GB net? — No.** Twenty-second pass; floor unchanged: ibfusion €4,962/128 GB (€38.79/GB, 5 pcs).
 
 This pass probed: QVL direct-DDG (202), UK 32MD bin premium (Algolia), picclick-KSM (403), plus full bests re-check (browser + curl).
+
+---
+
+## Pass 28 — 2026-11-14T11:5xZ (scheduled poke; crucial price render, Algolia attribute audit, picclick retry)
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | browser |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | browser |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl raw |
+
+### 2. New probes (all closed as no-price)
+
+- **crucial.com `MTC40F2046S1RC64BR`** via r.jina rendered: page body renders (Micron/Crucial boilerplate, product title) but **no price node in rendered markdown** — Crucial's price is client-side with no SSR value. US sanity channel stays "exists, price unreadable" (their own store; retail market is above the floor anyway).
+- **Kingston UK Algolia attribute audit**: index exposes spec fields (`DRAM Die`, `Chip Organization`, `Module Quantity`, `price` …) but **no availability/stock key at all** → UK stock levels structurally unverifiable; UK rows stay lead-quality.
+- **picclick.de KSM64R52BD4**: **403 again** (mirror throttles after use); Kingston-on-eBay sweep remains queued.
+
+QVL state stands (14 retries; smicro.eu sole EU listing).
+
+### Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — No.** Twenty-third pass; floor stands ibfusion €4,962/128 GB (€38.79/GB, 5 pcs).
+
+This pass probed: crucial.com rendered price (no SSR price), UK Algolia attribute audit (no stock key), picclick retry (403), plus full bests re-check (browser + curl).
