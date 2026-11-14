@@ -774,3 +774,33 @@ Galaxus.de search from this host (ERR_HTTP2), rest as prior.
 **Did anything beat €4,791/128 GB net? — No.** Twentieth pass; floor: ibfusion €4,962/128 GB (€38.79/GB, 5 pcs); volume: senetic.de 41–50 pcs at €40.83/GB; retail singles: Galaxus.de lead at €38.08/GB net est. (32 GB).
 
 This pass probed: Galaxus.de catalog (re-verify attempt — host-blocked, node rows kept as lead), delegated DACH+South Pass 3 fold-in, plus full bests re-check (browser + curl).
+
+---
+
+## Pass 26 — 2026-11-14T10:5xZ (scheduled poke; crucial.com Micron page, serverpartdeals browser, QVL proxy hiccup)
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | browser |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | browser |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl raw |
+
+### 2. New probes (all no-price)
+
+- **crucial.com** `MTC40F2046S1RC64BR` (Micron 64 GB DDR5-6400 2Rx4 CL52 — US, ships EU): product page renders ("Micron 64GB DDR5-6400 RDIMM 2Rx4 CL52"), **price is JS-injected — no $ token in HTML** → price not captured, part confirmed to exist in Crucial's own store.
+- **serverpartdeals.com via browser**: cookie-consent interstitial consumed the render; no product lines parsed → inconclusive again (third failure mode after 429 and 403).
+- **QVL 13th retry**: r.jina proxy itself returned **403** (rate-limit) — search didn't run; state stands (smicro.eu sole EU listing).
+
+### Blocked list
+
+crucial.com price nodes (JS), serverpartdeals (cookie wall), r.jina 403 on DDG.
+
+### Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — No.** Twenty-first pass; floor stands ibfusion €4,962/128 GB (€38.79/GB, 5 pcs).
+
+This pass probed: crucial.com Micron 6400 page (exists, price unparsed), serverpartdeals browser attempt (cookie wall), QVL retry (proxy 403), plus full bests re-check (browser + curl).
