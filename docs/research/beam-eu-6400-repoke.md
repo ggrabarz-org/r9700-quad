@@ -862,3 +862,40 @@ QVL state stands (14 retries; smicro.eu sole EU listing).
 **Did anything beat €4,791/128 GB net? — No.** Twenty-third pass; floor stands ibfusion €4,962/128 GB (€38.79/GB, 5 pcs).
 
 This pass probed: crucial.com rendered price (no SSR price), UK Algolia attribute audit (no stock key), picclick retry (403), plus full bests re-check (browser + curl).
+
+---
+
+## Pass 29 — 2026-11-14T12:2xZ (scheduled poke; **eBay.de Kingston 6400 market floor measured**, QVL 15th, Kaufland retry, memoryc DNS)
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | browser |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | browser |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl raw |
+
+### 2. NEW listings — the queued eBay.de sweep, Kingston side (picclick mirror via browser)
+
+| Listing type | Exact price seen | Reading |
+|---|---|---|
+| `KSM64R52BD4-64MD` **"kompatibler Ersatz" (compatible replacement)** | **EUR 2.425,84** Sofort-Kaufen | Below ibfusion's €2.481 — but it is NOT a Kingston-branded module (third-party spec-match); no SPD datasheet, seller/qty unknown, likely gross. **Lead only** — the JEDEC-SPD rule can't be satisfied without the module's own SPD proof. |
+| Genuine Kingston 64MD listings (4 shown) | **EUR 3.333,00 / 3.560,54 / 3.703,80 / 5.285,00** | Genuine-stock eBay floor ≈ €3.333 ≈ €52/GB gross → marketplace premium ~34% over dealer floor. Consistent with the Samsung sweep (pass 23). |
+
+**Verdict on the sub-floor lead:** at €2.425,84 gross (÷1.19 → €2.038 net = €31,85/GB) the compatible-replacement is the only 64 GB 6400 RDIMM quote seen anywhere under the floor — but it fails the SPD-evidence bar by construction (unbranded). If the buyer wants to gamble on a compatible module, one unit can be SPD-dumped (spdprint) before buying 12.
+
+### 3. QVL hunt (15th)
+
+DDG now returns ServerSupply / eBay.com / Memory4Less / CompSource / Newegg / Alibaba / icdirectory — **all US/Asia. EU: still none** (smicro.eu lead stands as sole EU listing).
+
+### Blocked / new
+
+Kaufland.de browser retry: still "Verifizierung erforderlich" (RayID `a5a991a1…`). **memoryc.com resolves (188.114.97.12, Cloudflare)** — the pool's "memoryC" may live at memoryc.com, not the DNS-dead discount-memory.com; content not yet probed.
+
+### Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — No verified listing does** (ibfusion 2× €2.481 = €4.962 stays the verified floor); the single eBay "compatible replacement" quote (€2.425,84 gross/module) is the only sub-floor number found all night and carries no SPD evidence.
+
+This pass probed: eBay.de KSM64R52BD4 sweep (picclick browser — market floor + compat lead), QVL 15th retry (US-only), Kaufland browser retry (walled), memoryc.com DNS (alive), plus full bests re-check (browser + curl).
