@@ -1778,15 +1778,45 @@ cheapest listing stays the cheapest. What it changes is the cash flow: you pay
 **Two cautions on the €932.37 listing:**
 
 - **Three listings share that price and only one names the OPN (`-12`).** The
-  others describe the part only as "9555 ES 64 Core 128 Thread". At this price
-  the odds of receiving `-13` are real.
+  others describe the part only as "9555 ES 64 Core 128 Thread" — at this price
+  that is the whole identification you get.
 - **Listings at €1,035–1,038 explicitly state "1.9–3.35 GHz" with `-13`** — so
   the low-clock part is being sold in the same price band. **Do not pay without a
   CPU-Z screenshot showing 3.2 GHz base.**
 
-The **€118 premium** for the `-12` listing at €1,050 is cheap insurance if the
-seller will not provide a screenshot: an RMA to China costs more than the
-difference.
+**Correction 2026-11-14T23:0xZ — the cheap samples are the same `-12` part; the
+clock, not the OPN suffix, is the discriminator, and there IS a 3.2 GHz source
+below retail.** A fresh sweep through PicClick (eBay 403s this host) found:
+
+- The **€1,050 listing's own picture is labelled `100-000001247-12`**, and the
+  €932 cluster resolves to the same `-12` part — so the earlier "€118 premium for
+  the listing that names `-12`" advice is retired: there is nothing to pay the
+  premium *for*, both clusters are nominally the same OPN.
+- The genuinely low-clock parts advertise it themselves: **"AMD EPYC TURIN 9555
+  ES 1.9GHz 64-core（100-000001247-12）" at $1,030** and **"ES1.9ghz-3.35ghz …
+  1247-13" at ~€1,036–1,128**. So the suffix is not the label either — a `-12`
+  is being sold as 1.9 GHz and a `-13` as 1.9–3.35 GHz.
+- **The 3.2 GHz route below retail is the used "Dell locked" bin:** "AMD EPYC
+  9555 **3.2GHz** 64C 100-000001142 Socket SP5 - **Dell Locked**" at **$1,500**,
+  plus a $1,895 sibling. `100-000001142` is the retail tray OPN and the listing
+  states production clocks outright.
+- **Everything else above $1,900 is retail or new-tray** (€3,900–6,700 at the
+  German/EU sellers; ~€4,375–5,888 unlocked on the international side), i.e.
+  **real 3.2 GHz is buyable today for roughly €1,300–1,700 net.**
+
+**UNVERIFIED and load-bearing: whether a Dell-locked 9555 POSTs in a Supermicro
+H14SSL-N.** Not tested here, and a vendor-locked EPYC is a documented failure
+mode on some boards. **Buy it only from a seller with a return window and POST it
+inside the window.** If that risk is unacceptable, the paths that do not depend on
+it are: a new-tray **9355** (32C/3.55 GHz, €2,050–2,379), or paying retail for an
+**unlocked 9555/9555P** (~€4,375–4,530). The clock question no longer has "nothing
+under €4k" for an answer.
+
+**Which leaves one honest caveat:** the €1,050 listing and the €932 cluster are
+nominally the same `-12` part, so the money buys nothing except the seller's
+willingness. **The thing to buy is the CPU-Z screenshot (3.2 GHz base), not the
+suffix** — that is the only yes/no that matters, and no listing price substitutes
+for it.
 
 ### What "P" actually means (AMD-verified, 2026-11-13)
 
@@ -3384,3 +3414,19 @@ Micron 32 GB, NEMIX, A-Tech).
   part), so buy one kit, prove 6400 × 12 channels, then the rest; Proshop shows
   a 4–5 day lead and a "max 2 per customer" banner. Also decoded: **"H14SSL-NB"
   is not a model** — `-B` is the **bulk-pack** suffix for H14SSL-N.
+- 2026-11-14T23:0xZ — **the 9555 clock question has an answer below retail:
+  the used "Dell locked" bin at ~$1,500, with the usual vendor-lock caveat.**
+  Fresh eBay sweep (PicClick route; eBay direct 403s this host) sorted the whole
+  9555 market by clock, which is the only field that matters here:
+  **1.9 GHz** parts are advertised as such — "9555 ES 1.9GHz …
+  `100-000001247-12`" at **$1,030**, "ES1.9ghz-3.35ghz … `1247-13`" at
+  **€1,036–1,128** — i.e. **the OPN suffix does not identify the clock in either
+  direction** (the `-12` label appears on 1.9 GHz listings and the €1,050 one
+  alike), so the earlier "pay €118 more for the `-12`" advice is **retired**.
+  **The one sub-retail listing that states production clocks is "EPYC 9555
+  `3.2GHz` 64C `100-000001142` … **Dell Locked**" at $1,500** (+ a $1,895
+  sibling). Real 3.2 GHz is therefore buyable for **~€1,300–1,700 net**, not
+  €4k+. **NOT verified: that a Dell-locked 9555 POSTs on a Supermicro
+  H14SSL-N** — vendor-locked EPYCs are a known failure mode on some boards, so
+  buy with a return window and POST inside it; the safe alternatives are a new
+  tray **9355** (€2,050–2,379) or an unlocked 9555/9555P at ~€4,375–4,530.
