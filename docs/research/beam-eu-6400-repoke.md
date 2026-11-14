@@ -711,3 +711,36 @@ Kleinanzeigen price nodes (Markdown), senetic.de card prices on curl-text (worke
 **Did anything beat €4,791/128 GB net? — No.** Eighteenth pass; floor unchanged: ibfusion €4,962/128 GB (€38.79/GB, 5 pcs), with a new DE EUR alternative at +5.3% and a marketplace floor ~28% above.
 
 This pass probed: senetic.de KSM64R52BD4 line (NEW EUR rows, incl. 96MC cross-check), eBay.de CCP listings via picclick parser fix (market floor 3.195 €), amazon.pl seller price drift (+26 zł), Kleinanzeigen leads, plus full bests re-check.
+
+---
+
+## Pass 24 — 2026-11-14T09:5xZ (scheduled poke; **senetic.de 64MD stock = 41–50 pcs**, CoreWave price token verified, 32GB Server Premier pairings)
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | browser |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | browser |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl raw |
+
+### 2. NEW / upgraded listings this pass
+
+| Part | Shop | Finding |
+|---|---|---|
+| **Kingston KSM64R52BD4-64MD** | **senetic.de (DE)** | **stock token captured: "Verfügbarkeit: 41–50 Stück"** next to the 2.613,25 € exkl card (pass 23 price). → A 6400 series 64 GB module route with **real 40+ pc stock at a DE warehouse**, +5.3% over ibfusion's 5 pcs. If capacity, not just price, decides, this is the volume answer. |
+| KSM64R52BS8-16MH (16 GB 6400) | senetic.pl | netto 2 748,17 zł pair confirmed against brutto 3 380,25 zł (×1.23 exact) — **€38.96/GB**: 16 GB singles price at parity but ⅙ module-per-slot (max 192 GB on 12 slots) |
+| KSM64R52BD4-96MC | senetic.pl | pair check: 16 417,58 netto / 20 193,62 brutto ✓ |
+| Kingston KSM64R52BD4-64MD price at CoreWave (LV) | corewavelabs.com | **$3,076 token now verified IN the fetched page HTML** (local grep of the saved product page) → huihui's lead upgraded to verified: $3,076 ex VAT ≈ €43.3/GB, 100+ pcs |
+
+### Blocked / no-result
+
+itpro.lt browser navigation timed out (45 s). amazon.pl `KSM64R52BD8-32HA`: **no cards — not listed in PL**. QVL state stands.
+
+### Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — No.** Nineteenth pass; price floor unchanged (ibfusion €4,962/128 GB). The **stock floor moved in our favour**: verified 41–50 pcs of 64MD at senetic.de (DE) at +5.3%, plus verified 100+ pcs at CoreWave at +15% — capacity for 12× is real and purchasable, just not at the absolute cheapest number.
+
+This pass probed: senetic.de 64MD stock pairing (41–50 Stück — new), senetic.pl KSM64R52BD8 pairing audit (16MH parity finding), CoreWave price verification (lead→verified), itpro.lt (timeout), amazon.pl 32HA (not listed), plus full bests re-check.
