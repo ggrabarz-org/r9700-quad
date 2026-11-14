@@ -673,3 +673,41 @@ No new listings. QVL state stands (smicro.eu sole EU listing).
 **Did anything beat €4,791/128 GB net? — No.** Seventeenth pass; floor stands ibfusion €4,962/128 GB (€38.79/GB, 5 pcs).
 
 This pass probed: Lenovo genuine-parts search (verified no-result), Fujitsu TS (Vercel wall), OTTO.de route (400, retired), plus full bests re-check (browser + curl). The pool now also has the OEM channels resolved: Dell/HPE routes dead, Lenovo negative, Fujitsu walled.
+
+---
+
+## Pass 23 — 2026-11-14T09:2xZ (scheduled poke; **senetic.de Kingston 6400 EUR rows parsed**, eBay.de market floor via picclick, amazon.pl re-pricing, Kleinanzeigen leads)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Exact strings | Method |
+|---|---|---|---|
+| Proshop.pl kit | unchanged | 27 362,00 / 22 245,53 zł netto | browser |
+| Tonitrus CCP | unchanged | 2.667,65 € netto · 50 pcs | browser |
+| ibfusion 64MD | unchanged | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | unchanged | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | unchanged | 971,07 / 3.387,48 € | curl raw |
+
+### 2. NEW listings this pass
+
+| Part | JEDEC SPD verdict | Shop | Exact price | Stock/lead | URL |
+|---|---|---|---|---|---|
+| Kingston **KSM64R52BD4-64MD** | SPD-verified family, 2Rx4 | **senetic.de (DE)** | **2.613,25 € exkl. MwSt** (= €40.83/GB; +5.3% vs ibfusion) | (card stock not captured) | https://www.senetic.de/search/?q=KSM64R52BD4 |
+| Kingston **KSM64R52BD4-96MC** | SPD-verified, 2Rx4 | **senetic.de (DE)** | **3.727,78 € exkl.** (= €38.83/GB; parity with senetic.pl's 96MC) | — | same search |
+| Kingston KSM64R52BS8-16MH 16 GB | family (6400) | senetic.de | 624,27 € exkl (€39/GB) | — | same search |
+
+**Reading:** senetic.de is the **DE storefront of the same distributor** as senetic.pl — it now carries the Kingston 6400 line in EUR at a small (+5.3%) premium to ibfusion; ibfusion stays cheapest. The 96 MC is priced identically (±zł rounding) in both senetic country sites — one price book, two currencies.
+
+**Marketplace floor (eBay.de via picclick, browser-parsed):** live `M321R8GA0EB2-CCP` listings at **EUR 3.195,00–4.760,00** (best 3.195 ≈ €49.9/GB gross) — private/B2B sellers sit **well above** the dealer floor; eBay is not a bargain source. One 5600 part (PB0-CWMXJ) at 2.300 €. Kleinanzeigen: ads exist for the part but no price nodes parsed (leads only).
+
+**amazon.pl re-check:** same marketplace seller at **13 429,35 zł** (was 13 403,64 — +25,71 zł drift, ~flat); still ≈ €38.7/GB net basis, no rank change.
+
+### Blocked list
+
+Kleinanzeigen price nodes (Markdown), senetic.de card prices on curl-text (worked around via raw-€ pairing).
+
+### Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — No.** Eighteenth pass; floor unchanged: ibfusion €4,962/128 GB (€38.79/GB, 5 pcs), with a new DE EUR alternative at +5.3% and a marketplace floor ~28% above.
+
+This pass probed: senetic.de KSM64R52BD4 line (NEW EUR rows, incl. 96MC cross-check), eBay.de CCP listings via picclick parser fix (market floor 3.195 €), amazon.pl seller price drift (+26 zł), Kleinanzeigen leads, plus full bests re-check.
