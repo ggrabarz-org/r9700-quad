@@ -977,3 +977,36 @@ Query `KSM64R52BD4-64MD` = 8 results; second query "Kingston KSM64R52BD4" = 17 r
 **Did anything beat €4,791/128 GB net? — Not confirmed.** New candidate: eBay.de genuine 64MD at **€2.899,34** — would be **€38.07/GB net IF VAT-incl.** (unconfirmed; retry the detail page after cooldown). Everything else flat or above; floor unchanged: ibfusion €4,962/128 GB (€38.77/GB net, 5 pcs).
 
 This pass probed: Camoufox A/B on Proshop+Tonitrus, Amazon.de, Kaufland, Mindfactory, eBay.de (two queries), memoryc.com, plus full bests re-check.
+
+---
+
+## Pass 32 — 2026-11-15 (Camoufox eBay.de detail campaign — **first genuine sub-floor listing found**, then rate-limit)
+
+### 1. **NEW LEAD — genuine Kingston 64MD BELOW the floor** (detail-page verified this pass)
+
+| Field | Verified value (from the item's own price module) |
+|---|---|
+| Item | eBay.de **item 206689139346** — "Kingston KSM64R52BD4-64MD neu" |
+| Price module | **"EUR 2.899,34 oder Preisvorschlag (inkl. MwSt.)"** — VAT-inclusive confirmed **in the module itself** |
+| State | **Neu** · **Stückzahl: 3 verfügbar** · **Preisvorschlag (Best Offer) enabled** |
+| **Net basis** | €2.899,34 ÷ 1.19 = **€2.436,42 → €38.07/GB net** vs ibfusion €2.481 = €38.77/GB → **−1.8% below the current floor; best genuine price found in 32 passes** |
+| Caveats | (a) seller/trust fields not yet captured (rate-limit hit); (b) quantity is **3, not 12** — a partial-capacity (192 GB) or "first-buy + prove" option, not a full build source; (c) below-floor status holds **only if a Gewerblich seller + proper VAT invoice** (else €2.899,34 = €45.30/GB, above floor) |
+
+**Interpretation:** if the seller is a business with VAT invoice, this is the first listing since the Proshop hike that beats the standing floor — and it's Best-Offer-enabled, so sub-€2.899 is plausibly negotiable. Its quantity (3) matches the "buy 1–3, prove 6400×12 on the board, then commit" strategy almost perfectly.
+
+### 2. Other eBay.de detail reads (same campaign, before throttle)
+
+- **366766859568** ("Kingston RDIMM 64GB 2Rx4 Micron D…"): search price EUR 3.364,54; one detail read returned first-token "2.765,00" (context ambiguous — treat 2.765–3.365 as its band, above floor either way at gross; re-read pending).
+- **227559358484**: listed "DIMM 64 GB DDR5-6400 REG … 1.255,49" is a **32 GB** variant trap (page price module: EUR 2.917,79; variants include 32 GB/64 GB kit items) — noted so it's never mistaken for a 64 GB price.
+- **Hynix wave**: search `HMCG94AHBRA480N` = 12 results, incl. **"BRAND NEW SK HYNIX 64GB DDR5 ECC RDIMM PC5-6400B 2Rx4 … HMCG94AHBRA480N — Neu — Privat"**; a related-items snippet showed **EUR 2.162,00** (≈€33.8/GB) — **lead only, item not yet opened**; hynix carries "no SPD sentence published" caveat as usual. Used hynix pulls from Gewerblich sellers also present (~€2.4–2.9k band).
+- A **dead-link check**: item 940065080081 is the OLD 3200 part (PC4-3200 KSM32RD4/64HCR, €469,75 Refurb) — not ours.
+
+### 3. Rate-limit state
+
+eBay.de detail pages now consistently return error pages to fresh Camoufox sessions (throttle after the campaign's ~12 fetches). Seller-identity/trust fetch + the €2.162 hynix item + re-read of 366766859568 are queued for the next pass (or ~hours cooldown).
+
+### 4. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — A genuine listing DID, conditionally: item 206689139346 at €38.07/GB net (VAT-recoverable basis), 3 pcs, Best Offer.** Pending: seller identity/trust + VAT-invoice feasibility. Floor of record stays ibfusion until that's confirmed (conservative), but the lead is real and detail-page-verified.
+
+This pass probed: eBay.de item details (8 items), variants/trap audit, hynix wave (12 results), plus bests re-check. All three slices' walls re-tested: Amazon.de (walled), Kaufland (walled), Mindfactory (walled) — Camoufox changes nothing there so far.
