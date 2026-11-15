@@ -933,3 +933,47 @@ This pass probed: eBay.de KSM64R52BD4 sweep (picclick browser — market floor +
 **Did anything beat €4,791/128 GB net? — No.** The eBay.com US channel adds one genuine part at +32% and one clone at +35%, both landed above the EU floor. Floor unchanged: ibfusion €4,962/128 GB (€38.79/GB net, 5 pcs).
 
 This pass probed: eBay.com (2 items fully decoded via Camoufox), Galaxus.de search (renders; product pages still CAPTCHA), plus the standing route set.
+
+---
+
+## Pass 31 — 2026-11-15 (scheduled poke; Camoufox A/B — eBay.de floor re-measured, walls re-tested)
+
+### 1. Re-check of the bests — all **UNCHANGED** (first pass with the two walled shops verified through Camoufox)
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | **Camoufox** (values match Chromium A/B exactly) |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | **Camoufox** |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl raw |
+
+### 2. eBay.de re-measured (Camoufox) — **first potential sub-floor genuine listing found**
+
+Query `KSM64R52BD4-64MD` = 8 results; second query "Kingston KSM64R52BD4" = 17 results:
+
+| Listing | Exact price seen | Reading |
+|---|---|---|
+| **"Kingston KSM64R52BD4-64MD neu"** | **EUR 2.899,34** | **Potential bar-beater — IF gross incl. 19% VAT: €2.436,42 net = €38.07/GB (−1.8% vs ibfusion €38.77/GB).** VAT status UNCONFIRMED — eBay.de rate-limited (SORRY page) before the detail fetch could read "inkl. MwSt" vs "zzgl. MwSt". May also be "net" = €45.30/GB. **Lead — confirm on next fetch.** |
+| Kingston RDIMM 64GB 2Rx4 "Kingston" | EUR 3.364,54 | gross ≈ €44.2/GB net-basis — above floor |
+| "Pamięć serwerowa DDR5 Kingston …" | EUR 3.262,19 | above floor |
+| Kingston CL52 Server Premier ~D~ | EUR 5.285,00 | dealer-premium tier |
+| Compatible Replacement (clone) | EUR 3.602,97 | clone priced ABOVE the floor on eBay.de (unlike the €2.425,84 one seen pass 29) |
+| 96 GB variants | 96MC EUR 6.813,00 · 96HM EUR 7.569,00 | €70–79/GB — above everything |
+
+**Method note:** eBay.de renders for Camoufox but **rate-limits after ~2–3 fetches** ("SORRY … 0.96fa6d68…"); item-detail fetch must wait for cooldown (next pass or manual).
+
+### 3. Walls re-tested with Camoufox (first time)
+
+- **Amazon.de**: "Tut uns Leid! … technischer Fehler" — walled even for Camoufox this run (retry next pass).
+- **Kaufland.de**: still "Verifizierung erforderlich" (interactive challenge).
+- **Mindfactory**: still "SECURITY CHECK … I am human".
+- **eBay.com**: renders (pass-30 finding holds). **Galaxus** product pages: CAPTCHA even for Camoufox (search renders).
+
+### 4. memoryc.com (queued pass-29 probe): resolves and renders (CH-facing) — search for `KSM64R52BD4` returns **no product rows** → shop reachable, part appears not carried.
+
+### 5. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — Not confirmed.** New candidate: eBay.de genuine 64MD at **€2.899,34** — would be **€38.07/GB net IF VAT-incl.** (unconfirmed; retry the detail page after cooldown). Everything else flat or above; floor unchanged: ibfusion €4,962/128 GB (€38.77/GB net, 5 pcs).
+
+This pass probed: Camoufox A/B on Proshop+Tonitrus, Amazon.de, Kaufland, Mindfactory, eBay.de (two queries), memoryc.com, plus full bests re-check.
