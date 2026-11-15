@@ -899,3 +899,37 @@ Kaufland.de browser retry: still "Verifizierung erforderlich" (RayID `a5a991a1�
 **Did anything beat €4,791/128 GB net? — No verified listing does** (ibfusion 2× €2.481 = €4.962 stays the verified floor); the single eBay "compatible replacement" quote (€2.425,84 gross/module) is the only sub-floor number found all night and carries no SPD evidence.
 
 This pass probed: eBay.de KSM64R52BD4 sweep (picclick browser — market floor + compat lead), QVL 15th retry (US-only), Kaufland browser retry (walled), memoryc.com DNS (alive), plus full bests re-check (browser + curl).
+
+---
+
+## Pass 30 — 2026-11-15 (Camoufox stealth unlock: eBay.com item decoded, Galaxus search renders)
+
+**Milestone:** real **Camoufox v158.0.1-beta.41** (Firefox engine, fingerprint spoofing) installed in `/tmp/opencode/pwenv` — it renders **eBay.com item pages and eBay search** that IP-walled headless Chromium 4/4 attempts, and **Galaxus.de search pages** (HTTP2-blocked for Chromium). Galaxus **product** pages remain CAPTCHA-walled even for Camoufox. From this pass the poke's browser route is Camoufox-first for eBay/Galaxus; Playwright Chromium stays for Proshop/Tonitrus (both still work).
+
+### eBay.com item 326661139726 — full decode (user-requested)
+
+| Field | Value |
+|---|---|
+| Title | "64GB PC5-51200R DDR5-6400 ECC RDIMM **KSM64R52BD4-64MD Compatible Replacement** RAM" |
+| **Brand** | **"MB"** — NOT Kingston. MPN **`KSM64R52BD4-64MD-MB`**, described "Equivalent To KSM64R52BD4-64MD" → third-party spec-match clone |
+| Price | **US $2,674.00** · + **US $350.00** shipping (USPS Priority Intl) · **4 available** |
+| Seller | Mem-Store, 99.9% pos · Santa Clara, CA · **Returns: not accepted** |
+| Spec claims | RDIMM, 288-pin, 64 GB, PC5-51200, 6400 MHz, 1.1 V, ECC Reg — no SPD datasheet exists for a clone |
+| Lead | Est. Nov 26 – Dec 4 to PL |
+
+**Landed cost (1 USD = 1.1058 € @ NBP):**
+- Sticker only: $2,674 = **€2,957 → €46.20/GB** (already +19% vs floor)
+- + shipping: $3,024 = **€3,344 → €52.25/GB** (+35% vs floor)
+- + 23% import VAT if private buyer: ≈ **€4,113 → €64.3/GB**; VAT-registered B2B: deductible/neutral, so €52.25/GB net stands
+- Duty: 0% (HS 8473.30)
+- Break-even vs ibfusion €2,481 net = must be **≤ $1,893 sticker incl. shipping effect** → this item is **$781 over break-even (41%)**
+
+**Verdict: reject.** It (a) fails the SPD-evidence rule by construction (unbranded clone — no datasheet sentence; the genuine `KSM64R52BD4-64MD` datasheet does not transfer to a third-party module's SPD), (b) costs +35% landed vs the floor even VAT-neutral, (c) has no returns. Same class as the earlier eBay.de "kompatibler Ersatz" €2,425,84 lead — unbranded clones cluster ~€32–46/GB nominal but carry the full SPD gamble.
+
+**Control item decoded this pass:** eBay.com `M321R8GA0PB2-CCP` (Samsung genuine, "SAMSUNG 64GB 1X64GB 2RX4 PC5-6400B") at **$2,959.00** — genuine QVL-family silicon, US channel, +~32% vs floor before shipping.
+
+### Verdict
+
+**Did anything beat €4,791/128 GB net? — No.** The eBay.com US channel adds one genuine part at +32% and one clone at +35%, both landed above the EU floor. Floor unchanged: ibfusion €4,962/128 GB (€38.79/GB net, 5 pcs).
+
+This pass probed: eBay.com (2 items fully decoded via Camoufox), Galaxus.de search (renders; product pages still CAPTCHA), plus the standing route set.
