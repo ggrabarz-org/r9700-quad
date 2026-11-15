@@ -1,5 +1,13 @@
 # Scheduled re-poke — JEDEC-6400 RDIMM bests, EU
 
+## Standing reference (for scheduler passes)
+
+**Bests (update as they move):** Jacob Elektronik (via geizhals) KSM64R52BD4-64MD €2.853,98 gross ≈ €2.398,30 net = €37.47/GB · ibfusion KSM64R52BD4-64MD €2.481 net (5 pcs) · eBay IT-Planet 64MD €2.899,34 inkl.MwSt 3 pcs · eBay hynix business 336558516150 €2.547,80 (50 pcs, SPD caveat) · Proshop.pl kit 22 245,53 zł netto (5–6 d) · Tonitrus CCP €2.667,65 (50 pcs) · senetic.pl 64MD 11 515,16 zł netto / 96MC 16 426,27 zł · senetic.de CWM €971 / CCP €3.387,48 / 3DS €6.175,58.
+**Shops pool (rotate >=3/pass):** Amazon.de/.pl · eBay.de/EU · geizhals.de (trawl) · idealo · Kaufland · Otto · Kleinanzeigen (leads) · Dell/HP/Lenovo/Fujitsu OEM channels · bargainhardware.co.uk (trawl) · offtek · kingstonmemoryshop.co.uk + memorycow.co.uk (Algolia app C7SR80KDDJ, key 30d27cecbb10f11beb035027fce892c3) · serverpartdeals · memory.net · abstock · itpro.lt · mem-tek.fr · Komputerbay · ebattery.com.au · corewavelabs.com · senetic.fr/.pl/.de · ibfusion.
+**Parts pool:** KSM64R52BD4-64MD/-64MH/-64HA · KSM64R52BD4-96MC · KSM64R52BD8-32MD/-32MH/-32HA · KF572RH38RBK4-128 · KF576RH40RB-32 single · M321R8GA0EB2-CCP · M321R8GA0PB2-CCP · MTC40F2046S1RC64BH1/-BD2 · HMCG94AHBRA480N / HMCG94BDJMA080N · MEM-DR564MC-ER64 · V-Color RDIMM JEDEC 6400 4x32 · generic "DDR5-6400 ECC RDIMM 64 GB"/"32 GB" site searches.
+**Known dead (skip):** ramshop.pl, sklepy-serwerowe.pl, notebooki-serwery.pl, ramek.com.pl, hmem.eu, discount-memory.com, bulk-memory.eu, server-warehouse.de, etb-online/etbhost, ramexpert, po-memory, mr-memory.co.uk, svp.co.uk, OTTO.de search, Mindfactory/Kaufland (interactive walls), Galaxus product pages (robot check; search tiles OK), Amazon.de (error cycle, occasionally serves).
+
+
 One scheduled task, running every 30 min, appends a dated section per pass.
 Baseline (2026-11-13, net/VAT-less, NBP 4.4070 zł/EUR):
 
