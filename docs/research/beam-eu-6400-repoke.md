@@ -1150,3 +1150,49 @@ eBay.de item detail (336558516150 open attempt → SORRY; rate budget spent). Ev
 **Did anything beat €4,791/128 GB net? — The held answer: YES (IT-Planet 206689139346, €38.40/GB net landed, 3 pcs).** This pass adds a **card-level business-hynix floor at ≈€33.78/GB net-basis** (VAT-recoverability + stock UNCONFIRMED — not board `best` until the item opens). If confirmed: 12× ≈ €2.572 gross/2.161,6 net each.
 
 Coverage: eBay.de business-hynix search (new PN route, 12 cards mapped), DDG alt-PN discovery, Proshop+Tonitrus (Camoufox), full curl bests. **Board updated & committed.**
+
+---
+
+## Pass 37 — 2026-11-15 (camofox-browser server adopted; **hynix business listing item-level verified: 50 pcs, €33.78/GB net-basis**)
+
+### 0. Infrastructure upgrade — camofox-browser v2.5.0 (REST + persistent profiles)
+
+Installed per user directive: `npm i -g camofox-browser` with `CAMOUFOX_INSTALL_DIR=/root/.cache/camofox-browser-engine` (engine 158.0.1-beta.41, 2.5 GB), server on `:9377`, **persistent per-user Firefox profiles** (`CAMOFOX_USER=ebay`). Result: **eBay.de serves fully through the server — no rate-limit cycle.** Cookie consent accepted once, persists forever. Item pages, search pages, snapshots (accessibility tree with `eN` refs) all working. This is the SOTA iteration of the previous script-per-fetch pattern.
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | Camoufox |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | Camoufox |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl |
+
+### 2. **Item-level verification: hynix business listing = 50 pcs** (item 336558516150)
+
+| Field | Verified value (camofox server, item page) |
+|---|---|
+| Title | SK hynix 64G 6400MHz DDR5 ECC RAM RDIMM 2Rx4 PC5-88/64B-MA0-1110 (**HMCG94BDJMA080N**) |
+| Price module | **US $2.808,44 (inkl. MwSt.) Ca. EUR 2.547,80** |
+| Shipping | US $27,03 (≈ EUR 24,52) — "Standard Shipping **from Greater China** to worldwide" |
+| **Stock** | **"50 verfügbar"** — **enough for a full 12×768 GB build** |
+| Seller | **Gewerblich**, 101.546 fb, sold 409.056 items, member since Aug 2005, "MemoryPartner_Deals" |
+| Returns | **30 Tage Rückgabe** (free domestic return shipping) |
+| Condition | Neu (Sonstige) |
+| **Net basis** | €2.547,80 ÷ 1,19 = **€2.141,0 + €20,6 ship ≈ €2.161,6 → €33.78/GB net** (VAT-recoverable, business seller) |
+| Caveats | hynix = **no SPD sentence published** (same as all hynix) · ships from China (delivery time/customs handling) · "Neu (Sonstige)" |
+
+**Correction to pass 35/36 notes:** the earlier "€2.416,93 + €19,61" rail figure was likely a mixed-variant rail artifact; the item-level truth is **€2.547,80 + €24,52 = €33.78/GB net-basis** — still far below every other route.
+
+### 3. Rail-scanned alternatives (same snapshot, prices on cards)
+
+- Private hynix 336731389651: **€2.162,00 last-one, Kaunas, no invoice** (unchanged; gross basis €34.63/GB).
+- yier/quar sellers (CN): €2.809,52 / €3.453,80 tier. US/UK/other: 2.9–3.6k.
+- bargain*hardware (UK) Lenovo 4800 64GB at €2.451,71 — wrong speed bin, skip.
+
+### 4. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — YES, twice over:** (a) JEDEC-qualified: IT-Planet eBay 3 pcs @ €38.40/GB net landed; (b) **cheapest raw price: hynix business 50 pcs @ €33.78/GB net-basis (SPD caveat, ships CN)**. 768 GB build maths: **12× hynix ≈ €25,939 net** vs senetic €31,359 net.
+
+Coverage: camofox-browser install + item-level eBay verification (2 items, ~6 navigations, zero throttling), rail scan, Proshop + Tonitrus, full curl set. **Board + ladder updated & committed (SOTA site).**

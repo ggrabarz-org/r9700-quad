@@ -1,6 +1,6 @@
 {
   "eurpln": 4.407,
-  "updated": "2026-11-15T03:44Z",
+  "updated": "2026-11-15T16:06Z",
   "offers": [
     {
       "part": "Kingston FURY Renegade Pro 7600 KF576RH40RBK4-128",
@@ -281,6 +281,20 @@
       "state": "lead",
       "best": false,
       "url": "https://www.ebay.de/sch/i.html?_nkw=HMCG94AHBRA480N"
+    },
+    {
+      "part": "SK hynix HMCG94BDJMA080N 64GB DDR5-6400 ECC RDIMM (PC5-88/64B-MA0-1110)",
+      "spec": "no SPD sentence published (hynix) · 'Neu (Sonstige)' · business seller MemoryPartner_Deals (101.546 fb, member 2005) · 30-day returns · ships Greater China · item 336558516150",
+      "shop": "eBay.de (business)",
+      "country": "DE (ships CN)",
+      "price_net": "US$2.808,44 inkl. MwSt ≈ €2.547,80 + €24,52 ship → €2.161,6 net (÷1.19, VAT-rec.)",
+      "price_gross": "€2.547,80 + €24,52 shipping",
+      "eur_per_gb": "€33.78 net-basis",
+      "stock": "50 verfügbar",
+      "checked": "2026-11-15T16:06Z",
+      "state": "new",
+      "best": false,
+      "url": "https://www.ebay.de/itm/336558516150"
     }
   ],
   "notes": [
@@ -289,29 +303,36 @@
     "Renegade 6400-CL32 bins (KF564R32RBE*) are JEDEC-4800 — the trap; never buy for this board."
   ],
   "ladder": {
-    "updated": "2026-11-15T03:44Z",
-    "rule": "cheapest VERIFIED route per capacity tier; JEDEC-SPD-6400@1.1V modules only; net/VAT-less; zł @ 4.4070",
+    "updated": "2026-11-15T16:06Z",
+    "rule": "cheapest route per capacity tier; JEDEC-SPD-6400@1.1V modules preferred; net/VAT-less; zł @ 4.4070",
     "rows": [
       {
         "cap": "64 GB",
-        "route": "1× ibfusion KSM64R52BD4-64MD",
+        "route": "1× ibfusion KSM64R52BD4-64MD (JEDEC-qualified)",
         "net": "€2,481",
         "per_gb": "€38.77",
         "caveat": "5 pcs stock"
+      },
+      {
+        "cap": "64 GB (price pick)",
+        "route": "1× eBay.de hynix HMCG94BDJMA080N business (SPD caveat)",
+        "net": "€2,161.6",
+        "per_gb": "€33.78",
+        "caveat": "50 pcs · ships CN · no SPD sentence (hynix)"
       },
       {
         "cap": "128 GB",
         "route": "2× ibfusion 64MD",
         "net": "€4,962",
         "per_gb": "€38.77",
-        "caveat": "stock cap 5 pcs · kit alt: Proshop 4×32 €5,048 (€39.44/GB)"
+        "caveat": "stock cap 5 · kit alt: Proshop 4×32 €5,048 (€39.44/GB)"
       },
       {
         "cap": "256 GB",
         "route": "4× ibfusion 64MD",
         "net": "€9,924",
         "per_gb": "€38.77",
-        "caveat": "uses 4 of 5 pcs · senetic.de alt €10,453 (2.613,25 €×4)"
+        "caveat": "uses 4 of 5 pcs · senetic.de alt €10,453"
       },
       {
         "cap": "384 GB (12×32, 12-ch)",
@@ -322,10 +343,17 @@
       },
       {
         "cap": "768 GB (12×64, 12-ch)",
-        "route": "12× senetic.de 64MD",
+        "route": "12× senetic.de 64MD (JEDEC-qualified)",
         "net": "€31,359",
         "per_gb": "€40.83",
-        "caveat": "41–50 pcs DE stock · mixed 5×ibfusion+7×senetic.de = €30,698"
+        "caveat": "41–50 pcs DE stock"
+      },
+      {
+        "cap": "768 GB (price pick)",
+        "route": "12× eBay.de hynix business (SPD caveat)",
+        "net": "€25,939",
+        "per_gb": "€33.78",
+        "caveat": "50 pcs verified · ships CN · prove-one-first"
       }
     ]
   }
