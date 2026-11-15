@@ -2,10 +2,10 @@
 
 ## Standing reference (for scheduler passes)
 
-**Bests (update as they move):** Jacob Elektronik (via geizhals) KSM64R52BD4-64MD €2.853,98 gross ≈ €2.398,30 net = €37.47/GB · ibfusion KSM64R52BD4-64MD €2.481 net (5 pcs) · eBay IT-Planet 64MD €2.899,34 inkl.MwSt 3 pcs · eBay hynix business 336558516150 €2.547,80 (50 pcs, SPD caveat) · Proshop.pl kit 22 245,53 zł netto (5–6 d) · Tonitrus CCP €2.667,65 (50 pcs) · senetic.pl 64MD 11 515,16 zł netto / 96MC 16 426,27 zł · senetic.de CWM €971 / CCP €3.387,48 / 3DS €6.175,58.
-**Shops pool (rotate >=3/pass):** Amazon.de/.pl · eBay.de/EU · geizhals.de (trawl) · idealo · Kaufland · Otto · Kleinanzeigen (leads) · Dell/HP/Lenovo/Fujitsu OEM channels · bargainhardware.co.uk (trawl) · offtek · kingstonmemoryshop.co.uk + memorycow.co.uk (Algolia app C7SR80KDDJ, key 30d27cecbb10f11beb035027fce892c3) · serverpartdeals · memory.net · abstock · itpro.lt · mem-tek.fr · Komputerbay · ebattery.com.au · corewavelabs.com · senetic.fr/.pl/.de · ibfusion.
+**Bests (update as they move):** **KSM64R52BD8-32MH 32 GB 2Rx8 (SPD-verified) — geizhals a3842215, 27 Angebote, ab €1.361,82 gross = €1.144,39 net = €35.76/GB (cheapest €/GB)** · barax (geizhals) KSM64R52BD8-32MD €1.250,00 gross = €32.83/GB (single offer, qty unverified) · Jacob Elektronik (via geizhals) KSM64R52BD4-64MD €2.853,98 gross ≈ €2.398,30 net = €37.47/GB (64 GB floor) · ibfusion KSM64R52BD4-64MD €2.481 net (5 pcs) · eBay IT-Planet 64MD €2.899,34 inkl.MwSt 3 pcs · eBay hynix business 336558516150 €2.547,80 (50 pcs, SPD caveat) · Proshop.pl kit 22 245,53 zł netto (5–6 d) · Tonitrus CCP €2.667,65 (50 pcs) · senetic.pl 64MD 11 515,16 zł netto / 96MC 16 426,27 zł · senetic.de CWM €971 / CCP €3.387,48 / 3DS €6.175,58.
+**Shops pool (rotate >=3/pass):** Amazon.de/.pl · eBay.de/EU · geizhals.de (trawl) · idealo · Kaufland · Otto · Kleinanzeigen (leads) · Dell/HP/Lenovo/Fujitsu OEM channels · bargainhardware.co.uk (trawl) · offtek · kingstonmemoryshop.co.uk + memorycow.co.uk (Algolia app C7SR80KDDJ, key 30d27cecbb10f11beb035027fce892c3) · serverpartdeals · memory.net · abstock · itpro.lt · mem-tek.fr · Komputerbay · ebattery.com.au · corewavelabs.com · senetic.fr/.pl/.de · ibfusion · jacob.de (Jacob Elektronik, browser-only) · barax (AT/DE, geizhals row) · geniuzcom.de · e-tec.at/DiTech.at · geizhals product tables a3452629/a3842215/a3452640.
 **Parts pool:** KSM64R52BD4-64MD/-64MH/-64HA · KSM64R52BD4-96MC · KSM64R52BD8-32MD/-32MH/-32HA · KF572RH38RBK4-128 · KF576RH40RB-32 single · M321R8GA0EB2-CCP · M321R8GA0PB2-CCP · MTC40F2046S1RC64BH1/-BD2 · HMCG94AHBRA480N / HMCG94BDJMA080N · MEM-DR564MC-ER64 · V-Color RDIMM JEDEC 6400 4x32 · generic "DDR5-6400 ECC RDIMM 64 GB"/"32 GB" site searches.
-**Known dead (skip):** ramshop.pl, sklepy-serwerowe.pl, notebooki-serwery.pl, ramek.com.pl, hmem.eu, discount-memory.com, bulk-memory.eu, server-warehouse.de, etb-online/etbhost, ramexpert, po-memory, mr-memory.co.uk, svp.co.uk, OTTO.de search, Mindfactory/Kaufland (interactive walls), Galaxus product pages (robot check; search tiles OK), Amazon.de (error cycle, occasionally serves).
+**Known dead (skip):** ramshop.pl, sklepy-serwerowe.pl, notebooki-serwery.pl, ramek.com.pl, hmem.eu, discount-memory.com, bulk-memory.eu, server-warehouse.de, etb-online/etbhost, ramexpert, po-memory, mr-memory.co.uk, svp.co.uk, OTTO.de search, Mindfactory/Kaufland (interactive walls), Galaxus product pages (robot check; search tiles OK), Amazon.de (error cycle, occasionally serves), idealo.de search URLs (404 via trawl both attempts), barax.at (DNS fails on this host — use the geizhals row), www.jacob.de (0 bytes to curl/JS app — camofox only), kingstonmemoryshop/memorycow UK 64MD (stock_quantity 0, ex-VAT £3.218,33 — price far above the floor).
 
 
 One scheduled task, running every 30 min, appends a dated section per pass.
@@ -1343,3 +1343,46 @@ Unchanged. No new blocks; geizhals now reachable for all future passes (Route 2)
 **Did anything beat €4,791/128 GB net? — YES, new verified beat: Jacob Elektronik €2.398,30 net/64 GB → €4.796,60/128 GB, at the old bar (€37.47 vs €37.43/GB), JEDEC-SPD-qualified, German business seller.** Board re-ranked (Jacob Elektronik = new BEST), ladder rebuilt.
 
 Coverage: geizhals search + product page + offer-table extraction (trawl), camofox bests, curl set (ibfusion, senetic ×2), senetic.pl tick check.
+
+---
+
+## Pass 42 — 2026-11-15T21:34Z (the **32 GB 2Rx8** bin is the new per-GB floor: geizhals 32GB-6400 wave at €35.76/GB net)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| Jacob Elektronik 64MD (geizhals row) | **unchanged €2.853,98 brutto = €2.398,30 net** · "Sofort lieferbar" (quantity not published) | trawl (product a3452640) |
+| Proshop.pl kit | unchanged 27 362,00 / 22 245,53 zł netto · 5–6 dni | camofox `--user proshop` |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · Verfügbar 50 | camofox `--user tonitrus` |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| senetic.pl 64MD / 96MC | unchanged 11 515,16 / 16 426,27 zł netto | curl |
+| senetic.de 64MD / 96MC | unchanged **2.613,25 € / 3.727,78 € exkl. MwSt** — and cross-confirmed from the other side: senetic.de appears in the geizhals 64MD table at €3.109,77 brutto (= the same €2.613,25 net) | curl + trawl |
+
+### 2. NEW listings
+
+| Part | JEDEC SPD verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| **Kingston `KSM64R52BD8-32MH`** (32 GB, 2Rx8, DDR5-6400 CL52 reg ECC) | **SPD-verified** — datasheet: "The SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V" | **Geizhals.de** product (27 Angebote) | **ab € 1.361,82 brutto** (€42,56/GB brutto) → **€1.144,39 net = €35.76/GB** | 27 Angebote; several rows read "Auf Lager" / "Sofort lieferbar" / "lagernd" (Future-X.de, F&M, Jacob Elektronik direkt, e-tec.at band €1.387,80–1.475,62); cheapest row = geniuzcom.de, "3 – 5 Werktage" | https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32mh-a3842215.html |
+| **Kingston `KSM64R52BD8-32MD`** (32 GB, 2Rx8, same spec) | **SPD-verified** — same datasheet sentence | **barax** (only offer on that product) | **€ 1.250,00 brutto** (€39,06/GB brutto) → **€1.050,42 net = €32.83/GB**, + €5,95 shipping | **1 Angebot** · "Ab Lager lieferbar – Lieferzeit 1-3 Werktage"; piece quantity not shown (barax.at does not resolve from this host) | https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32md-a3452629.html |
+| Kingston `KSM64R52BD4-64MD` (64 GB) — UK direct | 1.1 V / 6400MT/s / Micron D-Die stated on PDP (spec fields, not an SPD sentence) | **kingstonmemoryshop.co.uk / memorycow.co.uk** (Algolia) | **£3.218,33 ex-VAT** (£3.861,99 incl.) = **£50,29/GB ex-VAT** — no verified GBP/EUR rate, so no €/GB claim | **stock_quantity 0** · "Available To Order – 4-5 Business Day Delivery" · Royal Mail FREE | https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm |
+| SK hynix `HMCG94BDJMA080N` item 336558516150 (re-verified **at item level**) | **no SPD sentence published** (hynix) | **eBay.de / MemoryPartner_Deals** (Gewerblich, 101.547 FB, **100 % positive**) | **US $2.808,44 (inkl. MwSt.) ≈ €2.547,80** + US $27,03 (≈€24,52) shipping → **€33,78/GB net-basis** | **50 verfügbar** · condition "Neu: Sonstige" · ships from 深圳 (CN), delivery 8–29 Dec · 30-day returns, buyer pays return shipping | https://www.ebay.de/itm/336558516150 |
+
+Extra SPD verification batch (all **PASS**, same sentence quoted from each datasheet): `KSM64R52BD8-32MH`, `KSM64R52BD8-32HA`, `KSM64R52BD4-64HA` — the whole Server Premier DDR5-6400 family is JEDEC-SPD-6400 @1.1 V, so the 32 GB 2Rx8 bin is as qualified as the 64 GB 2Rx4 part.
+
+Also cross-checks from the geizhals offer tables (no action needed): PC-KING €2.860,72 / 4-6 Werktage and geniuzcom.de same price on the 64MD; e-tec.at €2.884,75 "Auf Lager, sofort versandfertig"; Proshop.de itself appears on the 32MH product at €1.446,65 ("Verfügbar – 5-7 Werktage").
+
+### 3. Blocked list
+
+- **barax.at** — DNS does not resolve from this host → the 32MD single-offer piece quantity can't be checked at the shop (only geizhals's "Ab Lager lieferbar").
+- **www.jacob.de** (Jacob Elektronik, redirects from jacob-elektronik.de) — serves 0 bytes to curl (JS app); 12-piece stock depth at the best 64 GB seller still unverified. Browser probe next pass.
+- **idealo.de** — search URL 404s through trawl on both attempts (`/preisliste/Produkte.html?topic=…` guess, `/intl/en/search?q=…`); not resolved this pass.
+- Unchanged: Mindfactory / Kaufland click-walls, Galaxus product pages, Amazon.de error cycle.
+
+### 4. Verdict + coverage
+
+**Did anything beat the cheapest verified offer (€37.47/GB net)? — YES, at the per-GB level: `KSM64R52BD8-32MH` from €1.144,39 net/32 GB = €35.76/GB** (JEDEC-SPD-verified, 27 Angebote with several in-stock DE/AT sellers). Consequence for the 384 GB tier: **12× 32 GB = €13.732,64 net** — cheaper than 6× 64 GB Jacob (€14.390) and 3× Proshop kits (€15.143), and it is the first route below the €37.4/GB line that is fully JEDEC-qualified. Cheapest single module seen: 32MD at €32.83/GB net (one offer, quantity unverified).
+
+The 64 GB / 768 GB picture is unchanged: Jacob €37.47/GB remains the JEDEC-qualified 64 GB floor, hynix €33.78/GB remains the no-SPD caveat floor. **Decision pressure shifts to the 384-vs-768 question the CPU-lane measurement is supposed to settle: at these prices 384 GB costs €35.76/GB while 768 GB costs €37.47/GB.**
+
+Coverage: camofox (proshop, tonitrus, ebay + consent) 3 profiles / 3 navigations; trawl 5 geizhals scrapes (MD-64 product, 32MD search+product, 32MH search+product); curl ibfusion, senetic.pl, senetic.de, Kingston datasheets ×4 (pdftotext), Algolia ×2 (kingstonindex/memcowindex), barax.at, jacob-elektronik.de redirect probe. Expansion probed this pass: kingstonmemoryshop/memorycow UK, barax, geniuzcom.de, e-tec.at/DiTech.at (AT rows), geizhals 32GB-6400 family, eBay item-level verification — 6 new shops/parts.
