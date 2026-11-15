@@ -1,4 +1,22 @@
-# R9700 ×4 — ASRock WRX90 WS EVO build book
+# R9700 ×4 — ~~ASRock WRX90 WS EVO build book~~ **SUPERSEDED**
+
+> **STATUS 2026-11-15: SUPERSEDED by the EPYC/SP5 platform.** The reason is the
+> CPU's CCD count, not the board. The CPU expert lane on a spilling MoE is fed by
+> the CPU's Infinity Fabric links to the I/O die, **one per CCD**, and the book's
+> chosen 9955WX is a **2-CCD** part — the same shape that disqualified the EPYC
+> 9135 in [docs/research/RECOMMENDATION.md](docs/research/RECOMMENDATION.md). It
+> cannot feed the 8-channel sTR5 platform's 409.6 GB/s from the CPU side, and
+> sTR5's ceiling is 33 % below SP5's 614 GB/s anyway. On a workload where experts
+> spill to RAM (DeepSeek 2.00/2.25, UD-Q8), that ratio *is* the decode ratio.
+> **The replacement platform is EPYC 9005 on SP5** — Supermicro H14SSL-N/NT or
+> Gigabyte MZ33-CP1, 12-channel DDR5-6400 (614 GB/s), with an **8-CCD-minimum**
+> CPU (9355/9555 on SP5; 9985WX if staying on sTR5). Full analysis:
+> [docs/research/RECOMMENDATION.md](docs/research/RECOMMENDATION.md). The WRX90
+> builds below remain valid **only** for a strictly VRAM-resident workload
+> (IQ3_S/IQ3_XXS, no spilling MoE ever), where the 2-CCD CPU lane is idle and the
+> book's numbers hold.
+
+<details><summary><strong>Original WRX90 book (kept for reference)</strong></summary>
 
 **Scope:** a four-GPU AMD Radeon AI PRO R9700 (32 GB) inference platform for the Strata engine, serving Qwen3.8-Flash-Next Swift 1.5 IQ3_S (or IQ3_XXS) at up to 262,144 tokens of context with as many full-context streams as 128 GB of VRAM will hold. The four GPUs are already owned; this book prices and specifies everything else.
 
@@ -251,7 +269,7 @@ Everything in §3.5 about “GPU-bound” is for IQ3_S fully resident. **DeepSee
 
 Option A with 2×64 6400 Micron = **€12,027.71**; with 4×64 5600 = **€15,566.85**; with 4×64 6400 G.Skill = **€17,770.03**; with 8×64 5600 = **€25,862.73**; with 8×64 5600 + 24C = **€27,240.73**; with 8×64 6400 G.Skill = **€29,057.79**; with 8×64 6400 G.Skill + 24C = **€30,435.79**; with 8×64 6400 Micron = **€32,297.93** (platform, 3% contingency). The 8×64 5600 kit alone is €19,992; the 8×64 6400 G.Skill kit is €23,094; eight Micron singles are €26,239.76 — the DRAM tax dominates the giant-model build.
 
-**If DeepSeek V4.1 is a primary workload**, budget the **8×64 (512 GB, 8 channels)** first and the **24C 9965WX** second, before the last 800 MT/s: the 2×64 → 8×64 step is 4× the channels and 4× the capacity; 5600 → 6400 is +14%. If DeepSeek is occasional, the 2×64/16C IQ3_S build is the cost/benefit choice, and the 8×64 upgrade is the later step. The 7600/7800 OC kits are still not 8×64.
+**If DeepSeek V4.1 is a primary workload — CORRECTED 2026-11-15:** the platform is the decision, not the RAM. The 9955WX has 2 CCDs → 2 Infinity Fabric links to the IOD, which cannot feed its own 8-channel platform's 409.6 GB/s from the CPU side; and sTR5's ceiling is 33 % below SP5's 614 GB/s on every SKU. The fix is **EPYC 9005 on SP5** (12 channels, 614 GB/s, 8-CCD 9355/9555) — see [docs/research/RECOMMENDATION.md](docs/research/RECOMMENDATION.md). The 8×64 sTR5 ladder below still works but leaves ~33 % of CPU-side decode on the table for a spilling MoE. The 7600/7800 OC kits are still not 8×64.
 
 **Why the 9965WX, in CCD terms (added 2026-11-15).** The CPU expert lane is fed by the CPU's fabric links to the IOD, one per CCD, so the L3 size is a proxy for the link count (each Zen 5 CCD carries **32 MB**):
 
@@ -585,7 +603,7 @@ Option A with the **ASUS Pro WS WRX90E-SAGE SE** (€1,288.00) and **no MCIO cab
 
 ### What not to buy
 
-- **A 24-core 9965WX (+€1,378) — for the GPU-resident IQ3_S build only.** The 16C/32T 9955WX gives the 15 expert workers Strata’s AMD reference config uses; more cores do not help a model whose experts all sit in VRAM. **If DeepSeek or another MoE will spill to RAM, this entry reverses:** the 9955WX is a **2-CCD** part (64 MB L3) and the 9965WX is **4 CCDs** (128 MB), i.e. twice the fabric links into the IOD. See §3.6.
+- ~~A 24-core 9965WX (+€1,378)~~ **REVERSED AND SUPERSEDED 2026-11-15.** For the GPU-resident IQ3_S build the 9955WX was right (2-CCD CPU lane is idle). But the CCD analysis shows the deeper problem: **any sTR5 build with a spilling MoE is the wrong platform** — the 9955WX's 2 fabric links cannot feed its own 8 channels (409.6 GB/s), which is 33 % below SP5's 614 GB/s. If DeepSeek/UD-Q8 is in scope, the fix is not the 9965WX — it is **EPYC on SP5** (8-CCD 9355/9555, 12ch, 614 GB/s). See [docs/research/RECOMMENDATION.md](docs/research/RECOMMENDATION.md).
 - **One 64 GB DDR5-6400 module.** One channel is 51.2 GB/s, slower than the 2×64 5600 pair; it is a boot/test config, not a speed upgrade.
 - **Two 4×64 GB 6400 kits instead of the 8×64 octa kit.** €24,270.02 vs €23,094.00, and the 4×64 kit is a CL36 bin, not the CL38 8-DIMM bin; two kits are not guaranteed 6400 at 8 DIMMs.
 - **128/256 GB RDIMMs.** Worse €/GB than 8×64; the 2 TB ceiling is not a target.
@@ -776,3 +794,5 @@ GitHub Pages deploys it on every push to `main` through `.github/workflows/pages
 | [`docs/SABER.md`](docs/SABER.md) / [`docs/SABER-4X.md`](docs/SABER-4X.md) | Saber engine evaluation and 4-rank limits. |
 | [`docs/VALIDATION.md`](docs/VALIDATION.md) | Acceptance protocol. |
 | [`docs/SOURCES.md`](docs/SOURCES.md) | Source links and verification notes. |
+
+</details>

@@ -1,5 +1,13 @@
 # Four R9700s. One 128 GB VRAM box. Priced.
 
+> **⚠️ SUPERSEDED 2026-11-15 — platform replaced by EPYC/SP5.** The chosen TR PRO
+> 9955WX is a **2-CCD** CPU: 2 Infinity Fabric links to the IOD cannot feed the
+> 8-channel sTR5 platform's 409.6 GB/s from the CPU side, and sTR5 is 33 % below
+> SP5's 614 GB/s on every SKU. For a workload whose experts spill to RAM
+> (DeepSeek 2.00/2.25, UD-Q8), the platform is the decision — see the EPYC/SP5
+> analysis in [the platform verdict](reference/epyc-platform.md). The builds
+> below are valid **only** for a strictly VRAM-resident workload (IQ3_S/IQ3_XXS).
+
 <div class="hero" markdown>
 <span class="eyebrow">R9700 ×4 · WRX90 build book · 2026-11-06/07</span>
 

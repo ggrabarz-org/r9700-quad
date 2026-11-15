@@ -1,6 +1,20 @@
 # Builds
 
+> **SUPERSEDED 2026-11-15 — platform replaced by EPYC/SP5.** The book's 9955WX is a
+> **2-CCD** CPU: 2 Infinity Fabric links to the IOD cannot feed the 8-channel
+> sTR5 platform's 409.6 GB/s from the CPU side, and sTR5 is 33 % below SP5's
+> 614 GB/s. For a spilling MoE (DeepSeek 2.00/2.25, UD-Q8) the platform is the
+> decision — see [the platform verdict](../reference/epyc-platform.md)
+> in the repository. These builds remain valid **only** for a strictly
+> VRAM-resident workload (IQ3_S/IQ3_XXS), where the CPU lane is idle.
+
+
+
 <p class="muted">Every priced configuration in the book. The four GPUs are owned and excluded; the “with GPUs” figure is today’s replacement value. Prices include 3% contingency.</p>
+
+<details open><summary><strong>⚠️ Platform superseded 2026-11-15</strong></summary>
+<p>All builds assume sTR5/WRX90, whose 8-channel ceiling is 409.6 GB/s, and the 9955WX is a 2-CCD CPU whose 2 fabric links cannot feed that from the CPU side. For a spilling MoE the platform decision is EPYC/SP5 (12 channels, 614 GB/s, 8-CCD CPU) — see the repository’s <code>docs/research/RECOMMENDATION.md</code>. These builds remain valid only for a strictly VRAM-resident workload.</p>
+</details>
 
 <div class="grid cards" markdown>
 

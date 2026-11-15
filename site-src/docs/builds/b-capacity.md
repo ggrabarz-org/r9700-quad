@@ -1,5 +1,15 @@
 # B — Capacity, 6× Gen4
 
+> **SUPERSEDED 2026-11-15 — platform replaced by EPYC/SP5.** The book's 9955WX is a
+> **2-CCD** CPU: 2 Infinity Fabric links to the IOD cannot feed the 8-channel
+> sTR5 platform's 409.6 GB/s from the CPU side, and sTR5 is 33 % below SP5's
+> 614 GB/s. For a spilling MoE (DeepSeek 2.00/2.25, UD-Q8) the platform is the
+> decision — see [the platform verdict](../reference/epyc-platform.md)
+> in the repository. These builds remain valid **only** for a strictly
+> VRAM-resident workload (IQ3_S/IQ3_XXS), where the CPU lane is idle.
+
+
+
 <div class="hero" markdown>
 <span class="eyebrow">Build B · capacity outlier</span>
 

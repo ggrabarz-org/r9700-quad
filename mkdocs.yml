@@ -113,6 +113,7 @@ nav:
       - GPU:
           - Radeon AI PRO R9700: parts/radeon-r9700.md
   - Reference:
+      - Platform verdict (superseded): reference/epyc-platform.md
       - Memory ladder: reference/memory-ladder.md
       - Power connectors: reference/power-connectors.md
       - Storage & lanes: reference/storage-lanes.md

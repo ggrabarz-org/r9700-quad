@@ -1,5 +1,7 @@
 # Part dossiers
 
+<p class="muted"><strong>⚠️ Platform superseded 2026-11-15:</strong> the WRX90/9955WX combination below is superseded by EPYC/SP5 (12-channel, 614 GB/s, 8-CCD CPU) for any workload where experts spill to RAM. The WRX90 part dossiers remain accurate for a VRAM-resident build.</p>
+
 <p class="muted">Every part in the builds has a page: what it is, the specification that matters, the pros and cons, and the builds it appears in. Prices are the 2026-11-06/07 EU snapshot, incl. VAT.</p>
 
 <div class="grid cards" markdown>
