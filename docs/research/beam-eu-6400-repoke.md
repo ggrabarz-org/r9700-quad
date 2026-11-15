@@ -1020,3 +1020,47 @@ After pass 32's detail campaign (~12 item fetches), eBay.de has escalated from r
 **What pass 32 already established (holds):** floor-beater is genuine Kingston 64MD, VAT-incl price ("inkl. MwSt." in module), 3 pcs, Best Offer — €38.07/GB net-basis on a VAT-recoverable purchase, the first genuine sub-floor listing of the hunt. What remains open is exactly the seller-trust/VAT-invoice piece, which eBay won't serve right now.
 
 **Mitigation for next passes:** throttle eBay to ≤2 fetches/pass with 30+ min spacing; prefer one item+dossier per pass. All other routes (Proshop/Tonitrus via Camoufox, curl shops) unaffected.
+
+---
+
+## Pass 34 — 2026-11-15T01:46Z (Camoufox per user directive; **floor-beater fully verified**, hynix wave mapped)
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | Camoufox |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | Camoufox |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl |
+
+### 2. **FLOOR-BEATER VERIFICATION CLOSED** (item 206689139346)
+
+| Field | Verified value |
+|---|---|
+| Seller | **IT-Planet GmbH** — **Gewerblich** ✅ · 99,4% positive · 2.534 Bewertungen · 1.807 items sold · member since Nov 2018 |
+| Price | EUR 2.899,34 **inkl. MwSt** · Preisvorschlag (Best Offer) |
+| Stock | **3 verfügbar** · Neu |
+| Shipping | **EUR 25,00** Standard International · Standort DE · ships within 5 days |
+| Returns | **14 Tage Rückgabe** (buyer pays return) |
+| **Net landed** | €2.436,42 + ~€21 shipping = **€2.457 ≈ €38.40/GB — below ibfusion (€38.77/GB)** ✅ |
+| Verdict | **Genuine sub-floor listing CONFIRMED** — VAT-invoice feasible (Gewerblich). 3 pcs = stage-1 buy; Best Offer may improve it further. |
+
+### 3. NEW: hynix HMCG94AHBRA480N wave (12 listings mapped, eBay.de)
+
+| Listing class | Price range seen | Reading |
+|---|---|---|
+| **BRAND NEW, Privat** (item 336731389651) | **EUR 2.162,00** Best Offer | €33.78/GB gross — cheapest hynix quote ever seen; **Privat → no VAT invoice**; used/no-SPD caveats don't apply but no datasheet sentence exists for hynix; item page fetch hit rate-limit — details next pass |
+| Used, Gewerblich (7 listings) | **EUR 2.696,86 · 2.744,92 (×2) · 2.842,98 · 2.856,35 · 2.893,00 · 3.083,53** | €2.266 net basis (÷1.19) ≈ **€35.41/GB if VAT-recoverable** — would undercut everything; BUT used pulls + "no SPD sentence published" ⇒ SPD state unverifiable; JEDEC-6400 training on H14 is plausible (native 6400 part) but unproven |
+| Clone ("Ersatz für") / Dell / other | 3.049,46 · 3.089,49 · 3.894,84 | above floor |
+
+### 4. Blocked / no-change
+
+Amazon.de still error page (even Camoufox). abstock.com: **SSL_ERROR_BAD_CERT_DOMAIN** (cert CN broken) — still unreachable. eBay rate-limit re-engaged after ~4 navigations this pass (hynix item page fetch → SORRY) — per-pass budget stands.
+
+### 5. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — YES, verified: item 206689139346 (Kingston 64MD, IT-Planet GmbH, €2.899,34 inkl. MwSt, 3 pcs, Best Offer) lands at €38.40/GB net with shipping — the first confirmed genuine sub-floor option (limited to 3 modules).** Hynix wave adds a €35–36/GB *used-Gewerblich* tier (SPD caveat) and a €33.8/GB no-invoice private NEW unit. Full-build floor stays ibfusion/senetic.
+
+This pass probed: Proshop+Tonitrus (Camoufox), eBay floor-beater (seller dossier — closed), eBay hynix wave (12 listings mapped), Amazon.de (walled), abstock (SSL broken), plus full curl bests re-check. Coverage line: eBay.de ×4 fetches (budget spent), Camoufox-first throughout per directive.
