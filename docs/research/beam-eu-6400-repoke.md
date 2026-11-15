@@ -1296,3 +1296,42 @@ Unchanged dead ends (Kaufland/Mindfactory site-walls, Galaxus product pages, Ama
 **Did anything beat €4,791/128 GB net? — No new beat.** Held: hynix business 50 pcs @ €33.78/GB net-basis (SPD caveat, item 336558516150 — still live, eBay unbanned); JEDEC-qualified floor ibfusion €38.77/GB; IT-Planet 3 pcs @ €38.40/GB landed. New data point: MH-bin aggregate at €39.15/GB net-basis — above the floor.
 
 Coverage: camofox on Proshop + Tonitrus (walled bests), trawl on bargainhardware + geizhals (Route-2 shops), curl set (ibfusion, senetic ×2, Caseking), Kingston 64MH datasheet SPD.
+
+---
+
+## Pass 41 — 2026-11-15 (Route-2 payoff: **geizhals seller table beats the floor** — Jacob Elektronik €37.47/GB net on the JEDEC-qualified MD bin)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| Proshop.pl kit | unchanged 27 362,00 / 22 245,53 zł netto · 5–6 dni | camofox |
+| Tonitrus CCP | unchanged 2.667,65 € netto · 50 pcs | camofox (pass 40) |
+| ibfusion 64MD | unchanged 2 481,00 € · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 515,16 / 16 426,27 zł netto (tick holds) | curl |
+| senetic.de rows | 971 / 3.387 tokens still present | curl |
+
+### 2. **NEW — Geizhals offer table for the exact MD bin** (via trawl, product a3452640)
+
+| Merchant | Gross | **Net (÷1.19)** | **€/GB net** | Note |
+|---|---:|---:|---:|---|
+| **Jacob Elektronik direkt** | **€2.853,98** | **€2.398,30** | **€37.47** | **beats ibfusion €38.77; at the old bar €37.43** |
+| Future-X.de | €2.853,99 | €2.398,31 | €37.47 | "Sofort lieferbar" |
+| *(unnamed offer)* | €2.808,99 | €2.360,50 | €36.88 | name not captured — cheapest, verify next pass |
+| PC-KING | €2.864,55 | €2.407,18 | €37.61 | |
+| electronis.de | €2.884,75 | €2.424,16 | €37.88 | "Auf Lager, sofort versandfertig" |
+| IT Planet (= the eBay seller) | €2.899,34 | €2.436,42 | €38.07 | cross-confirms the eBay listing |
+
+Product page aggregate: "ab €2.853,98 · 13–17 Angebote" (variant 64MD). SPD verdict unchanged: datasheet-verified JEDEC-6400 CL52 @1.1V.
+
+**Full-build consequence:** 12× ~€2.398,30 net = **€28.779,60 net (€37.47/GB)** — beats senetic.de's €31.359 and lands between hynix (€25.939, SPD caveat) and everything else. 384 GB via 6× Jacob (€14.390) also beats 3× Proshop kits (€15.143).
+
+### 3. Blocked list
+
+Unchanged. No new blocks; geizhals now reachable for all future passes (Route 2).
+
+### 4. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — YES, new verified beat: Jacob Elektronik €2.398,30 net/64 GB → €4.796,60/128 GB, at the old bar (€37.47 vs €37.43/GB), JEDEC-SPD-qualified, German business seller.** Board re-ranked (Jacob Elektronik = new BEST), ladder rebuilt.
+
+Coverage: geizhals search + product page + offer-table extraction (trawl), camofox bests, curl set (ibfusion, senetic ×2), senetic.pl tick check.
