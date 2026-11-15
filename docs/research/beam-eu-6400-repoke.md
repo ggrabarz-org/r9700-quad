@@ -2,8 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
-**Bests (update as they move):** **KSM64R52BD8-32MH 32 GB 2Rx8 (SPD-verified) — geizhals a3842215, 27 Angebote, ab €1.361,82 gross = €1.144,39 net = €35.76/GB (cheapest €/GB)** · barax (geizhals) KSM64R52BD8-32MD €1.250,00 gross = €32.83/GB (single offer, qty unverified) · jacob.de own shop KSM64R52BD4-96MC €4.243,34 gross = €3.565,83 net = €37.14/GB (SPD-verified, 'Sofort lieferbar'; 96 GB 2Rx4 @12ch needs manual check) · Jacob Elektronik (via geizhals) KSM64R52BD4-64MD €2.853,98 gross ≈ €2.398,30 net = €37.47/GB (64 GB floor; own-shop rate €2.911,06) · ibfusion KSM64R52BD4-64MD €2.481 net (5 pcs) · eBay IT-Planet 64MD €2.899,34 inkl.MwSt 3 pcs · eBay hynix business 336558516150 €2.547,80 (50 pcs, SPD caveat) · eBay Mem-Store 32 GB clone (brand MB, KSM64R52BD8-32MH-MB) €1.105,23 = €29.02/GB net-basis (8 pcs, ships CA, no SPD) · Proshop.pl kit 22 245,53 zł netto (5–6 d) · Tonitrus CCP €2.667,65 (50 pcs) · senetic.pl 64MD 11 515,16 zł netto / 96MC 16 426,27 zł · senetic.de CWM €971 / CCP €3.387,48 / 3DS €6.175,58.
-**Shops pool (rotate >=3/pass):** Amazon.de/.pl · eBay.de/EU · geizhals.de (trawl) · idealo · Kaufland · Otto · Kleinanzeigen (leads) · Dell/HP/Lenovo/Fujitsu OEM channels · bargainhardware.co.uk (trawl) · offtek · kingstonmemoryshop.co.uk + memorycow.co.uk (Algolia app C7SR80KDDJ, key 30d27cecbb10f11beb035027fce892c3) · serverpartdeals · memory.net · abstock · itpro.lt · mem-tek.fr · Komputerbay · ebattery.com.au · corewavelabs.com · senetic.fr/.pl/.de · ibfusion · jacob.de (Jacob Elektronik — camofox only, entry https://www.jacob.de/search?search=<PN>) · barax (AT/DE, geizhals row) · geniuzcom.de · e-tec.at/DiTech.at · geizhals product tables a3452629/a3842215/a3452640.
+**Bests (update as they move):** **KSM64R52BD8-32MH 32 GB 2Rx8 (SPD-verified) — geizhals a3842215, 27 Angebote, ab €1.361,82 gross = €1.144,39 net = €35.76/GB (cheapest €/GB)** · barax (geizhals) KSM64R52BD8-32MD €1.250,00 gross = €32.83/GB (single offer, qty unverified) · jacob.de own shop KSM64R52BD4-96MC €4.243,34 gross = €3.565,83 net = €37.14/GB (SPD-verified, 'Sofort lieferbar'; 96 GB 2Rx4 @12ch needs manual check) · Jacob Elektronik (via geizhals) KSM64R52BD4-64MD €2.853,98 gross ≈ €2.398,30 net = €37.47/GB (64 GB floor; own-shop rate €2.911,06) · ibfusion KSM64R52BD4-64MD €2.481 net (5 pcs) · eBay IT-Planet 64MD €2.899,34 inkl.MwSt 3 pcs · eBay hynix business 336558516150 €2.547,80 (50 pcs, SPD caveat) · eBay Mem-Store 32 GB clone (brand MB, KSM64R52BD8-32MH-MB) €1.105,23 = €29.02/GB net-basis (8 pcs, ships CA, no SPD) · Proshop.pl kit 22 245,53 zł netto (5–6 d) · Tonitrus CCP €2.667,65 (50 pcs) · senetic.pl 64MD 11 515,16 zł netto / 96MC 16 426,27 zł · senetic.de CWM €971 / CCP €3.387,48 / 3DS €6.175,58. **CAVEAT CLASS (no SPD sentence): CoreWave Labs LV — Samsung 48 GB M321R6GA3PB2-CCP $1,630 = €30.71/GB (250 pcs, EU, 3–4 d); 96 GB M321RYGA0PB2-CCP $3,478 = €32.76/GB (230 pcs); 256 GB M321RBJA0M22-CLP $9,565 = €33.79/GB (50 pcs); exact QVL 64 GB M321R8GA0PB2-CCP $3,641 = €51.45/GB (500 pcs). USD→EUR 0.90429 (NBP 2026-11-13).**
+**Shops pool (rotate >=3/pass):** Amazon.de/.pl · eBay.de/EU · geizhals.de (trawl) · idealo · Kaufland · Otto · Kleinanzeigen (leads) · Dell/HP/Lenovo/Fujitsu OEM channels · bargainhardware.co.uk (trawl) · offtek · kingstonmemoryshop.co.uk + memorycow.co.uk (Algolia app C7SR80KDDJ, key 30d27cecbb10f11beb035027fce892c3) · serverpartdeals · memory.net · abstock (conn refused 2026-11-16) · itpro.lt · mem-tek.fr · Komputerbay · ebattery.com.au · corewavelabs.com · senetic.fr/.pl/.de · ibfusion · jacob.de (Jacob Elektronik — camofox only, entry https://www.jacob.de/search?search=<PN>) · barax (AT/DE, geizhals row) · geniuzcom.de · e-tec.at/DiTech.at · geizhals product tables a3452629/a3842215/a3452640 · corewavelabs.com (LV; read via /server-memory/?q=<any> — /pricelist/ is JS-only; quote-based, repricing weekly).
 **Parts pool:** KSM64R52BD4-64MD/-64MH/-64HA · KSM64R52BD4-96MC · KSM64R52BD8-32MD/-32MH/-32HA · KF572RH38RBK4-128 · KF576RH40RB-32 single · M321R8GA0EB2-CCP · M321R8GA0PB2-CCP · MTC40F2046S1RC64BH1/-BD2 · HMCG94AHBRA480N / HMCG94BDJMA080N · MEM-DR564MC-ER64 · V-Color RDIMM JEDEC 6400 4x32 · generic "DDR5-6400 ECC RDIMM 64 GB"/"32 GB" site searches.
 **Known dead (skip):** ramshop.pl, sklepy-serwerowe.pl, notebooki-serwery.pl, ramek.com.pl, hmem.eu, discount-memory.com, bulk-memory.eu, server-warehouse.de, etb-online/etbhost, ramexpert, po-memory, mr-memory.co.uk, svp.co.uk, OTTO.de search, Mindfactory/Kaufland (interactive walls), Galaxus product pages (robot check; search tiles OK), Amazon.de (error cycle, occasionally serves), idealo.de search URLs (404 via trawl both attempts), barax.at (DNS fails on this host — use the geizhals row), www.jacob.de (0 bytes to curl; CloudFront 403 on guessed /index.php paths — use /search?search=), kingstonmemoryshop/memorycow UK 64MD (stock_quantity 0, ex-VAT £3.218,33 — far above the floor), offtek.com (parking page 'Coming Soon'), memory.net (403 bot wall on product pages), ValueRAM KVR64A52*/KVR64V52* (CUDIMM/SODIMM — not ECC RDIMM), KSM56R46* (DDR5-5600 despite '6400B' titles).
 
@@ -1431,3 +1431,50 @@ Coverage: camofox (proshop, tonitrus, ebay + consent) 3 profiles / 3 navigations
 Cheapest €/GB of any kind found today: the **Mem-Store 32 GB clone at €29.02/GB net-basis** — but it is a no-SPD clone (brand "MB"), only **8 pcs**, and US-shipped, so it sits in the hynix-clone caveat class, not the qualified class.
 
 Coverage: camofox 4 profiles / 5 navigations (proshop, tonitrus, jacob search→homepage→search, ebay search→item; `--user ebay` still un-throttled), trawl 1 geizhals product scrape (a3842215, tier 1, 671 kB), curl 8 (ibfusion, senetic ×2, Kingston datasheets ×3, memory.net, komputerbay, offtek). Expansion: jacob.de own shop (5 SKUs), eBay.de 32MH search (9 results) + item-level verification, offtek/memorynet/komputerbay probes — 6 new shops/parts.
+
+---
+
+## Pass 44 — 2026-11-16T00:5xZ (new route: **CoreWave live pricelist** — QVL 64GB finally priced, and the no-SPD class drops below every floor: Samsung 48 GB €30.71/GB · 96 GB €32.76/GB net-basis)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| Proshop.pl kit | unchanged 27 362,00 / **22 245,53 zł netto** · "Produkt sprowadzany, czas dostawy 5-6 dni" | camofox `--user proshop` |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · Verfügbar 50 (Refurb 3.103,78 netto) | camofox `--user tonitrus` |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| senetic.pl 64MD / 96MC | unchanged 11 515,16 / 16 426,27 zł netto | curl |
+| senetic.de 64MD / 96MC | unchanged 2.613,25 / 3.727,78 € exkl. MwSt | curl |
+| Geizhals 64MD product (a3452640) | aggregate unchanged **ab €2.853,98 · 17 Angebote** (stamp 16.11.2026, 00:40); price band 2.853,98 … 3.313,07 | trawl |
+
+### 2. NEW listings
+
+| Part | JEDEC SPD verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| **Samsung `M321R6GA3PB2-CCP`** (48 GB, DDR5-6400 RDIMM) | **no SPD sentence published** (Samsung); 48 GB 6400 QVL family listed (`M321R6GA0PB2-CCPKC` / `M321R6GA3PB2-CCPWC`) | **CoreWave Labs SIA** (Rīga, LV — ships EU) | **$1,630 → €1.474,00 net-basis = €30.71/GB** | **250 pcs · 3–4 Days** | https://corewavelabs.com/server-memory/ |
+| **Samsung `M321RYGA0PB2-CCP`** (96 GB, DDR5-6400 RDIMM) | **no SPD sentence published** (Samsung); 96 GB 6400 QVL family listed (`-CCPEC/-CCPPC/-CCPWC/-CCPKC`) | CoreWave Labs (LV) | **$3,478 → €3.145,11 net-basis = €32.76/GB** | **230 pcs · 4–5 Days** | same |
+| Samsung `MDRRWM4QDBC2-3G000` (96 GB 6400) | no SPD sentence | CoreWave Labs (LV) | $3,596 → €3.251,83 = €33.87/GB | 100 pcs · 3–4 Days | same |
+| Micron `MTC40F204WS1RC64BC1` (96 GB 6400) | **no SPD sentence published** (Micron) | CoreWave Labs (LV) | $3,587 → €3.243,69 = €33.79/GB | 200 pcs · 3–4 Days | same |
+| Samsung `M321RBJA0M22-CLP` (256 GB 6400) | no SPD sentence | CoreWave Labs (LV) | $9,565 → €8.649,53 = €33.79/GB | 50 pcs · 3–4 Days | same |
+| **Samsung `M321R8GA0PB2-CCP`** (**the exact QVL 64 GB part**) | no SPD sentence; Gigabyte-CP1-QVL PASS | CoreWave Labs (LV) | $3,641 → €3.292,52 = **€51.45/GB** — **closes the 7-pass "QVL part has no EU price" line**, at ~37 % above the floor | 500 pcs · 3–4 Days | same |
+| Kingston `KSM64R52BD4-96HM` (96 GB 2Rx4) | **SPD verdict now closed: "SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V"** (datasheet pulled this pass, 2Rx4) | jacob.de | €4.895,41 inkl. MwSt. → €4.113,79 = €42.85/GB (no change to the 96MC lead) | Sofort lieferbar | https://www.jacob.de/search?search=KSM64R52BD4 |
+| Kingston 32MH / 32MD / 96MC (UK) | 32MH/96MC SPD-verified family; 32MD 'Discontinued' at this shop | kingstonmemoryshop/memorycow (Algolia) | £1.882,18 (ex £1.568,48) · £2.999,99 (ex £2.499,99) · £5.824,64 (ex £4.853,87) — **all stock_quantity 0**, no GBP→EUR rate on hand → GBP only | 0 · "Available To Order" / "Discontinued" | https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm |
+
+CoreWave terms (from the page itself): *"Full repricing every Monday… prices are indicative, exclude VAT and shipping, and are confirmed on quotation. Stock is not reserved until a purchase order is accepted."* Row stamps "Updated 9 Nov 2026". Conversions at NBP 2026-11-13 (EUR 4.4070, USD 3.9852 → **1 USD = 0.90429 EUR**). VAT-registered EU B2B: LV VAT reverse-charged (net-basis stands); private: +21 % LV VAT.
+
+Also read: CoreWave **64MD (Kingston)** product page — $3,076 (site shows ≈ €2,772) · 100+ pcs · 2–3 d · +46-pc tier $3,233 · stamped 9 Nov 2026 → **€43.31/GB, no beat**.
+
+### 3. Blocked list
+
+- **abstock.com** — connection failed this pass (curl exit 000, no HTTP).
+- **supermicro.com manual PDF** (`/manuals/motherboard/H14/MNL-2821.pdf`) — returns a 426-byte HTML stub to curl, not the PDF → the **96 GB 2Rx4 at 12 channels** manual/QVL question stays open (again).
+- **corewavelabs.com/pricelist/** — JS-rendered (0 table rows in static HTML); the working read is `server-memory/?q=<anything>` which renders the full 201-row table statically.
+- Kleinanzeigen: **zero hits** for `KSM64R52BD` (searched `--user klaz`) — lead class empty, not a wall.
+- Unchanged: Mindfactory/Kaufland click-walls, Galaxus PDP robot check, Amazon.de error cycle, idealo search 404s, barax.at DNS, memory.net 403.
+
+### 4. Verdict + coverage
+
+**Did anything beat the cheapest verified offer (JEDEC-qualified floor €35.76/GB, 32MH)? — Not in the qualified class.** But the **no-SPD caveat class moved decisively**: CoreWave (EU warehouse, LV) prices Samsung 48 GB 6400 at **€30.71/GB net-basis (250 pcs)** and 96 GB 6400 at **€32.76/GB net-basis (230 pcs)** — both below the previous caveat floor (hynix eBay €33.78) and both with real quoted stock and 3–5 day EU lead times, versus 50 pcs from 深圳. Full-build consequence: 12× 48 GB = 576 GB at **€17.688 net-basis**, 12× 96 GB = 1.15 TB at **€37.742 net-basis** — i.e. **1.5× the capacity of the 768 GB Kingston build for +31 % money**, or 576 GB for less than the 384 GB qualified build (€17.688 vs €13.733+). The trade is the standing one: no SPD sentence published, so these are "buy 1, spdprint, prove, then order the rest" parts — now with a EU seller that ships in days instead of weeks.
+Also closed this pass: the **exact QVL 64 GB part (M321R8GA0PB2-CCP) finally has an EU-visible price — €51.45/GB** at CoreWave (500 pcs) — it is not, and never was, the cheap route.
+
+Coverage: camofox 3 profiles / 3 navigations (proshop, tonitrus, kleinanzeigen); trawl 1 geizhals scrape (a3452640, tier 1, 563 kB); curl ~14 (ibfusion, senetic ×2, CoreWave search + pricelist + 64MD product + memory table, Kingston 96HM datasheet + Algolia ×3, abstock, Supermicro manual, NBP ×2). Expansion: CoreWave live pricelist (new source; 201-row table, all 48 DDR5-6400 RDIMM rows read), Kingston UK Algolia re-check (3 SKUs), Kleinanzeigen lead search, abstock + Supermicro-manual probes — 4 new probes/parts.
