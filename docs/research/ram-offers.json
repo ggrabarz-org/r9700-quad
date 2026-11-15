@@ -1,7 +1,63 @@
 {
  "eurpln": 4.407,
- "updated": "2026-11-15T21:34Z",
+ "updated": "2026-11-15T22:20Z",
  "offers": [
+  {
+   "part": "Kingston KSM64R52BD4-96MC (96 GB 2Rx4, DDR5-6400 CL52 reg ECC)",
+   "spec": "SPD-verified: datasheet '…2Rx4, ECC, SPD is programmed to JEDEC standard latency DDR5-6400 timing'. 96 GB 2Rx4 at 12 ch/6400 needs Supermicro manual/QVL confirmation (manual rank table spells out 2R = 64 GB/channel).",
+   "shop": "jacob.de (Jacob Elektronik own shop)",
+   "country": "DE",
+   "price_net": "€3.565,83 net (€4.243,34 inkl. MwSt ÷1.19)",
+   "price_gross": "4.243,34 €",
+   "eur_per_gb": "€37.14",
+   "stock": "Sofort lieferbar (piece count not published)",
+   "checked": "2026-11-15T22:20Z",
+   "state": "new",
+   "best": false,
+   "url": "https://www.jacob.de/search?search=KSM64R52BD4"
+  },
+  {
+   "part": "32 GB clone brand MB, MPN KSM64R52BD8-32MH-MB (spec-match, not Kingston)",
+   "spec": "no SPD sentence (white-label clone); item verified: seller Mem-Store (29.886 FB, Gewerblich), ships Santa Clara CA (USA), condition Neu; shipping not captured this pass",
+   "shop": "eBay.de (Mem-Store, US)",
+   "country": "US→DE",
+   "price_net": "€928,77 net-basis (€1.105,23 inkl. MwSt ÷1.19)",
+   "price_gross": "1.105,23 €",
+   "eur_per_gb": "€29.02 net-basis",
+   "stock": "8 verfügbar (not enough for 12)",
+   "checked": "2026-11-15T22:20Z",
+   "state": "new",
+   "best": false,
+   "url": "https://www.ebay.de/itm/327137019602"
+  },
+  {
+   "part": "Kingston KSM64R52BD8-32MH (eBay.de genuine, cross-check)",
+   "spec": "SPD-verified part; landed price incl. €25,00 shipping",
+   "shop": "eBay.de (IT-Planet)",
+   "country": "DE",
+   "price_net": "€1.210,03 net incl. shipping ((1.414,93+25,00)÷1.19)",
+   "price_gross": "1.414,93 € + 25,00 shipping",
+   "eur_per_gb": "€37.70 landed",
+   "stock": "Best Offer (listed)",
+   "checked": "2026-11-15T22:20Z",
+   "state": "new",
+   "best": false,
+   "url": "https://www.ebay.de/itm/206689139860"
+  },
+  {
+   "part": "Kingston ValueRAM KVR64A52BD8-64 / KVR64V52BD8-32 (cheap-looking traps)",
+   "spec": "datasheets: \"Clocked Unbuffered DIMM (CUDIMM)\" resp. \"Clocked SODIMM\", On-Die ECC only → NOT ECC RDIMM → fails the board requirement",
+   "shop": "jacob.de",
+   "country": "DE",
+   "price_net": "€1.095,79 / €613,98 net",
+   "price_gross": "1.303,99 / 730,64 €",
+   "eur_per_gb": "n/a (module type fails)",
+   "stock": "Sofort lieferbar",
+   "checked": "2026-11-15T22:20Z",
+   "state": "blocked",
+   "best": false,
+   "url": "https://www.jacob.de/search?search=KSM64R52BD4"
+  },
   {
    "part": "Kingston KSM64R52BD4-64MD (64 GB, UK direct)",
    "spec": "PDP spec fields: 1.1 V / 6400MT/s / CL52 / Micron D-Die / 2R — spec fields, not an SPD sentence",
@@ -362,8 +418,8 @@
    "price_net": "€2.398,30 net (€2.853,98 inkl. MwSt ÷1.19)",
    "price_gross": "2.853,98 €",
    "eur_per_gb": "€37.47",
-   "stock": "geizhals row 'Sofort lieferbar' (quantity not published); 17 Angebote on the product, band €2.853,98–2.899,34",
-   "checked": "2026-11-15T21:34Z",
+   "stock": "own shop jacob.de 'Sofort lieferbar' (no piece count); geizhals rate €2.853,98 valid only entering via geizhals; own-shop price €2.911,06 brutto = €38.22/GB net",
+   "checked": "2026-11-15T22:20Z",
    "state": "ok",
    "best": true,
    "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html"
@@ -387,10 +443,11 @@
   "QVL part MEM-DR564MC-ER64 / Samsung M321R8GA0PB2-CCP: no EU price (4 passes, 2026-11-13).",
   "Watch: Samsung M321R8GA0EB2-CWM 5600 64 GB at senetic.de €971 net (€15.17/GB, quote-only) — fails the 6400 rule but signals shortage cracks; if an EB2 6400 variant appears at this family price, reopen everything.",
   "Renegade 6400-CL32 bins (KF564R32RBE*) are JEDEC-4800 — the trap; never buy for this board.",
-  "Pass 42: the 32 GB 2Rx8 Server Premier bin (KSM64R52BD8-32MH/-32MD) is JEDEC-SPD-verified and priced at €32.83–35.76/GB net in DE/AT — below the 64 GB floor. 384 GB is now the cheap tier; 768 GB costs €37.47/GB."
+  "Pass 42: the 32 GB 2Rx8 Server Premier bin (KSM64R52BD8-32MH/-32MD) is JEDEC-SPD-verified and priced at €32.83–35.76/GB net in DE/AT — below the 64 GB floor. 384 GB is now the cheap tier; 768 GB costs €37.47/GB.",
+  "Pass 43: jacob.de own shop readable via https://www.jacob.de/search?search=<PN> (camofox). 96MC at €37.14/GB net is the cheapest JEDEC-qualified part above 64 GB; ValueRAM KVR64A52BD8-64 / KVR64V52BD8-32 are CUDIMM/SODIMM (not ECC RDIMM) traps; KSM56R46* = 5600 title trap."
  ],
  "ladder": {
-  "updated": "2026-11-15T21:34Z",
+  "updated": "2026-11-15T22:20Z",
   "rule": "cheapest verified route per capacity tier; JEDEC-SPD-6400@1.1V preferred; net/VAT-less; zł @ 4.4070",
   "rows": [
    {
@@ -399,13 +456,6 @@
     "net": "€1.050,42",
     "per_gb": "€32.83",
     "caveat": "single offer · qty at shop unverified"
-   },
-   {
-    "cap": "384 GB (12×32, 12-ch)",
-    "route": "12× KSM64R52BD8-32MH @ Geizhals wave (ab geniuzcom.de)",
-    "net": "€13.732,64",
-    "per_gb": "€35.76",
-    "caveat": "SPD-verified, 27 Angebote; beats 6× 64 MD @ Jacob (€14.390) and 3× Proshop kits (€15.143)"
    },
    {
     "cap": "64 GB",
@@ -429,6 +479,20 @@
     "caveat": "stock TBC at seller page"
    },
    {
+    "cap": "384 GB (price pick, no-SPD clone)",
+    "route": "12× 32 GB clone (MB) @ eBay Mem-Store",
+    "net": "€11.145,24",
+    "per_gb": "€29.02",
+    "caveat": "only 8 pcs listed · ships from California · SPD unproven (clone)"
+   },
+   {
+    "cap": "384 GB (12×32, 12-ch)",
+    "route": "12× KSM64R52BD8-32MH @ Geizhals wave (ab geniuzcom.de)",
+    "net": "€13.732,64",
+    "per_gb": "€35.76",
+    "caveat": "SPD-verified, 27 Angebote; beats 6× 64 MD @ Jacob (€14.390) and 3× Proshop kits (€15.143)"
+   },
+   {
     "cap": "384 GB (12×32 kits)",
     "route": "3× Proshop 4×32 kits",
     "net": "€15.143",
@@ -448,6 +512,13 @@
     "net": "€25.939",
     "per_gb": "€33.78",
     "caveat": "ships CN · hynix no SPD sentence"
+   },
+   {
+    "cap": "1.15 TB (12×96, 12-ch)",
+    "route": "12× KSM64R52BD4-96MC @ jacob.de",
+    "net": "€42.789,96",
+    "per_gb": "€37.14",
+    "caveat": "SPD-verified; \"Sofort lieferbar\"; 96 GB 2Rx4 at 12 ch/6400 needs manual/QVL confirmation"
    }
   ]
  }

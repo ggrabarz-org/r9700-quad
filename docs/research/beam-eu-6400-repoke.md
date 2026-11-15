@@ -1386,3 +1386,48 @@ Also cross-checks from the geizhals offer tables (no action needed): PC-KING €
 The 64 GB / 768 GB picture is unchanged: Jacob €37.47/GB remains the JEDEC-qualified 64 GB floor, hynix €33.78/GB remains the no-SPD caveat floor. **Decision pressure shifts to the 384-vs-768 question the CPU-lane measurement is supposed to settle: at these prices 384 GB costs €35.76/GB while 768 GB costs €37.47/GB.**
 
 Coverage: camofox (proshop, tonitrus, ebay + consent) 3 profiles / 3 navigations; trawl 5 geizhals scrapes (MD-64 product, 32MD search+product, 32MH search+product); curl ibfusion, senetic.pl, senetic.de, Kingston datasheets ×4 (pdftotext), Algolia ×2 (kingstonindex/memcowindex), barax.at, jacob-elektronik.de redirect probe. Expansion probed this pass: kingstonmemoryshop/memorycow UK, barax, geniuzcom.de, e-tec.at/DiTech.at (AT rows), geizhals 32GB-6400 family, eBay item-level verification — 6 new shops/parts.
+
+---
+
+## Pass 43 — 2026-11-15T22:20Z (jacob.de opened with the browser: the **96 GB 96MC is the cheapest JEDEC-qualified €/GB above 64 GB**, and a 32 GB clone is the cheapest €/GB lead of all)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **KSM64R52BD8-32MH (Geizhals wave)** | **unchanged: ab €1.361,82 brutto · 27 Angebote** (variant line on product a3842215; page stamp "Letztes Preisupdate: 15.11.2026, 23:22"). Band: BA-Computer €1.367,94 · e-tec.at €1.387,80 · F&M €1.391,59 "Auf Lager" · Jacob €1.392,63 · DiTech.at €1.401,90 · IT Planet €1.414,93 | trawl |
+| Proshop.pl kit | unchanged 27 362,00 / **22 245,53 zł netto** · Produkt sprowadzany, 5–6 dni | camofox `--user proshop` |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · Verfügbar 50 (Refurb row 3.103,78 netto) | camofox `--user tonitrus` |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| senetic.pl 64MD / 96MC | unchanged 11 515,16 / 16 426,27 zł netto | curl |
+| senetic.de 64MD / 96MC | unchanged 2.613,25 / 3.727,78 € exkl. MwSt | curl |
+| Jacob Elektronik 64MD (Geizhals row) | not re-fetched this pass (last 21:34Z, unchanged then) — but Jacob's **own** shop now read (below) | — |
+
+### 2. NEW listings
+
+| Part | JEDEC SPD verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| **Kingston `KSM64R52BD4-96MC`** (96 GB 2Rx4, DDR5-6400 CL52 reg ECC) | **SPD-verified** — datasheet: "…2Rx4, ECC, **SPD is programmed to JEDEC standard latency DDR5-6400** timing…" | **jacob.de (Jacob Elektronik own shop)** | **€4.243,34 inkl. MwSt.** → **€3.565,83 net = €37.14/GB** | **"Sofort lieferbar"** (piece count not published) | https://www.jacob.de/search?search=KSM64R52BD4 |
+| Kingston `KSM64R52BD4-64MD` (own-shop price) | SPD-verified (same family) | jacob.de | **€2.911,06 inkl. MwSt.** → €2.446,27 net = **€38.22/GB** (the Geizhals rate €2.853,98 is only valid entering via Geizhals) | Sofort lieferbar | same |
+| Kingston `KSM64R52BD4-64HA` | **SPD-verified** (verified pass 42) | jacob.de | €3.497,66 inkl. MwSt. → €2.939,20 net = €45.92/GB | 1–2 Wochen Lieferzeit | same |
+| Kingston `KSM64R52BD4-96HM` (96 GB DDR5-6400 CL52 reg ECC) | datasheet **not** pulled yet → verdict open | jacob.de | €4.895,41 inkl. MwSt. → €4.113,79 net = €42.85/GB | Sofort lieferbar | same |
+| Kingston `KSM64R52BD4-128MB` (128 GB Server Premier) | — (5600-era/other speed unverified) | jacob.de | no price shown | **nicht verfügbar** | same |
+| **32 GB clone** brand **MB**, MPN `KSM64R52BD8-32MH-MB` | **no SPD sentence** (white-label clone, brand "MB") — spec-match only | **eBay.de "Mem-Store"** (29.886 FB, Gewerblich), ships Santa Clara CA, USA | **€1.105,23** (incl. VAT) → **€928,77 net = €29.02/GB net-basis**; shipping not captured this pass | **8 verfügbar** only | https://www.ebay.de/itm/327137019602 |
+| Kingston `KSM64R52BD8-32MH` (eBay.de, genuine) | SPD-verified | eBay.de IT-Planet (cross-check of the Geizhals row) | €1.414,93 + €25,00 shipping → €37.70/GB **landed** | Best Offer, listed | https://www.ebay.de/itm/206689139860 |
+
+**Cheap-looking traps (verified non-qualifying, datasheets pulled):** Kingston **`KVR64A52BD8-64`** at jacob.de €1.303,99 and **`KVR64V52BD8-32`** at €730,64 are **ValueRAM "Clocked Unbuffered/SODIMM"** parts (datasheet: *"64-bit … CUDIMMs, 2Rx8"*, On-Die ECC only) — **not ECC RDIMMs**, so they don't fit this board at any price. And the eBay tiles titled "32GB DDR5 ECC RDIMM 2Rx8 51200R 6400B" carrying PN **`KSM56R46BD4-64HA`** (€1.512,32) are **DDR5-5600** parts — the classic title/PN mismatch trap.
+
+### 3. Blocked list
+
+- **jacob.de**: `index.php?cl=search` guess → CloudFront 403 "Request blocked"; the working entry is `https://www.jacob.de/search?search=<PN>` (Shopware-6 form) — homepage + search served fine through camofox `--user jacob`. **Piece quantities are not published** ("Sofort lieferbar" only), so 12-pc depth at the best 64/96 GB seller is still unconfirmed.
+- **memory.net** — product URL I tried returns **403** (bot wall); no price read.
+- **komputerbay.com** — guessed path 404; not read (not a wall, just unprobed).
+- **offtek.com** — is a "Coming Soon / Offshore Technology" parking page, not the memory reseller → dead end, remove from the pool.
+- Unchanged: Mindfactory/Kaufland click-walls, Galaxus product pages, Amazon.de error cycle, idealo search 404s, barax.at DNS.
+
+### 4. Verdict + coverage
+
+**Did anything beat €35.76/GB net (KSM64R52BD8-32MH)? — No, and the whole 64 GB/96 GB class is unchanged at the top:** the best JEDEC-qualified 64 GB-class price remains Jacob's 64MD band €37.47/GB, and the **96 MC at €37.14/GB net (jacob.de, Sofort lieferbar)** is now the cheapest JEDEC-qualified part above 64 GB — it beats the 64 GB floor by 0,9 %/GB and opens a **1.15 TB (12×96) route at €42.790 net**, though the Supermicro rank table only spells out "RDIMM 2R → 64 GB/channel at 6400", so 96 GB 2Rx4 at 12 channels needs a manual/QVL confirmation before it is a safe buy.
+Cheapest €/GB of any kind found today: the **Mem-Store 32 GB clone at €29.02/GB net-basis** — but it is a no-SPD clone (brand "MB"), only **8 pcs**, and US-shipped, so it sits in the hynix-clone caveat class, not the qualified class.
+
+Coverage: camofox 4 profiles / 5 navigations (proshop, tonitrus, jacob search→homepage→search, ebay search→item; `--user ebay` still un-throttled), trawl 1 geizhals product scrape (a3842215, tier 1, 671 kB), curl 8 (ibfusion, senetic ×2, Kingston datasheets ×3, memory.net, komputerbay, offtek). Expansion: jacob.de own shop (5 SKUs), eBay.de 32MH search (9 results) + item-level verification, offtek/memorynet/komputerbay probes — 6 new shops/parts.
