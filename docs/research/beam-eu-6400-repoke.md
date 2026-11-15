@@ -1010,3 +1010,13 @@ eBay.de detail pages now consistently return error pages to fresh Camoufox sessi
 **Did anything beat €4,791/128 GB net? — A genuine listing DID, conditionally: item 206689139346 at €38.07/GB net (VAT-recoverable basis), 3 pcs, Best Offer.** Pending: seller identity/trust + VAT-invoice feasibility. Floor of record stays ibfusion until that's confirmed (conservative), but the lead is real and detail-page-verified.
 
 This pass probed: eBay.de item details (8 items), variants/trap audit, hynix wave (12 results), plus bests re-check. All three slices' walls re-tested: Amazon.de (walled), Kaufland (walled), Mindfactory (walled) — Camoufox changes nothing there so far.
+
+## Pass 33 addendum — 2026-11-15T00:54Z (eBay egress IP-banned; queued items parked)
+
+After pass 32's detail campaign (~12 item fetches), eBay.de has escalated from rate-limit to **domain-wide IP ban**: homepage, search, and item pages all return error pages to Camoufox; picclick.de item mirror 403s; r.jina returns eBay error pages; harness webfetch 403s; Wayback has **no snapshots** of the item. Attempts: 3 fresh Camoufox sessions (desktop+mobile hosts, cookie warm-up), curl, r.jina, picclick, webfetch, Wayback API — all dead.
+
+**Parked until cooldown (hours) or next IP:** (1) seller/trust + shipping-to-PL for floor-beater item 206689139346 (€2.899,34 inkl.MwSt, 3 pcs, Best Offer); (2) open hynix "BRAND NEW" HMCG94AHBRA480N item (€2.162 snippet); (3) re-read 366766859568 main price.
+
+**What pass 32 already established (holds):** floor-beater is genuine Kingston 64MD, VAT-incl price ("inkl. MwSt." in module), 3 pcs, Best Offer — €38.07/GB net-basis on a VAT-recoverable purchase, the first genuine sub-floor listing of the hunt. What remains open is exactly the seller-trust/VAT-invoice piece, which eBay won't serve right now.
+
+**Mitigation for next passes:** throttle eBay to ≤2 fetches/pass with 30+ min spacing; prefer one item+dossier per pass. All other routes (Proshop/Tonitrus via Camoufox, curl shops) unaffected.
