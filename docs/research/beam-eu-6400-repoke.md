@@ -1112,3 +1112,41 @@ Amazon.de served **26 result cards** this run (no error page!) but the 6400-RDIM
 **Did anything beat €4,791/128 GB net? — Yes (already-held): item 206689139346 at €38.40/GB net landed (3 pcs, Gewerblich, VAT-recoverable).** New this pass: private hynix €34.63/GB gross (1 pc, no invoice, no returns) and a **€31.99/GB net-basis business hynix lead (unverified, item# pending)** — if confirmed, the best per-GB of the entire hunt.
 
 Coverage: Proshop+Tonitrus (Camoufox), eBay.de item detail (1 nav) + search (1 nav, blocked), Galaxus search+product (search ok; product CAPTCHA), Amazon.de (served 26 cards, no relevant hit), full curl bests. **Board updated (ram-board.html) and committed as part of this pass.**
+
+---
+
+## Pass 36 — 2026-11-15T03:42Z (Camoufox; business-hynix wave re-mapped, new card-floor found; item open rate-limited)
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | Camoufox |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | Camoufox |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl |
+
+### 2. Business-hynix wave re-mapped (search "PC5-88/64B-MA0-1110" — the alt-PN surfaced via DDG)
+
+| Item(s) | Price seen (card-level) | Reading |
+|---|---|---|
+| **336558516150 / 336558516163** — "SK hynix 64G 6400MHz DDR5 ECC RAM RDIMM 2Rx4 PC5-88/64B-MA0-1110" | **EUR 2.547,80** Sofort-Kaufen **+ EUR 24,52** shipping · Neu (Sonstige) · **Gewerblich** | **New business floor: €2.572,32 gross → €2.161,6 net (÷1.19) → ≈€33.78/GB net-basis IF VAT-recoverable.** Item open BLOCKED (rate limit) — seller/VAT/stock unconfirmed. |
+| 116748359295 | EUR 2.809,52 | Neu (Sonstige) · Gewerblich |
+| 127929232544 / 127929388467 / 205738111552 | EUR 3.432,37 (frei Versand) | cross-border Gewerblich |
+| 396971403907 / 366405754994 | EUR 3.453,80 | Neu (Sonstige) · Gewerblich |
+| 237173785223 | EUR 9,72 | DDR3 — irrelevant (search noise) |
+
+- **Pass-35's €2.416,93 unit did not appear in this result set** (either sold, or its title differs — the rail said "ECC SK Hynix …"). Queued: search "**ECC SK Hynix 64G**" next pass to close it.
+- **PN note:** these listings use **HMCG94BDJMA080N** (PC5-88/64B-MA0-1110) — a hynix module family variant; per rule: *no SPD sentence published* (hynix), 6400 per listing title only. Distinct from HMCG94AHBRA480N but same class (64 GB 2Rx4 6400).
+- Private item 336731389651 (EUR 2.162, last one, Kaunas, no invoice, no returns) — **still stands** as the cheapest single-module gross price (€34.63/GB gross landed).
+
+### 3. Blocked list
+
+eBay.de item detail (336558516150 open attempt → SORRY; rate budget spent). Everything else per prior passes (Amazon error-page cycle, abstock SSL, Kaufland/Mindfactory interactive walls).
+
+### 4. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — The held answer: YES (IT-Planet 206689139346, €38.40/GB net landed, 3 pcs).** This pass adds a **card-level business-hynix floor at ≈€33.78/GB net-basis** (VAT-recoverability + stock UNCONFIRMED — not board `best` until the item opens). If confirmed: 12× ≈ €2.572 gross/2.161,6 net each.
+
+Coverage: eBay.de business-hynix search (new PN route, 12 cards mapped), DDG alt-PN discovery, Proshop+Tonitrus (Camoufox), full curl bests. **Board updated & committed.**
