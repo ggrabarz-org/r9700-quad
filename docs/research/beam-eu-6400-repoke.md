@@ -1196,3 +1196,35 @@ Installed per user directive: `npm i -g camofox-browser` with `CAMOUFOX_INSTALL_
 **Did anything beat €4,791/128 GB net? — YES, twice over:** (a) JEDEC-qualified: IT-Planet eBay 3 pcs @ €38.40/GB net landed; (b) **cheapest raw price: hynix business 50 pcs @ €33.78/GB net-basis (SPD caveat, ships CN)**. 768 GB build maths: **12× hynix ≈ €25,939 net** vs senetic €31,359 net.
 
 Coverage: camofox-browser install + item-level eBay verification (2 items, ~6 navigations, zero throttling), rail scan, Proshop + Tonitrus, full curl set. **Board + ladder updated & committed (SOTA site).**
+
+---
+
+## Pass 38 — 2026-11-15 (camofox-browser server standardized; route doc written; Proshop lead time moved)
+
+### 0. Tooling — the standing route is now documented
+
+**`docs/research/camofox-route.md` created**: camofox-browser v2.5.0 server (`CAMOUFOX_INSTALL_DIR=/root/.cache/camofox-browser-engine`, port 9377), **one persistent `--user <shop>` profile per shop**, budget ≤6 navigations/shop/pass, `snapshot`→file (never `get-text` to stdout), plus the measured comparison (curl → Chromium → Camoufox-lib → camofox-server) and the dead-end list. Agent skills installed: `.agents/skills/camofox-browser`, `.agents/skills/camofox-cli`.
+
+### 1. Re-check of the bests
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | price unchanged **27 362,00 / 22 245,53 zł netto** — **lead time moved 3–4 → 5–6 dni** | camofox CLI (`--user proshop`) |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | camofox |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl |
+
+### 2. New listings
+
+None this pass (the pass was infrastructure + verification; the 336558516150 dossier from pass 37 stands).
+
+### 3. Blocked list
+
+Unchanged (see route doc's dead-end list). Scheduler API refused a prompt rewrite from this thread (provider ownership) → the route doc carries the procedure instead, so every fresh pass reads it from the repo.
+
+### 4. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — Yes, still: hynix business 50 pcs @ €33.78/GB net-basis (item 336558516150); JEDEC-qualified best ibfusion €38.77/GB + IT-Planet 3 pcs @ €38.40/GB landed.**
+
+Coverage: camofox server health + second-profile isolation test (proshop via CLI), Proshop + Tonitrus via CLI, full curl set. **Board updated (Proshop lead-time field) + route doc committed.**
