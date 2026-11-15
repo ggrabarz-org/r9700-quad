@@ -1064,3 +1064,51 @@ Amazon.de still error page (even Camoufox). abstock.com: **SSL_ERROR_BAD_CERT_DO
 **Did anything beat €4,791/128 GB net? — YES, verified: item 206689139346 (Kingston 64MD, IT-Planet GmbH, €2.899,34 inkl. MwSt, 3 pcs, Best Offer) lands at €38.40/GB net with shipping — the first confirmed genuine sub-floor option (limited to 3 modules).** Hynix wave adds a €35–36/GB *used-Gewerblich* tier (SPD caveat) and a €33.8/GB no-invoice private NEW unit. Full-build floor stays ibfusion/senetic.
 
 This pass probed: Proshop+Tonitrus (Camoufox), eBay floor-beater (seller dossier — closed), eBay hynix wave (12 listings mapped), Amazon.de (walled), abstock (SSL broken), plus full curl bests re-check. Coverage line: eBay.de ×4 fetches (budget spent), Camoufox-first throughout per directive.
+
+---
+
+## Pass 35 — 2026-11-15T02:45Z (Camoufox; hynix private item FULLY verified + business lead found; Galaxus sale was DDR4)
+
+### 1. Re-check of the bests — all **UNCHANGED**
+
+| Offer | Result | Method |
+|---|---|---|
+| Proshop.pl kit | 27 362,00 / 22 245,53 zł netto | Camoufox |
+| Tonitrus CCP | 2.667,65 € netto · 50 pcs | Camoufox |
+| ibfusion 64MD | 2 481,00 € excl. VAT · 5 pcs | curl |
+| senetic.pl 64MD / 96MC | 11 509,07 / 16 417,58 zł netto | curl |
+| senetic.de CWM/CCP | 971,07 / 3.387,48 € | curl |
+
+### 2. Hynix item 336731389651 — full detail verified
+
+| Field | Value |
+|---|---|
+| Price | **EUR 2.162,00 oder Preisvorschlag (inkl. MwSt.)** |
+| State/stock | **Neu** · **"Letzter Artikel"** (LAST ONE — 1 pc) · 4 verkauft · 14 watchers |
+| Seller | tech.sales-now (74) — **Privat**, 100% positive, member since Jan 2018 |
+| Shipping | **EUR 54,05** Express International · from **Kaunas, Litauen** · ships in 2 days |
+| Returns | **Keine Rückgabe** (no returns) |
+| Basis | Private seller → **no VAT invoice** → gross is the real basis: (2.162 + 54,05)/64 = **€34,63/GB gross landed** — cheapest hynix number seen |
+| Caveats | hynix = "no SPD sentence published" + last-one + no-returns |
+
+### 3. **NEW BUSINESS-GRADE LEAD** (from the item's related-items rail)
+
+"**ECC SK Hynix 64G 6400MHz DDR5 ECC RAM RDIMM 2Rx4 PC5-…** — **Neu (Sonstige) · Gewerblich — EUR 2.416,93 + EUR 19,61 Lieferung — 40 verkauft**"
+
+- If a Gewerblich seller with VAT invoice: (2.416,93 + 19,61) ÷ 1,19 = €2.047,51 net → **≈€31.99/GB net** — **far below any price found in 35 passes**.
+- Item number/seller not captured (related-item widget, no href read). **Next pass: search "SK Hynix 64G 6400MHz … PC5" on eBay.de and open it.**
+- If real + new + business: it changes the build economics completely (12× = €24.570 net vs senetic €31.359).
+
+### 4. Galaxus: the "−18% Sale" badge is the **DDR4-3200** part, not ours
+
+Search tiles (Camoufox, no CAPTCHA on search): 16GB **EUR 778,64** (48,67/GB) · 32GB **EUR 1.449,92** (45,31/GB) · 64GB **EUR 3.262,26** (50,97/GB) — **identical to pass 25**; the sale badge belongs to the DDR4 3200 64GB (€836,10 statt €1.015,55). Product pages CAPTCHA ("Bist du ein Roboter?"), search tiles work. No change.
+
+### 5. Amazon.de — first non-wall
+
+Amazon.de served **26 result cards** this run (no error page!) but the 6400-RDIMM filter hit nothing relevant in the card text — behaviour changed (wall lifted at least once); next pass: re-parse with saved HTML.
+
+### 6. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — Yes (already-held): item 206689139346 at €38.40/GB net landed (3 pcs, Gewerblich, VAT-recoverable).** New this pass: private hynix €34.63/GB gross (1 pc, no invoice, no returns) and a **€31.99/GB net-basis business hynix lead (unverified, item# pending)** — if confirmed, the best per-GB of the entire hunt.
+
+Coverage: Proshop+Tonitrus (Camoufox), eBay.de item detail (1 nav) + search (1 nav, blocked), Galaxus search+product (search ok; product CAPTCHA), Amazon.de (served 26 cards, no relevant hit), full curl bests. **Board updated (ram-board.html) and committed as part of this pass.**
