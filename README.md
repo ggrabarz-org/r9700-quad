@@ -253,6 +253,19 @@ Option A with 2×64 6400 Micron = **€12,027.71**; with 4×64 5600 = **€15,56
 
 **If DeepSeek V4.1 is a primary workload**, budget the **8×64 (512 GB, 8 channels)** first and the **24C 9965WX** second, before the last 800 MT/s: the 2×64 → 8×64 step is 4× the channels and 4× the capacity; 5600 → 6400 is +14%. If DeepSeek is occasional, the 2×64/16C IQ3_S build is the cost/benefit choice, and the 8×64 upgrade is the later step. The 7600/7800 OC kits are still not 8×64.
 
+**Why the 9965WX, in CCD terms (added 2026-11-15).** The CPU expert lane is fed by the CPU's fabric links to the IOD, one per CCD, so the L3 size is a proxy for the link count (each Zen 5 CCD carries **32 MB**):
+
+| TR PRO 9000 WX | Cores | L3 | CCDs / fabric links | MSRP |
+|---|---:|---:|---:|---:|
+| 9945WX | 12 | 64 MB | **2** | OEM |
+| **9955WX** (book's CPU) | 16 | 64 MB | **2** | $1,649 |
+| **9965WX** | 24 | 128 MB | **4** | $2,899 |
+| 9975WX | 32 | 128 MB | **4** | $4,099 |
+| 9985WX | 64 | 256 MB | **8** | $7,999 |
+| 9995WX | 96 | 384 MB | **12** | $11,699 |
+
+The 9955WX is a **2-CCD** part. That is irrelevant to the GPU-resident IQ3_S build (the CPU lane is idle, and Strata measures *fewer* workers winning: 15 workers 38–42 tok/s vs 24 workers 27 tok/s), which is why it is the right CPU here. It is **not** a spilling-MoE part: for DeepSeek-to-RAM the 4-CCD 9965WX is the cheapest step up, and the 8-CCD 9985WX matches the topology the EPYC pick uses. Note also that **sTR5 is 8-channel on every SKU — 409.6 GB/s is the platform ceiling**, 33% below an SP5 EPYC's 614 GB/s; if the workload will spill experts to RAM, the platform itself is the bigger decision.
+
 ### 3.7 Why 128 GB now, and why one stick is not enough
 
 - The model is 79 GB on disk; the PLE table is 28.8 GB. With 128 GB of VRAM the experts live on the GPUs, but the host needs the PLE table (28.8 GB with `--ple-io ram`), the OS/page cache and checkpoint headroom. 64 GB is the documented minimum (IQ3_S “with little else open”); 128 GB is the comfortable floor.
@@ -572,7 +585,7 @@ Option A with the **ASUS Pro WS WRX90E-SAGE SE** (€1,288.00) and **no MCIO cab
 
 ### What not to buy
 
-- **A 24-core 9965WX (+€1,378).** The 16C/32T 9955WX gives the 15 expert workers Strata’s AMD reference config uses; more cores do not help a GPU-resident model.
+- **A 24-core 9965WX (+€1,378) — for the GPU-resident IQ3_S build only.** The 16C/32T 9955WX gives the 15 expert workers Strata’s AMD reference config uses; more cores do not help a model whose experts all sit in VRAM. **If DeepSeek or another MoE will spill to RAM, this entry reverses:** the 9955WX is a **2-CCD** part (64 MB L3) and the 9965WX is **4 CCDs** (128 MB), i.e. twice the fabric links into the IOD. See §3.6.
 - **One 64 GB DDR5-6400 module.** One channel is 51.2 GB/s, slower than the 2×64 5600 pair; it is a boot/test config, not a speed upgrade.
 - **Two 4×64 GB 6400 kits instead of the 8×64 octa kit.** €24,270.02 vs €23,094.00, and the 4×64 kit is a CL36 bin, not the CL38 8-DIMM bin; two kits are not guaranteed 6400 at 8 DIMMs.
 - **128/256 GB RDIMMs.** Worse €/GB than 8×64; the 2 TB ceiling is not a target.

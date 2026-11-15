@@ -1057,6 +1057,67 @@ https://geizhals.de/amd-epyc-9135-100-000001150-a3333151.html ·
 https://geizhals.de/amd-ryzen-threadripper-pro-9955wx-100-100000725wof-a3531872.html ·
 https://rog-forum.asus.com/t5/gaming-motherboards/asus-pro-ws-wrx90e-sage-se-motherboard-gpu-placement/td-p/1113091
 
+### The TR PRO half of the answer, and the trap in the build book (2026-11-15)
+
+**Two separate questions, two separate answers.**
+
+**(1) Peak bandwidth: no TR PRO comes close, and none ever will.** sTR5 is an
+8-channel socket. 8 × 6400 = **409.6 GB/s**, which is **33 % below** SP5's
+614 GB/s. This is architectural, not a SKU limitation — every TR PRO 9000 WX part
+from the 12-core 9945WX to the 96-core 9995WX is 8-channel. On the CPU-expert
+path that ratio *is* the decode ratio, so a perfect TR PRO build still streams
+spilled experts at about two-thirds the rate of a perfect EPYC build. **WRX90
+cannot be made to match SP5 on this axis.** (This is the same 614 → 410 loss the
+earlier section flagged; nothing since has changed it.)
+
+**(2) But "full bandwidth" for sTR5 means filling 409.6 GB/s — and there the same
+CCD ladder decides it, with a nasty result for the build book.** The Zen 5 CCD
+carries **32 MB of L3**, exactly as on EPYC, so the WX line decodes the same way
+(cross-checked against AMD's own page: the 9985WX states **Package Die Count 9** =
+8 CCDs + 1 IOD):
+
+| TR PRO 9000 WX | Cores | L3 | **CCDs** (L3 ÷ 32 MB) | Cores/CCD, base | MSRP |
+|---|---|---|---|---|---|
+| 9945WX | 12 | 64 MB | **2** | 6, 4.7 GHz | OEM |
+| **9955WX** | **16** | **64 MB** | **2** | 8, 4.5 GHz | $1,649 |
+| 9965WX | 24 | 128 MB | **4** | 6, 4.2 GHz | $2,899 |
+| 9975WX | 32 | 128 MB | **4** | 8, 4.0 GHz | $4,099 |
+| 9985WX | 64 | 256 MB | **8** | 8, 3.2 GHz | $7,999 |
+| 9995WX | 96 | 384 MB | **12** | 8, 2.5 GHz | $11,699 |
+
+**The build book's CPU is a 2-CCD part — the same topology this document
+disqualified the EPYC 9135 for.** The 9955WX has 2 CCDs and 16 cores; the 9135
+that was rejected for "cannot feed 614 GB/s" is *also* 2 CCDs / 16 cores. The
+only thing that softens it is that sTR5 asks for 409.6 GB/s rather than 614 — a
+lower bar, but the same shape of problem, and the 9955WX sits at the **2-CCD**
+end of a ladder whose 4-CCD rungs (9965WX, 9975WX) exist precisely because
+6-core-per-CCD and 8-core-per-CCD parts are how AMD scales into more memory
+traffic.
+
+**What this means per workload — and it is *not* one answer:**
+
+- **IQ3_S fully resident (the book's stated workload): the 9955WX is correct.**
+  The CPU lane is empty (single-digit MB/s), so CCD count is irrelevant and
+  Strata's own measurement says *fewer* workers win: 15 workers 38–42 tok/s vs
+  24 workers 27 tok/s. The 2-CCD part is not a handicap when nothing is being
+  streamed, and "what not to buy" is right to reject the 9965WX *for this case*.
+- **Spilling MoE (DeepSeek 2.00/2.25, UD-Q8): the 9955WX is the wrong part.**
+  Here the CCD count is the fabric-link count, and the book already concedes this
+  in §3.6 — "budget the 8×64 (512 GB) first and the **24C 9965WX** second" —
+  which contradicts its own "what not to buy" entry. The 9965WX (4 CCDs) is the
+  cheapest plausible way to fill 8 channels; the 9985WX (8 CCDs, matching the
+  9555's topology) is the part that mirrors the 9355/9555 argument one-for-one,
+  at $7,999.
+
+**Net, and the honest summary of the whole TR-PRO-vs-EPYC question:** if the
+workload will ever spill experts to RAM, **SP5 is the platform** — same 8-CCD
+parts, 50 % more channels, and a €2,050 9355 does the CPU job without the
+bandwidth tax. WRX90 remains the right choice only when the workload stays
+VRAM-resident *and* its other advantages (IPMI, 7 slots, 4 onboard Gen5 M.2,
+512 GB endgame) are what you are buying. In that case the 9955WX is fine — but
+do not buy it *and* expect it to feed a spilling MoE, because it has the same
+2-CCD shape as the CPU this document already rejected for that job.
+
 **Verdict: the swap does not buy what it looks like it buys.**
 - **You lose 33 % of memory bandwidth** (614 → 410 GB/s). For LLM inference that
   is the resource that matters most; it is a real, permanent loss.
@@ -1072,11 +1133,18 @@ https://rog-forum.asus.com/t5/gaming-motherboards/asus-pro-ws-wrx90e-sage-se-mot
   a genuine convenience — but you are paying 4 channels of bandwidth for it,
   and the MCIO storage workaround on the CP1 costs ~€105 and is already solved.
 
-**Recommendation: stay on EPYC 9135 + MZ33-CP1.** Reconsider WRX90 only if the
+**Recommendation: stay on EPYC + the SP5 board.** Reconsider WRX90 only if the
 onboard Gen5 M.2 simplicity and the extra slots outrank memory bandwidth for
 your workload — for tensor-parallel inference they almost certainly do not.
 **UNVERIFIED: WRX90E-SAGE SE current EU price**, so the total-cost comparison is
 incomplete; the bandwidth and slot-count arguments do not depend on it.
+
+**Part correction 2026-11-15:** the *board* conclusion stands, but the **9135
+named here is no longer the CPU to buy** — it is a **2-CCD** part and the CCD
+ladder (see "The TR PRO half of the answer" below) disqualifies that shape for a
+spilling MoE. On SP5 the pick is the **9355 (8 CCDs, €2,050)** or a verified-clock
+**9555**. The 9135 remains fine only for the VRAM-resident case where the CPU lane
+is idle.
 
 The CP1 does not fail — it is 3-native + 1-adapter. Compare the two ways to
 complete the build:
@@ -3501,3 +3569,16 @@ Micron 32 GB, NEMIX, A-Tech).
   H14SSL-N** — vendor-locked EPYCs are a known failure mode on some boards, so
   buy with a return window and POST inside it; the safe alternatives are a new
   tray **9355** (€2,050–2,379) or an unlocked 9555/9555P at ~€4,375–4,530.
+- 2026-11-15T00:0xZ — **TR PRO vs EPYC answered properly: no TR PRO can match
+  SP5 bandwidth, and the build book's own 9955WX is a 2-CCD part.** (1) sTR5 is
+  8-channel in every SKU (9945WX → 9995WX), so **409.6 GB/s is the ceiling** vs
+  SP5's 614 — an architectural 33 % loss, not a SKU choice. (2) The Zen 5 CCD is
+  **32 MB of L3**, so the same ladder that decoded the EPYC line decodes the WX
+  line (cross-checked: 9985WX = "Package Die Count 9" = 8 CCDs + IOD):
+  **9955WX = 2 CCDs / 64 MB**, 9965WX = 4, 9975WX = 4, 9985WX = 8, 9995WX = 12.
+  **The 9955WX therefore has the same 2-CCD topology the doc already rejected the
+  EPYC 9135 for.** Split verdict: fine for the book's VRAM-resident IQ3_S case
+  (CPU lane idle; Strata measures *fewer* workers winning, 15 > 24); wrong for a
+  spilling MoE, where the book contradicts itself — §3.6 already says "budget the
+  24C 9965WX second" while "what not to buy" rejects it. Noted the SP5 pick
+  correction (9355, not the 2-CCD 9135) in the WRX90 section's recommendation.
