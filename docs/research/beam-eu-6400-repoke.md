@@ -1262,3 +1262,37 @@ None — but the route-2 capability opens geizhals.de and bargainhardware for fu
 **Did anything beat €4,791/128 GB net? — The held answers stand** (hynix business 50 pcs @ €33.78/GB net-basis; JEDEC-qualified ibfusion €38.77/GB; IT-Planet 3 pcs @ €38.40/GB landed).
 
 Coverage: trawl deployment + 6 wall tests (Kaufland, Mindfactory, Galaxus, bargainhardware ×2, geizhals), global skills install, AGENTS.md sections, route doc update.
+
+---
+
+## Pass 40 — 2026-11-15 (dual-route pass: camofox + trawl; geizhals.de opened via Route 2)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| Proshop.pl kit | **unchanged** 27 362,00 / 22 245,53 zł netto · lead **5–6 dni** | camofox `--user proshop` |
+| Tonitrus CCP | unchanged 3.174,50 brutto / **2.667,65 € netto** · Verfügbar 50 | camofox `--user tonitrus` |
+| ibfusion 64MD | unchanged 2 481,00 € excl. · **5 in stock** | curl |
+| senetic.pl 64MD / 96MC | **+6 zł tick**: 11 515,16 / 16 426,27 zł netto | curl |
+| senetic.de row | CCP watch-row still serves (the 971,07 grep missed; page renders — re-grep next pass) | curl |
+| Caseking V-Color | still **OutOfStock** (curl state flag) | curl |
+
+### 2. NEW listings — Route 2 (trawl) opened geizhals.de
+
+| Part | JEDEC SPD verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| **Kingston KSM64R52BD4-64MH** (64 GB, MH die-suffix) | **SPD-verified**: datasheet sentence "SPD is programmed to JEDEC standard latency DDR5-6400 … 2Rx4" | **Geizhals.de** (12 Angebote) | **ab € 2.981,32** (single-offer variant listed at €2989,00) → €2.505,3 net = **€39.15/GB** | 12 Angebote | https://geizhals.de/?fs=KSM64R52BD4 |
+
+- **bargainhardware.co.uk via trawl**: "RDIMM 6400" search returns server chassis/rails, no 6400 RDIMM stock (only 4800-class) → no listing, but the route works (tier 3).
+- Geizhals is now usable for the whole hunt (was 403-permanent); future passes can price-check the full product family incl. the MD bin.
+
+### 3. Blocked list
+
+Unchanged dead ends (Kaufland/Mindfactory site-walls, Galaxus product pages, Amazon error cycle). No new blocks.
+
+### 4. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — No new beat.** Held: hynix business 50 pcs @ €33.78/GB net-basis (SPD caveat, item 336558516150 — still live, eBay unbanned); JEDEC-qualified floor ibfusion €38.77/GB; IT-Planet 3 pcs @ €38.40/GB landed. New data point: MH-bin aggregate at €39.15/GB net-basis — above the floor.
+
+Coverage: camofox on Proshop + Tonitrus (walled bests), trawl on bargainhardware + geizhals (Route-2 shops), curl set (ibfusion, senetic ×2, Caseking), Kingston 64MH datasheet SPD.
