@@ -4,6 +4,13 @@
 Camoufox engine (Firefox, C++-level fingerprint spoofing). Installed globally; engine at
 `/root/.cache/camofox-browser-engine` (v158.0.1-beta.41).
 
+**Route 2 (fallback):** [trawl](https://github.com/germondai/trawl) v1.11.1 — self-hosted scraping engine
+(Camoufox + HTTP clearance cache + supported CAPTCHA paths), Docker container `trawl`, `127.0.0.1:8191`.
+Start with `docker start trawl`. Proven 2026-11-15: cleared Cloudflare on bargainhardware.co.uk
+(tier 3, full product grid) where Chromium **and** standalone Camoufox failed. Limits: site-internal
+second-layer walls (Kaufland "Verifizierung", Mindfactory "SECURITY CHECK", Galaxus robot page) still hold.
+Use it when camofox gets "Just a moment" / CF-challenge pages.
+
 ## Why this route (measured, not assumed)
 
 | Attempt | Result |

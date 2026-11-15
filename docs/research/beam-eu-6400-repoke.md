@@ -1228,3 +1228,37 @@ Unchanged (see route doc's dead-end list). Scheduler API refused a prompt rewrit
 **Did anything beat €4,791/128 GB net? — Yes, still: hynix business 50 pcs @ €33.78/GB net-basis (item 336558516150); JEDEC-qualified best ibfusion €38.77/GB + IT-Planet 3 pcs @ €38.40/GB landed.**
 
 Coverage: camofox server health + second-profile isolation test (proshop via CLI), Proshop + Tonitrus via CLI, full curl set. **Board updated (Proshop lead-time field) + route doc committed.**
+
+---
+
+## Pass 39 — 2026-11-15 (Route 2 added: trawl; anti-detection stack made server-wide)
+
+### 0. Infrastructure — second browser route, both now server-wide
+
+- **Route 1 = camofox-browser** (already adopted, pass 37/38). Persistent `--user <shop>` profiles.
+- **Route 2 = [trawl](https://github.com/germondai/trawl) v1.11.1** — Docker (`apparmor=unconfined` needed in this env, `--shm-size=1gb`), `127.0.0.1:8191`, restart `unless-stopped`, health OK, browser pool warm. Picked from the GitHub anti-detection topic list as the strongest complement: HTTP-tier clearance cache + supported CAPTCHA/WAF paths, **not** more of the same engine.
+- **Measured coverage (2026-11-15):**
+
+| Site | camofox | trawl | Verdict |
+|---|---|---|---|
+| bargainhardware.co.uk (pure Cloudflare) | walled | **CLEARED** — tier 3, 101-product Magento grid (no 6400 in stock) | Route 2 wins |
+| Kaufland.de | walled | CF cleared, site's own "Verifizierung" page remains | both walled |
+| Mindfactory | walled | same — "SECURITY CHECK" page remains | both walled |
+| Galaxus product pages | CAPTCHA | HTTP tier returns the robot page instantly | both walled (search tiles still fine) |
+| geizhals.de | 403 | answered (URL tested was deleted; working routes to be re-tried) | Route 2 promising |
+
+- **Server-wide discoverability:** global skills installed at `~/.agents/skills/` (`camofox-browser`, `camofox-cli`, `reddit`; `ponytail` already there) + `~/.config/opencode/AGENTS.md` gains section "Anti-detection browser stack (camofox server + trawl fallback)" + project `AGENTS.md` points at it. Effect: any session on this server can find and use `$camofox-cli` / `$camofox-browser` / `$reddit` / `$browser`, with ponytail levels (`lite|full|ultra`) documented.
+
+### 1. Re-check of the bests
+
+Not re-fetched this pass (infrastructure pass; pass-38 values stand — Proshop 22 245,53 zł netto/5–6 d, Tonitrus €2.667,65, ibfusion €2.481·5, senetic rows flat).
+
+### 2. New listings
+
+None — but the route-2 capability opens geizhals.de and bargainhardware for future passes (both were permanently walled before).
+
+### 3. Verdict + coverage
+
+**Did anything beat €4,791/128 GB net? — The held answers stand** (hynix business 50 pcs @ €33.78/GB net-basis; JEDEC-qualified ibfusion €38.77/GB; IT-Planet 3 pcs @ €38.40/GB landed).
+
+Coverage: trawl deployment + 6 wall tests (Kaufland, Mindfactory, Galaxus, bargainhardware ×2, geizhals), global skills install, AGENTS.md sections, route doc update.
