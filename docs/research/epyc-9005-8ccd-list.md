@@ -20,7 +20,7 @@ Where the two disagree they are both shown — see the note at the bottom.
 
 | SKU | Cores | **CCDs** | Core cfg | L3 | Base GHz | TDP | Release $ | Recorded / street |
 |---|---:|---:|---|---:|---:|---:|---:|---|
-| 9175F | 16 | **16** | 16 × 1 | 512 MB | 4.20 | 320 W | $4,256 | — |
+| 9175F | 16 | **16** | 16 × 1 | 512 MB | 4.20 | 320 W | $4,256 | **€3,299–3,500 EU; $2,616–2,707 US; $1,900 used** |
 | 9275F | 24 | **8** | 8 × 3 | 256 MB | 4.10 | 320 W | $3,439 | — |
 | **9355P** | 32 | **8** | 8 × 4 | 256 MB | 3.55 | 280 W | **$2,998** | no QS tier; EU €3,718–4,706 |
 | **9355** | 32 | **8** | 8 × 4 | 256 MB | 3.55 | 280 W | $3,694 | **€2,050 street** (eBay DE, new) |
@@ -76,9 +76,65 @@ completeness only — the 8-CCD rule assumes SP5's 12 channels.
 3. **The F parts are the odd corner:** the 9175F is **16 CCDs of one core each**
    (16c, 4.2 GHz base, $4,256) and the 9275F is **8 CCDs of three** (24c,
    4.1 GHz, $3,439). Both clear the fabric bar with very high clocks and few
-   cores — plausibly interesting for latency-bound decode, but neither has a
-   recorded street price and both sit outside the 24–40-core knee's sweet spot
-   in cores/CCD terms.
+   cores. **Street, 2026-11-15:** 9175F **€2,673–3,500** (EU, new/unlocked), two
+   US listings **$2,616 / $2,707**, and a **used unlocked at $1,900**; 9275F
+   **£3,300** unlocked, 9375F £4,602, 9475F none found. So the 9175F is the one F
+   part with real stock — see the dedicated analysis below before buying it.
+
+---
+
+## Is the 9175F the "MoE bandwidth/latency master"? — **No, and the reason is structural**
+
+The intuition is sound and worth stating: the 9175F is **16 CCDs × 1 core** with
+**512 MB of L3**, so it has (a) the maximum fabric of any 16-core part, and (b)
+**32 MB of L3 per core** — 8× the L3-per-core of any 8-CCD part. If the CPU expert
+lane were L3-cache-bound, this would be the part. It is not, and three things
+break the hypothesis:
+
+**1. It is fabric-rich but core-poor, and decode needs cores to carry the bytes.**
+The 24–40-core "knee" is not about aggregate arithmetic — it is about having
+enough independent load streams in flight to actually reach the channels' peak
+on scattered reads. **16 cores is below that knee.** A 16-core part with 16 fabric
+links still cannot issue as many concurrent misses as a 32-core part with 8 links
+(the 9355), because outstanding-request capacity tracks the core count as much
+as the link count. More fabric does not compensate for fewer requesters.
+
+**2. Even perfect L3 hit rates cannot fix a 4-bit GEMV's byte count.** The one
+spec that cuts DRAM traffic is L3 capacity, and the rule this project already
+recorded is that **L3 pays only if the hot-expert working set is >256 MB and
+<512 MB.** Against 128 GB of VRAM the CPU residual for a Flash-class MoE is
+**hundreds of GB**, so the stream is dominated by cold experts that miss in *all*
+of 256/384/512 MB. The 9175F's 512 MB is real but it is a rounding error against
+that residual — exactly the argument that rejected the 9755.
+
+**3. The clock advantage is real but in the wrong dimension.** 4.2 GHz base is
+the highest in the stack (vs the 9355's 3.55, the 9555's 3.2), and decode is
+latency-sensitive, so this is the part's genuine merit. But the same table also
+shows what it gives up: **67 core-GHz against the 9355's 114 and the 9555's 205.**
+Prefill is compute-bound and tracks cores × clock, so the 9175F is **~1.7× slower
+at prefill than the €2,050 9355** while costing **~60 % more**.
+
+**4. Latency is worth less than it looks here, because of what is on the other
+side of the lane.** The CPU experts run **concurrently with the GPU window**
+(a pipeline hand-off per verify window). The CPU lane only has to finish *inside*
+that window; extra single-thread latency below that bar buys nothing, while raw
+bytes-per-second above it is what shortens the critical path. The 9175F optimises
+the term that is not binding.
+
+**Verdict:** the 9175F is the **best 16-core server part** and a genuine latency
+play — but for this build the ranking is unchanged and it is not close. **9355
+(€2,050) > 9555 (€932–1,050 QS, clock risk) > 9175F (~€2,673+)** on
+bytes-per-euro for a spilling MoE, and the 8-CCD 9355 beats it on *both* prefill
+(~1.7×) and price (~30 % less). The 9175F would only lead if a measurement showed
+the lane was **L3-resident and latency-bound** — i.e. a hot set between 256 and
+512 MB, at which point this project's own 9755 rule already applies and the 9755
+(16 CCDs, 512 MB, 128 cores, 5.2× the core-GHz) is the better expression of the
+same idea.
+
+**Where it *is* interesting:** as a **two-socket pair** (16 cores × 2 = 32 cores
+across 32 CCDs) or as a **dense single-thread host** for a box whose CPU work is
+actually latency-bound (KV bookkeeping, tokenizers, small-model serving). Neither
+is this build.
 4. **Price-source divergence, flagged not resolved.** For the high-core SKUs the
    page's *release* figures run **10–25 % above** the 1kU figures this project
    read from AMD's product pages in Nov 2026 (e.g. 9555 $9,826 here vs $7,973
