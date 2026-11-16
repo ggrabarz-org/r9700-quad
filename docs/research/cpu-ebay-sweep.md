@@ -27,7 +27,7 @@ vendor-locked, not an OEM re-badge, not a bundle. See traps below — the raw
 | SKU | Cores | CCDs | L3 MB | Base GHz | TDP | Plat | Valid floor | New floor | Best cond. |
 |---|---:|---:|---:|---:|---:|---|---:|---:|---|
 | 9175F | 16 | 16 | 512 | 4.20 | 320 | SP5 | **$2,616** | $2,616 | Brand New |
-| 9275F | 24 | 8 | 256 | 4.10 | 320 | SP5 | $660 ⚠ | $3,199 | Pre-Owned |
+| 9275F | 24 | 8 | 256 | 4.10 | 320 | SP5 | $660 ⛔ | $3,180 | Pre-Owned |
 | 9355P | 32 | 8 | 256 | 3.55 | 280 | SP5 | $3,568 | $3,830 | Refurb |
 | **9355** | 32 | 8 | 256 | 3.55 | 280 | SP5 | **$2,130** | $2,299 | Pre-Owned |
 | 9375F | 32 | 8 | 256 | 3.80 | 320 | SP5 | $3,849 | $3,849 | Brand New |
@@ -74,6 +74,40 @@ the item is that SKU. Six of 25 here fail that test. Any price from this sweep
 should be re-read against the title, and the buyer should ask for a **CPU-Z or
 IHS photo** before paying — the same standard this project already applies to the
 9555 sample market.
+
+### The $660 "9275F" outlier — decoded 2026-11-16 (item `128080874643`, seller `tomboost`)
+
+**It is a Dell-only PSB-locked server pull, and the listing admits it.** The
+seller's own description reads:
+
+> "AMD EPYC 9275F 4.10Ghz, 24 coeurs et 48 thread. 256Mo de cache 320W
+> Compatible DDR5-6400. **From Dell server can be PSB lock dell only.** I have two
+> CPU, contact me if you want two, special price."
+
+That explains the €599 (≈$660) price: **PSB-locked, Dell-only.** It will not POST
+in a Supermicro H14SSL-N — the exact vendor-lock risk this project already left
+UNVERIFIED for the 9555 Dell bin, here **conceded by the seller**. Same reject
+class as the "9555 Dell Locked $1,500" row; it slipped the sweep's filter only
+because the disqualifier sits in the *description*, not the title.
+
+**The photo gallery does not document the item.** Seven images: one **stock
+marketing photo** ("Dawson Electronics", plane + "Quality assurance") showing OPN
+**`100-000001245-08`** — *not* the 9275F's `100-000001144`; a **delidded** sTR5
+part with a copper IHS and liquid metal; a Task Manager screenshot showing
+**2 sockets / 48 cores / 512 MB L3** (a 2× 9275F host the seller owns, not the
+CPU on sale); and **two unrelated Intel desktop CPUs** — a **Core i7-860 SLBJJ**
+(2009, 2.80 GHz) and a **Core i7-2600 SR00B** (2011, 3.40 GHz, Costa Rica), both
+with legible Intel heatspreaders.
+
+**Verdict: reject on two independent grounds** — PSB-locked Dell-only, and a
+gallery that shows other parts. The $660 is not a bargain; it is the price of a
+part that will not boot in this build. **The 9275F's true floor is $3,180**, the
+Brand New "AMD EPYC-9275F CPU II … 3 yr warranty" listing.
+
+**Lesson for the classifier:** eBay sellers sometimes put the disqualifier in the
+**description** and the give-away in the **gallery**, not the title. A title-only
+filter misses those — for any listing far below the 25th-percentile price, read
+the description and the images before believing the SKU.
 
 ## What is actually cheap in valid, retail-clocked form
 

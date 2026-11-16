@@ -18,9 +18,9 @@
   "valid_floor": 660.28,
   "valid_floor_title": "AMD EPYC 9275F 24 Core 48 Threads 4.1-4.5GHz 320W 256MB Server CPU Processors",
   "valid_floor_cond": "Pre-Owned",
-  "new_floor": 3199.0,
-  "new_floor_title": "AMD EPYC 9275F Turin CPU 24 Cores 48 Threads 4.1-4.5GHz SP5 Processor",
-  "note": "$660 row is an unverified outlier (4.8x gap to $3,199 new); honest floor = $3,199"
+  "new_floor": 3180,
+  "new_floor_title": "AMD EPYC-9275F CPU II price incl VAT 3 yr warranty* B2B",
+  "note": "DECODED 2026-11-16: $660 item 128080874643 (seller tomboost) = Dell-only PSB-LOCKED server pull; seller description says \"can be PSB lock dell only\". Gallery shows a Dawson Electronics stock photo (OPN 100-000001245-08, NOT the 9275F 100-000001144), a delidded sTR5 part, a 2-socket Task Manager shot, and two Intel desktop CPUs (i7-860 SLBJJ, i7-2600 SR00B). REJECT. True floor $3,180."
  },
  "9355P": {
   "listings_total": 8,
