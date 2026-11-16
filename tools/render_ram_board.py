@@ -37,6 +37,16 @@ for o in data["offers"]:
 best_kit = next((o for o in data["offers"] if o.get("best")), data["offers"][0])
 gen = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
 
+# KPI card 1 is the 384 GB (12-channel) tier by definition: read that ladder row, not the "best" offer,
+# so the card cannot drift from the ladder when the overall cheapest part is a different capacity.
+row384 = next((r for r in (data.get("ladder") or {}).get("rows", []) if r["cap"].startswith("384 GB (12×32, 12-ch)")), None)
+if row384:
+    route = row384["route"].split(" @ ")
+    kit_net, kit_label, kit_url = row384["net"], f"12× {route[0].split('× ',1)[-1]}" + (f" — {route[1]}" if len(route) > 1 else ""), row384.get("url")
+    kit_cap = "Cheapest 12-ch 384 GB"
+else:
+    kit_net, kit_label, kit_url, kit_cap = best_kit.get("twelve_kit_net", 14372), best_kit["part"], best_kit.get("url"), "Cheapest kit"
+
 lad = data.get("ladder")
 if lad and lad.get("rows"):
     def _lroute(r):
@@ -84,8 +94,8 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <h1>RAM offer board — DDR5-6400 RDIMM (JEDEC-SPD rule)</h1>
 <p class="sub">Board: Supermicro H14SSL-NT · CPU: EPYC 9555 · 12 DIMM slots, 1DPC · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
 <div class="kpi">
-  <div class="card"><h2>Cheapest 12-ch 384 GB</h2><div class="big">{fmt(best_kit.get('twelve_kit_net', 14372))}</div><span class="k">12× {html.escape(best_kit['part'].split(' (')[0])} — <a href="{html.escape(best_kit['url'])}">{html.escape(best_kit['shop'].split(' (')[0])} ↗</a></span></div>
-  <div class="card"><h2>Cheapest per GB (net)</h2><div class="big">{best_kit.get('eur_per_gb','€37.43')}</div><span class="k"><a href="{html.escape(best_kit['url'])}">open the offer ↗</a> · baseline to beat</span></div>
+  <div class="card"><h2>{kit_cap}</h2><div class="big">{kit_net}</div><span class="k">{html.escape(kit_label)}{f' — <a href="{html.escape(kit_url)}">source ↗</a>' if kit_url else ''}</span></div>
+  <div class="card"><h2>Cheapest per GB (net)</h2><div class="big">{best_kit.get('eur_per_gb','€37.43')}</div><span class="k"><a href="{html.escape(best_kit['url'])}">open the offer ↗</a> · {html.escape(best_kit['part'].split(' (')[0])}</span></div>
   <div class="card"><h2>Updated</h2><div class="big">{gen}</div><span class="k">by the 30-min scheduler · <code>docs/research/beam-eu-6400-repoke.md</code></span></div>
 </div>
 {LADDER}
