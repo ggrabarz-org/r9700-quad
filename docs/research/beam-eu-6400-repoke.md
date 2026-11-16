@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**NEW CHEAPEST NEW 96 GB (pass 61): Micron `MTC40F204WS1RC64BC1` on Geizhals at €3 207,89 gross = €2 695,71 net = €28.08/GB net** — QVL ✓, Brand New, single-review seller "esus it", 12× = €32 348,52 net for 1152 GB (17 % under CoreWave's €33.79/GB). Geizhals's own "€33,42/GB" is a GROSS figure (their prices are "inkl. MwSt.") — comparing it to CoreWave's ex-VAT basis was my error, corrected in the pass. Also closed: Samsung `MDRRWM4QDBC2-3`/`-3L000` (QVL ✓) have **zero EU offers**.
+
 **QVL QUESTION NARROWED (pass 59, supersedes pass 58): the MZ23-SU0 QVL (stamp "Last Update: Oct 27, 2026") lists FIVE Samsung 96 GB 2Rx4 6400 parts and ZERO Kingston 96 GB, while validating Kingston 64MD/64MH.** So the board has **no 96 GB limitation** — the exclusion is **Kingston-96 GB-specific**. Ruled out: QVL staleness and any 96 GB capability limit. Remaining: genuine Kingston-96 GB incompatibility, or a validation gap for those SKUs — only GIGABYTE/Kingston can say. **Practical: a 96 GB build on this board is a Samsung-or-Micron decision; Micron 96 GB at €33.79/GB (Brand New, QVL ✓) is the strongest 96 GB route and needs no Kingston answer.** New QVL-pass part to price: `MDRRWM4QDBC2-3D000`.
 
 **OPEN QUESTION (pass 58, narrowed above): CoreWave sells the `96MC` that the MZ23-SU0 QVL OMITS** — but CoreWave resells by spec (it also sells "compatible" Samsung/Micron/Supermicro parts), so a reseller listing is **not** QVL evidence. Unresolved whether the omission is genuine incompatibility, an un-updated QVL, or a firmware restriction; only GIGABYTE/Kingston can answer. Also: CoreWave's own **64MD is "Brand New • 3 Years"** at $2,857–3,076 = **€40.37–43.46/GB** — 9–17 % dearer than Allegro, but with a 3-year warranty vs 12 months.
@@ -2441,3 +2443,57 @@ And per **build**, it is worse: **12 × 32 GB = 384 GB for €13 908** vs **12 �
 ## Pass 59 addendum — QVL/CoreWave context for the 8800 question
 
 Not needed for the verdict above, but worth stating so the reasoning is complete: the MZ23-SU0 QVL validates **five Samsung 96 GB 2Rx4 6400** parts and **zero** parts above 6400 MHz of any brand. That is the same evidence base that rejected the Kingston 96MC (pass 59) and it rejects this 8800 part more decisively, because here the *speed itself* is outside what the platform supports.
+
+---
+
+## Pass 61 — 2026-11-16T16:4xZ (**NEW CHEAPEST NEW 96 GB BY 17 %: Micron `MTC40F204WS1RC64BC1` on Geizhals at €3 207,89 gross = **€2 695,71 net = €28.08/GB net** (Geizhals's own "€33,42/GB" is a GROSS figure — corrected in this pass) · 12× = €32 348,52 net for 1152 GB · QVL-pass lead `MDRRWM4QDBC2-3*` has ZERO offers anywhere**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **64MD @ Allegro komputera_pl (QVL ✓)** | unchanged **12 898,20 zł** · buy-it.pl 13 071,22 · esus-it.pl 15 180,48 | camofox `--user ceneo` |
+| senetic.pl 64MD | unchanged **11 377,59 zł** = €40.34/GB (4 passes flat) | curl |
+| senetic.de 64MD | unchanged **2.582,03 €** = €40.34/GB | curl |
+| senetic.pl / .de 96MC | unchanged 16 426,27 zł / 3.727,78 € | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| CoreWave | unchanged from pass 57/58 | curl (prior) |
+
+### 2. **NEW — Micron 96 GB now has a Geizhals product page, and it beats CoreWave**
+
+| Field | Value |
+|---|---|
+| Part | **Micron `MTC40F204WS1RC64BC1`** — 96 GB DDR5-6400 RDIMM, **QVL ✓ on MZ23-SU0** |
+| Geizhals page | `micron-rdimm-96gb-mtc40f204ws1rc64bc1-a3632953.html` — **1 Angebot** |
+| Price | **€3 207,89** → Geizhals's own figure **"(€ 33,42 / GB)"** |
+| Availability | **"lagernd beim Händler, kurzfristig lieferbar"**, price stamped **16.11.2026, 16:31** |
+| Shipping | € 10,– (DE); *"Lieferung in weitere Länder auf Anfrage"* |
+| Merchant | **"esus it"** — rating **4.8 / 5 from 1 review**; payment Vorkasse / Kreditkarte / PayPal |
+| Seller's own title | *"Micron Arbeitspeicher 1x 96GB ECC REGISTERED DDR5 2Rx4 6400MHz PC5-51200 RDIMM | MTC40F204WS1RC64BC1"* |
+
+**CORRECTED PER-GB: €3 207,89 is VAT-INCLUSIVE** (Geizhals's own footnote: *"Preise in Euro inkl. MwSt. zzgl. Versandkosten"*), so its "(€ 33,42 / GB)" is a **gross** per-GB. The **net** figure is €3 207,89 ÷ 1.19 = **€2 695,71 → €28.08/GB net** — not €33.42. *(Draft error: I first compared Geizhals's gross-per-GB against CoreWave's ex-VAT per-GB — a gross/net mismatch of exactly the kind this tracker has hit before. The gross-per-GB of one and net-per-GB of the other are not comparable.)* On the corrected basis this is **the cheapest NEW 96 GB by a wide margin**, beating CoreWave's €33.79 net-basis by 17 % — and, unlike CoreWave, it is a **listed retail price from an EU (DE-listed) merchant** rather than a quote-only figure. **12× = €32 348,52 net for 1152 GB** (vs CoreWave €38 924 — a saving of ~€6 576, or 17 %).
+
+**Caveats that must travel with it:** a **single-review seller** (1 Bewertung) is a real fulfilment risk at ~€38.5k; the earlier click-out landed on `#expired`, which is *usually* a stale-offer anchor — but the page itself re-stamped the price 16:31 today and states "lagernd", so I am treating it as **live-but-thin**, not as verified stock depth; and their own shop (`esus-it.pl`) search does not surface the part at all, which is a second mild warning. **Treat as a price to watch and to verify by phone/email before ordering, not as a buy-now button.**
+
+### 3. The QVL-pass lead has no market: `MDRRWM4QDBC2-3*`
+
+| Variant | Geizhals | Result |
+|---|---|---|
+| `MDRRWM4QDBC2-3` (a3937363) | product page exists | **"Derzeit keine Angebote"** — 0 offers |
+| `MDRRWM4QDBC2-3L000` (a3937275) | product page exists | **"keine Angebote"** — 0 offers |
+
+So the fifth QVL-passed Samsung 96 GB part surfaced in pass 59 is **listed but unsold in the EU** — closing that lead honestly: it is QVL-valid but not purchasable, and should not displace the Micron or Samsung `M321RYGA0PB2` routes.
+
+### 4. Blocked list
+
+Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl, senetic.it/.es/.nl (markup).
+- New probes dead this pass: **mindfactory.de** (2 KB stub again), **computeruniverse.net** (403), **itsco.de** (Error 500), **esus-it.pl own search** (returns unrelated items — the part is not in their visible catalogue).
+
+### 5. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — YES, decisively: Micron 96 GB at €28.08/GB net** on Geizhals (€3 207,89 gross, live-stamped, "lagernd"), against CoreWave's €33.79/GB net-basis — **17 % cheaper**, and 12× = €32 348,52 net vs CoreWave's €38 924. It is the cheapest **new** 96 GB and the cheapest **QVL-passing, new, EU-listed** price ever recorded in this hunt. It does **not** beat the Kingston 64 MD route on total spend (€28 575,84 for 768 GB is still 26 % less money), so the capacity decision is unchanged — but per GB, and for a 1152 GB build, this is now the number to beat.
+
+**Also closed:** `MDRRWM4QDBC2-3*` (the QVL-pass Samsung from pass 59) has **zero EU offers** — recorded as QVL-valid but unbuyable rather than left as an open lead.
+
+Coverage: camofox 4 profiles / 7 navigations (tonitrus, ceneo, geizhals click-out, esus-it ×2); trawl 5 scrapes (geizhals MDRRWM ×2 search, MDRRWM ×2 product, Micron ×2). Expansion: Micron 96 GB Geizhals page (new), `MDRRWM4QDBC2-3`/`-3L000` (new, dead), mf/cu/itsco probes — 5 new data points.
