@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**VENDOR SPEC CONFIRMED (pass 64): Kingston's own product page states `KSM64R52BD4-96MC` = "DDR5 6400MT/s ECC Registered DIMM CL52 x80 **2RX4 1.1V** 288-pin 24Gbit Micron C"** — third independent confirmation of the org/speed — and Kingston publishes a **PCN dated 23.02.2026 naming the 96MC as an "Alternate Part"**, consistent with the pass-52 obsolescence signal. **The QVL question did NOT move:** Kingston's "Compatible Systems" list is Cloudflare-gated for camofox and JS-loaded under trawl (no MZ23 rows in the payload), so Gigabyte's QVL verdict from pass 59 stands. Working Kingston URL is `/en/memory/search?partid=<PN>` — `/memory/server-premier/<PN>` 404s.
+
 **QVL SHORTLIST COLLAPSED (pass 63): of the SIX QVL-passing 2Rx4 6400 parts on the MZ23-SU0, only TWO are buyable new in the EU — Kingston 64MD @ Allegro (€37.21/GB, new+SPD+retail) and Micron 96 GB @ Geizhals (€28.08/GB net, new, single thin seller).** 64MH is buyable but dearer (€39.27); Samsung `M321RYGA0PB2` is used/quote-only; `M321R8GA0PB2-CCP` and `MDRRWM4QDBC2-3*` have **zero** EU offers. With the pass-52 DigiKey obsolescence signal, **waiting for a better QVL-pass option has no supporting evidence after six flat passes.**
 
 **SELLER VERIFIED (pass 62) for the €28.08/GB Micron offer:** `esus-it.de` is a **real German server-hardware shop** (Impressum, `verkauf@esus-it.de`, two phone numbers) — not a phantom — but the part is **not in their own catalogue**, so the price is **live-listed, not stock-confirmed**: contact them before ordering ~€32k. Also closed: **64MH priced** (ab €2 991,09 = €39.27/GB, no beat) and **Samsung `M321R8GA0PB2-CCP` has ZERO EU offers** (second QVL-valid-but-unbuyable part after `MDRRWM4QDBC2-3*`).
@@ -2606,3 +2608,63 @@ Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle,
 **The pass's value is a warning rather than a price:** the qualified shortlist has quietly collapsed to two purchasable parts. Every other QVL-pass candidate surfaced in the last week turned out to be unsold, sold out, or used stock. If the build is going ahead, that — plus the DigiKey obsolescence signal from pass 52 — argues for acting on one of the two rather than waiting for a better QVL-pass option to appear, because the evidence of the last six passes is that nothing new is arriving.
 
 Coverage: camofox 3 profiles / 4 navigations (tonitrus, ceneo); trawl 2 scrapes (Micron, Samsung 32GB); curl 5 (ibfusion, senetic ×2, arlt/voelkner/op). Expansion: Samsung 32 GB QVL part (new, dead + 2Rx8), voelkner (new, sold out), arlt/office-partner (dead) — 4 probes, all negative.
+
+---
+
+## Pass 64 — 2026-11-16T19:3xZ (**7th flat pass. Kingston's own site confirms the 96MC spec and links a PCN naming it an "Alternate Part" — but Kingston's compatible-systems list did not resolve through either route**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| Allegro komputera_pl 64MD | unchanged **12 898,20 zł** = €37.21/GB | camofox `--user ceneo` |
+| senetic.pl 64MD | unchanged **11 377,59 zł** = €40.34/GB (**7th pass flat**) | curl |
+| senetic.de 64MD | unchanged **2.582,03 €** = €40.34/GB | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| **Micron 96 GB @ Geizhals (€28.08/GB)** | **still live, 4th consecutive pass** — 1 offer, esus it, €3 207,89 | trawl |
+
+### 2. NEW — Kingston's own product page for the 96MC (source-verified)
+
+Found via `site:kingston.com` search (the direct `/memory/server-premier/<PN>` pattern 404s — the working route is `?partid=`):
+
+> `Part Number: KSM64R52BD4-96MC · DDR5 6400MT/s ECC Registered DIMM **CL52 x80 2RX4 1.1V 288-pin 24Gbit Micron C**`
+> with links to the **Spec Sheet PDF**, a **PCN** page, and **"Compatible Systems"**.
+
+**So Kingston itself states 6400MT/s, 2RX4, 1.1V, Micron C** — matching both our datasheet read and CoreWave's listing. That is the third independent confirmation of the org/speed.
+
+**The PCN is the interesting artefact.** A Google snippet of Kingston's PCN notification (dated **23.02.2026**) reads: *"Alternate part available (closest Alternate is 96GB). Alternate Part: **KSM64R52BD4-96MC** 96GB DDR5-640…"* — i.e. Kingston has issued a change notice where the 96MC is itself the **replacement** part for something else. That is consistent with the pass-52 lifecycle picture (parts being superseded), though I did **not** open the PCN PDF this pass, so the full scope is not established.
+
+### 3. The QVL question — attempted, not resolved
+
+I tried Kingston's own **"Compatible Systems"** list (`/memory/search/systemdevices?partid=KSM64R52BD4-96MC`) as an independent tiebreaker against Gigabyte's QVL:
+
+| Route | Result |
+|---|---|
+| camofox (direct) | **Cloudflare "Performing security verification"** interstitial |
+| trawl (`/scrape`) | page served (tier 3, 291 KB) — but the **system list loads via JS**, not in the payload: **0 mentions of MZ23**, 0 of MZ33, no `systems` array |
+
+So Kingston's compatibility list **did not resolve** through either route this pass. **The open question therefore stands exactly as pass 59 left it**: Gigabyte's QVL (stamp Oct 27, 2026) lists five Samsung 96 GB 2Rx4 6400 parts and **zero Kingston 96 GB**, while validating Kingston 64MD/64MH. Whether that is genuine incompatibility or a per-SKU validation gap still needs GIGABYTE or Kingston to answer. I am recording the attempt rather than assuming the outcome.
+
+### 4. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Kingston `KSM64R52BD4-96MC` — **vendor spec page** | Kingston states **"DDR5 6400MT/s ECC Registered DIMM CL52 x80 2RX4 1.1V 288-pin 24Gbit Micron C"** | Kingston (spec, not a seller) | — | — | https://www.kingston.com/en/memory/search?partid=KSM64R52BD4-96MC |
+| Kingston `KSM64R52BD4-96MC` — PCN | vendor change notice dated 23.02.2026, names 96MC as an **"Alternate Part"** | Kingston PCN | — | — | https://www.kingston.com/en/memory/search/pcn?partid=KSM64R52BD4-96MC |
+
+No purchasable new listing this pass.
+
+### 5. Blocked list
+
+- **kingston.com** — `Performing security verification` (Cloudflare) on the direct camofox route; the **systemdevices** page renders through trawl but its data is JS-loaded and absent from the payload.
+- **kingston.com/en/memory/server-premier/<PN>** — **404**; the working path is `/en/memory/search?partid=<PN>`. (Second time a guessed Kingston URL pattern has failed — recorded.)
+- Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl, senetic.it/.es/.nl, esus-it own search.
+
+### 6. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No. Seventh consecutive flat pass.** Floors hold: **Micron 96 GB @ Geizhals €28.08/GB net** (live 4 passes, single thin seller) and **Kingston 64 MD @ Allegro €37.21/GB** (€28 575,84 total, new + SPD + QVL ✓).
+
+**Value of the pass:** one genuine verification and one honest failure. Kingston's own page now independently confirms the 96MC's **2RX4 / 6400 / 1.1 V** spec (third source agreeing), and it surfaces a **PCN** that positions the 96MC as a replacement part — consistent with the lifecycle signal. But the **compatibility question did not move**: Kingston's list is JS-gated and the QVL verdict from pass 59 stands unchanged. After seven flat passes the market picture is static; what remains is the same two-part buy decision.
+
+Coverage: camofox 4 profiles / 8 navigations (tonitrus, ceneo, kingston ×3, google ×2); trawl 3 scrapes (Micron, 32MH, kingston systemdevices). Expansion: Kingston vendor spec page (new, confirms org), Kingston PCN (new lead), Kingston compatible-systems (attempted, blocked) — 3 new artefacts, 0 new prices.
