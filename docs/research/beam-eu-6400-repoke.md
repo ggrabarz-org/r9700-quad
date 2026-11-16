@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**OPEN QUESTION (pass 58): CoreWave sells the `96MC` that the MZ23-SU0 QVL OMITS** — but CoreWave resells by spec (it also sells "compatible" Samsung/Micron/Supermicro parts), so a reseller listing is **not** QVL evidence. Unresolved whether the omission is genuine incompatibility, an un-updated QVL, or a firmware restriction; only GIGABYTE/Kingston can answer. Also: CoreWave's own **64MD is "Brand New • 3 Years"** at $2,857–3,076 = **€40.37–43.46/GB** — 9–17 % dearer than Allegro, but with a 3-year warranty vs 12 months.
+
 **CONDITION FINDING (pass 57, supersedes the pass-56 floor): CoreWave's Samsung `M321RYGA0PB2-CCP` is now "Clean Pull • 1 Year" = PULLED/USED stock** (was Brand New in passes 54–56), headline $3,261, best 500-pc lot $3,174 = €29.90/GB. Its Micron sibling `MTC40F204WS1RC64BC1` is **still "Brand New"** at $3,587 = **€33.79/GB**. ⇒ Pass-56's €29.90–30.57 "floor" was USED stock. On a NEW like-for-like basis: **Kingston 64MD @ Allegro €37.21/GB (new + SPD-verified + QVL ✓) is the buy**; Micron 96 GB €33.79/GB is the cheapest NEW 96 GB (no SPD sentence). Board rows now carry condition badges.
 
 **CORRECTION #2 (pass 56, superseded by the condition finding above): CoreWave's "More stock" table is a LIST OF INDEPENDENT STOCK LOTS, not quantity breaks** (1000 pcs $3,880 vs 250 pcs $3,245 — non-monotonic). **Cheapest lot that can fill a 12-pc order = 250 pcs @ $3,245 = €30.57/GB → 12× = €35.213 for 1152 GB — the cheapest QVL-passing build on the board.** Pass 54 used the $3,478 headline; pass 55 mis-read the first tier row as a ladder. Also: **senetic has fallen 3 passes running** (11 515,16 → 11 377,59 zł; 2.613,25 → 2.582,03 €), both now €40.34/GB.
@@ -2278,3 +2280,56 @@ Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle,
 **Why this pass matters more than its price moves:** three consecutive passes have now revised the same row — first the sticker, then the lot structure, now the condition. The lesson is that **price is the last thing to trust and condition is the first**: a "cheapest build" claim needs price *and* condition *and* SPD status stated together, which the board now does.
 
 Coverage: camofox 3 profiles / 5 navigations (tonitrus, ceneo, CoreWave ×2); curl 8 (ibfusion, senetic ×5 locales, CoreWave Micron, CoreWave search). Expansion: CoreWave Micron page + Clean-Pull condition discovery, senetic .it/.es/.nl locales, superstorage/esus-it rows — 5 new data points, 1 major condition finding.
+
+---
+
+## Pass 58 — 2026-11-16T14:3xZ (CoreWave also carries the **96MC that the MZ23-SU0 QVL omits** — but quote-only with no firm price; its 64MD is €40.37–43.46/GB, no beat. QVL omission is now a live cross-check question)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **64MD @ Allegro komputera_pl (QVL ✓)** | unchanged **12 898,20 zł** · **buy-it.pl ticked UP +169,45 → 13 071,22** · superstorage 13 372,80 (up last pass) · esus-it 15 180,48 | camofox `--user ceneo` |
+| senetic.pl 64MD | **unchanged 11 377,59 zł** = €40.34/GB (slide stopped, 2 passes flat) | curl |
+| senetic.de 64MD | **unchanged 2.582,03 €** = €40.34/GB | curl |
+| senetic.pl / .de 96MC | unchanged 16 426,27 zł / 3.727,78 € | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| CoreWave Samsung 96 GB | **still "Clean Pull"** (used) — condition change holds | curl (pass 57) |
+
+### 2. NEW — CoreWave carries **9 Kingston `KSM64R52*` products**, including two the QVL verdicts matter for
+
+| Part | CoreWave condition | Price | €/GB | Note |
+|---|---|---|---:|---|
+| **`KSM64R52BD4-64MD`** (64 GB) | **"Brand New • 3 Years"** | headline **$3,076**; lots **$2,857 (30 pcs) / $3,001 (30 pcs) / $3,064 (46 pcs)** | **€40.37 – €43.46** | **QVL ✓ on MZ23-SU0.** 3-year warranty is longer than any other route. 100+ pcs. No beat (Allegro is €37.21) |
+| **`KSM64R52BD4-96MC`** (96 GB) | **"⚪ Confirmed After Order/Quote Request"** | **no firm price** — one lot **$4,289 (1 pc)** = €40.40/GB | ~€40.40 indicative | **NOT on the MZ23-SU0 QVL.** Quote-only. No beat and no QVL backing |
+| `KSM64R52BD4-64MH` | listed | — | — | third Kingston SKU present |
+
+*(Arithmetic note: my first pass at this divided the 64 MD figures by 96 GB instead of 64 — a hardcoded capacity. Corrected above; the 64 MD is €40.37–43.46/GB, not €26.91.)*
+
+### 3. The QVL question this raises
+
+Gigabyte's MZ23-SU0 memory QVL lists `64MD` and `64MH` but **not `96MC`** (pass 54). CoreWave sells the **96MC** and labels it `2Rx4 1.1V` — but CoreWave also lists Samsung/Micron/Supermicro **"compatible"** parts, i.e. they resell by spec, not by QVL membership. So this is **not** evidence that the 96MC works on the board; it is only evidence that it is *sold*.
+
+**Recorded as an open question, not resolved:** is the 96MC's absence from the MZ23-SU0 QVL (a) a genuine incompatibility, (b) a QVL that simply hasn't been updated for that SKU, or (c) a firmware/BIOS-level restriction? The only honest next step is a question to GIGABYTE support or Kingston — I am not going to infer it from a reseller listing.
+
+### 4. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Kingston `KSM64R52BD4-64MD` | **SPD-verified 2Rx4** · QVL ✓ | **CoreWave (LV)** | **$2,857–3,076 ex-VAT = €40.37–43.46/GB** · "(Brand New • 3 Years)" | 100+ pcs · 3–4 d | https://corewavelabs.com/ksm64r52bd4-64md-kingston-64gb-ddr5-6400-rdimm/ |
+| Kingston `KSM64R52BD4-96MC` | SPD-verified 2Rx4 · **QVL ✗** | CoreWave (LV) | **quote-only** (1-pc lot $4,289 ≈ €40.40/GB) | "Confirmed After Order" | https://corewavelabs.com/ksm64r52bd4-96mc-kingston-96gb-ddr5-6400-rdimm/ |
+| buy-it.pl 64MD (Ceneo) | SPD-verified 2Rx4 | buy-it.pl | **13 071,22 zł** (up +169,45) = €2.966,12 = **€46.35/GB** | listed | https://www.ceneo.pl/182533999 |
+
+### 5. Blocked list
+
+Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl, senetic.it/.es/.nl (price markup not extractable).
+- **CoreWave 96MC** — the page exists but carries **no price** ("Confirmed After Order/Quote Request"), so no €/GB is claimable. Recorded as quote-only rather than guessed from the single 1-pc lot.
+
+### 6. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No.** Floors hold: **Kingston 64 MD @ Allegro €37.21/GB** (new, SPD-verified, QVL ✓, PL-shipped, €28.575,84 for 768 GB) and **Micron 96 GB @ CoreWave €33.79/GB** (new, QVL ✓, no SPD). CoreWave's **own** Kingston 64 MD is €40.37–43.46/GB — 9–17 % dearer than Allegro — though it does carry a **3-year warranty** versus Allegro's 12 months, which is the one axis on which it wins.
+
+**Value of the pass:** three new facts, none of them a price win — (1) CoreWave's Kingston 64 MD is new stock with a 3-year warranty but too dear; (2) CoreWave sells the **96MC that the QVL omits**, which sharpens the open QVL question without answering it; (3) the PL market firmed slightly (buy-it.pl +169,45 zł; superstorage up last pass), so Allegro's €12 898,20 is now more clearly the outlier-cheap row in a rising band.
+
+Coverage: camofox 3 profiles / 4 navigations (tonitrus, ceneo); curl 5 (ibfusion, senetic ×2, CoreWave ×2 product pages + search). Expansion: CoreWave Kingston catalogue (9 KSM products), CoreWave 96MC page, buy-it.pl tick — 4 new data points.
