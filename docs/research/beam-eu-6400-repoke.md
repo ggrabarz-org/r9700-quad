@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**BOARD CHANGED 2026-11-16 (user): Supermicro H14SSL-NT → GIGABYTE MZ23-SU0 (Rev. 3.x).** Rule re-verified on the new board's **Memory QVL** (195 rows): **Kingston 64MD/64MH QVL ✓** (2Rx4 1.1v 6400MHz), **Samsung M321R8GA0PB2-CCP (64GB), M321RYGA0PB2-CCP (96GB), M321RAJA0MB2-CCP (128GB) QVL ✓**, but **Kingston 96MC / 96HM / 64HA and Micron MTC40F204WS1RC64BC1 are NOT listed**. ⇒ The old €35.53/GB floor (96MC) is no longer QVL-backed. Cheapest QVL-passing build: **12× Samsung M321RYGA0PB2-CCP @ CoreWave = €32.76/GB net-basis** (no SPD sentence — verify on arrival); SPD-verified alternative: **12× Kingston 64MD @ Allegro €37.21/GB**. Board: 12-channel, 12 DIMM slots, 2DPC-capable to 9 TB, EPYC 9005.
+
 **LIFECYCLE WARNING (pass 52): DigiKey lists `KSM64R52BD4-64MD` as "Obsolete and no longer manufactured" (0 stock) and `-128MB` as "Discontinued at DigiKey" — distributor-level status (NOT a Kingston bulletin; datasheets live, senetic/electronis still sell them). Corroborated by the Proshop.pl 128GB-kit withdrawal and Jacob's first UPWARD tick (€2.853,98 → €2.856,98). Consequence: the 96MC route is both cheaper per GB and the less fragile — waiting now carries a replenishment risk.**
 
 **BOARD RULE CLOSED (pass 48):** Supermicro H14SSL-NT manual MNL-2821 §2.4 p.40 — the EPYC 9005 table rates **RDIMM 1R, 2R, 3DS 2S2R and 2S4R all at 6400 MT/s** (one merged 6400 cell); body text: "up to 3 TB registered ECC DDR5/3DS RDIMM at 6400 MT/s … in 12 slots"; p.41: 12 DIMMs = all slots. **⇒ every 2Rx4 route here (64 GB 64MD/MH/HA, 96 GB 96MC) runs 6400 at full 12-channel population.** Read via camofox PDF viewer — curl=403 Akamai, r.jina.ai=empty, trawl=61 MB body never delivered.
@@ -2004,3 +2006,74 @@ All four sit **above** the electronis/Allegro floors — confirming (again) that
 **Did anything beat the cheapest verified offer? — No.** Floors hold: **96MC @ electronis €35.53/GB (x12 cart-confirmed orderable, org re-confirmed "dual rank, x4")** and **64MD @ Allegro komputera_pl €37.21/GB (PL-shipped)**. The pass's value is **route breadth under the lifecycle warning**: the caveat-class 96 GB band now has **four interchangeable part numbers at one price point** — Samsung `M321RYGA0PB2-CCP`, Micron `MTC40F204WS1RC64BC1`, and the OEM numbers **Supermicro `MEM-DR596L-HL01-ER64`**, Lenovo `4X77A93533`, HPE `P64987-B21` — all 2Rx4, all $3,478/€32.76 net-basis at CoreWave (200+ pcs, 3–5 days, EU warehouse). That is a meaningfully wider fallback set than one week ago, and it is the direct answer to the obsolescence signal: **if the qualified Kingston bins thin out, there are now five part numbers of the same capacity/org to fall back on, from a EU warehouse, at a price that undercuts every qualified route on a like-for-like ex-VAT basis.**
 
 Coverage: camofox 6 profiles / ~11 navigations (tonitrus, electronis PDP, jacob own-shop search, google ×1, supermicro memory search, cc-helper, dd engine); trawl 1 scrape (geizhals 96MC, tier 1); curl 8 (ibfusion, senetic ×2, CoreWave ×2 part searches, mf/cu/twodirect/tk/sw probes). Expansion: Supermicro/Lenovo/HPE OEM part numbers (5 new parts), Jacob own-shop price read, CoreWave OEM band — 6 new parts/sources.
+
+---
+
+## Pass 54 — 2026-11-16T10:2xZ (**BOARD CHANGED by user: H14SSL-NT → GIGABYTE MZ23-SU0. Rule re-verified on the new board's Memory QVL — and it inverts the recommendation: our €/GB floor (Kingston 96MC) is NOT QVL-listed, while Samsung's 96 GB is**)
+
+### 0. What changed and why this pass exists
+
+The user replaced the board: **Supermicro H14SSL-NT → GIGABYTE MZ23-SU0 (Rev. 3.x)**. Everything the RAM tracker asserted about board legality was tied to the H14 manual p.40 ("RDIMM 2R = 6400 MT/s @ 12 slots"). Per instruction, the rule was **re-verified immediately on the new board** rather than carried over.
+
+### 1. The new board, from its own sources
+
+| Fact | Value | Source |
+|---|---|---|
+| Memory topology | **12-channel DDR5 RDIMM per CPU, 12 × DIMMs**, up to **9 TB** in 2 DIMMs-per-channel config | MZ23-SU0 PDP (camofox; curl 403 Akamai) |
+| CPU | EPYC **9005/9004**, single socket | PDP |
+| DDR5-6400 grade | Every 9005 SKU in the CPU-QVL carries **"DDR5-6400"**: 9965/9755 = `DDR5-6400 450/500`, **9555 = `DDR5-6400 320/400`**, 9655/9355/9135/9575F/9745/9645 etc. all `DDR5-6400` | CPU-QVL tab |
+| Manual | Not needed for the memory rule — **the QVL is per-module and authoritative** | — |
+
+Note the topology differs from the H14: this board is **2DPC-capable** (up to 9 TB) rather than 1DPC, so "12 DIMMs" is the 1-DIMM-per-channel full-bandwidth configuration, not the slot ceiling.
+
+### 2. THE MEMORY QVL — per-module verdicts (195 rows, 4800/5600/6400)
+
+Read directly (`Support-QVL?CAT=Mem`, camofox `--user giga`). Verbatim row form: `KSM64R52BD4-64MD Kingston DDR5 64GB Micron-Rambus 2Rx4 1.1v 6400MHz ECC Registered 288-pin`.
+
+| Part we price | MZ23-SU0 QVL | Verdict |
+|---|---|---|
+| **Kingston `KSM64R52BD4-64MD`** | **listed — 2Rx4, 1.1v, 6400MHz** (Micron-Rambus) | **QVL ✓** |
+| Kingston `KSM64R52BD4-64MH` | listed — 2Rx4, 1.1v, 6400MHz (Micron-Renesas) | **QVL ✓** |
+| **Kingston `KSM64R52BD4-96MC`** | **NOT LISTED** | **QVL ✗** |
+| Kingston `KSM64R52BD4-96HM` | NOT listed | QVL ✗ |
+| Kingston `KSM64R52BD4-64HA` | NOT listed | QVL ✗ |
+| Kingston `KSM64R52BD8-32MD` / `-32MH` | listed — but **2Rx8** | QVL ✓ / fails the 2Rx4 directive |
+| **Samsung `M321RYGA0PB2-CCP`** (96 GB) | **listed — 2Rx4, 1.1v, 6400MHz** (Montage, also -CCPWC/-CCPKC/-CCPEC) | **QVL ✓** |
+| **Samsung `M321R8GA0PB2-CCP`** (64 GB) | **listed — 2Rx4, 1.1v, 6400MHz** | **QVL ✓** |
+| **Samsung `M321RAJA0MB2-CCP`** (128 GB) | **listed as 2Rx4** (not the 3DS 2Rx2 class the tracker assumed) | **QVL ✓** |
+| Micron `MTC40F204WS1RC64BC1` (96 GB) | NOT listed (only Micron 96 GB at 5600/4800 appear) | QVL ✗ |
+| Supermicro `MEM-DR596L-HL01-ER64` | n/a — a Supermicro PN, not a module PN | — |
+
+**This inverts yesterday's conclusion.** On the H14 the 96MC was the qualified per-GB floor (€35.53). On the MZ23-SU0 it is **not QVL-backed at all** — while **Samsung's 96 GB part is**, at a *lower* per-GB price.
+
+### 3. Consequence for the build (ladder rebuilt)
+
+| Route | Net total | €/GB | Status |
+|---|---:|---:|---|
+| **12× Samsung `M321RYGA0PB2-CCP` @ CoreWave** | **$41.736 ≈ €37.741 net-basis** | **€32.76** | **QVL ✓** — now the cheapest QVL-passing build, 1152 GB, 230 pcs, EU 4–5 d |
+| **12× Kingston `64MD` @ Allegro komputera_pl** | **€28.575,84** | **€37.21** | **QVL ✓** — 768 GB, SPD-verified, PL-shipped |
+| 12× Kingston `64MD` @ Jacob (geizhals entry) | €28.809,84 | €37.51 | QVL ✓ — non-promo fallback |
+| 12× Kingston `96MC` @ electronis | €40.930,99 | €35.53 | **QVL ✗** — demoted from "floor" to "non-QVL option" |
+| 12× eBay hynix business | €25.939 net-basis | €33.78 | QVL ✗ / no SPD sentence |
+
+**The honest trade is now explicit:** the cheapest **QVL-backed** build is Samsung 96 GB at **€32.76/GB net-basis** — but Samsung publishes **no SPD sentence**, so it carries the SPD-verify-on-arrival gamble. The safest **QVL-backed and SPD-verified** build is the Kingston 64 MD at **€37.21/GB**. The old 96MC floor sits *between* them in price and is backed by neither on this board.
+
+### 4. Board-site changes made
+
+- Header now names **GIGABYTE MZ23-SU0 (Rev. 3.x)**, "12-channel, 12 DIMM slots (2DPC capable, up to 9 TB)".
+- The rule panel is relabelled **"Board rule verified on the current board"** and quotes the MZ23-SU0 **Memory QVL** (not the H14 manual).
+- **Every offer row carries a QVL badge**: 19 `QVL ✓`, 14 `QVL ✗`, 3 `n/a — clone` (a clone can never be on a QVL — an earlier draft wrongly badged one, caught and fixed before commit).
+- **Both KPI cards were rebuilt to read only QVL-passing 2Rx4 offers** (an earlier draft let a "kompatibler Ersatz" clone win the card — fixed).
+- Ladder rebuilt with QVL ✓ / ✗ stated per row.
+
+### 5. Blocked / notes
+
+- **gigabyte.com** returns 403 to curl (Akamai) — the QVL is only reachable through camofox, and only after clicking the **"Memory"** category (`?CAT=Mem`); the default view is the CPU-QVL. Guessing the xlsx QVL URL 404s (same lesson as the geizhals id guess).
+- **96 GB Kingston absence double-checked**: 27 × 96 GB rows exist in the QVL (Samsung, Micron, hynix) and **none is a Kingston 96 GB 6400 part** — so this is a genuine omission, not paging.
+- The MZ23-SU0 datasheet PDF is a 1-page marketing sheet; the memory rule had to come from the QVL, which is stricter and per-module anyway.
+
+### 6. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — The question changed shape.** On the new board the per-GB floor is no longer a QVL part, so the relevant floor is **cheapest QVL-passing: Samsung `M321RYGA0PB2-CCP` 12× @ CoreWave = €32.76/GB net-basis (1152 GB)**, with **Kingston 64MD @ Allegro €37.21/GB (768 GB) as the SPD-verified alternative**. The 96MC's €35.53/GB is no longer a qualified claim on this hardware.
+
+Coverage: camofox 3 profiles / ~10 navigations (gigabyte PDP, CPU-QVL, Memory QVL + category click, google fallback), curl 6 (gigabyte 403s, QVL xlsx 404s, datasheet PDF 200). New sources: GIGABYTE MZ23-SU0 PDP + Memory QVL (195 rows read).

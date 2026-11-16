@@ -47,9 +47,13 @@ for o in data["offers"]:
     best = ' <span class="tag rec">BEST</span>' if o.get("best") else ""
     orgv = str(o.get("org", ""))
     org = f' <span class="tag {"rec" if "2Rx4" in orgv else "bad"}">{html.escape(orgv)}</span>' if orgv else ""
+    qv = o.get("qvl_mz23su0")
+    qtag = ""
+    if qv == "pass": qtag = ' <span class="tag rec" title="listed on the MZ23-SU0 memory QVL">QVL ✓</span>'
+    elif qv == "fail": qtag = ' <span class="tag bad" title="NOT in the MZ23-SU0 memory QVL">QVL ✗</span>'
     flag = "" if o.get("state", "ok") in ("ok", "new") else f' <span class="tag {"warn" if o["state"] in ("stale","unreachable","withdrawn") else "bad"}">{html.escape(o["state"])}</span>'
     rows += f"""<tr>
-      <td data-s="{sk(p.get('net_pln'))}">{html.escape(o['part'])}<br><span class="k">{html.escape(o.get('spec',''))}</span>{best}{org}{flag}</td>
+      <td data-s="{sk(p.get('net_pln'))}">{html.escape(o['part'])}<br><span class="k">{html.escape(o.get('spec',''))}</span>{best}{org}{qtag}{flag}</td>
       <td data-s="{html.escape(o['shop'])}">{html.escape(o['shop'])}<br><span class="k">{html.escape(o.get('country',''))}</span></td>
       <td class="num" data-s="{sk(p.get('gross'))}">{gross}<br><span class="k">{gl}</span></td>
       <td class="num" data-s="{sk(p.get('net'))}">{net}<br><span class="k">{nl}</span></td>
@@ -69,12 +73,20 @@ gen = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
 
 # KPI card 1 is the cheapest full 2Rx4 build (user directive 2026-11-16: 2Rx4 only, so the 384 GB
 # 12x32 tier is gone). Read it from the ladder so the card cannot drift from the table below.
-fullrows = [r for r in (data.get("ladder") or {}).get("rows", []) if r["cap"].startswith("768 GB (12×64")]
-if fullrows:
-    row = min(fullrows, key=lambda r: float(r["net"].replace("€", "").replace(".", "").replace(",", ".")))
-    route = row["route"].split(" @ ")
-    kit_net, kit_label, kit_url = row["net"], f"12× {route[0].split('× ', 1)[-1]}" + (f" — {route[1]}" if len(route) > 1 else ""), row.get("url")
-    kit_cap = "Cheapest qualified 768 GB (12×64, 2Rx4)"
+# KPI 1: cheapest build made only of QVL-PASSING 2Rx4 parts, priced per 12 modules.
+_q = [o for o in data["offers"]
+      if o.get("qvl_mz23su0") == "pass" and "2Rx4" in str(o.get("org", ""))
+      and (o.get("price") or {}).get("net_pln") and (o.get("price") or {}).get("gb")]
+if _q:
+    def _pergb(o):
+        p = o["price"]
+        return p["net"] * (data["fx"][p["cur"]] / data["fx"]["EUR"]) / p["gb"]
+    o = min(_q, key=_pergb)
+    gb12 = o["price"]["gb"] * 12
+    kit_net = money(o["price"]["net"] * 12, o["price"]["cur"])
+    kit_label = f'12× {o["part"].split(" (")[0]} — {o["shop"].split(" (")[0]} · {gb12} GB · €{_pergb(o):.2f}/GB'
+    kit_url = o.get("url")
+    kit_cap = f"Cheapest QVL-passing 2Rx4 build ({gb12} GB)"
 else:
     kit_net, kit_label, kit_url, kit_cap = best_kit.get("twelve_kit_net", 14372), best_kit["part"], best_kit.get("url"), "Cheapest kit"
 
@@ -97,9 +109,17 @@ if lad and lad.get("rows"):
 else:
     LADDER = ""
 
+if _q:
+    _b = min(_q, key=lambda x: _pergb(x))
+    gb_best = f"€{_pergb(_b):.2f}"
+    gb_label = f'{_b["part"].split(" (")[0]} · {_b["shop"].split(" (")[0]}'
+    gb_url = _b.get("url")
+else:
+    gb_best, gb_label, gb_url = best_kit.get("eur_per_gb", "—"), best_kit["part"], best_kit.get("url", "")
+
 brc = data.get("board_rule_check")
 if brc:
-    BOARD_NOTE = (f"<div class='ask'><b>Board rule verified</b> — {html.escape(brc['source'])}<br>"
+    BOARD_NOTE = (f"<div class='ask'><b>Board rule verified on the current board</b> — {html.escape(brc['source'])}<br>"
                   f"<span class='k'>{html.escape(brc['verbatim'])}</span><br>"
                   f"<b>→ {html.escape(brc['conclusion'])}</b></div>")
 else:
@@ -143,10 +163,10 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
   code {{ color:#4cc9f0; }}
 </style></head><body><div class="wrap">
 <h1>RAM offer board — DDR5-6400 RDIMM (JEDEC-SPD rule)</h1>
-<p class="sub">Board: Supermicro H14SSL-NT · CPU: EPYC 9555 · 12 DIMM slots, 1DPC · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). <b>Module type: 2Rx4 only</b> (directive 2026-11-16) — 1Rx8/2Rx8 rows are struck from the ladder. Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
+<p class="sub">Board: <b>GIGABYTE MZ23-SU0 (Rev. 3.x)</b> · CPU: EPYC 9555 · 12-channel, 12 DIMM slots (2DPC capable, up to 9 TB) · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). <b>Module type: 2Rx4 only</b> (directive 2026-11-16) — 1Rx8/2Rx8 rows are struck from the ladder. Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
 <div class="kpi">
   <div class="card"><h2>{kit_cap}</h2><div class="big">{kit_net}</div><span class="k">{html.escape(kit_label)}{f' — <a href="{html.escape(kit_url)}">source ↗</a>' if kit_url else ''}</span></div>
-  <div class="card"><h2>Cheapest per GB (net)</h2><div class="big">{best_kit.get('eur_per_gb','€37.43')}</div><span class="k"><a href="{html.escape(best_kit['url'])}">open the offer ↗</a> · {html.escape(best_kit['part'].split(' (')[0])}</span></div>
+  <div class="card"><h2>Cheapest per GB — QVL-passing</h2><div class="big">{gb_best}</div><span class="k"><a href="{html.escape(gb_url)}">open the offer ↗</a> · {html.escape(gb_label)}</span></div>
   <div class="card"><h2>Updated</h2><div class="big">{gen}</div><span class="k">by the 30-min scheduler · <code>docs/research/beam-eu-6400-repoke.md</code></span></div>
 </div>
 {LADDER}
