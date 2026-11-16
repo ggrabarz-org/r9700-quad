@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**NEW 64 GB FLOOR (pass 66, first movement in nine passes): Allegro komputera_pl cut `KSM64R52BD4-64MD` from 12 898,20 to **12 736,00 zł** (−1,26 %) = **€2 349,55 net = €36.71/GB** (was €37.21) → **768 GB build improves to €28 194,61 net** (−€381,23).** Same seller (2 596 reviews), BLACK WEEKS promo — may fall further or snap back. Micron 96 GB ticked €3 207,89 → €3 209,50 (+0,05 %, noise) = €28.09/GB net, single-seller caveat unchanged.
+
 **MICRON ROUTE QUANTIFIED (pass 65): for the IDENTICAL part (`MTC40F204WS1RC64BC1`, 96 GB 2Rx4, QVL ✓) the Geizhals/esus-it route at €28.08/GB net is 11.5 % cheaper than CoreWave's best lot ($3,370 = €31.74/GB) and 16.9 % below its $3,587 headline — a €4 220,96 saving on 12 pieces.** Geizhals's aggregate page re-read confirms **"1 Angebot"**, i.e. genuinely single-seller. **Buy order: Geizhals first, CoreWave as the stocked fallback** (200 pcs, published "Brand New").
 
 **VENDOR SPEC CONFIRMED (pass 64): Kingston's own product page states `KSM64R52BD4-96MC` = "DDR5 6400MT/s ECC Registered DIMM CL52 x80 **2RX4 1.1V** 288-pin 24Gbit Micron C"** — third independent confirmation of the org/speed — and Kingston publishes a **PCN dated 23.02.2026 naming the 96MC as an "Alternate Part"**, consistent with the pass-52 obsolescence signal. **The QVL question did NOT move:** Kingston's "Compatible Systems" list is Cloudflare-gated for camofox and JS-loaded under trawl (no MZ23 rows in the payload), so Gigabyte's QVL verdict from pass 59 stands. Working Kingston URL is `/en/memory/search?partid=<PN>` — `/memory/server-premier/<PN>` 404s.
@@ -2726,3 +2728,61 @@ No new listings, no new prices.
 **Value of the pass:** it converts "CoreWave vs Geizhals" from a vague preference into a **quantified 11.5 % / €4 221 difference on the identical Micron part number**, and confirms the Geizhals listing is genuinely single-seller (the aggregate page shows "1 Angebot"). That sharpens the buy instruction: **Geizhals first, CoreWave as the stocked fallback**, and the only open risk on the cheap route is whether one merchant can supply 12.
 
 Coverage: camofox 3 profiles / 4 navigations (tonitrus, ceneo); trawl 2 scrapes (Micron product + Geizhals search); curl 6 (ibfusion, senetic ×2, CoreWave Micron page, skroutz, skroutz/ghat/tp probes). Expansion: CoreWave Micron lot table (6 lots read), Geizhals aggregate "1 Angebot" confirmation, 3 aggregator probes (all walled) — 1 new quantified comparison, 2 confirmations, 0 new prices.
+
+---
+
+## Pass 66 — 2026-11-16T21:3xZ (**MOVEMENT after 8 flat passes: Allegro's komputera_pl cut to 12 736,00 zł = €36.71/GB net — new 64 GB floor, −1.26 %. Total-spend leader improves to €28 194,61 net**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **64MD @ Allegro komputera_pl (QVL ✓)** | **DROPPED −162,20 zł: 12 898,20 → 12 736,00 zł** = €2 349,55 net = **€36.71/GB** (was €37.21) | camofox `--user ceneo` |
+| senetic.pl 64MD | unchanged 11 377,59 zł = €40.34/GB (9th pass flat) | curl |
+| senetic.de 64MD | unchanged 2.582,03 € = €40.34/GB | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| **Micron 96 GB @ Geizhals** | **€3 207,89 → €3 209,50** (+€1,61 = 0,05 %, noise) = **€28.09/GB** net | trawl |
+
+### 2. The Allegro drop, verified at source
+
+Ceneo's komputera_pl row now reads:
+
+> `Kingston Rdimm 64GB DDR5 2Rx4 Micron D 6400MHz PC5-51200 KSM64R52BD4-64MD · **BLACK WEEKS DO -50%** · **12 736,00 zł** · Wysyłka od 9,99 zł · Wysyłka do 3 dni · U CIEBIE JUŻ W CZWARTEK! · Firma · Ocena 4,8/5 · 2596 opinii`
+
+Same seller, same review count (2 596), same promo badge. **The price is live and the offer unchanged in every respect except price.**
+
+| Basis | Delivered | Net | €/GB | 12× (768 GB) |
+|---|---:|---:|---:|---:|
+| Goods only | 12 736,00 zł | €2 349,55 | **€36.71** | **€28 194,61** |
+| + 9,99 zł shipping | 12 745,99 zł | €2 351,39 | €36.74 | €28 216,73 |
+
+**This is the first real movement since pass 55** and it matters twice: the 64 GB per-GB floor falls **€37.21 → €36.71**, and the **total-spend leader improves €28 575,84 → €28 194,61 net** (−€381,23).
+
+### 3. Where the ladder now sits
+
+| Route | €/GB | Capacity | Status |
+|---|---:|---:|---|
+| Micron 96 GB @ Geizhals | **€28.09** | 1152 GB · €32 348 | QVL ✓ new, **1 seller**, verify stock |
+| Samsung 96 GB @ CoreWave | €29.90 | 1152 GB · €34 442 | QVL ✓ but **USED (Clean Pull)** |
+| Micron 96 GB @ CoreWave 50+ lot | €31.74 | 1152 GB · €36 569 | QVL ✓ new, quote-based |
+| **Kingston 64 MD @ Allegro** | **€36.71** | 768 GB · **€28 194,61** | **QVL ✓ + SPD ✓ + retail, PL-shipped** |
+| Kingston 64 MD @ Jacob | €37.51 | 768 GB · €28 809,84 | QVL ✓ + SPD ✓, non-promo fallback |
+
+The Allegro cut narrows the paper-trail premium over the Micron route from **€4 227 to €4 154** on total spend, and keeps Kingston the answer when SPD verification and a published retail price matter more than the last €4k.
+
+### 4. NEW listings
+
+No new part numbers this pass — one price cut, one noise-level tick.
+
+### 5. Blocked list
+
+Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl, senetic.it/.es/.nl, esus-it own search, kingston.com compatible-systems (JS-gated), skroutz/geizhals.at/toppreise (pass 65).
+
+### 6. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — YES, and it is the first change in nine passes.** **Allegro's komputera_pl cut the 64 GB part to 12 736,00 zł = €36.71/GB net**, taking the 64 GB floor below €37 for the first time and improving the **768 GB total to €28 194,61 net**. The Micron 96 GB route stays cheaper per GB at €28.09 (moved +€1,61, noise) and unchanged in its single-seller caveat.
+
+**Why this matters:** eight flat passes suggested the market was stuck. One promo-driven cut shows it is not — and that the "BLACK WEEKS" promo is the mechanism. That makes the Allegro price the one to watch: it may fall further, or snap back when the promo ends. **If the 768 GB build is the choice, this is a better moment than any of the last eight passes.**
+
+Coverage: camofox 3 profiles / 4 navigations (tonitrus, ceneo + source confirmation of the new price and seller); trawl 1 scrape (Micron). Re-check: ibfusion, senetic ×2 via curl. 2 price movements, 0 new parts.
