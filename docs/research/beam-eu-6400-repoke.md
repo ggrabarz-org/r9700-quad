@@ -2,7 +2,9 @@
 
 ## Standing reference (for scheduler passes)
 
-**CORRECTION (pass 55): CoreWave's $3,478 Samsung-96GB price is the 1-PIECE sticker. Its own tier table: 6 pcs $3,859, 36–94 pcs $3,804 ⇒ a 12-piece order is €35.83–36.35/GB, NOT €32.76 as pass 54 stated.** QVL-passing order is therefore: **Kingston 64MD @ Allegro €37.21/GB** (QVL ✓ + SPD-verified + retail-published, 768 GB, €28.575,84) → Samsung 96 GB @ CoreWave €36.35/GB (QVL ✓ only, no SPD, 1152 GB) → Samsung 96 GB @ Geizhals DE €40.58/GB. Also: senetic keeps sliding (pl 11 411,82 zł / de 2.589,80 €, two passes of falls).
+**CORRECTION #2 (pass 56, supersedes pass 55): CoreWave's "More stock" table is a LIST OF INDEPENDENT STOCK LOTS, not quantity breaks** (1000 pcs $3,880 vs 250 pcs $3,245 — non-monotonic). **Cheapest lot that can fill a 12-pc order = 250 pcs @ $3,245 = €30.57/GB → 12× = €35.213 for 1152 GB — the cheapest QVL-passing build on the board.** Pass 54 used the $3,478 headline; pass 55 mis-read the first tier row as a ladder. Also: **senetic has fallen 3 passes running** (11 515,16 → 11 377,59 zł; 2.613,25 → 2.582,03 €), both now €40.34/GB.
+
+**CORRECTION (pass 55, partly superseded): CoreWave's $3,478 Samsung-96GB price is the 1-PIECE sticker. Its own tier table: 6 pcs $3,859, 36–94 pcs $3,804 ⇒ a 12-piece order is €35.83–36.35/GB, NOT €32.76 as pass 54 stated.** QVL-passing order is therefore: **Kingston 64MD @ Allegro €37.21/GB** (QVL ✓ + SPD-verified + retail-published, 768 GB, €28.575,84) → Samsung 96 GB @ CoreWave €36.35/GB (QVL ✓ only, no SPD, 1152 GB) → Samsung 96 GB @ Geizhals DE €40.58/GB. Also: senetic keeps sliding (pl 11 411,82 zł / de 2.589,80 €, two passes of falls).
 
 **BOARD CHANGED 2026-11-16 (user): Supermicro H14SSL-NT → GIGABYTE MZ23-SU0 (Rev. 3.x).** Rule re-verified on the new board's **Memory QVL** (195 rows): **Kingston 64MD/64MH QVL ✓** (2Rx4 1.1v 6400MHz), **Samsung M321R8GA0PB2-CCP (64GB), M321RYGA0PB2-CCP (96GB), M321RAJA0MB2-CCP (128GB) QVL ✓**, but **Kingston 96MC / 96HM / 64HA and Micron MTC40F204WS1RC64BC1 are NOT listed**. ⇒ The old €35.53/GB floor (96MC) is no longer QVL-backed. Cheapest QVL-passing build: **12× Samsung M321RYGA0PB2-CCP @ CoreWave = €32.76/GB net-basis** (no SPD sentence — verify on arrival); SPD-verified alternative: **12× Kingston 64MD @ Allegro €37.21/GB**. Board: 12-channel, 12 DIMM slots, 2DPC-capable to 9 TB, EPYC 9005.
 
@@ -2142,3 +2144,68 @@ So CoreWave's own table says: **buy 6 → $3,859/pc; buy 36–94 → $3,804/pc.*
 **Process note:** the error was using a headline price for a quantity where the vendor publishes a tier table. The same class of mistake as the earlier VAT slips — a number read correctly but applied to the wrong basis. The board now shows CoreWave's tier prices in the row's spec rather than only the sticker.
 
 Coverage: camofox 3 profiles / ~6 navigations (tonitrus, ceneo, ceneo-retry); trawl 1 scrape (geizhals Samsung 96); curl 6 (ibfusion, senetic ×2, CoreWave product page, plus the two file reads). Expansion: CoreWave tier table (new), Geizhals Samsung-96 street price (new), senetic re-tick — 3 new price data points.
+
+---
+
+## Pass 56 — 2026-11-16T12:3xZ (**second correction: CoreWave's table is a LOT LIST, not quantity breaks — 250 pcs @ $3,245 = €30.57/GB is the real QVL-passing floor, and it undercuts everything else on the board**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **64MD @ Allegro komputera_pl (QVL ✓)** | unchanged **12 898,20 zł** · buy-it 12 901,77 · superstorage 13 277,55 · SuperTech 13 482,99 | camofox `--user ceneo` |
+| **senetic.pl 64MD** | **third consecutive fall: 11 377,59 zł netto** (11 515,16 → 11 480,61 → 11 411,82 → 11 377,59) = **€40.34/GB** | curl |
+| **senetic.de 64MD** | **2.582,03 € exkl.** (2.613,25 → 2.605,41 → 2.589,80 → 2.582,03) = **€40.34/GB** | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+
+### 2. **THE CORRECTION — CoreWave lists independent stock LOTS, not quantity tiers**
+
+Pass 55 said "$3,478 is the 1-piece sticker, 6 pcs costs $3,859". Reading the **whole** "More stock for this part" table (which I had only partly captured) shows the real structure — these are **separate stock tranches with their own quantity, price and update date**, and the price is **not monotonic in quantity**:
+
+| Lot | Unit price (ex-VAT) | €/GB | Lead | Updated | Can fill 12? |
+|---|---:|---:|---|---|---|
+| **250 pcs** | **$3,245** | **€30.57** | 4-5 d | 9 Nov | **yes** |
+| 50+ pcs | $3,370 | €31.74 | 4-5 d | 4 Nov | yes |
+| 230 pcs / 2000 pcs | $3,478 | €32.76 | 4-5 d | 6 Nov / 4 Nov | yes |
+| 20 pcs | $3,533 | €33.28 | 4-5 d | 30 Oct | yes |
+| 521 pcs | $3,596 | €33.87 | 3-4 d | 9 Nov | yes |
+| 190+ pcs | $3,652 | €34.40 | 4-5 d | 9 Nov | yes |
+| 94 / 36 pcs | $3,804 | €35.83 | 5-6 d | 9 Nov | yes |
+| 6 pcs | $3,859 | €36.35 | 2-3 d | 9 Nov | no |
+| 1000 pcs | $3,880 | €36.83 | 4-5 d | 9 Nov | yes |
+
+**1000 pcs costs $3,880 while 250 pcs costs $3,245** — that is only possible if these are independent lots (different purchase batches), not a quantity ladder. My pass-55 reading treated them as a ladder and picked the 6-pc row; both readings were wrong in the same way: **guessing the basis instead of reading the structure.**
+
+**Corrected floor: the best lot that can actually fill a 12-piece order is 250 pcs @ $3,245 = €2.934,42 = €30.57/GB**, i.e. **12× = €35.213 for 1152 GB** — the cheapest QVL-passing build on the board by a wide margin, and cheaper per GB than anything else tracked.
+
+### 3. Resulting QVL-passing order
+
+| Route | Capacity | Net total | €/GB | Status |
+|---|---:|---:|---:|---|
+| **12× Samsung `M321RYGA0PB2-CCP` @ CoreWave, 250-pc lot** | 1152 GB | **€35.213** | **€30.57** | QVL ✓ · **no SPD sentence** · lot-specific, 9 Nov stamp |
+| 12× Kingston `64MD` @ Allegro | 768 GB | €28.575,84 | €37.21 | QVL ✓ · SPD-verified · retail-published |
+| 12× Samsung 96 GB @ Geizhals DE | 1152 GB | €46.749 | €40.58 | QVL ✓ · no SPD |
+
+So: **CoreWave is the cheapest way to buy capacity, Allegro is the cheapest way to buy 768 GB with a full paper trail** (QVL + SPD + published retail price). A 1152 GB build at CoreWave costs €6.637 more than a 768 GB build at Allegro — you are paying ~31 % more for 50 % more memory.
+
+### 4. NEW / changed listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Samsung `M321RYGA0PB2-CCP` 96 GB | **no SPD sentence** (Samsung) | **CoreWave, 250-pc lot** | **$3,245 ex-VAT = €2.934,42 = €30.57/GB** | 250 pcs · 4-5 d · stamp 9 Nov | https://corewavelabs.com/m321ryga0pb2-ccp-samsung-96gb-ddr5-6400-rdimm/ |
+| same, 50+ lot | no SPD sentence | CoreWave | $3,370 = €3.047,45 = €31.74/GB | 50+ pcs · 4 Nov | same |
+| senetic.pl / .de 64MD | SPD-verified 2Rx4 | senetic | 11 377,59 zł / 2.582,03 € = **€40.34/GB** | falling 3 passes | senetic search |
+
+### 5. Blocked list
+
+Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl.
+- CoreWave requires a **quote request** for a firm price (their page: prices "confirmed on quotation"); the lots above are indicative, not cart prices. I did not submit a quote.
+
+### 6. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — YES, substantially: Samsung `M321RYGA0PB2-CCP` at CoreWave's 250-pc lot, $3,245 ex-VAT = €30.57/GB, 12× = €35.213 for 1152 GB**, QVL-passing on the MZ23-SU0. This beats the Allegro 64 GB route per GB by 18 % and the Geizhals Samsung route by 25 %. Caveats that travel with it: **quote-based (not a cart price), lot-specific stock (250 pcs, 9 Nov stamp), ex-VAT, and Samsung publishes no SPD sentence.**
+
+**Two corrections in two passes on the same row is a pattern worth naming:** I twice inferred the pricing basis from a partial read (pass 54: headline = price; pass 55: first tier row = ladder). The fix both times was to read the *complete* table and check whether the numbers are monotonic. The board row now carries the full lot list rather than a single figure.
+
+Coverage: camofox 3 profiles / ~5 navigations (tonitrus, ceneo, CoreWave product page ×2); curl 4 (ibfusion, senetic ×2, CoreWave). Expansion: full CoreWave lot table (11 lots), senetic 3-pass trend — 12 new price points.
