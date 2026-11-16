@@ -109,6 +109,16 @@ Brand New "AMD EPYC-9275F CPU II … 3 yr warranty" listing.
 filter misses those — for any listing far below the 25th-percentile price, read
 the description and the images before believing the SKU.
 
+**Status re-checked 2026-11-16:** the item is **still live — "Quantity: 2
+available"**, Buy-It-Now present, US $660.28, no sold/ended markers. It was not
+bought and did not sell out between the two checks. It initially *appeared* gone
+because the exact-phrase search `"9275F" "24 Core 48 Threads" "4.1-4.5GHz"`
+stopped surfacing it: the title ends in a stray hyphen and the price is
+**EUR-denominated**, so the relevance and ascending-price sorts can bury it. The
+looser phrase `"Server CPU Processors" EPYC 9275F` finds it. That was a search
+artifact, not a market event — worth remembering before reading "not found" as
+"removed".
+
 ## What is actually cheap in valid, retail-clocked form
 
 - **9355 — $2,130 used / $2,299 new.** Still the value pick, and consistent with
