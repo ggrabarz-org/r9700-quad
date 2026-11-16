@@ -68,6 +68,14 @@ if lad and lad.get("rows"):
 else:
     LADDER = ""
 
+brc = data.get("board_rule_check")
+if brc:
+    BOARD_NOTE = (f"<div class='ask'><b>Board rule verified</b> — {html.escape(brc['source'])}<br>"
+                  f"<span class='k'>{html.escape(brc['verbatim'])}</span><br>"
+                  f"<b>→ {html.escape(brc['conclusion'])}</b></div>")
+else:
+    BOARD_NOTE = ""
+
 page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>R9700 ×4 — RAM offer board (DDR5-6400 RDIMM, JEDEC-SPD rule)</title><style>
   :root {{ --bg:#101317; --panel:#171c22; --text:#e8edf2; --muted:#96a3b2; --line:#2b3540; --accent:#f5a524; }}
@@ -75,6 +83,9 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
   .wrap {{ max-width:1100px; margin:0 auto; padding:36px 24px 60px; }}
   h1 {{ font-size:26px; margin:0 0 4px; letter-spacing:-.02em; }}
   .sub {{ color:var(--muted); margin:0 0 20px; }}
+  .ask {{ background:linear-gradient(180deg,#12341f,#101317); border:1px solid #1f6b3d; border-radius:12px; padding:14px 18px; margin:0 0 20px; }}
+  .ask b {{ color:#7ee2a8; }}
+  .ask .k {{ color:#9fc7b0; }}
   .kpi {{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:22px; }}
   .card {{ background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }}
   .card h2 {{ margin:0; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }}
@@ -101,6 +112,7 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
   <div class="card"><h2>Updated</h2><div class="big">{gen}</div><span class="k">by the 30-min scheduler · <code>docs/research/beam-eu-6400-repoke.md</code></span></div>
 </div>
 {LADDER}
+{BOARD_NOTE}
 <table>
 <thead><tr><th>Part / spec</th><th>Shop</th><th class="num">Price (net / gross)</th><th class="num">€/GB net</th><th>Stock</th><th class="num">Checked</th><th>Link</th></tr></thead>
 <tbody>

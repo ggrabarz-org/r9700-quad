@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**BOARD RULE CLOSED (pass 48):** Supermicro H14SSL-NT manual MNL-2821 §2.4 p.40 — the EPYC 9005 table rates **RDIMM 1R, 2R, 3DS 2S2R and 2S4R all at 6400 MT/s** (one merged 6400 cell); body text: "up to 3 TB registered ECC DDR5/3DS RDIMM at 6400 MT/s … in 12 slots"; p.41: 12 DIMMs = all slots. **⇒ every 2Rx4 route here (64 GB 64MD/MH/HA, 96 GB 96MC) runs 6400 at full 12-channel population.** Read via camofox PDF viewer — curl=403 Akamai, r.jina.ai=empty, trawl=61 MB body never delivered.
+
 **Bests (update as they move):** **64 GB CLASS BEST: KSM64R52BD4-64MD @ Allegro komputera_pl (via Ceneo 182533999) 12 898,20 zł +9,99 shipping = 12 908,19 zł delivered = €2.381,32 net = €37.21/GB — 768 GB = €28.575,84 net (promo-badged, re-check at order; 2nd shop buy-it.pl 12 901,77 zł confirms)** · **NEW FLOOR: KSM64R52BD4-96MC @ electronis.de €4.058,99 gross = €3.410,92 net = €35.53/GB (SPD-verified, 2-4 Werktage; geizhals a3590379, 18 Angebote band 4.058,99–5.091,43) — 12× = €40.930,99 net for 1.152 TB** · **KSM64R52BD8-32MH 32 GB 2Rx8 (SPD-verified) — geizhals a3842215, 27 Angebote, ab €1.361,82 gross = €1.144,39 net = €35.76/GB (384 GB tier: 12× = €13.732,64)** · barax (geizhals) KSM64R52BD8-32MD €1.250,00 gross = €32.83/GB (single offer, qty unverified) · jacob.de own shop KSM64R52BD4-96MC €4.243,34 gross = €3.565,83 net = €37.14/GB (SPD-verified, 'Sofort lieferbar'; 96 GB 2Rx4 @12ch needs manual check) · Jacob Elektronik (via geizhals) KSM64R52BD4-64MD €2.853,98 gross ≈ €2.398,30 net = €37.47/GB (64 GB floor; own-shop rate €2.911,06) · ibfusion KSM64R52BD4-64MD €2.481 net (5 pcs) · eBay IT-Planet 64MD €2.899,34 inkl.MwSt 3 pcs · eBay hynix business 336558516150 €2.547,80 (50 pcs, SPD caveat) · eBay Mem-Store 32 GB clone (brand MB, KSM64R52BD8-32MH-MB) €1.105,23 = €29.02/GB net-basis (8 pcs, ships CA, no SPD) · **CoreWave (LV) caveat class: Samsung 48 GB 6400 €30.71/GB net-basis (250 pcs, 3–4 d), 96 GB €32.76/GB (230 pcs), QVL 64 GB M321R8GA0PB2-CCP €51.45/GB (500 pcs)** · Proshop.pl kit 22 245,53 zł netto (5–6 d) · Tonitrus CCP €2.667,65 (50 pcs) · senetic.pl 64MD 11 515,16 zł netto / 96MC 16 426,27 zł · senetic.de CWM €971 / CCP €3.387,48 / 3DS €6.175,58. **CAVEAT CLASS (no SPD sentence): CoreWave Labs LV — Samsung 48 GB M321R6GA3PB2-CCP $1,630 = €30.71/GB (250 pcs, EU, 3–4 d); 96 GB M321RYGA0PB2-CCP $3,478 = €32.76/GB (230 pcs); 256 GB M321RBJA0M22-CLP $9,565 = €33.79/GB (50 pcs); exact QVL 64 GB M321R8GA0PB2-CCP $3,641 = €51.45/GB (500 pcs). USD→EUR 0.90429 (NBP 2026-11-13).**
 **Shops pool (rotate >=3/pass):** Amazon.de/.pl · eBay.de/EU · geizhals.de (trawl) · idealo · Kaufland · Otto · Kleinanzeigen (leads) · Dell/HP/Lenovo/Fujitsu OEM channels · bargainhardware.co.uk (trawl) · offtek · kingstonmemoryshop.co.uk + memorycow.co.uk (Algolia app C7SR80KDDJ, key 30d27cecbb10f11beb035027fce892c3) · serverpartdeals · memory.net · abstock (conn refused 2026-11-16) · itpro.lt · mem-tek.fr · Komputerbay · ebattery.com.au · corewavelabs.com · senetic.fr/.pl/.de · ibfusion · jacob.de (Jacob Elektronik — camofox only, entry https://www.jacob.de/search?search=<PN>) · barax (AT/DE, geizhals row) · geniuzcom.de · e-tec.at/DiTech.at · geizhals product tables a3452629/a3842215/a3452640/a3590379 (96MC)/a3590377 (64HA)/a3528339 (Samsung 96) · corewavelabs.com (LV; read via /server-memory/?q=<any> — /pricelist/ is JS-only; quote-based, repricing weekly).
 **Parts pool:** KSM64R52BD4-64MD/-64MH/-64HA · KSM64R52BD4-96MC · KSM64R52BD8-32MD/-32MH/-32HA · KF572RH38RBK4-128 · KF576RH40RB-32 single · M321R8GA0EB2-CCP · M321R8GA0PB2-CCP · MTC40F2046S1RC64BH1/-BD2 · HMCG94AHBRA480N / HMCG94BDJMA080N · MEM-DR564MC-ER64 · V-Color RDIMM JEDEC 6400 4x32 · generic "DDR5-6400 ECC RDIMM 64 GB"/"32 GB" site searches.
@@ -1662,3 +1664,55 @@ Coverage: 11 datasheet pulls (Kingston ×8 + kit + 2 404s, CoreWave listing page
 **Did anything beat the cheapest verified offer? — No.** Under 2Rx4-only the floors hold: **€35.53/GB qualified (12× 96MC @ electronis = €40.930,99 net for 1.152 TB)** and **€37.21/GB qualified 64 GB (12× 64MD @ Allegro = €28.575,84 net for 768 GB)**. New this pass: **Proshop.de is a real but dearer source** (€39.15/GB 64 GB, €40.64/GB 96 GB, both 2-pc-capped), **hynix's Geizhals route is priced at €46.80/GB** (six times its own eBay business route — the eBay item remains the only cheap hynix door), and the **Micron 96 GB at CoreWave is confirmed 2Rx4** (€33.79/GB net-basis), which widens the caveat class to a second manufacturer: the 1.152 TB caveat build now has a Micron option alongside the Samsung one.
 
 Coverage: camofox 4 profiles / ~10 navigations (proshop ×3 incl. the two Proshop.de SKUs, tonitrus, ceneo, morele ×2, galaxus); trawl 4 scrapes (96MC, 64MD, hynix page) + 1 restart; curl 6 (ibfusion, senetic ×3 locales, CoreWave Micron, proshop.de/dustin 403 probes). Expansion: Proshop.de as a source, CoreWave Micron 96 GB, Geizhals hynix, senetic.fr, morele/komputronik/galaxus probes — 7 new sources/parts.
+
+---
+
+## Pass 48 — 2026-11-16T05:0xZ (**H14SSL-NT MANUAL READ AT LAST — the 9005 rank table confirms 6400 MT/s for RDIMM 2R, so every 2Rx4 route in this hunt is board-legal; floors hold**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **96MC @ electronis (€/GB floor)** | **unchanged €4.058,99** · Geizhals a3590379 `ab 4.058,99`, 18 Angebote, stamp 16.11. | trawl |
+| **64MD @ Jacob (DE 64 GB best)** | **unchanged €2.853,98** · Geizhals a3452640, 17 Angebote | trawl |
+| **64MD @ Allegro (PL 64 GB best)** | level unchanged: Ceneo 12 898,20 zł **[promo]** · buy-it.pl 12 901,77 · superstorage 13 277,55 · SuperTech 13 432,99 | camofox `--user ceneo` |
+| Proshop.pl kit | unchanged 27 362,00 / **22 245,53 zł netto** · 6–7 dni (2Rx8 — excluded by the directive) | camofox `--user proshop` |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox `--user tonitrus` |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| senetic.pl 64MD / 96MC | unchanged 11 515,16 / 16 426,27 zł netto | curl |
+| senetic.de 64MD / 96MC | unchanged 2.613,25 / 3.727,78 € exkl. MwSt | curl |
+
+### 2. **THE OPEN ITEM CLOSED — Supermicro H14SSL-NT manual, section 2.4, page 40**
+
+Reached for the first time in 6 passes by opening the **61 MB PDF in camofox's own pdf.js viewer** (`camofox open <pdf-url> --user smc`) and jumping with the viewer's page-number spinbutton. Verbatim from the page:
+
+> "Populating RDIMM/RDIMM 3DS DDR5 Memory Modules with AMD EPYC **9005** Series Processors
+> | Type | DIMM Population | Max Frequency 6400 MT/s Grade | 5600 | 4800 |
+> | RDIMM | 1R (1 rank) | **6400** | 5600 | 4800 |
+> | | 2R (2 ranks) | *(merged — same 6400 cell)* | | |
+> | 3DS RDIMM | 2S2R (4 ranks) | *(merged — same 6400 cell)* | | |
+> | 3DS RDIMM | 2S4R (8 ranks) | *(merged — same 6400 cell)* | | |"
+
+The 6400 column is a **single merged cell spanning 1R, 2R, 2S2R and 2S4R** — confirmed visually on the rendered page (page 40 screenshot) *and* in the text layer. Body text above the table: *"The motherboard supports up to 3 TB registered ECC DDR5/3DS RDIMM at **6400 MT/s** (AMD EPYC 9005 Series processor) … in 12 slots"*. Page 41's population table confirms **12 DIMMs = all 12 slots populated** is the validated configuration.
+
+**What this unlocks:** the `2R` row covers every 2Rx4 part this hunt has priced — the **64 GB 64MD** (768 GB build) and the **96 GB 96MC** (1.152 TB build) both run **6400 at full 12-channel population** on the H14SSL-NT. The €35.53/GB 1.152 TB route is **board-legal**, not a gamble. (Caveat unchanged: legality ≠ SPD-6400; the Kingston datasheet sentence remains the qualifier, and the 96MC is SPD-verified.)
+
+### 3. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Kingston `KSM64R52BD4-96HM` (96 GB 2Rx4) | **SPD-verified** (datasheet pass 43) | **Geizhals a3973312 (10 Angebote)** | **ab €4.742,17 = €3.985,02 net = €41.51/GB** | 10 Angebote · Jacob row €4.895,41 | https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96hm-a3973312.html |
+
+No beat — the 96HM bin sits €5.98/GB above the 96MC at electronis.
+
+### 4. Blocked list
+
+- **supermicro.com direct PDF** — 403 Akamai to curl **and** to `r.jina.ai` returns an empty body; the only working route is **camofox's PDF viewer** (now the documented method). Note trawl *did* pull the 61 MB body server-side (`bytes=61398187`) but never handed it to a client within a timeout.
+- **alternate.de / arlt.com / mindfactory.de search URLs** — 404/200-but-empty via curl this pass (Mindfactory served a 2 KB stub); the Geizhals offer rows remain the working window into Mindfactory pricing.
+- **geizhals `a3846113`** — my first guess at the 96HM page id resolved to an unrelated product (sports goods); the correct id is **a3973312**, found via the `fs=` search. Lesson: never construct geizhals ids, always search.
+
+### 5. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No.** Floors hold: **€35.53/GB (12× 96MC @ electronis = €40.930,99 net for 1.152 TB)** and **€37.21/GB (12× 64MD @ Allegro = €28.575,84 net for 768 GB)**. **The pass's real result is the manual:** the 2R rank class runs 6400 at 12 slots on this board, which removes the last structural doubt over the 96 GB 2Rx4 route — the €40.930,99 / 1.152 TB build is now fully legal, fully priced and fully SPD-verified. Its only remaining soft spot is the Allegro-scale stock question, not the electrical one.
+
+Coverage: camofox 5 profiles / ~12 navigations (smc ×6 incl. viewer page-jumps + 3 screenshots, proshop, tonitrus, ceneo); trawl 4 scrapes (96MC, 64MD, 96HM search+page) ; curl 7 (ibfusion, senetic ×2, alternate/arlt/mindfactory probes, supermicro direct). Expansion: Geizhals 96HM (new), the manual (new capability), alternate/arlt/mindfactory probes — 4 new sources/capabilities.
