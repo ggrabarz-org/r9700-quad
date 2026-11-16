@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**MICRON ROUTE QUANTIFIED (pass 65): for the IDENTICAL part (`MTC40F204WS1RC64BC1`, 96 GB 2Rx4, QVL ✓) the Geizhals/esus-it route at €28.08/GB net is 11.5 % cheaper than CoreWave's best lot ($3,370 = €31.74/GB) and 16.9 % below its $3,587 headline — a €4 220,96 saving on 12 pieces.** Geizhals's aggregate page re-read confirms **"1 Angebot"**, i.e. genuinely single-seller. **Buy order: Geizhals first, CoreWave as the stocked fallback** (200 pcs, published "Brand New").
+
 **VENDOR SPEC CONFIRMED (pass 64): Kingston's own product page states `KSM64R52BD4-96MC` = "DDR5 6400MT/s ECC Registered DIMM CL52 x80 **2RX4 1.1V** 288-pin 24Gbit Micron C"** — third independent confirmation of the org/speed — and Kingston publishes a **PCN dated 23.02.2026 naming the 96MC as an "Alternate Part"**, consistent with the pass-52 obsolescence signal. **The QVL question did NOT move:** Kingston's "Compatible Systems" list is Cloudflare-gated for camofox and JS-loaded under trawl (no MZ23 rows in the payload), so Gigabyte's QVL verdict from pass 59 stands. Working Kingston URL is `/en/memory/search?partid=<PN>` — `/memory/server-premier/<PN>` 404s.
 
 **QVL SHORTLIST COLLAPSED (pass 63): of the SIX QVL-passing 2Rx4 6400 parts on the MZ23-SU0, only TWO are buyable new in the EU — Kingston 64MD @ Allegro (€37.21/GB, new+SPD+retail) and Micron 96 GB @ Geizhals (€28.08/GB net, new, single thin seller).** 64MH is buyable but dearer (€39.27); Samsung `M321RYGA0PB2` is used/quote-only; `M321R8GA0PB2-CCP` and `MDRRWM4QDBC2-3*` have **zero** EU offers. With the pass-52 DigiKey obsolescence signal, **waiting for a better QVL-pass option has no supporting evidence after six flat passes.**
@@ -2668,3 +2670,59 @@ No purchasable new listing this pass.
 **Value of the pass:** one genuine verification and one honest failure. Kingston's own page now independently confirms the 96MC's **2RX4 / 6400 / 1.1 V** spec (third source agreeing), and it surfaces a **PCN** that positions the 96MC as a replacement part — consistent with the lifecycle signal. But the **compatibility question did not move**: Kingston's list is JS-gated and the QVL verdict from pass 59 stands unchanged. After seven flat passes the market picture is static; what remains is the same two-part buy decision.
 
 Coverage: camofox 4 profiles / 8 navigations (tonitrus, ceneo, kingston ×3, google ×2); trawl 3 scrapes (Micron, 32MH, kingston systemdevices). Expansion: Kingston vendor spec page (new, confirms org), Kingston PCN (new lead), Kingston compatible-systems (attempted, blocked) — 3 new artefacts, 0 new prices.
+
+---
+
+## Pass 65 — 2026-11-16T20:3xZ (8th flat pass. **CoreWave's Micron re-read with its lot table: its best lot is $3,370 = €31.74/GB — the Geizhals route is 11.5 % cheaper for the identical part. Geizhals confirms "1 Angebot" for the Micron, i.e. genuinely single-seller**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| Allegro komputera_pl 64MD | unchanged **12 898,20 zł** = €37.21/GB | camofox `--user ceneo` |
+| senetic.pl 64MD | unchanged **11 377,59 zł** = €40.34/GB (**8th pass flat**) | curl |
+| senetic.de 64MD | unchanged **2.582,03 €** = €40.34/GB | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| **Micron 96 GB @ Geizhals** | **unchanged €3 207,89, 5th consecutive read** | trawl |
+
+### 2. **Same part, two routes — Geizhals beats CoreWave by 11.5 %**
+
+CoreWave's Micron page still reads **"Brand New • 1 Year"**, 200 pcs, headline $3,587 — but its lot table has a **cheaper 50+ lot at $3,370**. Comparing the *identical* part number across both routes, on a net basis:
+
+| Route | Net per module | €/GB | 12× (1152 GB) |
+|---|---:|---:|---:|
+| **Geizhals / esus it** | €2 695,71 (from €3 207,89 gross ÷1.19) | **€28.08** | **€32 348,47** |
+| CoreWave, 50+ lot | €3 047,45 ($3,370 ex-VAT) | €31.74 | €36 569,43 |
+| CoreWave, headline | €3 243,68 ($3,587 ex-VAT) | €33.79 | €38 924,20 |
+
+**So Geizhals is 11.5 % cheaper per GB than CoreWave's *best* lot** (and 16.9 % cheaper than its headline) — a **€4 220,96 saving on a 12-piece order** for the same Micron part number. CoreWave's other lots are worse still: $3,783 (€35.63/GB), $4,076 (€38.39), $4,791 (€45.13), $4,891 (€46.07).
+
+**This settles the route question for the 96 GB build:** if the Geizhals seller can supply 12 pieces, it is decisively the cheaper source for this exact part — and CoreWave becomes the *fallback* (deep 200-pc stock, published "Brand New", but ~11–17 % dearer).
+
+### 3. Single-seller confirmed at the aggregate level
+
+Re-read the Geizhals product page directly: it shows **"1 Angebot"** with `um € 3 207,89` — so the Micron 96 GB really does have exactly **one** EU seller, not a partial render. That is worth stating plainly: a 12-piece order at this price depends entirely on one merchant with one review.
+
+### 4. NEW probes — all three walled
+
+| Probe | Result |
+|---|---|
+| skroutz.gr (GR aggregator) | **403 "Just a moment"** (Cloudflare) |
+| geizhals.**at** | **"Sichere Verbindung wird überprüft"** challenge page |
+| toppreise.ch | **"Kurze Prüfung"** (the intermittent short-check already noted in pass 49) |
+
+No new listings, no new prices.
+
+### 5. Blocked list
+
+- **skroutz.gr** (403 CF), **geizhals.at** (challenge), **toppreise.ch** (`?q=` short-check) — three new aggregator routes that did not serve.
+- Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only, which now includes geizhals.at's offering set by proxy), alza/cyberport 403, gigabyte.com 403 to curl, senetic.it/.es/.nl, esus-it own search, kingston.com compatible-systems (JS-gated).
+
+### 6. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No. Eighth flat pass.** Floors hold: **Micron 96 GB @ Geizhals €28.08/GB net** (€32 348,47 for 1 152 GB, single seller) and **Kingston 64 MD @ Allegro €37.21/GB** (€28 575,84 for 768 GB).
+
+**Value of the pass:** it converts "CoreWave vs Geizhals" from a vague preference into a **quantified 11.5 % / €4 221 difference on the identical Micron part number**, and confirms the Geizhals listing is genuinely single-seller (the aggregate page shows "1 Angebot"). That sharpens the buy instruction: **Geizhals first, CoreWave as the stocked fallback**, and the only open risk on the cheap route is whether one merchant can supply 12.
+
+Coverage: camofox 3 profiles / 4 navigations (tonitrus, ceneo); trawl 2 scrapes (Micron product + Geizhals search); curl 6 (ibfusion, senetic ×2, CoreWave Micron page, skroutz, skroutz/ghat/tp probes). Expansion: CoreWave Micron lot table (6 lots read), Geizhals aggregate "1 Angebot" confirmation, 3 aggregator probes (all walled) — 1 new quantified comparison, 2 confirmations, 0 new prices.
