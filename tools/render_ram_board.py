@@ -39,9 +39,13 @@ gen = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
 
 lad = data.get("ladder")
 if lad and lad.get("rows"):
+    def _lroute(r):
+        rt = html.escape(r["route"])
+        return f'<a href="{html.escape(r["url"])}">{rt}</a>' if r.get("url") else rt
+
     lrows = "".join(
         f"<tr><td><b>{html.escape(r['cap'])}</b><br><span class='k'>{html.escape(r['caveat'])}</span></td>"
-        f"<td>{html.escape(r['route'])}</td>"
+        f"<td>{_lroute(r)}</td>"
         f"<td class='num'>{html.escape(r['net'])}</td>"
         f"<td class='num'>{html.escape(r['per_gb'])}</td></tr>"
         for r in lad["rows"])
@@ -80,8 +84,8 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <h1>RAM offer board — DDR5-6400 RDIMM (JEDEC-SPD rule)</h1>
 <p class="sub">Board: Supermicro H14SSL-NT · CPU: EPYC 9555 · 12 DIMM slots, 1DPC · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
 <div class="kpi">
-  <div class="card"><h2>Cheapest 12-ch 384 GB</h2><div class="big">{fmt(best_kit.get('twelve_kit_net', 14372))}</div><span class="k">3× {html.escape(best_kit['part'])} @ Proshop.pl</span></div>
-  <div class="card"><h2>Cheapest per GB (net)</h2><div class="big">{best_kit.get('eur_per_gb','€37.43')}</div><span class="k">baseline to beat</span></div>
+  <div class="card"><h2>Cheapest 12-ch 384 GB</h2><div class="big">{fmt(best_kit.get('twelve_kit_net', 14372))}</div><span class="k">12× {html.escape(best_kit['part'].split(' (')[0])} — <a href="{html.escape(best_kit['url'])}">{html.escape(best_kit['shop'].split(' (')[0])} ↗</a></span></div>
+  <div class="card"><h2>Cheapest per GB (net)</h2><div class="big">{best_kit.get('eur_per_gb','€37.43')}</div><span class="k"><a href="{html.escape(best_kit['url'])}">open the offer ↗</a> · baseline to beat</span></div>
   <div class="card"><h2>Updated</h2><div class="big">{gen}</div><span class="k">by the 30-min scheduler · <code>docs/research/beam-eu-6400-repoke.md</code></span></div>
 </div>
 {LADDER}

@@ -526,91 +526,104 @@
     "route": "1× KSM64R52BD8-32MD @ barax (Geizhals)",
     "net": "€1.050,42",
     "per_gb": "€32.83",
-    "caveat": "single offer · qty at shop unverified"
+    "caveat": "single offer · qty at shop unverified",
+    "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32md-a3452629.html"
    },
    {
     "cap": "64 GB",
     "route": "1× KSM64R52BD4-64MD @ Jacob Elektronik (JEDEC-qualified)",
     "net": "€2.398,30",
     "per_gb": "€37.47",
-    "caveat": "geizhals seller table · sofort-lieferbar band"
+    "caveat": "geizhals seller table · sofort-lieferbar band",
+    "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html"
    },
    {
     "cap": "128 GB",
     "route": "2× MD @ Jacob Elektronik",
     "net": "€4.796,60",
     "per_gb": "€37.47",
-    "caveat": "beats ibfusion €4.962 and eBay IT-Planet €38.07"
+    "caveat": "beats ibfusion €4.962 and eBay IT-Planet €38.07",
+    "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html"
    },
    {
     "cap": "256 GB",
     "route": "4× MD @ Jacob Elektronik",
     "net": "€9.593,20",
     "per_gb": "€37.47",
-    "caveat": "stock TBC at seller page"
+    "caveat": "stock TBC at seller page",
+    "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html"
    },
    {
     "cap": "384 GB (12×32, 12-ch)",
     "route": "12× KSM64R52BD8-32MH @ Geizhals wave (ab geniuzcom.de)",
     "net": "€13.732,64",
     "per_gb": "€35.76",
-    "caveat": "SPD-verified, 27 Angebote; beats 6× 64 MD @ Jacob (€14.390) and 3× Proshop kits (€15.143)"
+    "caveat": "SPD-verified, 27 Angebote; beats 6× 64 MD @ Jacob (€14.390) and 3× Proshop kits (€15.143)",
+    "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32mh-a3842215.html"
    },
    {
     "cap": "384 GB (12×32 kits)",
     "route": "3× Proshop 4×32 kits",
     "net": "€15.143",
     "per_gb": "€39.44",
-    "caveat": "kit cap 2/SKU; beaten by 12× 32 GB MH (€13.732,64) and 6× Jacob (€14.390)"
+    "caveat": "kit cap 2/SKU; beaten by 12× 32 GB MH (€13.732,64) and 6× Jacob (€14.390)",
+    "url": "https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-128GB-CL38-Quad-Channel-4-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462079"
    },
    {
     "cap": "384 GB (price pick, no-SPD clone)",
     "route": "12× 32 GB clone (MB) @ eBay Mem-Store",
     "net": "€11.145,24",
     "per_gb": "€29.02",
-    "caveat": "only 8 pcs listed · ships from California · SPD unproven (clone)"
+    "caveat": "only 8 pcs listed · ships from California · SPD unproven (clone)",
+    "url": "https://www.ebay.de/itm/327137019602"
    },
    {
     "cap": "576 GB (12×48, caveat class)",
     "route": "12× Samsung M321R6GA3PB2-CCP @ CoreWave (LV)",
     "net": "€17.688 (net-basis)",
     "per_gb": "€30.71",
-    "caveat": "no SPD sentence (Samsung) · 250 pcs · EU warehouse 3–4 d · quote-confirmed pricing · buy-1-spdprint-then-11"
+    "caveat": "no SPD sentence (Samsung) · 250 pcs · EU warehouse 3–4 d · quote-confirmed pricing · buy-1-spdprint-then-11",
+    "url": "https://corewavelabs.com/server-memory/?q=DDR5-6400"
    },
    {
     "cap": "768 GB (12×64, 12-ch)",
     "route": "12× MD @ Jacob Elektronik",
     "net": "€28.779,60",
     "per_gb": "€37.47",
-    "caveat": "stock depth TBC at Jacob (browser probe); falls back to senetic.de 41-50 pcs @ €40.83"
+    "caveat": "stock depth TBC at Jacob (browser probe); falls back to senetic.de 41-50 pcs @ €40.83",
+    "url": "https://www.jacob.de/search?search=KSM64R52BD4"
    },
    {
     "cap": "768 GB (QVL part, price reality)",
     "route": "12× Samsung M321R8GA0PB2-CCP @ CoreWave",
     "net": "€39.510 (net-basis)",
     "per_gb": "€51.45",
-    "caveat": "the exact QVL part, now priced — QVL is not the cheap route"
+    "caveat": "the exact QVL part, now priced — QVL is not the cheap route",
+    "url": "https://corewavelabs.com/server-memory/?q=DDR5-6400"
    },
    {
     "cap": "768 GB (price pick, SPD caveat)",
     "route": "12× eBay hynix business",
     "net": "€25.939",
     "per_gb": "€33.78",
-    "caveat": "ships CN · hynix no SPD sentence"
+    "caveat": "ships CN · hynix no SPD sentence",
+    "url": "https://www.ebay.de/itm/336558516150"
    },
    {
     "cap": "1.15 TB (12×96, 12-ch)",
     "route": "12× KSM64R52BD4-96MC @ jacob.de",
     "net": "€42.789,96",
     "per_gb": "€37.14",
-    "caveat": "SPD-verified; \"Sofort lieferbar\"; 96 GB 2Rx4 at 12 ch/6400 needs manual/QVL confirmation"
+    "caveat": "SPD-verified; \"Sofort lieferbar\"; 96 GB 2Rx4 at 12 ch/6400 needs manual/QVL confirmation",
+    "url": "https://www.jacob.de/search?search=KSM64R52BD4"
    },
    {
     "cap": "1.15 TB (12×96, caveat class)",
     "route": "12× Samsung M321RYGA0PB2-CCP @ CoreWave (LV)",
     "net": "€37.742 (net-basis)",
     "per_gb": "€32.76",
-    "caveat": "no SPD sentence (Samsung) · 230 pcs · EU 4–5 d · 1.5× the 768 GB Kingston build for +31% money"
+    "caveat": "no SPD sentence (Samsung) · 230 pcs · EU 4–5 d · 1.5× the 768 GB Kingston build for +31% money",
+    "url": "https://corewavelabs.com/server-memory/?q=DDR5-6400"
    }
   ]
  }
