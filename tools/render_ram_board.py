@@ -17,11 +17,12 @@ def fmt(v):
     return f"€{v:,.0f}" if isinstance(v, (int, float)) else v
 
 rows = ""
-for o in sorted(data["offers"], key=lambda x: x.get("eur_per_gb", 99)):
+for o in sorted(data["offers"], key=lambda x: (x.get("state") == "excluded", x.get("eur_per_gb", 99))):
     best = ' <span class="tag rec">BEST</span>' if o.get("best") else ""
-    flag = "" if o.get("state", "ok") == "ok" else f' <span class="tag {"warn" if o["state"]=="stale" else "bad"}">{o["state"]}</span>'
+    org = f' <span class="tag {"rec" if "2Rx4" in str(o.get("org", "")) else "bad"}">{html.escape(o["org"])}</span>' if o.get("org") else ""
+    flag = "" if o.get("state", "ok") in ("ok", "new") else f' <span class="tag {"warn" if o["state"]=="stale" else "bad"}">{html.escape(o["state"])}</span>'
     rows += f"""<tr>
-      <td>{html.escape(o['part'])}<br><span class="k">{html.escape(o.get('spec',''))}</span>{best}</td>
+      <td>{html.escape(o['part'])}<br><span class="k">{html.escape(o.get('spec',''))}</span>{best}{org}{flag}</td>
       <td>{html.escape(o['shop'])}<br><span class="k">{html.escape(o.get('country',''))}</span></td>
       <td class="num">{html.escape(str(o.get('price_net','—')))}<br><span class="k">net / {html.escape(str(o.get('price_gross','—'))) if o.get('price_gross') else '—'}</span></td>
       <td class="num">{o.get('eur_per_gb','—')}</td>
@@ -37,13 +38,14 @@ for o in data["offers"]:
 best_kit = next((o for o in data["offers"] if o.get("best")), data["offers"][0])
 gen = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
 
-# KPI card 1 is the 384 GB (12-channel) tier by definition: read that ladder row, not the "best" offer,
-# so the card cannot drift from the ladder when the overall cheapest part is a different capacity.
-row384 = next((r for r in (data.get("ladder") or {}).get("rows", []) if r["cap"].startswith("384 GB (12×32, 12-ch)")), None)
-if row384:
-    route = row384["route"].split(" @ ")
-    kit_net, kit_label, kit_url = row384["net"], f"12× {route[0].split('× ',1)[-1]}" + (f" — {route[1]}" if len(route) > 1 else ""), row384.get("url")
-    kit_cap = "Cheapest 12-ch 384 GB"
+# KPI card 1 is the cheapest full 2Rx4 build (user directive 2026-11-16: 2Rx4 only, so the 384 GB
+# 12x32 tier is gone). Read it from the ladder so the card cannot drift from the table below.
+fullrows = [r for r in (data.get("ladder") or {}).get("rows", []) if r["cap"].startswith("768 GB (12×64")]
+if fullrows:
+    row = min(fullrows, key=lambda r: float(r["net"].replace("€", "").replace(".", "").replace(",", ".")))
+    route = row["route"].split(" @ ")
+    kit_net, kit_label, kit_url = row["net"], f"12× {route[0].split('× ', 1)[-1]}" + (f" — {route[1]}" if len(route) > 1 else ""), row.get("url")
+    kit_cap = "Cheapest full build 768 GB (12×64, 2Rx4)"
 else:
     kit_net, kit_label, kit_url, kit_cap = best_kit.get("twelve_kit_net", 14372), best_kit["part"], best_kit.get("url"), "Cheapest kit"
 
@@ -92,7 +94,7 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
   code {{ color:#4cc9f0; }}
 </style></head><body><div class="wrap">
 <h1>RAM offer board — DDR5-6400 RDIMM (JEDEC-SPD rule)</h1>
-<p class="sub">Board: Supermicro H14SSL-NT · CPU: EPYC 9555 · 12 DIMM slots, 1DPC · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
+<p class="sub">Board: Supermicro H14SSL-NT · CPU: EPYC 9555 · 12 DIMM slots, 1DPC · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). <b>Module type: 2Rx4 only</b> (directive 2026-11-16) — 1Rx8/2Rx8 rows are struck from the ladder. Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
 <div class="kpi">
   <div class="card"><h2>{kit_cap}</h2><div class="big">{kit_net}</div><span class="k">{html.escape(kit_label)}{f' — <a href="{html.escape(kit_url)}">source ↗</a>' if kit_url else ''}</span></div>
   <div class="card"><h2>Cheapest per GB (net)</h2><div class="big">{best_kit.get('eur_per_gb','€37.43')}</div><span class="k"><a href="{html.escape(best_kit['url'])}">open the offer ↗</a> · {html.escape(best_kit['part'].split(' (')[0])}</span></div>

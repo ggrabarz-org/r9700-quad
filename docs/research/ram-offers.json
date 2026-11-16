@@ -1,6 +1,6 @@
 {
  "eurpln": 4.407,
- "updated": "2026-11-16T02:05Z",
+ "updated": "2026-11-16T02:30Z",
  "offers": [
   {
    "part": "Kingston KSM64R52BD4-64MD (64 GB 2Rx4 DDR5-6400 CL52 reg ECC)",
@@ -12,9 +12,10 @@
    "eur_per_gb": "€37.21",
    "stock": "live offer, dostawa pt. 20 lis., ships from PL",
    "checked": "2026-11-16T02:05Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://www.ceneo.pl/182533999"
+   "url": "https://www.ceneo.pl/182533999",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston KSM64R52BS8-16MH (16 GB 1Rx8 DDR5-6400 CL52 reg ECC) — the user-supplied Ceneo link",
@@ -26,9 +27,11 @@
    "eur_per_gb": "€36.81",
    "stock": "free shipping, 1 day",
    "checked": "2026-11-16T02:05Z",
-   "state": "new",
+   "state": "excluded",
    "best": false,
-   "url": "https://www.ceneo.pl/182533859"
+   "url": "https://www.ceneo.pl/182533859",
+   "org": "1Rx8",
+   "excluded_reason": "fails the 2Rx4 directive"
   },
   {
    "part": "Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Polish channel",
@@ -40,9 +43,10 @@
    "eur_per_gb": "€36.79",
    "stock": "\"U CIEBIE JUŻ POJUTRZE!\"",
    "checked": "2026-11-16T02:05Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://www.ceneo.pl/199487972"
+   "url": "https://www.ceneo.pl/199487972",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston KSM64R52BD4-64HA (64 GB 2Rx4) — Polish channel",
@@ -54,9 +58,10 @@
    "eur_per_gb": "€42.39",
    "stock": "listed",
    "checked": "2026-11-16T02:05Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://www.ceneo.pl/199271545"
+   "url": "https://www.ceneo.pl/199271545",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston KSM64R52BD4-96MC (96 GB 2Rx4, DDR5-6400 CL52 reg ECC)",
@@ -68,10 +73,11 @@
    "eur_per_gb": "€35.53",
    "stock": "lieferbar, Lieferzeit 2-4 Werktage",
    "checked": "2026-11-16T01:25Z",
-   "state": "new",
+   "state": "ok",
    "best": true,
    "twelve_kit_net": 40931,
-   "url": "https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html"
+   "url": "https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston KSM64R52BD4-96MC wave (same Geizhals product)",
@@ -83,9 +89,10 @@
    "eur_per_gb": "€35.53–44.57",
    "stock": "band; several Sofort/Auf Lager rows",
    "checked": "2026-11-16T01:25Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html"
+   "url": "https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston KSM64R52BD4-64HA (64 GB 2Rx4 DDR5-6400 CL52 reg ECC)",
@@ -97,9 +104,10 @@
    "eur_per_gb": "€37.56",
    "stock": "4-6 Werktage (cheapest row); Nexus €3.596,95 sofort",
    "checked": "2026-11-16T01:25Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64ha-a3590377.html"
+   "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64ha-a3590377.html",
+   "org": "2Rx4"
   },
   {
    "part": "Samsung M321RYGA0PB2-CCP (96 GB, QVL-family 6400 RDIMM)",
@@ -111,9 +119,10 @@
    "eur_per_gb": "€40.58",
    "stock": "2-3 Werktage; Jacob €4.642,88 Sofort",
    "checked": "2026-11-16T01:25Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://geizhals.de/samsung-rdimm-96gb-m321ryga0pb2-ccp-a3528339.html"
+   "url": "https://geizhals.de/samsung-rdimm-96gb-m321ryga0pb2-ccp-a3528339.html",
+   "org": "2Rx4"
   },
   {
    "part": "Samsung M321R6GA3PB2-CCP (48 GB, DDR5-6400 RDIMM)",
@@ -125,9 +134,11 @@
    "eur_per_gb": "€30.71 net-basis",
    "stock": "250 pcs · 3–4 Days (row stamp 9 Nov 2026)",
    "checked": "2026-11-16T02:05Z",
-   "state": "new",
+   "state": "excluded",
    "best": false,
-   "url": "https://corewavelabs.com/server-memory/"
+   "url": "https://corewavelabs.com/server-memory/",
+   "org": "2Rx8",
+   "excluded_reason": "fails the 2Rx4 directive"
   },
   {
    "part": "Samsung M321RYGA0PB2-CCP (96 GB, DDR5-6400 RDIMM)",
@@ -139,13 +150,14 @@
    "eur_per_gb": "€32.76 net-basis",
    "stock": "230 pcs · 4–5 Days",
    "checked": "2026-11-16T02:05Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://corewavelabs.com/server-memory/"
+   "url": "https://corewavelabs.com/server-memory/",
+   "org": "2Rx4"
   },
   {
    "part": "Samsung M321RBJA0M22-CLP (256 GB, DDR5-6400 RDIMM)",
-   "spec": "no SPD sentence published (Samsung); CoreWave quote-based",
+   "spec": "no SPD sentence published (Samsung); CoreWave quote-based · H14 manual rates \"3DS RDIMM 2Rx4 (8R), 256 GB, 3 TB, 6400\" — 3DS class, not the same thing as a plain 2Rx4; keep separate unless deliberately choosing 3DS",
    "shop": "CoreWave Labs SIA (Riga, LV)",
    "country": "LV (ships EU)",
    "price_net": "$9,565 ≈ €8.649,53 net-basis",
@@ -155,7 +167,8 @@
    "checked": "2026-11-16T02:05Z",
    "state": "new",
    "best": false,
-   "url": "https://corewavelabs.com/server-memory/"
+   "url": "https://corewavelabs.com/server-memory/",
+   "org": "2Rx4 (3DS, 8R physical)"
   },
   {
    "part": "Samsung M321R8GA0PB2-CCP — the exact QVL 64 GB part (PB2)",
@@ -167,9 +180,10 @@
    "eur_per_gb": "€51.45 net-basis",
    "stock": "500 pcs · 3–4 Days",
    "checked": "2026-11-16T02:05Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://corewavelabs.com/server-memory/"
+   "url": "https://corewavelabs.com/server-memory/",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston KSM64R52BD8-32MH / -32MD / -96MC (UK direct)",
@@ -181,9 +195,11 @@
    "eur_per_gb": "GBP, not converted",
    "stock": "0 · Available To Order (32MD: Discontinued)",
    "checked": "2026-11-16T00:55Z",
-   "state": "stale",
+   "state": "excluded",
    "best": false,
-   "url": "https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm"
+   "url": "https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm",
+   "org": "2Rx8",
+   "excluded_reason": "fails the 2Rx4 directive"
   },
   {
    "part": "Kingston KSM64R52BD4-96MC (96 GB 2Rx4, DDR5-6400 CL52 reg ECC)",
@@ -195,9 +211,10 @@
    "eur_per_gb": "€37.14",
    "stock": "Sofort lieferbar (piece count not published)",
    "checked": "2026-11-16T00:55Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://www.jacob.de/search?search=KSM64R52BD4"
+   "url": "https://www.jacob.de/search?search=KSM64R52BD4",
+   "org": "2Rx4"
   },
   {
    "part": "32 GB clone brand MB, MPN KSM64R52BD8-32MH-MB (spec-match, not Kingston)",
@@ -209,9 +226,11 @@
    "eur_per_gb": "€29.02 net-basis",
    "stock": "8 verfügbar (not enough for 12)",
    "checked": "2026-11-15T22:20Z",
-   "state": "new",
+   "state": "excluded",
    "best": false,
-   "url": "https://www.ebay.de/itm/327137019602"
+   "url": "https://www.ebay.de/itm/327137019602",
+   "org": "2Rx8",
+   "excluded_reason": "fails the 2Rx4 directive"
   },
   {
    "part": "Kingston KSM64R52BD8-32MH (eBay.de genuine, cross-check)",
@@ -223,9 +242,11 @@
    "eur_per_gb": "€37.70 landed",
    "stock": "Best Offer (listed)",
    "checked": "2026-11-15T22:20Z",
-   "state": "new",
+   "state": "excluded",
    "best": false,
-   "url": "https://www.ebay.de/itm/206689139860"
+   "url": "https://www.ebay.de/itm/206689139860",
+   "org": "2Rx8",
+   "excluded_reason": "fails the 2Rx4 directive"
   },
   {
    "part": "Kingston ValueRAM KVR64A52BD8-64 / KVR64V52BD8-32 (cheap-looking traps)",
@@ -251,9 +272,10 @@
    "eur_per_gb": "£50.29/GB ex-VAT (no verified GBP/EUR rate)",
    "stock": "stock_quantity 0 · 'Available To Order – 4-5 Business Day Delivery' · FREE Royal Mail",
    "checked": "2026-11-15T21:34Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm"
+   "url": "https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston KSM64R52BD8-32MD (32 GB, 2Rx8, DDR5-6400 CL52 reg ECC)",
@@ -265,9 +287,11 @@
    "eur_per_gb": "€32.83 (net basis)",
    "stock": "1 Angebot · 'Ab Lager lieferbar – Lieferzeit 1-3 Werktage'; piece quantity not published (barax.at DNS fails here)",
    "checked": "2026-11-15T21:34Z",
-   "state": "new",
+   "state": "excluded",
    "best": false,
-   "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32md-a3452629.html"
+   "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32md-a3452629.html",
+   "org": "2Rx8",
+   "excluded_reason": "fails the 2Rx4 directive"
   },
   {
    "part": "Kingston KSM64R52BD8-32MH (32 GB, 2Rx8, DDR5-6400 CL52 reg ECC)",
@@ -279,10 +303,12 @@
    "eur_per_gb": "€35.76",
    "stock": "27 Angebote; several 'Auf Lager' / 'Sofort lieferbar' / 'lagernd' rows; cheapest = geniuzcom.de 3–5 Werktage",
    "checked": "2026-11-16T00:55Z",
-   "state": "new",
+   "state": "excluded",
    "best": false,
    "twelve_kit_net": 13733,
-   "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32mh-a3842215.html"
+   "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32mh-a3842215.html",
+   "org": "2Rx8",
+   "excluded_reason": "fails the 2Rx4 directive"
   },
   {
    "part": "Kingston FURY Renegade Pro 7600 KF576RH40RBK4-128",
@@ -294,9 +320,11 @@
    "eur_per_gb": "€39.44",
    "stock": "import 5–6 d (lead time moved 3–4 → 5–6 d) · max 2/client",
    "checked": "2026-11-16T02:05Z",
-   "state": "ok",
+   "state": "excluded",
    "best": false,
-   "url": "https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-128GB-CL38-Quad-Channel-4-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462079"
+   "url": "https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-128GB-CL38-Quad-Channel-4-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462079",
+   "org": "1Rx8 (4x32GB kit)",
+   "excluded_reason": "fails the 2Rx4 directive"
   },
   {
    "part": "Kingston Server Premier KSM64R52BD4-64MD",
@@ -310,7 +338,8 @@
    "checked": "2026-11-16T02:05Z",
    "state": "ok",
    "best": false,
-   "url": "https://ibfusion.com/ram/64gb-ddr5-rdimm-ecc-6400mhz/"
+   "url": "https://ibfusion.com/ram/64gb-ddr5-rdimm-ecc-6400mhz/",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston Server Premier KSM64R52BD4-64MD",
@@ -324,7 +353,8 @@
    "checked": "2026-11-16T02:05Z",
    "state": "ok",
    "best": false,
-   "url": "https://www.senetic.pl/search/?q=KSM64R52BD4&f_s_category=icecat_106"
+   "url": "https://www.senetic.pl/search/?q=KSM64R52BD4&f_s_category=icecat_106",
+   "org": "2Rx4"
   },
   {
    "part": "Samsung M321R8GA0EB2-CCP",
@@ -342,7 +372,7 @@
   },
   {
    "part": "Samsung M321RAJA0MB2-CCP",
-   "spec": "128 GB 3DS RDIMM, DDR5-6400 · the capacity route (12× = 1.5 TB @ 6400)",
+   "spec": "128 GB 3DS RDIMM, DDR5-6400 · the capacity route (12× = 1.5 TB @ 6400) · excluded under the 2Rx4 directive (3DS 2Rx2 class). H14 manual does rate it 6400 at 12ch (1.5 TB) if the 3DS class is ever reconsidered.",
    "shop": "senetic.de",
    "country": "DE",
    "price_net": "€6,175.58",
@@ -350,9 +380,11 @@
    "eur_per_gb": "€48.25",
    "stock": "6 pcs",
    "checked": "2026-11-16T02:05Z",
-   "state": "ok",
+   "state": "excluded",
    "best": false,
-   "url": "https://www.senetic.de/search/?q=M321R8GA0PB2-CCP&f_s_category=icecat_106"
+   "url": "https://www.senetic.de/search/?q=M321R8GA0PB2-CCP&f_s_category=icecat_106",
+   "org": "2Rx2 (3DS, 4R physical)",
+   "excluded_reason": "3DS 2Rx2, not a plain 2Rx4 module"
   },
   {
    "part": "V-Color RDIMM JEDEC DDR5-6400 CL52 (4×32 GB)",
@@ -392,9 +424,11 @@
    "eur_per_gb": "€37.62",
    "stock": "3–4 d · max 2 szt./klienta (per SKU)",
    "checked": "2026-11-16T02:05Z",
-   "state": "ok",
+   "state": "excluded",
    "best": false,
-   "url": "https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-32GB-CL38-Single-Channel-1-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462077"
+   "url": "https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-32GB-CL38-Single-Channel-1-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462077",
+   "org": "1Rx8",
+   "excluded_reason": "fails the 2Rx4 directive"
   },
   {
    "part": "Samsung M321R8GA0EB2-CCP (64 GB 6400, 2Rx4)",
@@ -422,7 +456,8 @@
    "checked": "2026-11-14T02:2xZ",
    "state": "lead",
    "best": false,
-   "url": "https://smicro.eu/samsung-64-gb-ddr5-6400mhz-ecc-rdimm-m321r8ga0pb2-ccp-2"
+   "url": "https://smicro.eu/samsung-64-gb-ddr5-6400mhz-ecc-rdimm-m321r8ga0pb2-ccp-2",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston Server Premier KSM64R52BD4-96MC (96 GB 2Rx4)",
@@ -434,9 +469,10 @@
    "eur_per_gb": "€38.81",
    "stock": "(karta bez statusu — sprawdzić)",
    "checked": "2026-11-16T02:05Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://www.senetic.pl/search/?q=KSM64R52BD4&f_s_category=icecat_106"
+   "url": "https://www.senetic.pl/search/?q=KSM64R52BD4&f_s_category=icecat_106",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston Server Premier KSM64R52BD4-64MD",
@@ -448,9 +484,10 @@
    "eur_per_gb": "€38.63 (net basis)",
    "stock": "wysyłka 20–21 XI",
    "checked": "2026-11-14T03:0xZ",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://www.amazon.pl/s?k=KSM64R52BD4-64MD"
+   "url": "https://www.amazon.pl/s?k=KSM64R52BD4-64MD",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston Server Premier KSM64R52BD4-64MD",
@@ -464,7 +501,8 @@
    "checked": "2026-11-14T03:5xZ",
    "state": "verified",
    "best": false,
-   "url": "https://corewavelabs.com/ksm64r52bd4-64md-kingston-64gb-ddr5-6400-rdimm/"
+   "url": "https://corewavelabs.com/ksm64r52bd4-64md-kingston-64gb-ddr5-6400-rdimm/",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston Server Premier KSM64R52BD4-64MD / 96MC",
@@ -476,10 +514,11 @@
    "eur_per_gb": "€40.83 (64MD) / €38.83 (96MC)",
    "stock": "41–50 Stück (64MD) — DE warehouse",
    "checked": "2026-11-16T02:05Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
    "url": "https://www.senetic.de/search/?q=KSM64R52BD4",
-   "note": "cross-confirmed from the geizhals 64MD table: Senetic.de row €3.109,77 brutto = the same €2.613,25 net"
+   "note": "cross-confirmed from the geizhals 64MD table: Senetic.de row €3.109,77 brutto = the same €2.613,25 net",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston Server Premier DDR5-6400 CL52 ECC Reg singles (1×16/32/64)",
@@ -507,7 +546,8 @@
    "checked": "2026-11-14T12:2xZ",
    "state": "lead",
    "best": false,
-   "url": "https://picclick.de/search?q=KSM64R52BD4-64MD"
+   "url": "https://picclick.de/search?q=KSM64R52BD4-64MD",
+   "org": "2Rx4"
   },
   {
    "part": "KSM64R52BD4-64MD 'Compatible Replacement' (clone, brand MB)",
@@ -521,7 +561,8 @@
    "checked": "2026-11-15T09:0xZ",
    "state": "reject",
    "best": false,
-   "url": "https://www.ebay.com/itm/326661139726"
+   "url": "https://www.ebay.com/itm/326661139726",
+   "org": "2Rx4"
   },
   {
    "part": "Samsung M321R8GA0PB2-CCP (QVL family, genuine)",
@@ -535,7 +576,8 @@
    "checked": "2026-11-15T09:0xZ",
    "state": "reject",
    "best": false,
-   "url": "https://www.ebay.com/itm/326661139726"
+   "url": "https://www.ebay.com/itm/326661139726",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston KSM64R52BD4-64MD (genuine, eBay.de IT-Planet GmbH)",
@@ -549,7 +591,8 @@
    "checked": "2026-11-15T01:47Z",
    "state": "ok",
    "best": false,
-   "url": "https://www.ebay.de/sch/i.html?_nkw=KSM64R52BD4-64MD"
+   "url": "https://www.ebay.de/sch/i.html?_nkw=KSM64R52BD4-64MD",
+   "org": "2Rx4"
   },
   {
    "part": "SK hynix HMCG94AHBRA480N (used wave, eBay.de Gewerblich)",
@@ -563,7 +606,8 @@
    "checked": "2026-11-15T03:44Z",
    "state": "lead",
    "best": false,
-   "url": "https://www.ebay.de/sch/i.html?_nkw=HMCG94AHBRA480N"
+   "url": "https://www.ebay.de/sch/i.html?_nkw=HMCG94AHBRA480N",
+   "org": "2Rx4"
   },
   {
    "part": "SK hynix HMCG94BDJMA080N 64GB DDR5-6400 ECC RDIMM (PC5-88/64B-MA0-1110)",
@@ -575,9 +619,10 @@
    "eur_per_gb": "€33.78 net-basis",
    "stock": "50 verfügbar · item-level verified: seller MemoryPartner_Deals (Gewerblich, 101.547 FB, 100 % positive), ships 深圳 CN, delivery 8–29 Dec, 30-day returns (buyer pays)",
    "checked": "2026-11-15T21:34Z",
-   "state": "new",
+   "state": "ok",
    "best": false,
-   "url": "https://www.ebay.de/itm/336558516150"
+   "url": "https://www.ebay.de/itm/336558516150",
+   "org": "2Rx4"
   },
   {
    "part": "Kingston KSM64R52BD4-64MH (64 GB, die-suffix MH)",
@@ -605,7 +650,8 @@
    "checked": "2026-11-15T22:20Z",
    "state": "ok",
    "best": false,
-   "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html"
+   "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html",
+   "org": "2Rx4"
   },
   {
    "part": "KSM64R52BD4-64MD seller wave (Future-X / unnamed / PC-KING / electronis)",
@@ -619,7 +665,8 @@
    "checked": "2026-11-15T21:34Z",
    "state": "lead",
    "best": false,
-   "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html"
+   "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html",
+   "org": "2Rx4"
   }
  ],
  "notes": [
@@ -630,75 +677,20 @@
   "Pass 43: jacob.de own shop readable via https://www.jacob.de/search?search=<PN> (camofox). 96MC at €37.14/GB net is the cheapest JEDEC-qualified part above 64 GB; ValueRAM KVR64A52BD8-64 / KVR64V52BD8-32 are CUDIMM/SODIMM (not ECC RDIMM) traps; KSM56R46* = 5600 title trap.",
   "Pass 44: CoreWave Labs (LV) live pricelist priced the QVL 64 GB part (M321R8GA0PB2-CCP $3,641 = €51.45/GB net-basis, 500 pcs) and dropped the no-SPD caveat class to €30.71–33.79/GB (Samsung 48/96/256 GB 6400). Read via corewavelabs.com/server-memory/?q=<anything> (the /pricelist/ page is JS-only). USD→EUR @ NBP 2026-11-13: 1 USD = 0.90429 EUR.",
   "Pass 45: NEW PER-GB FLOOR in the qualified class — KSM64R52BD4-96MC at electronis.de €4.058,99 gross = €35.53/GB net (Geizhals a3590379 + electronis shop-level cross-check). 1.152 TB route drops to €40.930,99 net. Geizhals also now prices 64HA (€37.56/GB) and the Samsung 96 GB QVL sibling M321RYGA0PB2-CCP (€40.58/GB).",
-  "Pass 46: Ceneo.pl opened as a source (user-supplied link = the 16 GB KSM64R52BS8-16MH, €36.81/GB net, 192 GB cap). New 64 GB best: Allegro komputera_pl 12 908,19 zł delivered = €37.21/GB net -> 768 GB at €28.575,84 net. Ceneo rows cross-validated against senetic.pl direct read (14 163,65/1.23 = 11 515,16 zł exactly). Old floor: 96MC electronis €35.53/GB; 32MH €35.76/GB; Ceneo carries no 32 GB 6400 part."
+  "Pass 46: Ceneo.pl opened as a source (user-supplied link = the 16 GB KSM64R52BS8-16MH, €36.81/GB net, 192 GB cap). New 64 GB best: Allegro komputera_pl 12 908,19 zł delivered = €37.21/GB net -> 768 GB at €28.575,84 net. Ceneo rows cross-validated against senetic.pl direct read (14 163,65/1.23 = 11 515,16 zł exactly). Old floor: 96MC electronis €35.53/GB; 32MH €35.76/GB; Ceneo carries no 32 GB 6400 part.",
+  "Pass 46b (USER DIRECTIVE): 2Rx4 only. 32GB tier removed (KSM64R52BD8-2xMH = 2Rx8; no 32GB 2Rx4 exists), 16GB removed (1Rx8), Proshop 128GB kit removed (4x32GB 1Rx8), CoreWave Samsung 48GB removed (2Rx8). Remaining qualified 2Rx4 builds: 12x64GB = 768GB (Allegro 28.575,84 net @ 37.21) and 12x96GB = 1.152TB (electronis 40.930,99 net @ 35.53). 2Rx4 128GB/256GB 3DS parts exist (CoreWave Samsung) but need board 3DS/rank verification."
  ],
  "ladder": {
   "updated": "2026-11-16T02:05Z",
-  "rule": "cheapest verified route per capacity tier; JEDEC-SPD-6400@1.1V preferred; net/VAT-less; zł @ 4.4070",
+  "rule": "CHEAPEST 2Rx4-EVERYWHERE ROUTE per capacity · JEDEC-SPD-6400@1.1V preferred · user directive 2026-11-16: 2Rx4 modules only · net/VAT-less · zł @ 4.4070",
   "rows": [
-   {
-    "cap": "32 GB (cheapest per GB)",
-    "route": "1× KSM64R52BD8-32MD @ barax (Geizhals)",
-    "net": "€1.050,42",
-    "per_gb": "€32.83",
-    "caveat": "single offer · qty at shop unverified",
-    "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32md-a3452629.html"
-   },
    {
     "cap": "64 GB",
     "route": "1× KSM64R52BD4-64MD @ Allegro komputera_pl (via Ceneo)",
     "net": "€2.381,32",
     "per_gb": "€37.21",
-    "caveat": "SPD-verified · promo-badged row (BLACK WEEKS), 2nd shop 12 901,77 zł confirms the level · ships PL, 20 Nov",
+    "caveat": "SPD-verified 2Rx4 · promo-badged row (BLACK WEEKS), re-check at order · ships PL 20 Nov",
     "url": "https://www.ceneo.pl/182533999"
-   },
-   {
-    "cap": "128 GB",
-    "route": "2× MD @ Jacob Elektronik",
-    "net": "€4.796,60",
-    "per_gb": "€37.47",
-    "caveat": "beats ibfusion €4.962 and eBay IT-Planet €38.07",
-    "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html"
-   },
-   {
-    "cap": "256 GB",
-    "route": "4× MD @ Jacob Elektronik",
-    "net": "€9.593,20",
-    "per_gb": "€37.47",
-    "caveat": "stock TBC at seller page",
-    "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html"
-   },
-   {
-    "cap": "384 GB (12×32, 12-ch)",
-    "route": "12× KSM64R52BD8-32MH @ Geizhals wave (ab geniuzcom.de)",
-    "net": "€13.732,64",
-    "per_gb": "€35.76",
-    "caveat": "SPD-verified, 27 Angebote; beats 6× 64 MD @ Jacob (€14.390) and 3× Proshop kits (€15.143)",
-    "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32mh-a3842215.html"
-   },
-   {
-    "cap": "384 GB (12×32 kits)",
-    "route": "3× Proshop 4×32 kits",
-    "net": "€15.143",
-    "per_gb": "€39.44",
-    "caveat": "kit cap 2/SKU; beaten by 12× 32 GB MH (€13.732,64) and 6× Jacob (€14.390)",
-    "url": "https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-128GB-CL38-Quad-Channel-4-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462079"
-   },
-   {
-    "cap": "384 GB (price pick, no-SPD clone)",
-    "route": "12× 32 GB clone (MB) @ eBay Mem-Store",
-    "net": "€11.145,24",
-    "per_gb": "€29.02",
-    "caveat": "only 8 pcs listed · ships from California · SPD unproven (clone)",
-    "url": "https://www.ebay.de/itm/327137019602"
-   },
-   {
-    "cap": "576 GB (12×48, caveat class)",
-    "route": "12× Samsung M321R6GA3PB2-CCP @ CoreWave (LV)",
-    "net": "€17.688 (net-basis)",
-    "per_gb": "€30.71",
-    "caveat": "no SPD sentence (Samsung) · 250 pcs · EU warehouse 3–4 d · quote-confirmed pricing · buy-1-spdprint-then-11",
-    "url": "https://corewavelabs.com/server-memory/?q=DDR5-6400"
    },
    {
     "cap": "768 GB (12×64, 12-ch)",
@@ -729,7 +721,7 @@
     "route": "12× KSM64R52BD4-96MC @ electronis.de",
     "net": "€40.930,99",
     "per_gb": "€35.53",
-    "caveat": "SPD-verified · cheapest qualified €/GB on the board · 96 GB 2Rx4 @ 12 ch needs manual/QVL confirmation",
+    "caveat": "SPD-verified 2Rx4 · cheapest qualified €/GB on the board · 96GB 2Rx4 @12ch still needs H14 manual confirmation",
     "url": "https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html"
    },
    {
@@ -737,9 +729,10 @@
     "route": "12× Samsung M321RYGA0PB2-CCP @ CoreWave (LV)",
     "net": "€37.742 (net-basis)",
     "per_gb": "€32.76",
-    "caveat": "no SPD sentence (Samsung) · 230 pcs · EU 4–5 d · 1.5× the 768 GB Kingston build for +31% money",
+    "caveat": "no SPD sentence (Samsung) but CoreWave lists it as 2Rx4 → the caveat is SPD only, not the org",
     "url": "https://corewavelabs.com/server-memory/?q=DDR5-6400"
    }
   ]
- }
+ },
+ "rule_2rx4": "USER DIRECTIVE 2026-11-16: 2Rx4 modules ONLY. Excludes 2Rx8/1Rx8 parts (32GB KSM64R52BD8-*, 16GB KSM64R52BS8-*, Proshop KF576RH40RBK4-128 kit = 1Rx8, CoreWave Samsung 48GB = 2Rx8). 12 full 2Rx4 builds: 12x64GB=768GB, 12x96GB=1.152TB, or 2Rx4 128GB/256GB parts."
 }
