@@ -1468,9 +1468,10 @@ Meanwhile the **same components are EU-stock, separately**:
 costs €1,037 in the EU — the same as the H14SSL-NT (€990–1,049).** You would pay
 H14 money for an older board with a 400 W ceiling and a revision trap.
 
-**The EU build: H14SSL-N €975 + 9555 QS €1,050 = ~€2,025**, new board with
-warranty, 6400 guaranteed, no import VAT, no customs. That beats the landed US
-bundle by roughly €300 and removes two of the four questions (revision, import).
+**The EU build (corrected 2026-11-16): H14SSL-N €975 + retail 9355 €2,050 =
+~€3,025**, new board with warranty, 6400 guaranteed, no import VAT, no customs.
+The earlier "9555 QS €1,050" line is struck: no verified 3.2 GHz sample source
+exists (see the Parts-to-order note and [cpu-ebay-sweep.md](cpu-ebay-sweep.md)).
 
 **What still has to be asked of the EU CPU seller:** the listings say **"ES"**
 while quoting the **`-12` QS OPN** — the title and part number disagree. Get the
@@ -1522,9 +1523,12 @@ brutal: **cTDP floor 450 W**, so 4×210 W GPUs (840 W) + 450 W + ~150 W ≈
 **This is also the one case where the H14's 500 W rating actually matters** — an
 H13SSL-NT is rated **400 W** and cannot take a 9755 at all.
 
-**Verdict:**
-- **9555 QS at €1,050 stays the value pick.** 64 cores, 256 MB L3, 360 W, runs
-  on a 1600 W PSU, leaves the GPU budget alone.
+**Verdict (corrected 2026-11-16):**
+- ~~**9555 QS at €1,050 stays the value pick**~~ **STRUCK 2026-11-16.** The
+  sample market has **no verified 3.2 GHz 9555**: every sub-€1,500 listing is the
+  1.9–3.0 GHz ES bin, Dell-locked, or mislabelled 9535 silicon
+  ([cpu-ebay-sweep.md](cpu-ebay-sweep.md)). The value pick moves to the **retail
+  9355 (€2,050)** — same 8-CCD fabric topology, 3.55 GHz, 280 W, no lottery.
 - **9755 QS at €3,299 is only justified if your expert working set actually
   benefits from 512 MB L3** — it is 3× the CPU price, forces a 2000 W PSU, and
   buys no bandwidth. It is the only "higher QS" in the EU worth a second look.
@@ -1542,17 +1546,26 @@ the SSD model are still open (see below).
 | 1 | **Supermicro H14SSL-NT** (dual 10GbE BCM57416) | **€1,049.00** Geizhals | https://geizhals.de/supermicro-h14ssl-nt-mbd-h14ssl-nt-b-a3613182.html |
 | 1a | H14SSL-NT, cheaper EU offer | €990.00 | https://www.ebay.de/itm/188303743859 |
 | 1b | *Alt:* **H14SSL-N** (2× 1GbE) if the network is 2.5G | €975.16 | https://geizhals.de/supermicro-h14ssl-n-mbd-h14ssl-n-b-a3613031.html |
-| 2 | **EPYC 9555 QS**, OPN `100-000001247-12` | **€1,050.00** | https://www.ebay.de/itm/365767517640 |
-| 2a | 9555 sample, cheaper, **no OPN in title** | €932.37 | https://www.ebay.de/itm/206400401738 |
+| 2 | **EPYC 9355** (retail tray, 32c/3.55 GHz, **8 CCDs**, 280 W) | **€2,050–2,379** | EU floor per RECOMMENDATION; US floor $2,130–2,299 (cpu-ebay-sweep) |
 | 3 | **4× PowerColor AI PRO R9700 32G-B** | **€2,249.00 each** | https://www.caseking.de/en/powercolor-radeon-ai-pro-r9700-graphics-card-32gb-gddr6/GCPC-079.html |
 | 4 | **C-Payne MCIO → PCIe 5.0 x16 adapter** | **€50.00** | https://c-payne.com/products/mcio-pcie-gen5-device-adapter-x8-x16 |
 | 5 | **C-Payne MCIO 8i gen5 cable**, 45/75 cm ×2 | **€45.00 each** | https://c-payne.com/products/mcio-sff-ta-1016-8i-cable-pcie-gen5 |
 | 6 | **KALEA MCIO 8i → 2× M.2 Gen5** | **€59.90** incl. VAT | https://www.kalea-informatique.com/adapter-for-2-ssd-m2-pcie-nvme-m-key-to-sff8654-for-mounting-two-ssd-m2-in-place-of-ssd-u2.htm |
 
-**Pinned subtotal: €11,339.90** — board €1,049 + CPU €1,050 + 4 GPUs €8,996 +
-adapter €50 + **3 cables** €135 + M.2 adapter €59.90. Take the €990 board offer
-and it is **€11,280.90**. RAM, PSU, heatsink, case and SSDs are not in this
-number.
+**Pinned subtotal: €12,339.90–12,668.90** — board €1,049 + **CPU €2,050–2,379
+(retail 9355)** + 4 GPUs €8,996 + adapter €50 + **3 cables** €135 + M.2 adapter
+€59.90. Take the €990 board offer and it is €12,280.90–12,609.90. RAM (12×64 GB
+2Rx4 6400 ≈ €28,576 net for 768 GB), PSU (1600 W), SP5 heatsink, case and SSDs
+are not in this number.
+
+**2026-11-16, CPU line purged:** the **9555 QS at €1,050 is struck**. The
+sample market has no 3.2 GHz 9555 — every sub-€1,500 listing is the
+**1.9–3.0 GHz low-clock ES bin** (`1247-12`/`-13`), a **Dell-locked** retail
+part, or mislabelled 9535 silicon (see [cpu-ebay-sweep.md](cpu-ebay-sweep.md):
+six of 25 SKUs fail the title check). Per the 8-CCD verdict the CPU pick is the
+**retail 9355** — cheapest part with the full 8-CCD fabric topology, retail
+clocks, no lottery. A 9555 remains buyable only at retail (€4,529) or
+Dell-locked ~$1,500 (POST risk on Supermicro, unverified).
 
 **Notes that decide whether these are the right clicks:**
 
