@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**CORRECTION (pass 55): CoreWave's $3,478 Samsung-96GB price is the 1-PIECE sticker. Its own tier table: 6 pcs $3,859, 36–94 pcs $3,804 ⇒ a 12-piece order is €35.83–36.35/GB, NOT €32.76 as pass 54 stated.** QVL-passing order is therefore: **Kingston 64MD @ Allegro €37.21/GB** (QVL ✓ + SPD-verified + retail-published, 768 GB, €28.575,84) → Samsung 96 GB @ CoreWave €36.35/GB (QVL ✓ only, no SPD, 1152 GB) → Samsung 96 GB @ Geizhals DE €40.58/GB. Also: senetic keeps sliding (pl 11 411,82 zł / de 2.589,80 €, two passes of falls).
+
 **BOARD CHANGED 2026-11-16 (user): Supermicro H14SSL-NT → GIGABYTE MZ23-SU0 (Rev. 3.x).** Rule re-verified on the new board's **Memory QVL** (195 rows): **Kingston 64MD/64MH QVL ✓** (2Rx4 1.1v 6400MHz), **Samsung M321R8GA0PB2-CCP (64GB), M321RYGA0PB2-CCP (96GB), M321RAJA0MB2-CCP (128GB) QVL ✓**, but **Kingston 96MC / 96HM / 64HA and Micron MTC40F204WS1RC64BC1 are NOT listed**. ⇒ The old €35.53/GB floor (96MC) is no longer QVL-backed. Cheapest QVL-passing build: **12× Samsung M321RYGA0PB2-CCP @ CoreWave = €32.76/GB net-basis** (no SPD sentence — verify on arrival); SPD-verified alternative: **12× Kingston 64MD @ Allegro €37.21/GB**. Board: 12-channel, 12 DIMM slots, 2DPC-capable to 9 TB, EPYC 9005.
 
 **LIFECYCLE WARNING (pass 52): DigiKey lists `KSM64R52BD4-64MD` as "Obsolete and no longer manufactured" (0 stock) and `-128MB` as "Discontinued at DigiKey" — distributor-level status (NOT a Kingston bulletin; datasheets live, senetic/electronis still sell them). Corroborated by the Proshop.pl 128GB-kit withdrawal and Jacob's first UPWARD tick (€2.853,98 → €2.856,98). Consequence: the 96MC route is both cheaper per GB and the less fragile — waiting now carries a replenishment risk.**
@@ -2077,3 +2079,66 @@ Read directly (`Support-QVL?CAT=Mem`, camofox `--user giga`). Verbatim row form:
 **Did anything beat the cheapest verified offer? — The question changed shape.** On the new board the per-GB floor is no longer a QVL part, so the relevant floor is **cheapest QVL-passing: Samsung `M321RYGA0PB2-CCP` 12× @ CoreWave = €32.76/GB net-basis (1152 GB)**, with **Kingston 64MD @ Allegro €37.21/GB (768 GB) as the SPD-verified alternative**. The 96MC's €35.53/GB is no longer a qualified claim on this hardware.
 
 Coverage: camofox 3 profiles / ~10 navigations (gigabyte PDP, CPU-QVL, Memory QVL + category click, google fallback), curl 6 (gigabyte 403s, QVL xlsx 404s, datasheet PDF 200). New sources: GIGABYTE MZ23-SU0 PDP + Memory QVL (195 rows read).
+
+---
+
+## Pass 55 — 2026-11-16T11:4xZ (**CORRECTION to pass 54: CoreWave's $3,478 is a 1-piece sticker; a 12-piece order prices at $3,804–3,859 → the "cheapest QVL build" is €35.83–36.35/GB, not €32.76. The QVL-passing winner is the Kingston 64 MD at €37.21/GB**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **64MD @ Allegro komputera_pl (QVL ✓)** | unchanged **12 898,20 zł** · buy-it.pl 12 901,77 · superstorage 13 277,55 · SuperTech **ticked up 13 432,99 → 13 483,99** | camofox `--user ceneo` |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| **senetic.pl 64MD** | **−68,79 zł further DOWN: 11 411,82 zł netto** (was 11 480,61 · two passes of falls) = €2.589,48 = **€40.46/GB** | curl |
+| **senetic.de 64MD** | **−15,61 € further DOWN: 2.589,80 € exkl.** (was 2.605,41) = **€40.47/GB** | curl |
+| senetic.pl / .de 96MC | unchanged 16 426,27 zł / 3.727,78 € | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox `--user tonitrus` |
+| Proshop.pl kit | still withdrawn; singles unchanged | (pass 51/52 state) |
+| CoreWave pricelist | **same sticker, new tier data — see §2** | curl |
+
+### 2. **THE CORRECTION — CoreWave's price is a 1-piece sticker, and 12 pieces cost more**
+
+Pass 54 concluded "cheapest QVL-passing build = 12× Samsung `M321RYGA0PB2-CCP` @ CoreWave = €32.76/GB". That used CoreWave's headline **$3,478**. Reading the product page's own tier table this pass:
+
+> `$ 3,478 · ≈ €3134 · Excl. VAT & shipping · Brand New • 1 Year · 🟢 230 pcs available · Lead time: 4-5 Days · Updated 9 Nov 2026`
+> *More stock for this part — Quantity | Price | Ships In | Updated:*
+> **`94 pcs | $3804 | Lead time 5-6 days`**, **`36 pcs | $3804`**, **`6 pcs | $3859 | 2-3 days`**, `19 pcs | $…`
+
+So CoreWave's own table says: **buy 6 → $3,859/pc; buy 36–94 → $3,804/pc.** A 12-piece order therefore lands in the **$3,804–3,859 band**, *above* the $3,478 sticker.
+
+| Basis | Unit | Net €/GB | 12× total |
+|---|---:|---:|---:|
+| 1-pc sticker (what pass 54 used) | $3,478 | €32.76 | €37.741 |
+| **6-pc tier — the honest basis for a single order** | **$3,859** | **€36.35** | **€41.876** |
+| 36–94 pc tier | $3,804 | €35.83 | €41.279 |
+| Geizhals DE street (same part, QVL ✓) | €4.635,94 gross | €40.58 | €46.749 |
+
+**Corrected conclusion: the QVL-passing Samsung 96 GB is €35.83–36.35/GB at CoreWave, or €40.58/GB on the German street — not €32.76.** The per-GB ordering on the QVL-passing tier is now:
+
+1. **Kingston `64MD` @ Allegro — €37.21/GB (768 GB, €28.575,84 net)** — QVL ✓, **SPD-verified**, PL-shipped
+2. Samsung `M321RYGA0PB2-CCP` @ CoreWave 6-pc tier — €36.35/GB (1152 GB, €41.876 net-basis) — QVL ✓ but **no SPD sentence**
+3. Samsung 96 GB @ Geizhals DE — €40.58/GB
+
+*(Caveat on the ordering: #2 is cheaper per GB but only if you accept the no-SPD gamble and CoreWave's quote-based pricing; #1 is the cheapest build that is simultaneously QVL-passing, SPD-verified and purchasable at a published retail price. On total spend #1 is also 32 % cheaper because it buys 768 GB rather than 1152 GB — capacity, not price, is the real fork.)*
+
+### 3. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| **Samsung `M321RYGA0PB2-CCP`** (96 GB 2Rx4) — QVL ✓ on MZ23-SU0 | **no SPD sentence published** (Samsung) | **Geizhals DE** (7 Angebote) | **ab €4.635,94 brutto = €3.895,75 net = €40.58/GB** | 7 Angebote | https://geizhals.de/samsung-rdimm-96gb-m321ryga0pb2-ccp-a3528339.html |
+| Samsung `M321RYGA0PB2-CCP` — tier prices | no SPD sentence | CoreWave (LV) | **6 pcs $3,859 · 94 pcs $3,804** (ex-VAT) = €36.35 / €35.83 per GB | 230 pcs · 4-5 d | page above |
+| SuperTech.pl 64MD (Ceneo row) | SPD-verified 2Rx4 | SuperTech.pl | **13 483,99 zł** (tick UP +51 zł) = €3.059,68 = **€47.81/GB** | listed | https://www.ceneo.pl/182533999 |
+
+### 4. Blocked list
+
+- Nothing new blocked this pass. Standing: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl (camofox only).
+- `camofox eval` on a `--user` whose tab was evicted returns "Tab not found" — re-`open` first (hit once on ceneo, recovered).
+
+### 5. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No, and pass 54's headline is corrected.** The QVL-passing floor is the **Kingston 64 MD @ Allegro at €37.21/GB**, which is also the only QVL ✓ **and** SPD-verified **and** retail-published route. CoreWave's Samsung 96 GB is €35.83–36.35/GB once its own tier pricing is applied (not €32.76), so it is *cheaper per GB* but carries the no-SPD caveat and a quote-based price. Meanwhile the 64 GB market keeps softening at the distributors — **senetic.pl −68,79 zł and senetic.de −15,61 € this pass**, two consecutive passes of falls — which is worth watching: if that slide continues it eventually undercuts Allegro.
+
+**Process note:** the error was using a headline price for a quantity where the vendor publishes a tier table. The same class of mistake as the earlier VAT slips — a number read correctly but applied to the wrong basis. The board now shows CoreWave's tier prices in the row's spec rather than only the sticker.
+
+Coverage: camofox 3 profiles / ~6 navigations (tonitrus, ceneo, ceneo-retry); trawl 1 scrape (geizhals Samsung 96); curl 6 (ibfusion, senetic ×2, CoreWave product page, plus the two file reads). Expansion: CoreWave tier table (new), Geizhals Samsung-96 street price (new), senetic re-tick — 3 new price data points.

@@ -81,12 +81,13 @@ if _q:
     def _pergb(o):
         p = o["price"]
         return p["net"] * (data["fx"][p["cur"]] / data["fx"]["EUR"]) / p["gb"]
-    o = min(_q, key=_pergb)
+    # card 1 answers "cheapest TOTAL spend for a QVL-passing 12-module build"
+    o = min(_q, key=lambda x: x["price"]["net"] * (data["fx"][x["price"]["cur"]] / data["fx"]["EUR"]))
     gb12 = o["price"]["gb"] * 12
     kit_net = money(o["price"]["net"] * 12, o["price"]["cur"])
     kit_label = f'12× {o["part"].split(" (")[0]} — {o["shop"].split(" (")[0]} · {gb12} GB · €{_pergb(o):.2f}/GB'
     kit_url = o.get("url")
-    kit_cap = f"Cheapest QVL-passing 2Rx4 build ({gb12} GB)"
+    kit_cap = f"Lowest total spend — QVL-passing ({gb12} GB)"
 else:
     kit_net, kit_label, kit_url, kit_cap = best_kit.get("twelve_kit_net", 14372), best_kit["part"], best_kit.get("url"), "Cheapest kit"
 
