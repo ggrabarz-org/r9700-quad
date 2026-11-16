@@ -1,7 +1,67 @@
 {
  "eurpln": 4.407,
- "updated": "2026-11-16T05:05Z",
+ "updated": "2026-11-16T06:15Z",
  "offers": [
+  {
+   "part": "Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Foletti Computer (CH)",
+   "spec": "SPD-verified 2Rx4 · source-verified at superstore.foletti.com (via Toppreise p951885) · CHF 3'363.90 incl. free shipping · '< 5 Pcs from our external EU-warehouse' · 'No right of return' · delivery 19-30 Nov · FX 1 CHF = 1.08051 EUR (NBP 2026-11-13), CH VAT 8.1%",
+   "shop": "Foletti Computer",
+   "country": "CH (EU warehouse)",
+   "org": "2Rx4",
+   "price_net": "€3.362,37 net-basis (CHF 3'363.90 ÷1.081)",
+   "price_gross": "CHF 3'363.90 (€3.634,72)",
+   "eur_per_gb": "€35.02",
+   "stock": "< 5 pcs · no returns · external EU warehouse",
+   "checked": "2026-11-16T06:15Z",
+   "state": "new",
+   "best": false,
+   "url": "https://www.toppreise.ch/preisvergleich/Arbeitsspeicher/KINGSTON-Server-Premier-RDIMM-DDR5-6400-KSM64R52BD4-96MC-p951885"
+  },
+  {
+   "part": "Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — orderflow.ch",
+   "spec": "SPD-verified 2Rx4 · source-verified at orderflow.ch/products/19769118 (via Toppreise p953764) · '20x ab Schweizer Lager, ca. 1-3 Werktage' · ships from CH so PL import VAT applies on top; Lieferungen page 404s (cross-border terms unconfirmed) · FX 1 CHF = 1.08051 EUR, CH VAT 8.1%",
+   "shop": "orderflow.ch",
+   "country": "CH",
+   "org": "2Rx4",
+   "price_net": "€2.325,64 net-basis pre-import (CHF 2'326.70 ÷1.081)",
+   "price_gross": "CHF 2'326.70 (€2.514,02)",
+   "eur_per_gb": "€36.34",
+   "stock": "20x Swiss warehouse · 1-3 Werktage",
+   "checked": "2026-11-16T06:15Z",
+   "state": "new",
+   "best": false,
+   "url": "https://www.orderflow.ch/products/19769118"
+  },
+  {
+   "part": "Kingston KSM64R52BD4-128MB (128 GB 2Rx4, non-3DS) — first 2Rx4 128 GB part",
+   "spec": "SPD-VERIFIED, datasheet pulled pass 49: '128GB 2Rx4 16G x 80-Bit … SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V' · 32 internal banks · 1.1V · corrects the earlier tracker note that treated 128MB as 3DS-only · board-legal: manual p.40 rates RDIMM 2R at 6400 MT/s @ 12 slots → 12× = 1.5 TB at 6400",
+   "shop": "Toppreise.ch (7 Angebote; page floor ab CHF 4'841.05, best row CHF 5'061.00)",
+   "country": "CH",
+   "org": "2Rx4",
+   "price_net": "€4.838,85 net-basis (CHF 4'841.05 ÷1.081)",
+   "price_gross": "CHF 4'841.05 (€5.230,79)",
+   "eur_per_gb": "€37.80 (ab) – €39.52",
+   "stock": "7 Angebote",
+   "checked": "2026-11-16T06:15Z",
+   "state": "new",
+   "best": false,
+   "url": "https://www.toppreise.ch/preisvergleich/Arbeitsspeicher/KINGSTON-Server-Premier-RDIMM-DDR5-6400-KSM64R52BD4-128MB-p953222"
+  },
+  {
+   "part": "Kingston KSM64R52BD4-96MC / 64MD — MediaMarkt.ch & Interdiscount.ch rows",
+   "spec": "SPD-verified parts · MediaMarkt.ch 96MC is a MARKETPLACE offer (seller 'Mediarado CH', CHF 4'223.04 = €43.97/GB net) · 64MD Interdiscount CHF 2'512.60 = €39.24/GB net — both dearer than the Foletti/orderflow rows and CHF-only",
+   "shop": "MediaMarkt.ch / Interdiscount.ch",
+   "country": "CH",
+   "org": "2Rx4",
+   "price_net": "CHF 4'223.04 / CHF 2'543.10 / CHF 2'512.60",
+   "price_gross": "see prices",
+   "eur_per_gb": "€43.97 (96MC) · €39.72/€39.24 (64MD)",
+   "stock": "listed",
+   "checked": "2026-11-16T06:15Z",
+   "state": "new",
+   "best": false,
+   "url": "https://www.mediamarkt.ch/de/search.html?query=KSM64R52BD4"
+  },
   {
    "part": "Kingston KSM64R52BD4-96HM (96 GB 2Rx4) — Geizhals product",
    "spec": "SPD-verified (datasheet pass 43: \"SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V\", 2Rx4) · Geizhals a3973312, 10 Angebote · no beat (€41.51/GB vs the 96MC €35.53)",
@@ -785,7 +845,8 @@
   "Pass 46: Ceneo.pl opened as a source (user-supplied link = the 16 GB KSM64R52BS8-16MH, €36.81/GB net, 192 GB cap). New 64 GB best: Allegro komputera_pl 12 908,19 zł delivered = €37.21/GB net -> 768 GB at €28.575,84 net. Ceneo rows cross-validated against senetic.pl direct read (14 163,65/1.23 = 11 515,16 zł exactly). Old floor: 96MC electronis €35.53/GB; 32MH €35.76/GB; Ceneo carries no 32 GB 6400 part.",
   "Pass 46b (USER DIRECTIVE): 2Rx4 only. 32GB tier removed (KSM64R52BD8-2xMH = 2Rx8; no 32GB 2Rx4 exists), 16GB removed (1Rx8), Proshop 128GB kit removed (4x32GB 1Rx8), CoreWave Samsung 48GB removed (2Rx8). Remaining qualified 2Rx4 builds: 12x64GB = 768GB (Allegro 28.575,84 net @ 37.21) and 12x96GB = 1.152TB (electronis 40.930,99 net @ 35.53). 2Rx4 128GB/256GB 3DS parts exist (CoreWave Samsung) but need board 3DS/rank verification.",
   "Pass 47 (2Rx4-only): floors hold — 96MC electronis €35.53/GB (1.152TB = €40.930,99 net), 64MD Allegro €37.21/GB (768GB = €28.575,84 net). Proshop.de opened (96MC €40.64, 64MD €39.15, both capped 2/customer). Micron MTC40F204WS1RC64BC1 confirmed 2Rx4 per CoreWave listing (€33.79/GB net-basis) — the caveat class now has a Micron 96GB option. hynix Geizhals €46.80/GB = no buy. Proshop.pl lead slipped 5-6 -> 6-7 dni.",
-  "Pass 48: MANUAL ANSWERED (6-pass open item). H14SSL-NT MNL-2821 p.40: 9005 table rates RDIMM 1R/2R and 3DS 2S2R/2S4R all at 6400 MT/s (single merged 6400 cell); board supports 3 TB @ 6400 in 12 slots; p.41 confirms 12-DIMM population. => every 2Rx4 route priced here (64 GB 64MD/MH/HA, 96 GB 96MC, Samsung/Micron 2Rx4) is board-legal at 6400 across all 12 channels. Read via camofox PDF viewer (curl 403 Akamai, r.jina.ai empty, trawl 61MB body never delivered)."
+  "Pass 48: MANUAL ANSWERED (6-pass open item). H14SSL-NT MNL-2821 p.40: 9005 table rates RDIMM 1R/2R and 3DS 2S2R/2S4R all at 6400 MT/s (single merged 6400 cell); board supports 3 TB @ 6400 in 12 slots; p.41 confirms 12-DIMM population. => every 2Rx4 route priced here (64 GB 64MD/MH/HA, 96 GB 96MC, Samsung/Micron 2Rx4) is board-legal at 6400 across all 12 channels. Read via camofox PDF viewer (curl 403 Akamai, r.jina.ai empty, trawl 61MB body never delivered).",
+  "Pass 49: camofox search/google + Toppreise.ch opened. Source-verified beats: KSM64R52BD4-96MC @ Foletti CHF 3'363.90 = EUR 35.02/GB net (<5 pcs, no returns) and KSM64R52BD4-64MD @ orderflow.ch CHF 2'326.70 = EUR 36.34/GB net-basis (20x, CH-origin). Also NEW: KSM64R52BD4-128MB is a real 128GB 2Rx4 SPD-6400 part (datasheet verified) — not 3DS; 12x = 1.5 TB at 6400, ab CHF 4'841.05 = EUR 37.80/GB (no win vs 96MC). FX 1 CHF = 1.08051 EUR (NBP 2026-11-13); CH VAT 8.1%. Correction: an early draft of pass 49 quoted wrong per-GB figures (33.61/33.63) — the record now carries 35.02/36.34."
  ],
  "ladder": {
   "updated": "2026-11-16T02:05Z",
@@ -804,7 +865,7 @@
     "route": "12× KSM64R52BD4-64MD @ Allegro komputera_pl",
     "net": "€28.575,84",
     "per_gb": "€37.21",
-    "caveat": "SPD-verified 2Rx4 · board-legal (manual p.40, 2R=6400 @12 slots) · promo-badged price, re-check at order",
+    "caveat": "SPD-verified 2Rx4 · board-legal · Allegro (promo) is the fillable route; orderflow.ch CHF 2'326.70 = €36.34/GB net-basis beats it by 2.3% but is CH-origin (import VAT applies, terms unconfirmed)",
     "url": "https://www.ceneo.pl/182533999"
    },
    {
@@ -825,10 +886,10 @@
    },
    {
     "cap": "1.15 TB (12×96, 12-ch)",
-    "route": "12× KSM64R52BD4-96MC @ electronis.de",
+    "route": "12× KSM64R52BD4-96MC @ electronis.de (or Foletti CHF — see board)",
     "net": "€40.930,99",
     "per_gb": "€35.53",
-    "caveat": "SPD-verified 2Rx4 · **board-legal: H14 manual p.40 rates RDIMM 2R at 6400 MT/s @ 12 slots (read 2026-11-16)** · cheapest qualified €/GB",
+    "caveat": "SPD-verified 2Rx4 · board-legal (manual p.40) · electronis is the fillable 18-offer route; Foletti CHF 3'363.90 = €35.02/GB but '< 5 pcs' so it cannot fill a 12-piece build",
     "url": "https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html"
    },
    {

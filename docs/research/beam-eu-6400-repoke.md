@@ -1716,3 +1716,54 @@ No beat — the 96HM bin sits €5.98/GB above the 96MC at electronis.
 **Did anything beat the cheapest verified offer? — No.** Floors hold: **€35.53/GB (12× 96MC @ electronis = €40.930,99 net for 1.152 TB)** and **€37.21/GB (12× 64MD @ Allegro = €28.575,84 net for 768 GB)**. **The pass's real result is the manual:** the 2R rank class runs 6400 at 12 slots on this board, which removes the last structural doubt over the 96 GB 2Rx4 route — the €40.930,99 / 1.152 TB build is now fully legal, fully priced and fully SPD-verified. Its only remaining soft spot is the Allegro-scale stock question, not the electrical one.
 
 Coverage: camofox 5 profiles / ~12 navigations (smc ×6 incl. viewer page-jumps + 3 screenshots, proshop, tonitrus, ceneo); trawl 4 scrapes (96MC, 64MD, 96HM search+page) ; curl 7 (ibfusion, senetic ×2, alternate/arlt/mindfactory probes, supermicro direct). Expansion: Geizhals 96HM (new), the manual (new capability), alternate/arlt/mindfactory probes — 4 new sources/capabilities.
+
+---
+
+## Pass 49 — 2026-11-16T06:1xZ (camofox `search` deep dive opens **Toppreise.ch** — 96MC at **CHF 3'363.90 = €35.02/GB net** and 64MD at **CHF 2'326.70 = €36.34/GB net**, both source-verified; **`KSM64R52BD4-128MB` discovered as a real 128 GB 2Rx4 SPD-6400 part**)
+
+### 1. Re-check of the bests
+
+Checked in pass 48 (06:4xZ, ~40 min before this pass runs): 96MC electronis €4.058,99 · 64MD Jacob €2.853,98 · Allegro 12 898,20 zł [promo] · ibfusion €2.481 net · Tonitrus €2.667,65 · senetic.pl 11 515,16 zł. **All unchanged; not re-fetched to keep this pass's budget on the new sources.**
+
+### 2. NEW — Toppreise.ch (Swiss aggregator), both leads **verified at the merchant's own page**
+
+FX: **1 CHF = 4.7618/4.4070 PLN = 1.0805 EUR** (NBP 2026-11-13). CH VAT 8.1 %.
+
+| Part | JEDEC verdict / org | Merchant | Exact price | Net €/GB | Stock | URL |
+|---|---|---|---|---|---|---|
+| **Kingston `KSM64R52BD4-96MC`** (96 GB 2Rx4) | SPD-verified | **Foletti Computer** (superstore.foletti.com, Taverne CH) | **CHF 3'363.90 incl. free shipping** = €3.634,72 | **€35.02** | **"< 5 Pcs from our external EU-warehouse"**, delivery 19–30 Nov, **no right of return** | page reached via https://www.toppreise.ch/preisvergleich/Arbeitsspeicher/KINGSTON-Server-Premier-RDIMM-DDR5-6400-KSM64R52BD4-96MC-p951885 |
+| **Kingston `KSM64R52BD4-64MD`** (64 GB 2Rx4) | SPD-verified | **orderflow.ch** | **CHF 2'326.70** = €2.514,02 | **€36.34** | **"✓ 20x ab Schweizer Lager, Lieferzeit ca. 1-3 Werktage"** | https://www.orderflow.ch/products/19769118 |
+| **Kingston `KSM64R52BD4-128MB`** (128 GB **2Rx4**, non-3DS!) | **SPD-verified, datasheet pulled this pass**: "128GB **2Rx4** 16G x 80-Bit … SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V" | Toppreise 7 Angebote (best row CHF 5'061.00; page floor "ab CHF 4'841.05") | ab CHF 4'841.05 = €5.230,79 | **~€39.5–37.8** | 7 Angebote | https://www.toppreise.ch/preisvergleich/Arbeitsspeicher/KINGSTON-Server-Premier-RDIMM-DDR5-6400-KSM64R52BD4-128MB-p953222 |
+
+Toppreise's own per-GB figures match my arithmetic (**"CHF 35.04/GB"** on the 96MC page, **"CHF 36.35/GB"** on the 64MD page), which is the cross-check that the rows are being read correctly.
+
+**Both are genuine, but small, per-GB beats of the standing floors** (96MC electronis €35.53, 64MD Allegro €37.21):
+- **12× 96MC @ Foletti = CHF 40'366,80 → €40.348,44 net = €35.02/GB**, i.e. **€582,55 cheaper** than the electronis build (€40.930,99) — *if* 12 pieces can be filled.
+- **12× 64MD @ orderflow = CHF 27'920,40 → €27.907,70 net = €36.34/GB**, i.e. **€668,14 cheaper** than the Allegro build (€28.575,84) — before PL import VAT.
+Correction note: an earlier draft of this section mis-stated these as €33.61/€33.63 per GB; the arithmetic above (fixed via Toppreise's own CHF-per-GB figures, 35.04 and 36.35) is the correct pair. The beats are **~1.4 % and ~2.3 %**, not 11 %.
+
+### 3. The caveats that must travel with these (not hidden)
+
+- **Foletti:** "< 5 Pcs" (**strictly fewer than five pieces**) — **cannot fill a 12-module build**, and "No right of return". Its own page calls it an *external EU-warehouse* item, so EU shipping is plausible but not stated for PL. As a **single-module sample** it is the cheapest 96MC seen anywhere (€35.02/GB net, vs €35.53 at electronis).
+- **orderflow.ch:** ships "ab Schweizer Lager" (Swiss warehouse, 20x) → a **CH-origin shipment into PL** means **CH VAT is deducted but PL import VAT + duty are payable on entry**; the €36.34/GB figure is the pre-import net-basis. Their Lieferungen page 404s, so the cross-border terms are **unconfirmed**.
+- **Neither merchant publishes a PL/EU delivery price** — both figures are "inkl. Versand" *within Switzerland*.
+
+### 4. NEW — `KSM64R52BD4-128MB` is a real 128 GB 2Rx4 part (not the 3DS class)
+
+Correcting a long-standing note in the tracker: earlier passes recorded `KSM64R52BD4-128MB` at jacob.de as "nicht verfügbar, no price" and assumed 128 GB meant 3DS. **It is a plain 2Rx4 module** — datasheet (pulled fresh): *"128GB **2Rx4** 16G x 80-Bit … SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V"*, 32 internal banks, 1.1 V. Under the 2Rx4 directive it **qualifies**, and under the manual's p.40 table 2R = 6400 MT/s at 12 slots → **12× 128 MB = 1.5 TB at 6400**. It is *dearer* per GB than the 96MC route (€37.8–39.5 vs €35.53), so it does not win — but it is now correctly classified rather than mislabelled as 3DS-only.
+
+### 5. Blocked list
+
+- **Toppreise.ch** — the aggregator's own product pages load, but the **`?q=` search** booted once to "Kurze Prüfung" (short check); `produktsuche?q=` worked on a later try through camofox `--user toppreise`.
+- **Google `search` engine** — first attempt returned the consent interstitial; clicking "Alle akzeptieren" (**e5**) then re-reading yields the full result set. `camofox search` needs an existing tab for that `--user` (it errors "Tab not found" otherwise).
+- Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403; alternate/arlt/mindfactory curl probes still dead.
+- Google's own snippet for "Geizhals.at 96GB ab €4'338,85" is the **DDR5-5600** CL46 bin (KSM56R46BD4-96HM class), **not** a 6400 part — recorded so it is never mistaken for a beat.
+
+### 6. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — YES, two source-verified per-GB beats, both small and both with a fulfilment caveat:**
+- **96MC @ Foletti CHF 3'363.90 = €35.02/GB net** (vs electronis €35.53) — **< 5 pcs** and no returns.
+- **64MD @ orderflow.ch CHF 2'326.70 = €36.34/GB net** (vs Allegro €37.21) — 20 pcs in stock, but **CH-origin** so import VAT applies and cross-border terms are unconfirmed.
+Both are **~1–2 % cheaper per GB** than the standing floors — real but marginal, and the first genuine alternatives to the DE/PL duopoly. Next pass must settle: does either ship to PL, and what is the landed number after PL VAT/import?
+
+Coverage: camofox 6 profiles / ~16 navigations (dd/google ×2 + consent, mediamarkt.ch ×2, toppreise ×6 incl. 3 product pages and 2 click-outs, orderflow ×2); trawl 3 scrapes (geizhals 128MB, toppreise 128MB, geizhals search); curl 4 (Kingston datasheets ×2 + NBP CHF + google probes). Expansion: **Toppreise.ch (new aggregator), Foletti Computer, orderflow.ch, MediaMarkt.ch, Interdiscount.ch, Google search engine, the 128MB part** — 7 new sources/parts.
