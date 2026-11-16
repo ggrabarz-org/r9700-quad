@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**QVL SHORTLIST COLLAPSED (pass 63): of the SIX QVL-passing 2Rx4 6400 parts on the MZ23-SU0, only TWO are buyable new in the EU — Kingston 64MD @ Allegro (€37.21/GB, new+SPD+retail) and Micron 96 GB @ Geizhals (€28.08/GB net, new, single thin seller).** 64MH is buyable but dearer (€39.27); Samsung `M321RYGA0PB2` is used/quote-only; `M321R8GA0PB2-CCP` and `MDRRWM4QDBC2-3*` have **zero** EU offers. With the pass-52 DigiKey obsolescence signal, **waiting for a better QVL-pass option has no supporting evidence after six flat passes.**
+
 **SELLER VERIFIED (pass 62) for the €28.08/GB Micron offer:** `esus-it.de` is a **real German server-hardware shop** (Impressum, `verkauf@esus-it.de`, two phone numbers) — not a phantom — but the part is **not in their own catalogue**, so the price is **live-listed, not stock-confirmed**: contact them before ordering ~€32k. Also closed: **64MH priced** (ab €2 991,09 = €39.27/GB, no beat) and **Samsung `M321R8GA0PB2-CCP` has ZERO EU offers** (second QVL-valid-but-unbuyable part after `MDRRWM4QDBC2-3*`).
 
 **NEW CHEAPEST NEW 96 GB (pass 61): Micron `MTC40F204WS1RC64BC1` on Geizhals at €3 207,89 gross = €2 695,71 net = €28.08/GB net** — QVL ✓, Brand New, single-review seller "esus it", 12× = €32 348,52 net for 1152 GB (17 % under CoreWave's €33.79/GB). Geizhals's own "€33,42/GB" is a GROSS figure (their prices are "inkl. MwSt.") — comparing it to CoreWave's ex-VAT basis was my error, corrected in the pass. Also closed: Samsung `MDRRWM4QDBC2-3`/`-3L000` (QVL ✓) have **zero EU offers**.
@@ -2551,3 +2553,56 @@ Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle,
 **Standing caution:** two of the four QVL-passing parts surfaced in the last week (`MDRRWM4QDBC2-3*`, `M321R8GA0PB2-CCP`) turn out to have **no EU seller at all**. QVL membership and market availability are independent facts, and the board now shows both.
 
 Coverage: camofox 4 profiles / 7 navigations (tonitrus, ceneo, geizhals merchant profile ×2, esus-it.de ×2); trawl 4 scrapes (Micron product, 64MH/64CCP/hynix searches). Expansion: esus-it.de seller verification (new), KSM64R52BD4-64MH pricing (new), M321R8GA0PB2-CCP availability (closed) — 4 new data points.
+
+---
+
+## Pass 63 — 2026-11-16T18:4xZ (bests flat a 6th pass; three new probes all dead-end; **the QVL-pass shortlist is shrinking — three of six QVL parts have no EU seller**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| Allegro komputera_pl 64MD | unchanged **12 898,20 zł** = €37.21/GB | camofox `--user ceneo` |
+| senetic.pl 64MD | unchanged **11 377,59 zł** = €40.34/GB (**6th pass flat**) | curl |
+| senetic.de 64MD | unchanged **2.582,03 €** = €40.34/GB | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| **Micron 96 GB @ Geizhals (€28.08/GB)** | **still live**: 1 offer, esus it, €3 207,89, third consecutive pass | trawl |
+
+### 2. NEW probes — all three dead ends
+
+| Probe | Result |
+|---|---|
+| Samsung `M321R4GA3PB2-CCP` (32 GB, Geizhals a3978623) | **"keine Angebote"** — 0 offers. QVL-listed but unsold. Also **2Rx8**, so excluded by the 2Rx4 directive regardless |
+| voelkner.de — `M321RYGA0PB2` search | 1 hit, but it is the **128 GB** part and it reads **"Ausverkauft"** (sold out), no price |
+| arlt.com / office-partner.de | 404 both; **no** M321 product rows |
+
+So nothing new is purchasable this pass.
+
+### 3. **The QVL shortlist is shrinking — worth stating plainly**
+
+The MZ23-SU0 QVL passes these 2Rx4 6400 parts. Here is whether each can actually be **bought in the EU today**:
+
+| QVL ✓ part | EU availability |
+|---|---|
+| Kingston `KSM64R52BD4-64MD` | **yes** — Allegro 12 898,20 zł, Jacob, Geizhals band |
+| Kingston `KSM64R52BD4-64MH` | **yes** — Geizhals ab €2 991,09 (€39.27/GB) |
+| Micron `MTC40F204WS1RC64BC1` (96 GB) | **yes, thinly** — 1 Geizhals offer (esus it), €3 207,89 |
+| Samsung `M321RYGA0PB2-CCP` (96 GB) | **quote-only** — CoreWave Clean Pull (used), no retail listing |
+| Samsung `M321R8GA0PB2-CCP` (64 GB) | **NO** — "keine Angebote" (pass 62) |
+| Samsung `MDRRWM4QDBC2-3*` (96 GB) | **NO** — "keine Angebote" (pass 61) |
+
+**Three of six QVL-passing parts have no EU seller at all**, and a fourth is used-stock quote-only. The practical QVL-verified buy list is **two items**: **Kingston 64 MD** (Allegro, €37.21/GB, new + SPD + retail) and **Micron 96 GB** (Geizhals/esus it, €28.08/GB net, new, single thin seller). Everything else on the QVL is academic.
+
+### 4. Blocked list
+
+Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl, senetic.it/.es/.nl, esus-it own search.
+- **arlt.com** (404), **office-partner.de** (404), **voelkner.de** (served, but the part is sold out).
+
+### 5. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No. Sixth consecutive flat pass on every floor.** Floors hold: **Micron 96 GB @ Geizhals €28.08/GB net** (live 3 passes running, seller verified as a real DE company, part absent from their own shop) and **Kingston 64 MD @ Allegro €37.21/GB** (€28 575,84 total, new + SPD + QVL ✓).
+
+**The pass's value is a warning rather than a price:** the qualified shortlist has quietly collapsed to two purchasable parts. Every other QVL-pass candidate surfaced in the last week turned out to be unsold, sold out, or used stock. If the build is going ahead, that — plus the DigiKey obsolescence signal from pass 52 — argues for acting on one of the two rather than waiting for a better QVL-pass option to appear, because the evidence of the last six passes is that nothing new is arriving.
+
+Coverage: camofox 3 profiles / 4 navigations (tonitrus, ceneo); trawl 2 scrapes (Micron, Samsung 32GB); curl 5 (ibfusion, senetic ×2, arlt/voelkner/op). Expansion: Samsung 32 GB QVL part (new, dead + 2Rx8), voelkner (new, sold out), arlt/office-partner (dead) — 4 probes, all negative.

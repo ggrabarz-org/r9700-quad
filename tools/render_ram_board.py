@@ -132,6 +132,13 @@ if brc:
 else:
     BOARD_NOTE = ""
 
+qs = data.get("qvl_buyable_shortlist")
+if qs:
+    BOARD_NOTE += (f"<div class='ask'><b>QVL shortlist — what can actually be bought</b> "
+                   f"<span class='k'>(checked {html.escape(qs['checked'])})</span><br>"
+                   f"<span class='k'>{html.escape(qs['conclusion'])}</span><br>"
+                   f"<b>→ {html.escape(qs['implication'])}</b></div>")
+
 lc = data.get("lifecycle_signal")
 if lc:
     BOARD_NOTE += (f"<div class='ask' style='background:linear-gradient(180deg,#3a2a12,#101317);border-color:#8a6417'>"
