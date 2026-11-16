@@ -47,13 +47,18 @@ for o in data["offers"]:
     best = ' <span class="tag rec">BEST</span>' if o.get("best") else ""
     orgv = str(o.get("org", ""))
     org = f' <span class="tag {"rec" if "2Rx4" in orgv else "bad"}">{html.escape(orgv)}</span>' if orgv else ""
+    cd = o.get("condition") or ""
+    ctag = ""
+    if cd:
+        _used = any(k in cd.lower() for k in ("pull", "used", "refurb", "open box"))
+        ctag = f' <span class="tag {"bad" if _used else "rec"}">{html.escape(cd)}</span>'
     qv = o.get("qvl_mz23su0")
     qtag = ""
     if qv == "pass": qtag = ' <span class="tag rec" title="listed on the MZ23-SU0 memory QVL">QVL ✓</span>'
     elif qv == "fail": qtag = ' <span class="tag bad" title="NOT in the MZ23-SU0 memory QVL">QVL ✗</span>'
     flag = "" if o.get("state", "ok") in ("ok", "new") else f' <span class="tag {"warn" if o["state"] in ("stale","unreachable","withdrawn") else "bad"}">{html.escape(o["state"])}</span>'
     rows += f"""<tr>
-      <td data-s="{sk(p.get('net_pln'))}">{html.escape(o['part'])}<br><span class="k">{html.escape(o.get('spec',''))}</span>{best}{org}{qtag}{flag}</td>
+      <td data-s="{sk(p.get('net_pln'))}">{html.escape(o['part'])}<br><span class="k">{html.escape(o.get('spec',''))}</span>{best}{org}{ctag}{qtag}{flag}</td>
       <td data-s="{html.escape(o['shop'])}">{html.escape(o['shop'])}<br><span class="k">{html.escape(o.get('country',''))}</span></td>
       <td class="num" data-s="{sk(p.get('gross'))}">{gross}<br><span class="k">{gl}</span></td>
       <td class="num" data-s="{sk(p.get('net'))}">{net}<br><span class="k">{nl}</span></td>
@@ -113,7 +118,8 @@ else:
 if _q:
     _b = min(_q, key=lambda x: _pergb(x))
     gb_best = f"€{_pergb(_b):.2f}"
-    gb_label = f'{_b["part"].split(" (")[0]} · {_b["shop"].split(" (")[0]}'
+    _cond = _b.get("condition", "")
+    gb_label = f'{_b["part"].split(" (")[0]} · {_b["shop"].split(" (")[0]}' + (f' · {_cond}' if _cond else "")
     gb_url = _b.get("url")
 else:
     gb_best, gb_label, gb_url = best_kit.get("eur_per_gb", "—"), best_kit["part"], best_kit.get("url", "")

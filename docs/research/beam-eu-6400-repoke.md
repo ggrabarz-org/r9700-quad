@@ -2,7 +2,9 @@
 
 ## Standing reference (for scheduler passes)
 
-**CORRECTION #2 (pass 56, supersedes pass 55): CoreWave's "More stock" table is a LIST OF INDEPENDENT STOCK LOTS, not quantity breaks** (1000 pcs $3,880 vs 250 pcs $3,245 — non-monotonic). **Cheapest lot that can fill a 12-pc order = 250 pcs @ $3,245 = €30.57/GB → 12× = €35.213 for 1152 GB — the cheapest QVL-passing build on the board.** Pass 54 used the $3,478 headline; pass 55 mis-read the first tier row as a ladder. Also: **senetic has fallen 3 passes running** (11 515,16 → 11 377,59 zł; 2.613,25 → 2.582,03 €), both now €40.34/GB.
+**CONDITION FINDING (pass 57, supersedes the pass-56 floor): CoreWave's Samsung `M321RYGA0PB2-CCP` is now "Clean Pull • 1 Year" = PULLED/USED stock** (was Brand New in passes 54–56), headline $3,261, best 500-pc lot $3,174 = €29.90/GB. Its Micron sibling `MTC40F204WS1RC64BC1` is **still "Brand New"** at $3,587 = **€33.79/GB**. ⇒ Pass-56's €29.90–30.57 "floor" was USED stock. On a NEW like-for-like basis: **Kingston 64MD @ Allegro €37.21/GB (new + SPD-verified + QVL ✓) is the buy**; Micron 96 GB €33.79/GB is the cheapest NEW 96 GB (no SPD sentence). Board rows now carry condition badges.
+
+**CORRECTION #2 (pass 56, superseded by the condition finding above): CoreWave's "More stock" table is a LIST OF INDEPENDENT STOCK LOTS, not quantity breaks** (1000 pcs $3,880 vs 250 pcs $3,245 — non-monotonic). **Cheapest lot that can fill a 12-pc order = 250 pcs @ $3,245 = €30.57/GB → 12× = €35.213 for 1152 GB — the cheapest QVL-passing build on the board.** Pass 54 used the $3,478 headline; pass 55 mis-read the first tier row as a ladder. Also: **senetic has fallen 3 passes running** (11 515,16 → 11 377,59 zł; 2.613,25 → 2.582,03 €), both now €40.34/GB.
 
 **CORRECTION (pass 55, partly superseded): CoreWave's $3,478 Samsung-96GB price is the 1-PIECE sticker. Its own tier table: 6 pcs $3,859, 36–94 pcs $3,804 ⇒ a 12-piece order is €35.83–36.35/GB, NOT €32.76 as pass 54 stated.** QVL-passing order is therefore: **Kingston 64MD @ Allegro €37.21/GB** (QVL ✓ + SPD-verified + retail-published, 768 GB, €28.575,84) → Samsung 96 GB @ CoreWave €36.35/GB (QVL ✓ only, no SPD, 1152 GB) → Samsung 96 GB @ Geizhals DE €40.58/GB. Also: senetic keeps sliding (pl 11 411,82 zł / de 2.589,80 €, two passes of falls).
 
@@ -2209,3 +2211,70 @@ Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle,
 **Two corrections in two passes on the same row is a pattern worth naming:** I twice inferred the pricing basis from a partial read (pass 54: headline = price; pass 55: first tier row = ladder). The fix both times was to read the *complete* table and check whether the numbers are monotonic. The board row now carries the full lot list rather than a single figure.
 
 Coverage: camofox 3 profiles / ~5 navigations (tonitrus, ceneo, CoreWave product page ×2); curl 4 (ibfusion, senetic ×2, CoreWave). Expansion: full CoreWave lot table (11 lots), senetic 3-pass trend — 12 new price points.
+
+---
+
+## Pass 57 — 2026-11-16T13:3xZ (**CONDITION CHANGE: CoreWave's Samsung 96 GB is now "Clean Pull" (used) at $3,174–3,261 — the €30/GB headline was used stock. Micron's is still "Brand New" at $3,587 = €33.79/GB**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **64MD @ Allegro komputera_pl (QVL ✓)** | unchanged **12 898,20 zł** · buy-it 12 901,77 · **superstorage ticked UP 13 277,55 → 13 372,80** · new row **esus-it.pl 15 180,48** | camofox `--user ceneo` |
+| **senetic.pl 64MD** | **unchanged 11 377,59 zł** (the 3-pass slide has stopped) = €40.34/GB | curl |
+| **senetic.de 64MD** | **unchanged 2.582,03 €** = €40.34/GB | curl |
+| senetic.pl / .de 96MC | unchanged 16 426,27 zł / 3.727,78 € | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| **CoreWave Samsung 96 GB** | **condition changed to "Clean Pull • 1 Year"**; headline fell $3,478 → **$3,261**; **new 500-pc lot at $3,174** | curl |
+| CoreWave Micron 96 GB | **unchanged "Brand New • 1 Year"** at $3,587 | curl |
+| senetic.it / .es / .nl | new locales readable (all 8 KSM hits) but **no 64MD/96MC price extracted** — same distributor, no new information | curl |
+
+### 2. **THE FINDING — the cheap 96 GB lots are used stock**
+
+CoreWave's Samsung `M321RYGA0PB2-CCP` page now reads:
+
+> `SKU: M321RYGA0PB2-CCP · $ 3,261 · ≈ €2978 · Excl. VAT & shipping · **Clean Pull • 1 Year**`
+
+Previously (passes 54–56) the same page said **Brand New**. The Micron sibling still says **"Brand New • 1 Year"** at $3,587. So the condition is **per part, not per lot**, and the Samsung part has been downgraded to pulled/used units.
+
+"Clean Pull" is a real trade term: a module pulled from a working system, tested, and resold with a short (1-year) warranty. That is *not* the same product as a new-in-box module, and it changes both the warranty position and the resale/MSI story.
+
+### 3. Condition-aware pricing (all QVL ✓ on MZ23-SU0)
+
+| Part | Condition | Unit | €/GB | 12× |
+|---|---|---:|---:|---:|
+| Samsung `M321RYGA0PB2-CCP` | **Clean Pull (USED)** | $3,174 (500-pc lot) | €29.90 | €34.442 |
+| Samsung `M321RYGA0PB2-CCP` | **Clean Pull (USED)** | $3,245 (250-pc lot) | €30.57 | €35.213 |
+| Samsung `M321RYGA0PB2-CCP` | **Clean Pull (USED)** | $3,261 (headline) | €30.72 | €35.386 |
+| **Micron `MTC40F204WS1RC64BC1`** | **Brand New** | **$3,587** | **€33.79** | **€38.924** |
+| **Kingston `64MD` @ Allegro** | **Brand New, SPD-verified** | 12 908,19 zł | **€37.21** | **€28.575,84 (768 GB)** |
+
+**The pass-56 headline (€29.90–30.57/GB) was used stock.** The cheapest **new** 96 GB route is Micron at **€33.79/GB**; the cheapest **new, SPD-verified** route of any capacity is still **Kingston 64 MD at €37.21/GB**.
+
+### 4. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Samsung `M321RYGA0PB2-CCP` 96 GB | no SPD sentence · **Clean Pull (used)** | CoreWave | **$3,174 (500-pc lot) / $3,261 headline**, ex-VAT | 500 / 250+ pcs · 4-5 d | https://corewavelabs.com/m321ryga0pb2-ccp-samsung-96gb-ddr5-6400-rdimm/ |
+| Micron `MTC40F204WS1RC64BC1` 96 GB | no SPD sentence · **Brand New** | CoreWave | **$3,587 ex-VAT = €3.243,68 = €33.79/GB** | 200 pcs · 3-4 d | https://corewavelabs.com/mtc40f204ws1rc64bc1-micron-96gb-ddr5-6400-rdimm/ |
+| superstorage.pl 64MD (Ceneo) | SPD-verified 2Rx4 | superstorage.pl | **13 372,80 zł** (tick UP +95,25) = €3.034,49 = **€47.41/GB** | listed | https://www.ceneo.pl/182533999 |
+| esus-it.pl 64MD (Ceneo, new row) | SPD-verified 2Rx4 | esus-it.pl | **15 180,48 zł** = €3.444,63 = **€53.82/GB** | listed | same |
+
+### 5. Blocked list
+
+Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl.
+- **senetic.it / .es / .nl** — pages fetch (200, 8 KSM hits each) but the price markup differs from the .pl/.de templates, so no numbers were extracted. Same distributor as .pl/.de, so no expected information — recorded as un-extracted rather than guessed.
+- CoreWave prices remain **quote-confirmed**, not cart prices.
+
+### 6. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — Only on used stock.** The €29.90–30.57/GB Samsung numbers from pass 56 are **Clean Pull (used)**; on a like-for-like **new** basis the 96 GB floor is **Micron at €33.79/GB**, and the cheapest new **and** SPD-verified route is unchanged at **Kingston 64 MD @ Allegro €37.21/GB**. So the ordering by *what you actually get*:
+
+1. **Kingston 64 MD @ Allegro** — €37.21/GB, new, SPD-verified, QVL ✓, PL-shipped (768 GB, €28.575,84)
+2. **Micron 96 GB @ CoreWave** — €33.79/GB, new, QVL ✓, no SPD (1152 GB, €38.924 net-basis)
+3. Samsung 96 GB @ CoreWave — €29.90/GB, **used**, QVL ✓, no SPD
+
+**Why this pass matters more than its price moves:** three consecutive passes have now revised the same row — first the sticker, then the lot structure, now the condition. The lesson is that **price is the last thing to trust and condition is the first**: a "cheapest build" claim needs price *and* condition *and* SPD status stated together, which the board now does.
+
+Coverage: camofox 3 profiles / 5 navigations (tonitrus, ceneo, CoreWave ×2); curl 8 (ibfusion, senetic ×5 locales, CoreWave Micron, CoreWave search). Expansion: CoreWave Micron page + Clean-Pull condition discovery, senetic .it/.es/.nl locales, superstorage/esus-it rows — 5 new data points, 1 major condition finding.
