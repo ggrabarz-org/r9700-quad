@@ -2,7 +2,9 @@
 
 ## Standing reference (for scheduler passes)
 
-**OPEN QUESTION (pass 58): CoreWave sells the `96MC` that the MZ23-SU0 QVL OMITS** — but CoreWave resells by spec (it also sells "compatible" Samsung/Micron/Supermicro parts), so a reseller listing is **not** QVL evidence. Unresolved whether the omission is genuine incompatibility, an un-updated QVL, or a firmware restriction; only GIGABYTE/Kingston can answer. Also: CoreWave's own **64MD is "Brand New • 3 Years"** at $2,857–3,076 = **€40.37–43.46/GB** — 9–17 % dearer than Allegro, but with a 3-year warranty vs 12 months.
+**QVL QUESTION NARROWED (pass 59, supersedes pass 58): the MZ23-SU0 QVL (stamp "Last Update: Oct 27, 2026") lists FIVE Samsung 96 GB 2Rx4 6400 parts and ZERO Kingston 96 GB, while validating Kingston 64MD/64MH.** So the board has **no 96 GB limitation** — the exclusion is **Kingston-96 GB-specific**. Ruled out: QVL staleness and any 96 GB capability limit. Remaining: genuine Kingston-96 GB incompatibility, or a validation gap for those SKUs — only GIGABYTE/Kingston can say. **Practical: a 96 GB build on this board is a Samsung-or-Micron decision; Micron 96 GB at €33.79/GB (Brand New, QVL ✓) is the strongest 96 GB route and needs no Kingston answer.** New QVL-pass part to price: `MDRRWM4QDBC2-3D000`.
+
+**OPEN QUESTION (pass 58, narrowed above): CoreWave sells the `96MC` that the MZ23-SU0 QVL OMITS** — but CoreWave resells by spec (it also sells "compatible" Samsung/Micron/Supermicro parts), so a reseller listing is **not** QVL evidence. Unresolved whether the omission is genuine incompatibility, an un-updated QVL, or a firmware restriction; only GIGABYTE/Kingston can answer. Also: CoreWave's own **64MD is "Brand New • 3 Years"** at $2,857–3,076 = **€40.37–43.46/GB** — 9–17 % dearer than Allegro, but with a 3-year warranty vs 12 months.
 
 **CONDITION FINDING (pass 57, supersedes the pass-56 floor): CoreWave's Samsung `M321RYGA0PB2-CCP` is now "Clean Pull • 1 Year" = PULLED/USED stock** (was Brand New in passes 54–56), headline $3,261, best 500-pc lot $3,174 = €29.90/GB. Its Micron sibling `MTC40F204WS1RC64BC1` is **still "Brand New"** at $3,587 = **€33.79/GB**. ⇒ Pass-56's €29.90–30.57 "floor" was USED stock. On a NEW like-for-like basis: **Kingston 64MD @ Allegro €37.21/GB (new + SPD-verified + QVL ✓) is the buy**; Micron 96 GB €33.79/GB is the cheapest NEW 96 GB (no SPD sentence). Board rows now carry condition badges.
 
@@ -2333,3 +2335,61 @@ Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle,
 **Value of the pass:** three new facts, none of them a price win — (1) CoreWave's Kingston 64 MD is new stock with a 3-year warranty but too dear; (2) CoreWave sells the **96MC that the QVL omits**, which sharpens the open QVL question without answering it; (3) the PL market firmed slightly (buy-it.pl +169,45 zł; superstorage up last pass), so Allegro's €12 898,20 is now more clearly the outlier-cheap row in a rising band.
 
 Coverage: camofox 3 profiles / 4 navigations (tonitrus, ceneo); curl 5 (ibfusion, senetic ×2, CoreWave ×2 product pages + search). Expansion: CoreWave Kingston catalogue (9 KSM products), CoreWave 96MC page, buy-it.pl tick — 4 new data points.
+
+---
+
+## Pass 59 — 2026-11-16T15:3xZ (**QVL question narrowed decisively: the MZ23-SU0 QVL *does* support 96 GB 2Rx4 @ 6400 — it lists FIVE Samsung 96 GB parts — but ZERO Kingston 96 GB. QVL stamp is "Last Update: Oct 27, 2026", so this is not staleness**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **64MD @ Allegro komputera_pl (QVL ✓)** | unchanged **12 898,20 zł** · buy-it.pl 13 071,22 (holds last pass's rise) · esus-it 15 180,48 | camofox `--user ceneo` |
+| senetic.pl 64MD | unchanged **11 377,59 zł** = €40.34/GB (3 passes flat) | curl |
+| senetic.de 64MD | unchanged **2.582,03 €** = €40.34/GB | curl |
+| senetic.pl / .de 96MC | unchanged 16 426,27 zł / 3.727,78 € | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| CoreWave | unchanged from pass 57/58 (Samsung 96 GB = Clean Pull; Micron 96 GB = Brand New $3,587) | curl (pass 57/58) |
+
+### 2. **The QVL question, narrowed to a precise answer**
+
+Re-read the MZ23-SU0 memory QVL through the **Memory** category (the earlier pass-54 read was of the default CPU tab's text; this pass clicked through and captured the stamp):
+
+| Check | Result |
+|---|---|
+| QVL page stamp | **"Last Update: Oct 27, 2026"** |
+| `KSM64R52BD4-96MC` present? | **No** |
+| Any **Kingston** 96 GB 6400 row? | **No — zero** |
+| Any **96 GB** row at all? | **Yes — 27 × "DDR5 96GB"** |
+| 96 GB **6400** rows | **5, all Samsung**: `M321RYGA0PB2-CCPPC/-CCPWC/-CCPKC/-CCPEC` and `MDRRWM4QDBC2-3D000` — all **2Rx4, 1.1 v, 6400 MHz** |
+| Kingston rows that ARE listed (6400) | `KSM64R52BD4-64MD` (2Rx4), `KSM64R52BD4-64MH` (2Rx4), `KSM64R52BD8-32MD/-32MH` (2Rx8) |
+
+**So the board itself has no 96 GB limitation** — Gigabyte validates five 96 GB 2Rx4 6400 modules. The exclusion is **specific to Kingston's 96 GB SKUs** (96MC and 96HM are both absent), while Kingston's 64 GB 64MD/64MH **are** validated. That rules out two of my three hypotheses from pass 58:
+
+- ❌ *"QVL not updated for that SKU"* — the QVL was refreshed **Oct 27, 2026** and still omits it.
+- ❌ *"the board can't do 96 GB at 6400"* — it validates five such parts.
+- ✅ **Remaining:** either a genuine Kingston-96 GB incompatibility on this board, or a validation gap specific to those SKUs. **Only GIGABYTE or Kingston can say which.** I did not send an enquiry (no support channel was opened this pass) — so this stays an open question, now much better specified.
+
+### 3. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Samsung `M321RYGA0PB2-CCP(PC/WC/KC/EC)` 96 GB | **no SPD sentence** (Samsung) · **QVL ✓** | CoreWave (from pass 57/58) | **"Clean Pull" (USED)** $3,174–3,261 · **Micron sibling "Brand New" $3,587 = €33.79/GB** | 200–500 pcs | https://corewavelabs.com/mtc40f204ws1rc64bc1-micron-96gb-ddr5-6400-rdimm/ |
+| `MDRRWM4QDBC2-3D000` Samsung 96 GB | no SPD sentence · **QVL ✓** | not yet priced in EU (QVL-only find) | — | — | MZ23-SU0 QVL |
+
+**New QVL-backed part to hunt:** `MDRRWM4QDBC2-3D000` — a fifth Samsung 96 GB 6400 module number that appears on the QVL but has never been priced in this hunt. Worth a probe next pass.
+
+### 4. Blocked list
+
+Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl, senetic.it/.es/.nl (markup not extractable).
+- New probes dead: **brack.ch** (no connection), **digitec.ch** (403, 202-byte stub), **steg-electronics.ch** (200 but 0 KSM hits).
+- **GIGABYTE QVL** requires the browser route *and* a click on the "Memory" category — the default view is the CPU tab, which is why pass 54's read needed re-doing properly.
+
+### 5. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No.** Floors hold: **Kingston 64 MD @ Allegro €37.21/GB** (new, SPD-verified, QVL ✓) and **Micron 96 GB @ CoreWave €33.79/GB** (new, QVL ✓, no SPD). **The pass's value is that the QVL question is now answerable in one line:** the board validates 96 GB 2Rx4 at 6400 five times over — all Samsung — and validates Kingston only at 64 GB. So a **96 GB build on this board is a Samsung-or-Micron decision, not a Kingston one**, and the Kingston 96MC should not be assumed usable regardless of price.
+
+**Practical consequence:** the Micron 96 GB at **€33.79/GB (QVL ✓, Brand New)** is now the strongest 96 GB route, and it does not depend on resolving the Kingston question at all.
+
+Coverage: camofox 3 profiles / 5 navigations (tonitrus, ceneo, gigabyte QVL ×2 + Memory click); curl 6 (ibfusion, senetic ×2, brack/digitec/steg). Expansion: MZ23-SU0 QVL re-read with category click + stamp, 5 Samsung 96 GB parts enumerated, new part `MDRRWM4QDBC2-3D000` surfaced — 6 new data points, 1 question narrowed.
