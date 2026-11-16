@@ -1831,3 +1831,58 @@ Also captured: the 64MD Allegro facet shows **only the 6400 bin for 64 GB** (Tak
 Coverage: camofox 8 profiles / ~20 navigations (folelli shipping page, orderflow product+cart+AGB+FAQ attempts, so-it.ch shipping, toppreise merchant map + 4 click-throughs, mediamarkt, allegro product page, dd/google ×3, smicro); trawl 4 scrapes (geizhals ×2, smicro ×2); curl 8 (ibfusion, senetic ×2, new-shop probes ×5). Expansion: Allegro as a source (22-offer table), smicro.pl, orderflow/so-it.ch/eldar.ch shipping policies, komputery/datacamp/prokomputer/megekko/computershop/serversupply/vanparts probes — 12 new sources/parts.
 
 **Next action for the user:** the buy decision is now unambiguous — `12× KSM64R52BD4-96MC @ electronis.de` (€40.930,99 net, 1.152 TB, 6400 × 12 confirmed by the manual) if 96 GB @ 12 channels is acceptable to the QVL question, else `12× KSM64R52BD4-64MD @ Allegro komputera_pl` (€28.575,84 net, 768 GB, PL-shipped) — and the one remaining unknown to settle before ordering 12 is stock depth on the electronis 96MC page.
+
+---
+
+## Pass 51 — 2026-11-16T07:0xZ (**last open item closed: electronis 96MC accepts a 12-piece order (cart = €48.707,88), and its PDP confirms "dual rank, x4" 2Rx4 · Proshop.pl's KIT is withdrawn but its 2Rx4 singles are listed · cheapest no-SPD 96 GB ever seen: eBay clone at €32.43/GB net-basis**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **96MC @ electronis (€/GB floor)** | **unchanged €4.058,99** · Geizhals a3590379, 18 Angebote, stamp 16.11. | trawl + camofox |
+| **64MD @ Jacob (DE 64 GB best)** | **unchanged €2.853,98** · Geizhals a3452640, 17 Angebote | trawl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| **senetic.pl 64MD** | **−34,55 zł tick DOWN: 11 480,61 zł netto** (was 11 515,16) | curl |
+| **senetic.de 64MD** | **−7,84 € tick DOWN: 2.605,41 € exkl.** (was 2.613,25) | curl |
+| senetic.pl / .de 96MC | unchanged 16 426,27 zł netto / 3.727,78 € exkl. | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox `--user tonitrus` |
+| **Proshop.pl 128 GB kit** | **WITHDRAWN — "Produkt został wycofany"** (was 22 245,53 zł netto; already excluded as 1Rx8) | camofox `--user proshop` |
+| CoreWave pricelist | unchanged (48 GB $1,630 · Samsung 96 GB $3,478 · Micron 96 GB $3,587 · QVL 64 GB $3,641) | curl |
+
+### 2. THE LAST OPEN ITEM — electronis 96MC x12 confirmed buyable
+
+Added the part to the cart and set the quantity field `details[624331]` to **12**, then applied it via the cart's own "Menge aktualisieren" button. Result, verbatim from the cart:
+
+> *Kingston Server Premier RDIMM 96GB DDR5-6400 - KSM64R52BD4-96MC · » lieferbar, Lieferzeit 2-4 Werktage · € 4.058,99 · **€ 48.707,88** · Warenwert: € 48.707,88 … **Gesamtsumme: € 48.714,78** (inkl. 19,00% MwSt: € 7.777,32)*
+
+**The shop accepted 12 pieces without any stock warning** — no "nur X verfügbar", no line-item error. So `12× KSM64R52BD4-96MC @ electronis.de` is a *placeable order*, not just a listing: **€48.707,88 goods / €48.714,78 total incl. €6,90 shipping** (all VAT-incl.) → **€40.930,99 net** at 19 % VAT deducted = **€35.53/GB net** — identical to the per-unit figure, because €6,90 shipping is per-order and the per-unit math already excluded it. *(Arithmetic note: an earlier draft of this line said €40.930,99 / €35.53 — that divided by 1.2 instead of 1.19; the correct pair is 1.19 and is used above.)* Also captured the PDP spec block confirming the org at merchant level: *"Modultyp: RDIMM (Registered) · Organisation: **dual rank, x4** · Spannung: 1.1V (JEDEC-Normspannung) · Modulhöhe: 31.25mm · JEDEC-Spezifikation: PC5-51200R · Besonderheiten: JEDEC-Standardprofil (DDR5-6400/CL52), Micron C-Die"*.
+
+*(Note: no order was placed and no payment details entered — the cart was used as a stock probe only, and the cart was left with the quantity applied.)*
+
+### 3. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| **96 GB clone, MPN `KSM64R52BD4-96MC-MB`** (brand "MB", spec-match) | **no SPD sentence** (white-label clone) | **eBay.de Mem-Store** (29.886 FB, Gewerblich, Santa Clara US) | **US$3.706,75 incl. MwSt ≈ €3.362,74 + US$378,35 (€342,14) shipping = €3.704,88 landed → €3.113,34 net-basis = €32.43/GB** | **8 verfügbar**, 12 sold | https://www.ebay.de/itm/198497557101 |
+| Kingston `KSM64R52BD4-96MC` (genuine) | SPD-verified | eBay.de IT-Planet (cross-check) | €4.982,58 Best Offer = €4.187,04 net = **€43.62/GB** | listed | https://www.ebay.de/itm/206689139883 |
+| Kingston `KSM64R52BD4-96MC` (genuine, ~D~) | SPD-verified | eBay.de | €6.813,00 = €5.725,21 net = €59.64/GB | listed | https://www.ebay.de/itm/820079866557 |
+| **Kingston `KSM64R52BD4-96MC` (96 GB 2Rx4) — Proshop.pl** | SPD-verified | **Proshop.pl** (new source; the *kit* is withdrawn but the singles are live) | **21 041,46 zł netto** (SKU 3401661, 5–6 dni) → €4.774,55 net = **€49.73/GB** | **2 szt. max per customer**, sprowadzany | https://www.proshop.pl/RAM/Kingston-Server-Premier-DDR5-6400-RejestrowanaECC-96GB-CL52-Single-Channel-1-pcs/3401661 |
+| Kingston `KSM64R52BD4-96MC` (2nd SKU) | SPD-verified | Proshop.pl | **20 443,09 zł netto** (SKU 3521489, 6–7 dni) → €4.638,78 = **€48.32/GB** | 2 szt. cap | .../3521489 |
+| **Kingston `KSM64R52BD4-64MD` (64 GB 2Rx4) — Proshop.pl** | SPD-verified | Proshop.pl | **13 562,60 zł netto** (SKU 3504787, 6–7 dni) → €3.077,51 = **€48.09/GB** | 2 szt. cap | .../3504787 |
+| Mem-Store clone 96 GB (2nd listing) | no SPD sentence | eBay.de Mem-Store | €4.583,44 = €3.851,63 net = €40.12/GB | 8 verfügbar | https://www.ebay.de/itm/336689737285 |
+
+**The eBay clone is the cheapest 96 GB module seen in the whole hunt — €32.43/GB net-basis — and it undercuts CoreWave's caveat class (Samsung €32.76, Micron €33.79).** It carries the full clone caveat set: no SPD sentence, brand "MB", **only 8 pieces** (cannot fill a 12-module build), US-origin with US$378 shipping baked into the figure above.
+
+### 4. Blocked list
+
+- **alza.de / alza.pl / cyberport.de** — all 403 to curl this pass (alza blocks pass 51), no data.
+- **Proshop.pl singles** — 2-customer cap *"Na wybranym produkcie mozliwy jest zakup jedynie 2 szt"* on every SKU, so Proshop cannot fill a 12-module build either.
+- **camofox `search`** with a stale `--user` errors "Tab not found" (needs `open` first for that profile) — worked around throughout by `open`-then-`eval`.
+- Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl (CF + stale listing), CH tier (CH+LI-only).
+
+### 5. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No (the €35.53/GB qualified floor stands), but the pass closed the buying question.** `12× KSM64R52BD4-96MC @ electronis.de` is now **confirmed orderable** (cart accepted 12; €48.714,78 incl. shipping → **€40.936,79 net incl. the €6,90 shipping, = €35.54/GB; goods alone €40.930,99 net = €35.53/GB**), board-legal per the manual (p.40: RDIMM 2R = 6400 MT/s @ 12 slots), SPD-verified, and org-confirmed at merchant level (dual rank x4). The 64 GB fallback (`12× 64MD @ Allegro komputera_pl`, €28.575,84 net, PL-shipped) is unchanged, and the cheapest *no-SPD* alternative is now the eBay 8-piece clone at €32.43/GB net-basis — cheaper per GB but too few pieces for the build, which is exactly the trade the tracker has been documenting.
+
+Coverage: camofox 5 profiles / ~14 navigations (electronis product→cart→qty12→apply, proshop search + 3 SKU pages + kit page, tonitrus, ebay search + 2 item pages); trawl 2 scrapes (geizhals 96MC + 64MD); curl 6 (ibfusion, senetic ×2, CoreWave, alza ×2, cyberport). Expansion: Proshop.pl singles (3 SKUs, new), eBay 96MC wave (4 listings), Mem-Store clone at item level, alza/cyberport probes — 8 new listings/sources.
