@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**QVL CORRECTION (pass 68, supersedes pass 59 prose): the MZ23-SU0 Memory QVL DOES list Micron `MTC40F204WS1RC64BC1` 96 GB — four die-variants (MWFF/MXCC/USFF/QWCC), all 2Rx4 1.1v 6400MHz. The €28.09/GB floor is QVL-backed, not QVL-unknown.** Root cause of the nine-pass error: the QVL page opens on the **CPU** tab and all 22 CPUs read "DDR5-6400", which reads like a memory hit; the Memory table only renders after clicking the **Memory** category. **SK hynix is a FOURTH QVL vendor at 6400** (`HMCG94AHBRA480N`/`-487N` 64 GB @ €46,82/GB; `HMCGM4MHBRB499N`/`-505N` 96 GB, no EU listing) and Micron contributes **22** 6400 rows. Kingston 96MC/96HM/64HA remain genuinely NOT listed. **Proshop.pl moved UP 25 969,00 → 26 723,00 zł (+2,90 %)** on pass 68.
+
 **SELLER RISK ON THE CHEAP ROUTES (pass 67): the Allegro 64 MD cut HOLDS at 12 736,00 zł (second read; "Oszczędzasz 165 zł" vs 214 confirms the −162,20 cut is real) — but `komputera.pl` is a **parked domain-for-sale page**, so the Allegro storefront is that seller's only presence and it carries just **5 ratings** (the "2 596 opinii" on the Ceneo row is the *product* count, not the seller). And **FOUR QVL-passing parts now have ZERO EU offers** (`M321R8GA0PB2-CCP` 64 GB, `MDRRWM4QDBC2-3*` 96 GB, `M321R4GA0EB2-CCP` 32 GB, `M321R2GA3PB2-CCP` 16 GB) — Gigabyte's QVL is a compatibility document, not a shopping list.**
 
 **NEW 64 GB FLOOR (pass 66, first movement in nine passes): Allegro komputera_pl cut `KSM64R52BD4-64MD` from 12 898,20 to **12 736,00 zł** (−1,26 %) = **€2 349,55 net = €36.71/GB** (was €37.21) → **768 GB build improves to €28 194,61 net** (−€381,23).** Same seller (2 596 reviews), BLACK WEEKS promo — may fall further or snap back. Micron 96 GB ticked €3 207,89 → €3 209,50 (+0,05 %, noise) = €28.09/GB net, single-seller caveat unchanged.
@@ -2850,3 +2852,76 @@ No purchasable new listings this pass — two QVL parts closed as unsold, one se
 2. **Four QVL-passing parts have zero EU offers**, doubling the count from pass 63. Gigabyte's QVL is a compatibility document, not a shopping list.
 
 Coverage: camofox 4 profiles / 7 navigations (ceneo, tonitrus, allegro offer page, komputera.pl, title checks); trawl 3 scrapes (Micron, 2 Samsung QVL parts); curl 6 (ibfusion, senetic ×2, idealo/cyberport/nbb). 2 QVL parts closed, 1 seller-recon finding, 0 new prices.
+
+---
+
+## Pass 68 — 2026-11-16T23:3xZ (**QVL record CORRECTED: Micron 96 GB IS listed — 4 variants at 6400**, so the €28.09/GB floor is QVL-valid after all; plus **SK hynix 6400 parts are on the QVL too**, a whole vendor family the board file had never credited. Proshop.pl jumps +2.9 %.)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **Allegro 64MD @ komputera_pl (QVL ✓)** | **HOLDS 12 736,00 zł** — third consecutive read, no snap-back | camofox `--user ceneo` |
+| ibfusion 64MD | **2 481,00 € excl. VAT** · 5 in stock — unchanged | curl |
+| senetic.pl 64MD / 96MC | **11 377,59 / 16 426,27 zł netto** — unchanged (11th pass flat) | curl |
+| senetic.de 64MD / 96MC | **2.582,03 / 3.727,78 € exkl** — unchanged | curl |
+| Tonitrus CCP | **3.174,50 € brutto / 2.667,65 € netto** · 50 verfügbar — unchanged | camofox |
+| Micron 96 GB @ Geizhals | **3.209,50 €** = €28.09/GB net · 1 Angebot — unchanged | trawl |
+| **Proshop.pl KF576RH40RBK4-128** | **MOVED UP: 25 969,00 → 26 723,00 zł** (+754,00 zł, **+2,90 %**) · netto 21 726,02 zł → €46,67/GB net | camofox `--user proshop` |
+
+Proshop's kit is the 7600 quad-channel FURY (not JEDEC-6400-default), so it is out of the qualifying set regardless — but the uptick is worth noting as the second upward move on the board (Jacob's tick was the first, pass 52).
+
+### 2. **CORRECTION — the QVL DOES list the Micron 96 GB (and I had this wrong for nine passes)**
+
+The board file has said since pass 59 that "Micron `MTC40F204WS1RC64BC1` is NOT listed" on the MZ23-SU0 QVL. **That is wrong.** Re-reading the actual Memory QVL table this pass (203 rows, stamp unchanged "Last Update: Oct 27, 2026") returns the part in **four die-variants, all 2Rx4 1.1v 6400MHz**:
+
+```
+MTC40F204WS1RC64BC1 MWFF  Micron DDR5 96GB Micron-Montage  2Rx4 1.1v 6400MHz ECC Registered
+MTC40F204WS1RC64BC1 MXCC  Micron DDR5 96GB Micron-Renesas  2Rx4 1.1v 6400MHz ECC Registered
+MTC40F204WS1RC64BC1 USFF  Micron DDR5 96GB Micron-Rambus   2Rx4 1.1v 6400MHz ECC Registered
+MTC40F204WS1RC64BC1 QWCC  Micron DDR5 96GB Micron-Montage  2Rx4 1.1v 6400MHz ECC Registered
+```
+
+**⇒ The €28.09/GB net Micron 96 GB route is QVL-passing.** It was being carried as "QVL ✓" in `ram-offers.json` and as "QVL ✗" in the standing-reference text at the same time; the JSON was right and the prose was wrong. This removes the largest open risk on the cheapest route — it is no longer a "QVL unknown, verify before ordering" item.
+
+Why the earlier pass missed it: the QVL page opens on the **CPU** tab (all 22 CPUs read "DDR5-6400", which reads like a memory search hit), and the Memory table only appears after clicking the **Memory** category (`?CAT=Mem` alone does not switch it). Pass 59 evidently extracted the CPU tab and concluded "no Micron rows".
+
+**Also newly visible on the same table — SK hynix is a QVL vendor here at 6400**, including 96 GB 2Rx4 parts never priced in this record:
+
+| QVL ✓ SK hynix 6400 part | Geizhals | Result |
+|---|---|---|
+| `HMCG94AHBRA480N` 64 GB 2Rx4 (Renesas) | a3657519 | **3 566,11 € gross = €46,82/GB net** · 1 Angebot (esus it) — no beat |
+| `HMCG94AHBRA487N` 64 GB 2Rx4 (Montage) | a3620495 | same 3 566,11 € band |
+| `HMCGM4MHBRB499N` / `-505N` 96 GB 2Rx4 | (no Geizhals entry) | **no EU listing** |
+
+So the QVL vendor set at 6400 2Rx4 is **Kingston, Samsung, Micron and SK hynix** — not the Kingston+Samsung pair the standing reference implies. Corrected in the board file.
+
+### 3. Two more Micron 64 GB parts priced (QVL ✓, no beat)
+
+| QVL ✓ part | Geizhals | Best offer | €/GB net |
+|---|---|---|---|
+| `MTC40F2046S1RC64BH1` 64 GB 2Rx4 (2 die-variants on QVL) | a3871706 | **3 313,98 €** (Jacob Elektronik direkt) · 94 Angebote band 3 313,98–3 924,47 | **€43,51** |
+| `MTC40F2046S1RC64BH1T` (tray) | a3877100 | **2 999,81 €** (serverandmore-muc) · 94 Angebote (2nd 3 299,81; then 6 624,94 outliers) | **€39,39** |
+
+The tray variant is the cheapest Micron 64 GB yet — but still **7 % above the Allegro Kingston 64MD at €36.71/GB**, so no change to the build recommendation.
+
+### 4. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Micron `MTC40F2046S1RC64BH1T` 64 GB | no SPD sentence published | serverandmore-muc (Geizhals) | 2 999,81 € inkl. MwSt | listed | https://geizhals.de/micron-rdimm-64gb-mtc40f2046s1rc64bh1t-a3877100.html |
+| Micron `MTC40F2046S1RC64BH1` 64 GB | no SPD sentence published | Jacob Elektronik direkt | 3 313,98 € inkl. MwSt | listed | https://geizhals.de/micron-rdimm-64gb-mtc40f2046s1rc64bh1-a3871706.html |
+| SK hynix `HMCG94AHBRA480N` 64 GB | no SPD sentence published | esus it | 3 566,11 € inkl. MwSt | 1 Angebot | https://geizhals.de/sk-hynix-rdimm-64gb-hmcg94ahbra480n-a3657519.html |
+
+### 5. Blocked list
+
+- New: **bargainhardware.co.uk** served a full tier-3 grid for "DDR5-6400 RDIMM" but carries **0** 6400 RDIMMs (40 × 4800MHz, 0 × 5600, 0 × 6400) — usable site, empty result, not a wall; **geniuzcom.de** 301s to a `.at` search path; **e-tec.at** 404 on `/suche?q=`; **itpro.lt** connection failed (exit 000); **mem-tek.fr** connection failed (exit 000).
+- Unchanged: idealo 403, cyberport 403, notebooksbilliger 404, komputera.pl parked, Mindfactory/Kaufland, Amazon.de cycle, CH tier, alza 403, gigabyte.com 403 to curl (camofox required), skroutz/geizhals.at/toppreise.
+
+### 6. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No. But the pass repaired the record on the point that mattered most: the €28.09/GB Micron 96 GB IS QVL-listed**, so the cheapest QVL-passing build on the board (12 × Micron 96 GB = **€32 348 net for 1 152 GB**) stands on QVL evidence rather than on a reseller's spec sheet. Second finding: **SK hynix is a fourth QVL vendor at 6400** (priced, no beat), so "QVL ✓ at 6400" is a wider set than the Kingston/Samsung pair the file implied.
+
+Floors unchanged: **Micron 96 GB @ Geizhals €28.09/GB net** and **Kingston 64MD @ Allegro €36.71/GB net** (768 GB, €28 194,61 net).
+
+Coverage: camofox 3 profiles / 8 navigations (ceneo, proshop, tonitrus, + QVL Memory-tab read ×5 evals); trawl 6 scrapes (Micron 96, 2 Micron 64, 2 hynix 64, bargainhardware); curl 8 (ibfusion, senetic ×2, geniuz ×2, e-tec ×2, itpro, mem-tek). 1 record correction (QVL), 1 new vendor family, 3 new listings priced, 0 beats.
