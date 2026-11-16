@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**SELLER VERIFIED (pass 62) for the €28.08/GB Micron offer:** `esus-it.de` is a **real German server-hardware shop** (Impressum, `verkauf@esus-it.de`, two phone numbers) — not a phantom — but the part is **not in their own catalogue**, so the price is **live-listed, not stock-confirmed**: contact them before ordering ~€32k. Also closed: **64MH priced** (ab €2 991,09 = €39.27/GB, no beat) and **Samsung `M321R8GA0PB2-CCP` has ZERO EU offers** (second QVL-valid-but-unbuyable part after `MDRRWM4QDBC2-3*`).
+
 **NEW CHEAPEST NEW 96 GB (pass 61): Micron `MTC40F204WS1RC64BC1` on Geizhals at €3 207,89 gross = €2 695,71 net = €28.08/GB net** — QVL ✓, Brand New, single-review seller "esus it", 12× = €32 348,52 net for 1152 GB (17 % under CoreWave's €33.79/GB). Geizhals's own "€33,42/GB" is a GROSS figure (their prices are "inkl. MwSt.") — comparing it to CoreWave's ex-VAT basis was my error, corrected in the pass. Also closed: Samsung `MDRRWM4QDBC2-3`/`-3L000` (QVL ✓) have **zero EU offers**.
 
 **QVL QUESTION NARROWED (pass 59, supersedes pass 58): the MZ23-SU0 QVL (stamp "Last Update: Oct 27, 2026") lists FIVE Samsung 96 GB 2Rx4 6400 parts and ZERO Kingston 96 GB, while validating Kingston 64MD/64MH.** So the board has **no 96 GB limitation** — the exclusion is **Kingston-96 GB-specific**. Ruled out: QVL staleness and any 96 GB capability limit. Remaining: genuine Kingston-96 GB incompatibility, or a validation gap for those SKUs — only GIGABYTE/Kingston can say. **Practical: a 96 GB build on this board is a Samsung-or-Micron decision; Micron 96 GB at €33.79/GB (Brand New, QVL ✓) is the strongest 96 GB route and needs no Kingston answer.** New QVL-pass part to price: `MDRRWM4QDBC2-3D000`.
@@ -2497,3 +2499,55 @@ Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle,
 **Also closed:** `MDRRWM4QDBC2-3*` (the QVL-pass Samsung from pass 59) has **zero EU offers** — recorded as QVL-valid but unbuyable rather than left as an open lead.
 
 Coverage: camofox 4 profiles / 7 navigations (tonitrus, ceneo, geizhals click-out, esus-it ×2); trawl 5 scrapes (geizhals MDRRWM ×2 search, MDRRWM ×2 product, Micron ×2). Expansion: Micron 96 GB Geizhals page (new), `MDRRWM4QDBC2-3`/`-3L000` (new, dead), mf/cu/itsco probes — 5 new data points.
+
+---
+
+## Pass 62 — 2026-11-16T17:4xZ (**Micron €28.08/GB verified as a live listed offer and the seller is a real German shop with an Impressum — but the part is not in their own catalogue. 64MH priced at €46.74/GB gross; QVL-pass Samsung 64 GB has no offers**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| Allegro komputera_pl 64MD | unchanged **12 898,20 zł** = €37.21/GB | camofox `--user ceneo` |
+| senetic.pl 64MD | unchanged **11 377,59 zł** = €40.34/GB (5 passes flat) | curl |
+| senetic.de 64MD | unchanged **2.582,03 €** = €40.34/GB | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| **Micron 96 GB @ Geizhals** | **holds at €3 207,89 = €28.08/GB net** · 1 Angebot, esus it, still listed | trawl + camofox |
+
+### 2. **Seller verification for the €28.08/GB offer (the pass's main job)**
+
+Last pass flagged a single-review seller as the weak point on the cheapest number on the board. This pass I chased the seller down:
+
+| Check | Result |
+|---|---|
+| Geizhals merchant profile | `geizhals.de/merchants/esus-de` — **"1 Bewertung, 1 gültige Bewertung"**, 4.8/5 |
+| Contact published on Geizhals | **`verkauf@esus-it.de`** |
+| Their own German shop | **`https://www.esus-it.de/` — "ESUS IT – Serverausrüstung für Unternehmen"**, a real server-hardware shop with an **Impressum**, phone numbers (+49 174 1507780 / 1507987) and a working catalogue |
+| Part in their own catalogue | **NOT FOUND** — `search.php?search=MTC40F204WS1RC64BC1` returns unrelated items |
+| Offer still live? | **Yes** — Geizhals re-served the same €3 207,89 single offer this pass |
+
+**Verdict on the seller:** it is **a genuine German company, not a phantom** — that is a real upgrade in confidence over "1 review". But two things remain unresolved and both matter at ~€32k: the part is **not in their own shop** (so the Geizhals listing may be a drop-ship or a stale feed), and the review base is a single transaction. **The €28.08/GB figure is a live *listed* price, not a confirmed stock position.** Recommendation stands: contact `verkauf@esus-it.de` and get written confirmation of quantity and lead time before ordering.
+
+### 3. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Kingston `KSM64R52BD4-64MH` (64 GB 2Rx4, **QVL ✓**) | **SPD-verified** (datasheet: "SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V") | **Geizhals.de** (11 Angebote) | **ab €2 991,09 brutto** = €2 513,52 net = **€39.27/GB** | 11 Angebote | https://geizhals.de/?fs=KSM64R52BD4-64MH |
+| Kingston `KSM64R52BD4-64MH` (single-offer variant) | SPD-verified | Geizhals (1 Angebot) | **um €2 989,00** = €38.98/GB net | 1 | same |
+| Samsung `M321R8GA0PB2-CCP` (64 GB 2Rx4, **QVL ✓**) | **no SPD sentence** (Samsung) | Geizhals a3657628 | **"keine Angebote"** — 0 offers | 0 | https://geizhals.de/samsung-rdimm-64gb-m321r8ga0pb2-ccp-a3657628.html |
+
+**No beat from any of these** — 64MH at €38.98–39.27/GB sits above Allegro's €37.21, and the QVL-pass Samsung 64 GB is unsold in the EU (second QVL-valid-but-unbuyable part, after `MDRRWM4QDBC2-3*`).
+
+### 4. Blocked list
+
+Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza/cyberport 403, gigabyte.com 403 to curl, senetic.it/.es/.nl, esus-it own search (part absent — see §2).
+- Geizhals search pages need `?fs=` (product-path guesses 404); the 64MH search yields two separate product entries ("Nicht kategorisiert" + "Kingston Server Premier …"), which is why 1 Angebot and 11 Angebote appear side by side.
+
+### 5. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No.** Floors hold: **Micron 96 GB @ Geizhals €28.08/GB net** (live-listed, seller now verified as a real DE company, but part absent from their own shop) and **Kingston 64 MD @ Allegro €37.21/GB** (QVL ✓ + SPD-verified + retail, €28 575,84 total). The pass's value is **de-risking the cheapest number**: a 1-review merchant turned out to be a legitimate German server shop, which moves that offer from "suspicious" to "worth a phone call". It also closed two leads properly — 64MH is priced and loses, and the QVL-pass Samsung 64 GB has zero EU offers.
+
+**Standing caution:** two of the four QVL-passing parts surfaced in the last week (`MDRRWM4QDBC2-3*`, `M321R8GA0PB2-CCP`) turn out to have **no EU seller at all**. QVL membership and market availability are independent facts, and the board now shows both.
+
+Coverage: camofox 4 profiles / 7 navigations (tonitrus, ceneo, geizhals merchant profile ×2, esus-it.de ×2); trawl 4 scrapes (Micron product, 64MH/64CCP/hynix searches). Expansion: esus-it.de seller verification (new), KSM64R52BD4-64MH pricing (new), M321R8GA0PB2-CCP availability (closed) — 4 new data points.
