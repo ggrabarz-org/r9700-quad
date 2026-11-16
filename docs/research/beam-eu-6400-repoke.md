@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**LIFECYCLE WARNING (pass 52): DigiKey lists `KSM64R52BD4-64MD` as "Obsolete and no longer manufactured" (0 stock) and `-128MB` as "Discontinued at DigiKey" — distributor-level status (NOT a Kingston bulletin; datasheets live, senetic/electronis still sell them). Corroborated by the Proshop.pl 128GB-kit withdrawal and Jacob's first UPWARD tick (€2.853,98 → €2.856,98). Consequence: the 96MC route is both cheaper per GB and the less fragile — waiting now carries a replenishment risk.**
+
 **BOARD RULE CLOSED (pass 48):** Supermicro H14SSL-NT manual MNL-2821 §2.4 p.40 — the EPYC 9005 table rates **RDIMM 1R, 2R, 3DS 2S2R and 2S4R all at 6400 MT/s** (one merged 6400 cell); body text: "up to 3 TB registered ECC DDR5/3DS RDIMM at 6400 MT/s … in 12 slots"; p.41: 12 DIMMs = all slots. **⇒ every 2Rx4 route here (64 GB 64MD/MH/HA, 96 GB 96MC) runs 6400 at full 12-channel population.** Read via camofox PDF viewer — curl=403 Akamai, r.jina.ai=empty, trawl=61 MB body never delivered.
 
 **Bests (update as they move):** **64 GB CLASS BEST: KSM64R52BD4-64MD @ Allegro komputera_pl (via Ceneo 182533999) 12 898,20 zł +9,99 shipping = 12 908,19 zł delivered = €2.381,32 net = €37.21/GB — 768 GB = €28.575,84 net (promo-badged, re-check at order; 2nd shop buy-it.pl 12 901,77 zł confirms)** · **NEW FLOOR: KSM64R52BD4-96MC @ electronis.de €4.058,99 gross = €3.410,92 net = €35.53/GB (SPD-verified, 2-4 Werktage; geizhals a3590379, 18 Angebote band 4.058,99–5.091,43) — 12× = €40.930,99 net for 1.152 TB** · **KSM64R52BD8-32MH 32 GB 2Rx8 (SPD-verified) — geizhals a3842215, 27 Angebote, ab €1.361,82 gross = €1.144,39 net = €35.76/GB (384 GB tier: 12× = €13.732,64)** · barax (geizhals) KSM64R52BD8-32MD €1.250,00 gross = €32.83/GB (single offer, qty unverified) · jacob.de own shop KSM64R52BD4-96MC €4.243,34 gross = €3.565,83 net = €37.14/GB (SPD-verified, 'Sofort lieferbar'; 96 GB 2Rx4 @12ch needs manual check) · Jacob Elektronik (via geizhals) KSM64R52BD4-64MD €2.853,98 gross ≈ €2.398,30 net = €37.47/GB (64 GB floor; own-shop rate €2.911,06) · ibfusion KSM64R52BD4-64MD €2.481 net (5 pcs) · eBay IT-Planet 64MD €2.899,34 inkl.MwSt 3 pcs · eBay hynix business 336558516150 €2.547,80 (50 pcs, SPD caveat) · eBay Mem-Store 32 GB clone (brand MB, KSM64R52BD8-32MH-MB) €1.105,23 = €29.02/GB net-basis (8 pcs, ships CA, no SPD) · **CoreWave (LV) caveat class: Samsung 48 GB 6400 €30.71/GB net-basis (250 pcs, 3–4 d), 96 GB €32.76/GB (230 pcs), QVL 64 GB M321R8GA0PB2-CCP €51.45/GB (500 pcs)** · Proshop.pl kit 22 245,53 zł netto (5–6 d) · Tonitrus CCP €2.667,65 (50 pcs) · senetic.pl 64MD 11 515,16 zł netto / 96MC 16 426,27 zł · senetic.de CWM €971 / CCP €3.387,48 / 3DS €6.175,58. **PL 64 GB FLOOR (purchasable, PL-shipped): Allegro komputera_pl 12 908,19 zł delivered = €37.21/GB net (22 offers; 17 ship from Poland; market band 37.21–39.39 across 8 named sellers). **SWISS TIER RETRACTED (pass 50): Foletti / orderflow.ch / so-it.ch / eldar.ch / MediaMarkt.ch / Interdiscount.ch / Digitec / highdefinition.ch / BRACK / Galaxus.ch / Avento all ship CH+LI only — not reachable for a PL address.** **CAVEAT CLASS (no SPD sentence): CoreWave Labs LV — Samsung 48 GB M321R6GA3PB2-CCP $1,630 = €30.71/GB (250 pcs, EU, 3–4 d); 96 GB M321RYGA0PB2-CCP $3,478 = €32.76/GB (230 pcs); 256 GB M321RBJA0M22-CLP $9,565 = €33.79/GB (50 pcs); exact QVL 64 GB M321R8GA0PB2-CCP $3,641 = €51.45/GB (500 pcs). USD→EUR 0.90429 (NBP 2026-11-13).**
@@ -1886,3 +1888,60 @@ Added the part to the cart and set the quantity field `details[624331]` to **12*
 **Did anything beat the cheapest verified offer? — No (the €35.53/GB qualified floor stands), but the pass closed the buying question.** `12× KSM64R52BD4-96MC @ electronis.de` is now **confirmed orderable** (cart accepted 12; €48.714,78 incl. shipping → **€40.936,79 net incl. the €6,90 shipping, = €35.54/GB; goods alone €40.930,99 net = €35.53/GB**), board-legal per the manual (p.40: RDIMM 2R = 6400 MT/s @ 12 slots), SPD-verified, and org-confirmed at merchant level (dual rank x4). The 64 GB fallback (`12× 64MD @ Allegro komputera_pl`, €28.575,84 net, PL-shipped) is unchanged, and the cheapest *no-SPD* alternative is now the eBay 8-piece clone at €32.43/GB net-basis — cheaper per GB but too few pieces for the build, which is exactly the trade the tracker has been documenting.
 
 Coverage: camofox 5 profiles / ~14 navigations (electronis product→cart→qty12→apply, proshop search + 3 SKU pages + kit page, tonitrus, ebay search + 2 item pages); trawl 2 scrapes (geizhals 96MC + 64MD); curl 6 (ibfusion, senetic ×2, CoreWave, alza ×2, cyberport). Expansion: Proshop.pl singles (3 SKUs, new), eBay 96MC wave (4 listings), Mem-Store clone at item level, alza/cyberport probes — 8 new listings/sources.
+
+---
+
+## Pass 52 — 2026-11-16T08:5xZ (**LIFECYCLE SIGNAL: DigiKey lists `KSM64R52BD4-64MD` as "Obsolete" and the `-128MB` as "Discontinued at DigiKey", both 0 stock — the Server Premier DDR5-6400 family is going end-of-life at distributor level; buy-side consequence recorded**)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **96MC @ electronis (€/GB floor)** | **unchanged €4.058,99** · Geizhals a3590379, 18 Angebote, stamp 16.11. | trawl |
+| **64MD @ Jacob** | **ticked UP €2.853,98 → €2.856,98 gross** (+€3,00) = €2.400,82 net = **€37.51/GB** (was 37.47) · Geizhals a3452640, **18 Angebote** (was 17 — new merchant I-CS €2.900,40) | trawl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| senetic.pl 64MD / 96MC | unchanged **11 480,61** / 16 426,27 zł netto | curl |
+| senetic.de 64MD / 96MC | unchanged **2.605,41** / 3.727,78 € exkl. | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox `--user tonitrus` |
+| Proshop.pl | kit still withdrawn; the three 2Rx4 singles still listed (unchanged zł) | camofox `--user proshop` |
+| CoreWave pricelist | unchanged (48 GB $1,630 · Samsung 96 GB $3,478 · Micron 96 GB $3,587 · QVL 64 GB $3,641) | curl |
+
+### 2. NEW — distributor lifecycle status (the pass's real finding)
+
+**DigiKey product search for `KSM64R52BD4` returns exactly 2 results, both with 0 stock:**
+
+| Mfr Part # | DigiKey status | Stock |
+|---|---|---|
+| `KSM64R52BD4-64MD` (MODULE DDR5 SDRAM 64GB 288RDIMM) | **"Obsolete"** | 0 In Stock |
+| `KSM64R52BD4-128MB` (MODULE DDR5 SDRAM 128GB 288RDIMM) | **"Discontinued at DigiKey"** | 0 In Stock |
+
+And the 64MD's own DigiKey page reads verbatim: **"KSM64R52BD4-64MD is Obsolete and no longer manufactured."** with the substitute slot offering only an Advantech part ("In Stock: 0").
+
+**This coheres with three independent observations already in the tracker:**
+1. **Proshop.pl withdrew the 128 GB Renegade kit** ("Produkt został wycofany") — pass 51.
+2. **Prices stopped falling and started ticking up** — Jacob +€3,00 this pass; the 64 GB band has been flat-to-up for three passes while the 96MC held.
+3. **Stock at every keeper is thin and capped** — ibfusion 5 pcs, Foletti "< 5 pcs", Proshop 2 pcs/customer, and the only deep-stock 64 GB sources are *distributor* listings (electronis 2–4 days, senetic 41–50 pcs).
+
+*Scope note: this is **distributor-level status**, not a Kingston EOL bulletin. Kingston's own datasheets are still live and senetic/electronis still sell the part with normal lead times — so the family is not "unobtainable", it is "no longer being replenished at broadline distributors". I am recording the signal as observed, not extrapolating to a discontinuation date.*
+
+### 3. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Kingston `KSM64R52BD4-64MD` | SPD-verified 2Rx4 | **I-CS (via Geizhals, new merchant)** | €2.900,40 gross → €2.437,31 net = **€38.08/GB** | 18th Angebot on the product | https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html |
+| Kingston `KSM64R52BD4-64MD` | SPD-verified | **Morgan Ingland (miatlantic.com, UK)** | £3.736,14 (was £4.483,37) — GBP only, no verified rate applied | "In Stock" claimed | https://miatlantic.com/ |
+| Kingston `KSM64R52BD4-64MD` | SPD-verified | **Mouser LU / SabrePC / Walmart / DigiKey** | Mouser "In Stock" (no price shown) · SabrePC $3,044.28 **out of stock** · Walmart $577.84 **out of stock** | see cells | — |
+
+**No beat** from any of them: I-CS is €38.08/GB vs the €37.21 Allegro floor, and the US/UK channels are either out of stock or dearer.
+
+### 4. Blocked list
+
+- **New expansion probes all dead this pass:** eprice.it ("Pagina non trovata"), pccomponentes.com (403), alternate.nl (404 "deze pagina is niet meer beschikbaar"), **itsco.de** (Error 500 on `/suche`, 404 on both `/artikelsuche` and `/search`), **memory4less.com** (403), **etb-tech.com** (404), **hardware-planet.de** (connection failed), **inkshop.ie** (404), miatlantic product path (404; only the search snippet carried the price).
+- **DigiKey** — product pages for the -96MC/-64MH/-32MH slugs 404 (their URL slugs don't match the MPN form); only the `products/result?keywords=` search route works. Recorded so the next pass uses the search route.
+- Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, idealo 404s, barax.at DNS, memory.net 403, smicro.pl (CF + stale listing), CH tier (CH+LI-only), alza/cyberport (403).
+
+### 5. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No.** The qualified floors hold: **€35.53/GB (12× 96MC @ electronis = €40.930,99 net, x12 cart-confirmed orderable)** and **€37.21/GB (12× 64MD @ Allegro komputera_pl = €28.575,84 net, PL-shipped)**. **The pass's value is the lifecycle signal:** DigiKey calling the 64MD "Obsolete and no longer manufactured" plus Proshop's kit withdrawal plus the first upward price tick (Jacob +€3,00) point the same way — **this family is being wound down, and waiting has a cost.** That reframes the decision: if the build is going ahead, the 96MC is both the cheaper-per-GB and the *sooner* buy, and the 64 GB route's €37.21 promotional Allegro price is the more fragile of the two.
+
+Coverage: camofox 6 profiles / ~14 navigations (tonitrus, proshop search, electronis search, digikey ×5 incl. the search route, eprice, itsco ×3); trawl 2 scrapes (geizhals 96MC + 64MD); curl 9 (ibfusion, senetic ×2, CoreWave, pccomp/altnl/m4l/etbtech/hwplanet/inkshop). Expansion: DigiKey lifecycle status (new), I-CS merchant (new), miatlantic/Mouser/SabrePC rows, 6 dead shop probes — 4 new sources/parts.

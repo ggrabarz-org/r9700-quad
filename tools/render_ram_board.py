@@ -76,6 +76,15 @@ if brc:
 else:
     BOARD_NOTE = ""
 
+lc = data.get("lifecycle_signal")
+if lc:
+    BOARD_NOTE += (f"<div class='ask' style='background:linear-gradient(180deg,#3a2a12,#101317);border-color:#8a6417'>"
+                   f"<b style='color:#f5c451'>Lifecycle warning</b> — observed {html.escape(lc['observed'])}<br>"
+                   f"<span class='k' style='color:#d8c49a'>{html.escape(lc['digikey'])}</span><br>"
+                   f"<span class='k' style='color:#d8c49a'>Corroboration: {html.escape(lc['corroboration'])}</span><br>"
+                   f"<span class='k' style='color:#d8c49a'>Scope: {html.escape(lc['scope'])}</span><br>"
+                   f"<b style='color:#f5c451'>→ {html.escape(lc['consequence'])}</b></div>")
+
 page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>R9700 ×4 — RAM offer board (DDR5-6400 RDIMM, JEDEC-SPD rule)</title><style>
   :root {{ --bg:#101317; --panel:#171c22; --text:#e8edf2; --muted:#96a3b2; --line:#2b3540; --accent:#f5a524; }}
