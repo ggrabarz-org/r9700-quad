@@ -31,534 +31,702 @@
 <div class="kpi">
   <div class="card"><h2>Cheapest qualified 768 GB (12×64, 2Rx4)</h2><div class="big">€28.575,84</div><span class="k">12× KSM64R52BD4-64MD — Allegro komputera_pl — <a href="https://www.ceneo.pl/182533999">source ↗</a></span></div>
   <div class="card"><h2>Cheapest per GB (net)</h2><div class="big">€35.53</div><span class="k"><a href="https://www.electronis.de/index.php?page=article&amp;ID=624331">open the offer ↗</a> · Kingston KSM64R52BD4-96MC</span></div>
-  <div class="card"><h2>Updated</h2><div class="big">2026-11-16 09:34Z</div><span class="k">by the 30-min scheduler · <code>docs/research/beam-eu-6400-repoke.md</code></span></div>
+  <div class="card"><h2>Updated</h2><div class="big">2026-11-16 10:15Z</div><span class="k">by the 30-min scheduler · <code>docs/research/beam-eu-6400-repoke.md</code></span></div>
 </div>
 <h1 style='font-size:18px;margin:0 0 6px'>Capacity ladder — cheapest verified route</h1><p class='sub' style='margin:0 0 10px'>CHEAPEST 2Rx4-EVERYWHERE ROUTE per capacity · JEDEC-SPD-6400@1.1V preferred · user directive 2026-11-16: 2Rx4 modules only · net/VAT-less · zł @ 4.4070 · ladder updated 2026-11-16T02:05Z</p><table style='margin-bottom:22px'><thead><tr><th>Capacity</th><th>Route</th><th class='num'>Net total</th><th class='num'>€/GB</th></tr></thead><tbody><tr><td><b>64 GB</b><br><span class='k'>SPD-verified 2Rx4 · promo-badged row (BLACK WEEKS), re-check at order · ships PL 20 Nov</span></td><td><a href="https://www.ceneo.pl/182533999">1× KSM64R52BD4-64MD @ Allegro komputera_pl (via Ceneo)</a></td><td class='num'>€2.381,32</td><td class='num'>€37.21</td></tr><tr><td><b>768 GB (12×64, 12-ch)</b><br><span class='k'>SPD-verified 2Rx4 · board-legal · PL-shipped floor = Allegro komputera_pl 12 908,19 zl (€37.21/GB net, promo-badged) · **LIFECYCLE: 64MD listed &#x27;Obsolete&#x27; at DigiKey + Jacob ticked up + Proshop kit withdrawn — this route is the more fragile**</span></td><td><a href="https://www.ceneo.pl/182533999">12× KSM64R52BD4-64MD @ Allegro komputera_pl</a></td><td class='num'>€28.575,84</td><td class='num'>€37.21</td></tr><tr><td><b>768 GB (QVL part, price reality)</b><br><span class='k'>the exact QVL part, now priced — QVL is not the cheap route</span></td><td><a href="https://corewavelabs.com/server-memory/?q=DDR5-6400">12× Samsung M321R8GA0PB2-CCP @ CoreWave</a></td><td class='num'>€39.510 (net-basis)</td><td class='num'>€51.45</td></tr><tr><td><b>768 GB (price pick, SPD caveat)</b><br><span class='k'>ships CN · hynix no SPD sentence</span></td><td><a href="https://www.ebay.de/itm/336558516150">12× eBay hynix business</a></td><td class='num'>€25.939</td><td class='num'>€33.78</td></tr><tr><td><b>1.15 TB (12×96, 12-ch)</b><br><span class='k'>SPD-verified 2Rx4 · board-legal (manual p.40) · cheapest qualified €/GB · x12 cart-confirmed at electronis · not flagged obsolete at DigiKey</span></td><td><a href="https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html">12× KSM64R52BD4-96MC @ electronis.de (or Foletti CHF — see board)</a></td><td class='num'>€40.930,99</td><td class='num'>€35.53</td></tr><tr><td><b>1.15 TB (12×96, caveat class)</b><br><span class='k'>no SPD sentence (Samsung) but CoreWave lists it as 2Rx4 → the caveat is SPD only, not the org</span></td><td><a href="https://corewavelabs.com/server-memory/?q=DDR5-6400">12× Samsung M321RYGA0PB2-CCP @ CoreWave (LV)</a></td><td class='num'>€37.742 (net-basis)</td><td class='num'>€32.76</td></tr></tbody></table>
 <div class='ask'><b>Board rule verified</b> — Supermicro H14SSL-NT User Manual rev 1.0a (MNL-2821), section 2.4, p.40, read 2026-11-16T05:0xZ<br><span class='k'>Populating RDIMM/RDIMM 3DS DDR5 Memory Modules with AMD EPYC 9005 Series Processors — Type: RDIMM 1R (1 rank) / RDIMM 2R (2 ranks) / 3DS RDIMM 2S2R (4 ranks) / 3DS RDIMM 2S4R (8 ranks); Max Frequency 6400 MT/s Grade DIMM = 6400 (single merged cell spanning all four rank classes); 5600 grade = 5600; 4800 grade = 4800. Body: &quot;The motherboard supports up to 3 TB registered ECC DDR5/3DS RDIMM at 6400 MT/s (AMD EPYC 9005 Series processor) ... in 12 slots&quot;. p.41 population table: 12 DIMMs = all 12 slots.</span><br><b>→ RDIMM 2R (which covers all 2Rx4 parts here: KSM64R52BD4-64MD/MH/HA, KSM64R52BD4-96MC, M321R8GA0PB2, M321RYGA0PB2, MTC40F204WS1...) runs 6400 MT/s at full 12-channel population on this board. The 96 GB 2Rx4 route and the 768 GB 64 GB route are board-legal at 6400.</b></div><div class='ask' style='background:linear-gradient(180deg,#3a2a12,#101317);border-color:#8a6417'><b style='color:#f5c451'>Lifecycle warning</b> — observed 2026-11-16T08:5xZ via camofox --user digikey (products/result?keywords=KSM64R52BD4)<br><span class='k' style='color:#d8c49a'>KSM64R52BD4-64MD = &quot;Obsolete&quot; / 0 In Stock (&quot;KSM64R52BD4-64MD is Obsolete and no longer manufactured&quot;, substitute offered = Advantech, In Stock 0); KSM64R52BD4-128MB = &quot;Discontinued at DigiKey&quot; / 0 In Stock. Only 2 results exist for the whole KSM64R52BD4 family.</span><br><span class='k' style='color:#d8c49a'>Corroboration: Proshop.pl withdrew the 128GB Renegade kit (&quot;Produkt został wycofany&quot;, pass 51); Jacob 64MD ticked UP EUR 2.853,98 -&gt; 2.856,98 (pass 52, first upward tick); every keeper is thin-stocked and/or purchase-capped (ibfusion 5 pcs, Foletti &lt;5, Proshop 2/customer).</span><br><span class='k' style='color:#d8c49a'>Scope: Distributor-level status, NOT a Kingston EOL bulletin: Kingston datasheets live, senetic/electronis still sell with normal lead times.</span><br><b style='color:#f5c451'>→ Buy-side: the 96MC route is both cheaper per GB and the less fragile one; the 64MD Allegro promo price is the more likely to move. Waiting now carries a replenishment risk.</b></div>
-<table>
-<thead><tr><th>Part / spec</th><th>Shop</th><th class="num">Price (net / gross)</th><th class="num">€/GB net</th><th>Stock</th><th class="num">Checked</th><th>Link</th></tr></thead>
+<table id="offers">
+<thead><tr>
+  <th>Part / spec</th><th>Shop</th>
+  <th class="num">Gross <span class="k">(own currency)</span></th>
+  <th class="num">Net <span class="k">(own currency)</span></th>
+  <th class="num">Net <span class="k">PLN</span></th>
+  <th class="num">€/GB net</th>
+  <th>Stock</th><th class="num">Checked</th><th>Link</th>
+</tr></thead>
 <tbody>
 <tr>
-      <td>SK hynix HMCG94AHBRA480N (used wave, eBay.de Gewerblich)<br><span class="k">Business wave re-mapped (PC5-88/64B-MA0-1110 / HMCG94BDJMA080N listings, all Neu (Sonstige) · Gewerblich): cheapest card = EUR 2.547,80 + EUR 24,52 shipping (items 336558516150/336558516163) -&gt; €33.78/GB net-basis IF VAT-recoverable; other business listings EUR 2.809,52 / 3.432,37–3.618,70. Pass-35&#x27;s EUR 2.416,93 unit NOT in this result set (sold or different title) — re-search &#x27;ECC SK Hynix&#x27; next pass. Item detail open BLOCKED (rate limit) — seller/VAT/stock unconfirmed, card-level only. Private item 336731389651 EUR 2.162 last-one still stands (€34.63/GB gross, no invoice).</span> <span class="tag rec">2Rx4</span> <span class="tag bad">lead</span></td>
-      <td>eBay.de<br><span class="k">DE</span></td>
-      <td class="num">EUR 2.696,86–3.894,84 gross (wave)<br><span class="k">net / 2.696,86–3.894,84 €</span></td>
-      <td class="num">business floor €33.78/GB net-basis (card-level, VAT-rec. unconfirmed); private €34.63/GB gross</td>
-      <td>multiple listings, Best Offer · one BRAND NEW private at EUR 2.162 (no invoice)</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.ebay.de/sch/i.html?_nkw=HMCG94AHBRA480N">open ↗</a></td>
+      <td data-s="13860.53">Supermicro MEM-DR596L-HL01-ER64 (96 GB DDR5-6400 RDIMM) — board vendor&#x27;s own SKU<br><span class="k">no SPD sentence published by the reseller (compatible item, not genuine-Supermicro) · CoreWave listing states 2Rx4 1.1V · price is EX-VAT (CoreWave states &#x27;Excl. VAT &amp; shipping&#x27;) · OEM-SKU band: Supermicro MEM-DR596L-HL01-ER64 / Lenovo 4X77A93533 / HPE P64987-B21 / Samsung M321RYGA0PB2-CCP all at $3,478 · 12x = 1.152 TB caveat-class</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="CoreWave Labs SIA (Riga, LV)">CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
+      <td class="num" data-s="3478.00">$3 478,00<br><span class="k">gross · VAT 21%</span></td>
+      <td class="num" data-s="3478.00">$3 478,00<br><span class="k">net USD</span></td>
+      <td class="num" data-s="13860.53">zł13 860,53<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€32.76 net-basis</td>
+      <td>200+ pcs class · 3–5 Days (EU warehouse)</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
     </tr><tr>
-      <td>Kingston ValueRAM KVR64A52BD8-64 / KVR64V52BD8-32 (cheap-looking traps)<br><span class="k">datasheets: &quot;Clocked Unbuffered DIMM (CUDIMM)&quot; resp. &quot;Clocked SODIMM&quot;, On-Die ECC only → NOT ECC RDIMM → fails the board requirement</span> <span class="tag bad">blocked</span></td>
-      <td>jacob.de<br><span class="k">DE</span></td>
-      <td class="num">€1.095,79 / €613,98 net<br><span class="k">net / 1.303,99 / 730,64 €</span></td>
-      <td class="num">n/a (module type fails)</td>
-      <td>Sofort lieferbar</td>
-      <td class="num">2026-11-16T09:35Z</td>
+      <td data-s="15714.61">Kingston KSM64R52BD4-96MC / 96HM / 64HA / 64MD — Jacob own-shop prices (direct read)<br><span class="k">SPD-verified 2Rx4 parts · own-shop rates are HIGHER than the geizhals-entry rate (the geizhals rate only applies entering via geizhals) · 96MC 4.243,34 Sofort · 96HM 4.895,41 Sofort · 64HA 3.149,95 1-2 Wochen · 64MD 2.914,12 Sofort</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="jacob.de (own shop)">jacob.de (own shop)<br><span class="k">DE</span></td>
+      <td class="num" data-s="4243.34">€4 243,34<span class="k">*</span><br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="3565.83">€3 565,83<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="15714.61">zł15 714,61<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.14 (96MC) · €42.85 · €41.01 · €38.22</td>
+      <td>see spec (96MC/96HM/64MD Sofort)</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
       <td><a href="https://www.jacob.de/search?search=KSM64R52BD4">open ↗</a></td>
     </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD (64 GB, UK direct)<br><span class="k">PDP spec fields: 1.1 V / 6400MT/s / CL52 / Micron D-Die / 2R — spec fields, not an SPD sentence</span> <span class="tag rec">2Rx4</span></td>
-      <td>kingstonmemoryshop.co.uk / memorycow.co.uk (Algolia)<br><span class="k">UK</span></td>
-      <td class="num">£3.218,33 ex-VAT (£3.861,99 incl.)<br><span class="k">net / 3.861,99 £ incl. VAT</span></td>
-      <td class="num">£50.29/GB ex-VAT (no verified GBP/EUR rate)</td>
-      <td>stock_quantity 0 · &#x27;Available To Order – 4-5 Business Day Delivery&#x27; · FREE Royal Mail</td>
-      <td class="num">2026-11-15T21:34Z</td>
-      <td><a href="https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD — end-of-life at distributor level (DigiKey)<br><span class="k">DigiKey: &#x27;Obsolete and no longer manufactured&#x27;, 0 In Stock; the 128MB sibling is &#x27;Discontinued at DigiKey&#x27;. Scope: distributor status, not a Kingston bulletin. Corroborated by the Proshop kit withdrawal and the first upward price tick.</span> <span class="tag rec">2Rx4</span> <span class="tag bad">info</span></td>
-      <td>DigiKey (status record, not a purchase route)<br><span class="k">US</span></td>
-      <td class="num">no price (0 stock)<br><span class="k">net / —</span></td>
-      <td class="num">—</td>
-      <td>0 In Stock</td>
-      <td class="num">2026-11-16T08:55Z</td>
-      <td><a href="https://www.digikey.com/en/products/result?keywords=KSM64R52BD4">open ↗</a></td>
-    </tr><tr>
-      <td>KSM64R52BD4-64MD &#x27;kompatibler Ersatz&#x27; (unbranded spec-match)<br><span class="k">not Kingston-branded — SPD evidence missing; single eBay.de listing</span> <span class="tag rec">2Rx4</span> <span class="tag bad">lead</span></td>
-      <td>eBay.de (marketplace)<br><span class="k">DE</span></td>
-      <td class="num">EUR 2.425,84 gross (≈ €2.038 net ÷1.19)<br><span class="k">net / 2.425,84 €</span></td>
-      <td class="num">€31.85 net est. (lead)</td>
-      <td>single listing, qty unknown</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://picclick.de/search?q=KSM64R52BD4-64MD">open ↗</a></td>
-    </tr><tr>
-      <td>96 GB clone, MPN KSM64R52BD4-96MC-MB (brand MB, spec-match) — cheapest 96 GB seen<br><span class="k">no SPD sentence (white-label clone) · eBay.de item 198497557101, Mem-Store (29.886 FB, Gewerblich), ships Santa Clara US, 8 pcs only (cannot fill 12) · landed figure includes US$378,35 shipping (@USD 0.90429) · cheapest 96 GB module of the whole hunt, undercutting CoreWave&#x27;s caveat class</span> <span class="tag rec">2Rx4 (claimed; no datasheet)</span></td>
-      <td>eBay.de (Mem-Store, US)<br><span class="k">US→PL</span></td>
-      <td class="num">€3.113,34 net-basis (US$3.706,75 ≈ €3.362,74 + €342,14 shipping, ÷1.19)<br><span class="k">net / US$3.706,75 ≈ €3.362,74 + US$378,35 shipping</span></td>
-      <td class="num">€32.43 net-basis</td>
-      <td>8 verfügbar (12 sold)</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.ebay.de/itm/198497557101">open ↗</a></td>
-    </tr><tr>
-      <td>Supermicro MEM-DR596L-HL01-ER64 (96 GB DDR5-6400 RDIMM) — board vendor&#x27;s own SKU<br><span class="k">no SPD sentence published by the reseller (compatible item, not genuine-Supermicro) · CoreWave listing states 2Rx4 1.1V · price is EX-VAT (CoreWave states &#x27;Excl. VAT &amp; shipping&#x27;) · OEM-SKU band: Supermicro MEM-DR596L-HL01-ER64 / Lenovo 4X77A93533 / HPE P64987-B21 / Samsung M321RYGA0PB2-CCP all at $3,478 · 12x = 1.152 TB caveat-class</span> <span class="tag rec">2Rx4</span></td>
-      <td>CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
-      <td class="num">$3,478 ≈ €3.145,12 net-basis (@ USD 0.90429 — ex-VAT, no /1.19)<br><span class="k">net / $3,478 excl. VAT</span></td>
-      <td class="num">€32.76 net-basis</td>
-      <td>200+ pcs class · 3–5 Days (EU warehouse)</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
-    </tr><tr>
-      <td>Samsung M321RYGA0PB2-CCP (96 GB, DDR5-6400 RDIMM)<br><span class="k">no SPD sentence published (Samsung); 96 GB 6400 QVL family (-CCPEC/-CCPPC/-CCPWC/-CCPKC); CoreWave quote-based, EU warehouse</span> <span class="tag rec">2Rx4</span></td>
-      <td>CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
-      <td class="num">$3,478 ≈ €3.145,11 net-basis<br><span class="k">net / $3,478 excl. VAT</span></td>
-      <td class="num">€32.76 net-basis</td>
-      <td>230 pcs · 4–5 Days</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
-    </tr><tr>
-      <td>SK hynix HMCG94BDJMA080N 64GB DDR5-6400 ECC RDIMM (PC5-88/64B-MA0-1110)<br><span class="k">no SPD sentence published (hynix) · &#x27;Neu (Sonstige)&#x27; · business seller MemoryPartner_Deals (101.547 FB, 100% positive) · 30-day returns · ships Greater China · item 336558516150 · price shown &#x27;inkl. MwSt.&#x27; at checkout (VAT-invoice feasibility still open)</span> <span class="tag rec">2Rx4</span></td>
-      <td>eBay.de (business)<br><span class="k">DE (ships CN)</span></td>
-      <td class="num">US$2.808,44 inkl. MwSt ≈ €2.547,80 + €24,52 ship → €2.161,6 net (÷1.19, VAT-rec.)<br><span class="k">net / €2.547,80 + €24,52 shipping</span></td>
-      <td class="num">€33.78 net-basis</td>
-      <td>50 verfügbar · item-level verified: seller MemoryPartner_Deals (Gewerblich, 101.547 FB, 100 % positive), ships 深圳 CN, delivery 8–29 Dec, 30-day returns (buyer pays)</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.ebay.de/itm/336558516150">open ↗</a></td>
-    </tr><tr>
-      <td>Micron MTC40F204WS1RC64BC1 (96 GB, DDR5-6400 RDIMM)<br><span class="k">no SPD sentence published (Micron) · CoreWave listing states 2Rx4 · second manufacturer in the 2Rx4 caveat class · twin SKU BC1T $3,804</span> <span class="tag rec">2Rx4 (per listing)</span></td>
-      <td>CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
-      <td class="num">$3,587 ≈ €3.243,69 net-basis (@0.90429)<br><span class="k">net / $3,587 excl. VAT</span></td>
-      <td class="num">€33.79 net-basis</td>
-      <td>200 pcs · 3–4 Days</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
-    </tr><tr>
-      <td>Samsung M321RBJA0M22-CLP (256 GB, DDR5-6400 RDIMM)<br><span class="k">no SPD sentence published (Samsung); CoreWave quote-based · H14 manual rates &quot;3DS RDIMM 2Rx4 (8R), 256 GB, 3 TB, 6400&quot; — 3DS class, not the same thing as a plain 2Rx4; keep separate unless deliberately choosing 3DS</span> <span class="tag rec">2Rx4 (3DS, 8R physical)</span></td>
-      <td>CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
-      <td class="num">$9,565 ≈ €8.649,53 net-basis<br><span class="k">net / $9,565 excl. VAT</span></td>
-      <td class="num">€33.79 net-basis</td>
-      <td>50 pcs · 3–4 Days</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Foletti Computer (CH)<br><span class="k">UNREACHABLE FOR PL: merchant ships to Switzerland+Liechtenstein only (Foletti: &quot;We only ship orders to addresses within Switzerland and Liechtenstein&quot;; orderflow FAQ: &quot;Nein, wir liefern ausschliesslich innerhalb der Schweiz sowie ins Fürstentum Liechtenstein&quot;). Price kept for the record only — not a purchasable route. SPD-verified 2Rx4 · source-verified at superstore.foletti.com (via Toppreise p951885) · CHF 3&#x27;363.90 incl. free shipping · &#x27;&lt; 5 Pcs from our external EU-warehouse&#x27; · &#x27;No right of return&#x27; · delivery 19-30 Nov · FX 1 CHF = 1.08051 EUR (NBP 2026-11-13), CH VAT 8.1%</span> <span class="tag rec">2Rx4</span> <span class="tag bad">unreachable</span></td>
-      <td>Foletti Computer<br><span class="k">CH (EU warehouse)</span></td>
-      <td class="num">€3.362,37 net-basis (CHF 3&#x27;363.90 ÷1.081)<br><span class="k">net / CHF 3&#x27;363.90 (€3.634,72)</span></td>
-      <td class="num">€35.02</td>
-      <td>&lt; 5 pcs · no returns · external EU warehouse</td>
-      <td class="num">2026-11-16T06:15Z</td>
-      <td><a href="https://www.toppreise.ch/preisvergleich/Arbeitsspeicher/KINGSTON-Server-Premier-RDIMM-DDR5-6400-KSM64R52BD4-96MC-p951885">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — cheapest qualified route (unchanged, x12 orderable)<br><span class="k">SPD-verified 2Rx4 · x12 cart-confirmed orderable (pass 51) · board-legal per H14 manual p.40 · lifecycle: NOT listed as obsolete at DigiKey (the family listing only carries the 64MD and 128MB rows)</span> <span class="tag rec">BEST</span> <span class="tag rec">2Rx4</span></td>
-      <td>electronis.de<br><span class="k">DE</span></td>
-      <td class="num">€3.410,92 net<br><span class="k">net / 4.058,99 €</span></td>
-      <td class="num">€35.53</td>
+      <td data-s="15031.92">Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — cheapest qualified route (unchanged, x12 orderable)<br><span class="k">SPD-verified 2Rx4 · x12 cart-confirmed orderable (pass 51) · board-legal per H14 manual p.40 · lifecycle: NOT listed as obsolete at DigiKey (the family listing only carries the 64MD and 128MB rows)</span> <span class="tag rec">BEST</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="electronis.de">electronis.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="4058.99">€4 058,99<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="3410.92">€3 410,92<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="15031.92">zł15 031,92<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€35.53</td>
       <td>lieferbar 2-4 Werktage · 12 accepted in cart</td>
-      <td class="num">2026-11-16T09:35Z</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
       <td><a href="https://www.electronis.de/index.php?page=article&amp;ID=624331">open ↗</a></td>
     </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC (96 GB 2Rx4, DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified: datasheet &quot;…2Rx4, ECC, SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&quot; · Geizhals a3590379 (18 Angebote) · shop-level cross-check: electronis own search returns the 96MC card at the same €4.058,99 · 96 GB 2Rx4 at 12 ch still needs H14 manual rank-table confirmation · x12 cart test pass 51: no stock warning, order placeable.</span> <span class="tag rec">BEST</span> <span class="tag rec">2Rx4</span></td>
-      <td>electronis.de<br><span class="k">DE</span></td>
-      <td class="num">€3.410,92 net (€4.058,99 inkl. MwSt ÷1.19)<br><span class="k">net / 4.058,99 €</span></td>
-      <td class="num">€35.53</td>
-      <td>lieferbar, 2-4 Werktage · **12-PIECE ORDER CONFIRMED BUYABLE** (cart accepted 12 = €48.707,88; Gesamtsumme €48.714,78 incl. €6,90 shipping → €40.930,99 net = €35.53/GB) · PDP: dual rank x4, 1.1V, 31.25mm, Micron C-Die</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC wave (same Geizhals product)<br><span class="k">SPD-verified · PC-KING €4.059,00 (1-2 Tage) · Mindfactory €4.091,74 · Future-X.de €4.091,79 · e-tec.at €4.135,00 · JB-Computer €4.135,00 · Jacob €4.160,13 Sofort · galaxus €4.243,12 · Senetic.de €4.436,06</span> <span class="tag rec">2Rx4</span></td>
-      <td>Geizhals.de offer table<br><span class="k">DE/AT</span></td>
-      <td class="num">€3.410,92–4.278,51 net<br><span class="k">net / 4.058,99–5.091,43 € (18 Angebote)</span></td>
-      <td class="num">€35.53–44.57</td>
-      <td>band; several Sofort/Auf Lager rows</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — orderflow.ch<br><span class="k">UNREACHABLE FOR PL: merchant ships to Switzerland+Liechtenstein only (Foletti: &quot;We only ship orders to addresses within Switzerland and Liechtenstein&quot;; orderflow FAQ: &quot;Nein, wir liefern ausschliesslich innerhalb der Schweiz sowie ins Fürstentum Liechtenstein&quot;). Price kept for the record only — not a purchasable route. SPD-verified 2Rx4 · source-verified at orderflow.ch/products/19769118 (via Toppreise p953764) · &#x27;20x ab Schweizer Lager, ca. 1-3 Werktage&#x27; · ships from CH so PL import VAT applies on top; Lieferungen page 404s (cross-border terms unconfirmed) · FX 1 CHF = 1.08051 EUR, CH VAT 8.1%</span> <span class="tag rec">2Rx4</span> <span class="tag bad">unreachable</span></td>
-      <td>orderflow.ch<br><span class="k">CH</span></td>
-      <td class="num">€2.325,64 net-basis pre-import (CHF 2&#x27;326.70 ÷1.081)<br><span class="k">net / CHF 2&#x27;326.70 (€2.514,02)</span></td>
-      <td class="num">€36.34</td>
-      <td>20x Swiss warehouse · 1-3 Werktage</td>
-      <td class="num">2026-11-16T06:15Z</td>
-      <td><a href="https://www.orderflow.ch/products/19769118">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Polish channel<br><span class="k">SPD-verified · Ceneo product 199487972 (3 shops) — does NOT beat electronis.de €35.53/GB</span> <span class="tag rec">2Rx4</span></td>
-      <td>SuperTech.pl (via Ceneo)<br><span class="k">PL</span></td>
-      <td class="num">€3.532,07 net (19 145,99 zł ÷1.23 ÷4.4070)<br><span class="k">net / 19 145,99 zł</span></td>
-      <td class="num">€36.79</td>
-      <td>&quot;U CIEBIE JUŻ POJUTRZE!&quot;</td>
-      <td class="num">2026-11-16T02:05Z</td>
-      <td><a href="https://www.ceneo.pl/199487972">open ↗</a></td>
-    </tr><tr>
-      <td>KSM64R52BD4-64MD seller wave (Future-X / unnamed / PC-KING / electronis)<br><span class="k">same CD52 bin, SPD-verified family · names from geizhals offer table</span> <span class="tag rec">2Rx4</span> <span class="tag bad">lead</span></td>
-      <td>geizhals.de seller table<br><span class="k">DE</span></td>
-      <td class="num">Future-X €2.398,31 net · unnamed €2.360,50 net (name not captured) · PC-KING €2.407,18 · electronis €2.424,16<br><span class="k">net / 2.853,99 / 2.808,99 / 2.864,55 / 2.884,75 €</span></td>
-      <td class="num">€36.88–37.88 net basis</td>
-      <td>electronis &#x27;Auf Lager&#x27;, Future-X &#x27;Sofort lieferbar&#x27;</td>
-      <td class="num">2026-11-15T21:34Z</td>
+      <td data-s="10741.23">Kingston KSM64R52BD4-64MD — I-CS (new Geizhals merchant)<br><span class="k">SPD-verified 2Rx4 · 18th Angebot on geizhals a3452640 · no beat</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="I-CS (via Geizhals)">I-CS (via Geizhals)<br><span class="k">DE</span></td>
+      <td class="num" data-s="2900.40">€2 900,40<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2437.31">€2 437,31<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10741.23">zł10 741,23<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€38.08</td>
+      <td>listed</td>
+      <td class="num" data-s="2026-11-16T08:55Z">2026-11-16T08:55Z</td>
       <td><a href="https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html">open ↗</a></td>
     </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC / 96HM / 64HA / 64MD — Jacob own-shop prices (direct read)<br><span class="k">SPD-verified 2Rx4 parts · own-shop rates are HIGHER than the geizhals-entry rate (the geizhals rate only applies entering via geizhals) · 96MC 4.243,34 Sofort · 96HM 4.895,41 Sofort · 64HA 3.149,95 1-2 Wochen · 64MD 2.914,12 Sofort</span> <span class="tag rec">2Rx4</span></td>
-      <td>jacob.de (own shop)<br><span class="k">DE</span></td>
-      <td class="num">96MC €3.565,83 · 96HM €4.113,79 · 64HA €2.647,02 · 64MD €2.448,84<br><span class="k">net / 4.243,34 / 4.895,41 / 3.149,95 / 2.914,12 €</span></td>
-      <td class="num">€37.14 (96MC) · €42.85 · €41.01 · €38.22</td>
-      <td>see spec (96MC/96HM/64MD Sofort)</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://www.jacob.de/search?search=KSM64R52BD4">open ↗</a></td>
+      <td data-s="">Kingston KSM64R52BD4-64MD — end-of-life at distributor level (DigiKey)<br><span class="k">DigiKey: &#x27;Obsolete and no longer manufactured&#x27;, 0 In Stock; the 128MB sibling is &#x27;Discontinued at DigiKey&#x27;. Scope: distributor status, not a Kingston bulletin. Corroborated by the Proshop kit withdrawal and the first upward price tick.</span> <span class="tag rec">2Rx4</span> <span class="tag bad">info</span></td>
+      <td data-s="DigiKey (status record, not a purchase route)">DigiKey (status record, not a purchase route)<br><span class="k">US</span></td>
+      <td class="num" data-s="">—<br><span class="k">—</span></td>
+      <td class="num" data-s="">—<br><span class="k">—</span></td>
+      <td class="num" data-s="">—<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">—</td>
+      <td>0 In Stock</td>
+      <td class="num" data-s="2026-11-16T08:55Z">2026-11-16T08:55Z</td>
+      <td><a href="https://www.digikey.com/en/products/result?keywords=KSM64R52BD4">open ↗</a></td>
     </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD (64 GB 2Rx4 DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified (datasheet: &quot;SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&quot;) · found via Ceneo.pl (ceneo product 182533999, 23 offers) · seller komputera_pl, Super Sprzedawca, 100% of 5 ratings, 12-mo warranty · Ceneo row carries a BLACK WEEKS promo badge; Allegro PDP states &quot;Oszczędzasz 214 zł kupując na Allegro&quot; -&gt; treat as promo price, re-check at order time · 2nd shop buy-it.pl 12 901,77 zł confirms the level</span> <span class="tag rec">2Rx4</span></td>
-      <td>Allegro.pl (komputera_pl, via Ceneo)<br><span class="k">PL</span></td>
-      <td class="num">€2.381,32 net (12 908,19 zł delivered ÷1.23 VAT ÷4.4070 NBP)<br><span class="k">net / 12 898,20 zł + 9,99 zł DPD = 12 908,19 zł delivered</span></td>
-      <td class="num">€37.21</td>
-      <td>live offer, dostawa pt. 20 lis., ships from PL</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.ceneo.pl/182533999">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — Allegro offer list (22 offers, 17 ship from Poland)<br><span class="k">SPD-verified 2Rx4 · allegro.pl product page (22 oferty) · facet &#x27;wysyłka z Polski (17) ofert · wyszklka z Czech (4) · pozostałe kraje UE (1)&#x27; · PL market band captured: komputera_pl 12.908,19 zl / VIPEGR 13.134,49 / proline_pl 13.162,49 / SuperTechPL 13.244,98 / kubartech_pl 13.372,17 / FACTSTORE 13.535,00 / iiPLUTO 13.665,61 / Elektromaniak_ 15.010,48 zl (delivered) — tight 37.21-39.39 EUR/GB band, i.e. a market level not one lucky listing · title confirms &#x27;2Rx4 Micron D&#x27;</span> <span class="tag rec">2Rx4</span></td>
-      <td>Allegro.pl (8 named sellers)<br><span class="k">PL (17/22 ship from Poland)</span></td>
-      <td class="num">€2.381,32 net (12 908,19 zl ÷1.23 VAT ÷4.4070 NBP) for the cheapest row; band up to €2.769,15<br><span class="k">net / 12 908,19 zl delivered (komputera_pl, promo &#x27;Oszczędzasz 214 zł&#x27;)</span></td>
-      <td class="num">€37.21 (band €37.21–39.39)</td>
-      <td>22 offers; cheapest ships from PL, delivery Fri 20 Nov</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://allegro.pl/oferty-produktu/pamiec-ram-ddr5-kingston-ksm64r52bd4-64md-64-gb-72b7c8e6-1065-4a1b-a613-667e1b5c7460">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC (96 GB 2Rx4, DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified: datasheet &#x27;…2Rx4, ECC, SPD is programmed to JEDEC standard latency DDR5-6400 timing&#x27;. 96 GB 2Rx4 at 12 ch/6400 needs Supermicro manual/QVL confirmation (manual rank table spells out 2R = 64 GB/channel). · pass 52: ticked UP 2.853,98 -&gt; 2.856,98 (first upward tick; lifecycle signal)</span> <span class="tag rec">2Rx4</span></td>
-      <td>jacob.de (Jacob Elektronik own shop)<br><span class="k">DE</span></td>
-      <td class="num">€2.400,82 net (€2.856,98 inkl. MwSt ÷1.19)<br><span class="k">net / 2.856,98 €</span></td>
-      <td class="num">€37.51</td>
-      <td>Sofort lieferbar (piece count not published)</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://www.jacob.de/search?search=KSM64R52BD4">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD (gross listing via Geizhals seller table)<br><span class="k">SPD-verified JEDEC-6400 CL52 @1.1V (datasheet) · German business seller (VAT invoice) · geizhals a3452640 offer table · pass 52: ticked UP 2.853,98 -&gt; 2.856,98 (first upward tick; lifecycle signal)</span> <span class="tag rec">2Rx4</span></td>
-      <td>Jacob Elektronik direkt (DE)<br><span class="k">DE</span></td>
-      <td class="num">€2.400,82 net (€2.856,98 inkl. MwSt ÷1.19)<br><span class="k">net / 2.856,98 €</span></td>
-      <td class="num">€37.51</td>
-      <td>own shop jacob.de &#x27;Sofort lieferbar&#x27; (no piece count); geizhals rate €2.853,98 valid only entering via geizhals; own-shop price €2.911,06 brutto = €38.22/GB net</td>
-      <td class="num">2026-11-16T08:55Z</td>
-      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64HA (64 GB 2Rx4 DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified (pass 42 datasheet) · new Geizhals page a3590377 (8 Angebote)</span> <span class="tag rec">2Rx4</span></td>
-      <td>Geizhals.de offer table (ab geniuzcom.de)<br><span class="k">DE/AT</span></td>
-      <td class="num">€2.403,97 net (€2.860,72 ÷1.19)<br><span class="k">net / 2.860,72 € (ab)</span></td>
-      <td class="num">€37.56</td>
-      <td>4-6 Werktage (cheapest row); Nexus €3.596,95 sofort</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64ha-a3590377.html">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston FURY Renegade Pro 7600 KF576RH40RB-32 (single)<br><span class="k">1×32 GB, 1Rx8 · SPD JEDEC-6400 CL52 @1.1V (datasheet) · staging path vs kit cap · WITHDRAWN pass 51: Proshop.pl page reads &quot;Produkt został wycofany&quot; (product discontinued).</span> <span class="tag bad">1Rx8</span> <span class="tag bad">withdrawn</span></td>
-      <td>Proshop.pl<br><span class="k">PL</span></td>
-      <td class="num">5 305,69 zł (€1,203.92)<br><span class="k">net / 6 526 zł</span></td>
-      <td class="num">€37.62</td>
-      <td>3–4 d · max 2 szt./klienta (per SKU)</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-32GB-CL38-Single-Channel-1-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462077">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-128MB (128 GB 2Rx4, non-3DS) — first 2Rx4 128 GB part<br><span class="k">SPD-VERIFIED, datasheet pulled pass 49: &#x27;128GB 2Rx4 16G x 80-Bit … SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&#x27; · 32 internal banks · 1.1V · corrects the earlier tracker note that treated 128MB as 3DS-only · board-legal: manual p.40 rates RDIMM 2R at 6400 MT/s @ 12 slots → 12× = 1.5 TB at 6400</span> <span class="tag rec">2Rx4</span></td>
-      <td>Toppreise.ch (7 Angebote; page floor ab CHF 4&#x27;841.05, best row CHF 5&#x27;061.00)<br><span class="k">CH</span></td>
-      <td class="num">€4.838,85 net-basis (CHF 4&#x27;841.05 ÷1.081)<br><span class="k">net / CHF 4&#x27;841.05 (€5.230,79)</span></td>
-      <td class="num">€37.80 (ab) – €39.52</td>
-      <td>7 Angebote</td>
-      <td class="num">2026-11-16T06:15Z</td>
-      <td><a href="https://www.toppreise.ch/preisvergleich/Arbeitsspeicher/KINGSTON-Server-Premier-RDIMM-DDR5-6400-KSM64R52BD4-128MB-p953222">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD (genuine, eBay.de IT-Planet GmbH)<br><span class="k">VERIFIED: seller IT-Planet GmbH — Gewerblich, 99,4% pos, 2534 Bew., member Nov 2018 · Preisvorschlag enabled · 14-day returns · ships DE→PL EUR 25 Standard Intl</span> <span class="tag rec">2Rx4</span></td>
-      <td>eBay.de (marketplace)<br><span class="k">DE</span></td>
-      <td class="num">EUR 2.436,42 net (÷1.19; VAT-recoverable, Gewerblich) + ~EUR 21 net shipping<br><span class="k">net / 2.899,34 €</span></td>
-      <td class="num">€38.07 net · €38.40/GB landed w/ shipping</td>
-      <td>3 verfügbar · Best Offer — sub-floor confirmed</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.ebay.de/sch/i.html?_nkw=KSM64R52BD4-64MD">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD — I-CS (new Geizhals merchant)<br><span class="k">SPD-verified 2Rx4 · 18th Angebot on geizhals a3452640 · no beat</span> <span class="tag rec">2Rx4</span></td>
-      <td>I-CS (via Geizhals)<br><span class="k">DE</span></td>
-      <td class="num">€2.437,31 net<br><span class="k">net / 2.900,40 €</span></td>
-      <td class="num">€38.08</td>
-      <td>listed</td>
-      <td class="num">2026-11-16T08:55Z</td>
-      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston Server Premier DDR5-6400 CL52 ECC Reg singles (1×16/32/64)<br><span class="k">SPD-verified family · Galaxus lists PN-less (&#x27;DIMM&#x27;) — confirm PN + 288-pin RDIMM before ordering</span> <span class="tag bad">lead</span></td>
-      <td>Galaxus.de<br><span class="k">DE</span></td>
-      <td class="num">gross: 16GB 778,64 € · 32GB 1.449,92 € · 64GB 3.262,26 €<br><span class="k">net / EUR gross shown</span></td>
-      <td class="num">€38.08 net est. (32GB ÷1.19) / €50.97 gross (64GB)</td>
-      <td>unverifiable (product pages CAPTCHA)</td>
-      <td class="num">2026-11-15T02:47Z</td>
-      <td><a href="https://www.galaxus.de/de/s1/product/kingston-ddr5-32gb-pc-6400-cl52-server-premier-ecc-reg-retail-1-x-32gb-6400-mhz-ddr5-ram-dimm-ram-69848466">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston Server Premier KSM64R52BD4-64MD<br><span class="k">SPD-verified family, 2Rx4 · marketplace offer (sprzedawca niepotwierdzony)</span> <span class="tag rec">2Rx4</span></td>
-      <td>Amazon.pl<br><span class="k">PL</span></td>
-      <td class="num">13 403,64 zł brutto ÷1.23 = €2.472,7 net (gross-basis)<br><span class="k">net / 13 403,64 zł</span></td>
-      <td class="num">€38.63 (net basis)</td>
-      <td>wysyłka 20–21 XI</td>
-      <td class="num">2026-11-14T03:0xZ</td>
-      <td><a href="https://www.amazon.pl/s?k=KSM64R52BD4-64MD">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston Server Premier KSM64R52BD4-64MD<br><span class="k">64 GB, 2Rx4 · SPD = JEDEC-6400 CL52 @1.1 V (datasheet-verified)</span> <span class="tag rec">2Rx4</span></td>
-      <td>ibfusion<br><span class="k">ES/CH</span></td>
-      <td class="num">€2,481.00<br><span class="k">net / €2,681.96 (incl. CH 8.1%)</span></td>
-      <td class="num">€38.77</td>
-      <td>5 in stock · B2B/VIES 0% VAT</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://ibfusion.com/ram/64gb-ddr5-rdimm-ecc-6400mhz/">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston Server Premier KSM64R52BD4-96MC (96 GB 2Rx4)<br><span class="k">SPD = JEDEC-6400 CL52 @1.1V (datasheet-verified, 2Rx4 12G) · 4 szt = 384 GB</span> <span class="tag rec">2Rx4</span></td>
-      <td>senetic.pl<br><span class="k">PL</span></td>
-      <td class="num">16 417,58 zł (€3.725,80)<br><span class="k">net / —</span></td>
-      <td class="num">€38.81</td>
-      <td>(karta bez statusu — sprawdzić)</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://www.senetic.pl/search/?q=KSM64R52BD4&amp;f_s_category=icecat_106">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — Proshop.de<br><span class="k">SPD-verified 2Rx4 · Proshop.de own listing · 2/customer cap</span> <span class="tag rec">2Rx4</span></td>
-      <td>Proshop.de<br><span class="k">DE</span></td>
-      <td class="num">€2.505,31 exkl. MwSt<br><span class="k">net / 2.981,32 €</span></td>
-      <td class="num">€39.15</td>
-      <td>Maximale Bestellmenge: 2 Stück pro Kunde</td>
-      <td class="num">2026-11-16T05:05Z</td>
-      <td><a href="https://www.proshop.de/RAM/Kingston-Server-Premier-DDR5-6400-RegistriertECC-64GB-CL52-Single-Channel-1-pcs/3504787">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MH (64 GB, die-suffix MH)<br><span class="k">SPD-verified: &#x27;SPD is programmed to JEDEC standard latency DDR5-6400 timing ... 2Rx4&#x27; (datasheet) · geizhals aggregate</span></td>
-      <td>Geizhals.de (12 Angebote)<br><span class="k">DE</span></td>
-      <td class="num">ab €2.981,32 gross (um €2989,00 single-offer listing)<br><span class="k">net / 2.981,32 €</span></td>
-      <td class="num">€39.15 net-basis (÷1.19)</td>
-      <td>12 Angebote</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://geizhals.de/?fs=KSM64R52BD4">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston FURY Renegade Pro 7600 KF576RH40RBK4-128<br><span class="k">4×32 GB, 1Rx8 · SPD = JEDEC-6400 CL52 @1.1 V (datasheet-verified) · 31.25 mm · WITHDRAWN pass 51: Proshop.pl page reads &quot;Produkt został wycofany&quot; (product discontinued).</span> <span class="tag bad">1Rx8 (4x32GB kit)</span> <span class="tag bad">withdrawn</span></td>
-      <td>Proshop.pl<br><span class="k">PL</span></td>
-      <td class="num">22 245,53 zł (€5,047.77)<br><span class="k">net / 27 362 zł</span></td>
-      <td class="num">€39.44</td>
-      <td>import 5–6 d (lead time moved 3–4 → 5–6 d) · max 2/client</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-128GB-CL38-Quad-Channel-4-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462079">open ↗</a></td>
-    </tr><tr>
-      <td>Samsung M321RYGA0PB2-CCP (96 GB, QVL-family 6400 RDIMM)<br><span class="k">no SPD sentence published (Samsung); first EU street price for the 96 GB QVL sibling · Geizhals a3528339</span> <span class="tag rec">2Rx4</span></td>
-      <td>Geizhals.de offer table (ab Mindfactory)<br><span class="k">DE/AT</span></td>
-      <td class="num">€3.895,75 net (€4.635,94 ÷1.19)<br><span class="k">net / 4.635,94 € (ab)</span></td>
-      <td class="num">€40.58</td>
-      <td>2-3 Werktage; Jacob €4.642,88 Sofort</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://geizhals.de/samsung-rdimm-96gb-m321ryga0pb2-ccp-a3528339.html">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Proshop.de<br><span class="k">SPD-verified 2Rx4 · Proshop.de own listing (new source) · hard cap &quot;Maximale Bestellmenge: 2 Stück pro Kunde&quot; · dearer than the electronis floor by 14%</span> <span class="tag rec">2Rx4</span></td>
-      <td>Proshop.de<br><span class="k">DE</span></td>
-      <td class="num">€3.901,68 exkl. MwSt<br><span class="k">net / 4.643,00 €</span></td>
-      <td class="num">€40.64</td>
-      <td>2 Stück pro Kunde (stock-limited cap)</td>
-      <td class="num">2026-11-16T05:05Z</td>
-      <td><a href="https://www.proshop.de/RAM/Kingston-Server-Premier-DDR5-6400-RegistriertECC-96GB-CL52-Single-Channel-1-pcs/3401661">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston Server Premier KSM64R52BD4-64MD<br><span class="k">64 GB, 2Rx4 · same part, mainline PL distributor</span> <span class="tag rec">2Rx4</span></td>
-      <td>senetic.pl<br><span class="k">PL</span></td>
-      <td class="num">11 509,07 zł (€2,612)<br><span class="k">net / 14 156,16 zł (€3,212)</span></td>
-      <td class="num">€40.81</td>
-      <td>41–50 pcs · 24 h</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://www.senetic.pl/search/?q=KSM64R52BD4&amp;f_s_category=icecat_106">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — senetic.fr<br><span class="k">SPD-verified 2Rx4 · senetic.fr locale == senetic.de price within 4 cents (same distributor)</span> <span class="tag rec">2Rx4</span></td>
-      <td>senetic.fr<br><span class="k">FR</span></td>
-      <td class="num">2.613,29 € HT<br><span class="k">net / 3.135,95 € TTC</span></td>
-      <td class="num">€40.83</td>
-      <td>listed</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://www.senetic.fr/search/?q=KSM64R52BD4&amp;f_s_category=icecat_106">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston Server Premier KSM64R52BD4-64MD / 96MC<br><span class="k">SPD-verified family · senetic DE storefront (same distributor as senetic.pl)</span> <span class="tag rec">2Rx4</span></td>
-      <td>senetic.de<br><span class="k">DE</span></td>
-      <td class="num">64MD 2.613,25 € · 96MC 3.727,78 € · 16MH 624,27 € (exkl.)<br><span class="k">net / —</span></td>
-      <td class="num">€40.83 (64MD) / €38.83 (96MC)</td>
-      <td>41–50 Stück (64MD) — DE warehouse</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://www.senetic.de/search/?q=KSM64R52BD4">open ↗</a></td>
-    </tr><tr>
-      <td>Micron MTC40F2046S1RC64BH1<br><span class="k">64 GB, 2Rx4, DDR5-6400 CL52 @1.1 V · no SPD sentence published</span></td>
-      <td>Tonitrus<br><span class="k">DE</span></td>
-      <td class="num">€2,654.20<br><span class="k">net / €3,158.50</span></td>
-      <td class="num">€41.47</td>
-      <td>new stock small (unverified)</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://www.tonitrus.com/MTC40F2046S1RC64BH1_1">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96HM (96 GB 2Rx4) — Geizhals product<br><span class="k">SPD-verified (datasheet pass 43: &quot;SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&quot;, 2Rx4) · Geizhals a3973312, 10 Angebote · no beat (€41.51/GB vs the 96MC €35.53)</span> <span class="tag rec">2Rx4</span></td>
-      <td>Geizhals.de offer table<br><span class="k">DE/AT</span></td>
-      <td class="num">€3.985,02 net (÷1.19)<br><span class="k">net / 4.742,17 € (ab)</span></td>
-      <td class="num">€41.51</td>
-      <td>10 Angebote</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96hm-a3973312.html">open ↗</a></td>
-    </tr><tr>
-      <td>Samsung M321R8GA0EB2-CCP<br><span class="k">64 GB, 2Rx4, DDR5-6400 CL52 @1.1 V · no SPD sentence published (JEDEC by construction)</span></td>
-      <td>Tonitrus<br><span class="k">DE</span></td>
-      <td class="num">€2,667.65<br><span class="k">net / €3,174.50</span></td>
-      <td class="num">€41.68</td>
-      <td>50 in stock (last verified 17:4xZ; bot-walled since)</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://www.tonitrus.com/M321R8GA0EB2-CCP">open ↗</a></td>
-    </tr><tr>
-      <td>V-Color RDIMM JEDEC DDR5-6400 CL52 (4×32 GB)<br><span class="k">128 GB kit · JEDEC 6400 CL52 @1.1 V per Caseking product page</span></td>
-      <td>Caseking<br><span class="k">DE</span></td>
-      <td class="num">6.392,42 € DE-VAT-incl (÷1.19 = €5.372,6 net)<br><span class="k">net / —</span></td>
-      <td class="num">€41.97 (net basis)</td>
-      <td>OUT OF STOCK (browser-verified)</td>
-      <td class="num">2026-11-15T18:21Z</td>
-      <td><a href="https://www.caseking.de/en/v-color-rdimm-jedec-ddr5-6400-ram-cl52-128-gb-4-x-32-gb-quad-channel-kit-black/MEVC-031.html">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64HA (64 GB 2Rx4) — Polish channel<br><span class="k">SPD-verified · Ceneo product 199271545</span> <span class="tag rec">2Rx4</span></td>
-      <td>SuperTech.pl (via Ceneo)<br><span class="k">PL</span></td>
-      <td class="num">€2.712,68 net (14 703,99 zł ÷1.23 ÷4.4070)<br><span class="k">net / 14 703,99 zł</span></td>
-      <td class="num">€42.39</td>
-      <td>listed</td>
-      <td class="num">2026-11-16T02:05Z</td>
-      <td><a href="https://www.ceneo.pl/199271545">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC (96 GB 2Rx4, 2nd SKU) — Proshop.de<br><span class="k">SPD-verified 2Rx4 · 2/customer cap</span> <span class="tag rec">2Rx4</span></td>
-      <td>Proshop.de<br><span class="k">DE</span></td>
-      <td class="num">€4.098,67 exkl. MwSt<br><span class="k">net / 4.877,42 €</span></td>
-      <td class="num">€42.69</td>
-      <td>2 Stück pro Kunde</td>
-      <td class="num">2026-11-16T05:05Z</td>
-      <td><a href="https://www.proshop.de/RAM/Kingston-Server-Premier-DDR5-6400-RegistriertECC-96GB-CL52-Single-Channel-1-pcs/3521489">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston Server Premier KSM64R52BD4-64MD<br><span class="k">SPD-verified family 2Rx4 · ships EU from Rīga, USD-quoted net</span> <span class="tag rec">2Rx4</span> <span class="tag bad">verified</span></td>
-      <td>corewavelabs.com<br><span class="k">LV</span></td>
-      <td class="num">$3,076 ex VAT (≈€2.772)<br><span class="k">net / —</span></td>
-      <td class="num">€43.31</td>
-      <td>100+ pcs · 2–3 d</td>
-      <td class="num">2026-11-14T03:5xZ</td>
-      <td><a href="https://corewavelabs.com/ksm64r52bd4-64md-kingston-64gb-ddr5-6400-rdimm/">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC (genuine) — eBay.de wave<br><span class="k">SPD-verified · IT-Planet €4.982,58 Best Offer = €43.62/GB; ~D~ listing €6.813,00 = €59.64/GB — both far above the electronis floor, recorded to close the channel</span> <span class="tag rec">2Rx4</span></td>
-      <td>eBay.de (genuine listings)<br><span class="k">DE</span></td>
-      <td class="num">€4.187,04 / €5.725,21 net<br><span class="k">net / 4.982,58 € / 6.813,00 €</span></td>
-      <td class="num">€43.62 / €59.64</td>
-      <td>listed</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.ebay.de/itm/206689139883">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC / 64MD — MediaMarkt.ch &amp; Interdiscount.ch rows<br><span class="k">SPD-verified parts · MediaMarkt.ch 96MC is a MARKETPLACE offer (seller &#x27;Mediarado CH&#x27;, CHF 4&#x27;223.04 = €43.97/GB net) · 64MD Interdiscount CHF 2&#x27;512.60 = €39.24/GB net — both dearer than the Foletti/orderflow rows and CHF-only</span> <span class="tag rec">2Rx4</span></td>
-      <td>MediaMarkt.ch / Interdiscount.ch<br><span class="k">CH</span></td>
-      <td class="num">CHF 4&#x27;223.04 / CHF 2&#x27;543.10 / CHF 2&#x27;512.60<br><span class="k">net / see prices</span></td>
-      <td class="num">€43.97 (96MC) · €39.72/€39.24 (64MD)</td>
-      <td>listed</td>
-      <td class="num">2026-11-16T06:15Z</td>
-      <td><a href="https://www.mediamarkt.ch/de/search.html?query=KSM64R52BD4">open ↗</a></td>
-    </tr><tr>
-      <td>SK hynix HMCG94AHBRA480N (64 GB 2Rx4) — Geizhals<br><span class="k">no SPD sentence published (hynix) · the Geizhals route is 6x the eBay business route — do not buy here, recorded to close the page</span> <span class="tag rec">2Rx4</span></td>
-      <td>Geizhals.de (single offer)<br><span class="k">DE</span></td>
-      <td class="num">€2.995,23 net (÷1.19)<br><span class="k">net / 3.564,32 € (ab)</span></td>
-      <td class="num">€46.80</td>
-      <td>1 Angebot</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://geizhals.de/sk-hynix-rdimm-64gb-hmcg94ahbra480n-a3657519.html">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — Proshop.pl single<br><span class="k">SPD-verified 2Rx4 · 2 szt. cap · sprowadzany 6-7 dni · no beat (€48.09/GB vs €37.21 Allegro)</span> <span class="tag rec">2Rx4</span></td>
-      <td>Proshop.pl<br><span class="k">PL</span></td>
-      <td class="num">13 562,60 zł netto (SKU 3504787)<br><span class="k">net / 16 682,00 zł</span></td>
-      <td class="num">€48.09</td>
+      <td data-s="21041.46">Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Proshop.pl singles<br><span class="k">SPD-verified 2Rx4 · Proshop.pl now carries the SINGLES (the 128 GB kit is withdrawn) · hard cap &#x27;Na wybranym produkcie mozliwy jest zakup jedynie 2 szt&#x27; · sprowadzany, 5-6 dni · far dearer than the electronis floor</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Proshop.pl">Proshop.pl<br><span class="k">PL</span></td>
+      <td class="num" data-s="25881.00">zł25 881,00<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="21041.46">zł21 041,46<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="21041.46">zł21 041,46<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€49.73 / €48.32</td>
       <td>2 szt. max per customer</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.proshop.pl/RAM/Kingston-Server-Premier-DDR5-6400-RejestrowanaECC-64GB-CL52-Single-Channel-1-pcs/3504787">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Proshop.pl singles<br><span class="k">SPD-verified 2Rx4 · Proshop.pl now carries the SINGLES (the 128 GB kit is withdrawn) · hard cap &#x27;Na wybranym produkcie mozliwy jest zakup jedynie 2 szt&#x27; · sprowadzany, 5-6 dni · far dearer than the electronis floor</span> <span class="tag rec">2Rx4</span></td>
-      <td>Proshop.pl<br><span class="k">PL</span></td>
-      <td class="num">21 041,46 zł netto (SKU 3401661) / 20 443,09 zł (SKU 3521489)<br><span class="k">net / 25 881,00 / 25 145,00 zł</span></td>
-      <td class="num">€49.73 / €48.32</td>
-      <td>2 szt. max per customer</td>
-      <td class="num">2026-11-16T07:10Z</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
       <td><a href="https://www.proshop.pl/RAM/Kingston-Server-Premier-DDR5-6400-RejestrowanaECC-96GB-CL52-Single-Channel-1-pcs/3401661">open ↗</a></td>
     </tr><tr>
-      <td>Samsung M321R8GA0PB2-CCP (QVL family, genuine)<br><span class="k">no SPD sentence published · genuine Samsung · US channel</span> <span class="tag rec">2Rx4</span> <span class="tag bad">reject</span></td>
-      <td>eBay.com (genuine listing)<br><span class="k">US</span></td>
-      <td class="num">US$2,959 (+ shipping)<br><span class="k">net / $2,959</span></td>
-      <td class="num">€51.1+ pre-shipping</td>
-      <td>(1X64GB listing)</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.ebay.com/itm/326661139726">open ↗</a></td>
+      <td data-s="13562.60">Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — Proshop.pl single<br><span class="k">SPD-verified 2Rx4 · 2 szt. cap · sprowadzany 6-7 dni · no beat (€48.09/GB vs €37.21 Allegro)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Proshop.pl">Proshop.pl<br><span class="k">PL</span></td>
+      <td class="num" data-s="16682.00">zł16 682,00<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="13562.60">zł13 562,60<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="13562.60">zł13 562,60<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€48.09</td>
+      <td>2 szt. max per customer</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.proshop.pl/RAM/Kingston-Server-Premier-DDR5-6400-RejestrowanaECC-64GB-CL52-Single-Channel-1-pcs/3504787">open ↗</a></td>
     </tr><tr>
-      <td>Samsung M321R8GA0PB2-CCP — the exact QVL 64 GB part (PB2)<br><span class="k">no SPD sentence published (Samsung); Gigabyte MZ33-CP1 QVL PASS; closes the 7-pass &quot;QVL part has no EU price&quot; gap — and it is ~37% above the floor</span> <span class="tag rec">2Rx4</span></td>
-      <td>CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
-      <td class="num">$3,641 ≈ €3.292,52 net-basis<br><span class="k">net / $3,641 excl. VAT</span></td>
-      <td class="num">€51.45 net-basis</td>
-      <td>500 pcs · 3–4 Days</td>
-      <td class="num">2026-11-16T09:35Z</td>
+      <td data-s="13720.49">96 GB clone, MPN KSM64R52BD4-96MC-MB (brand MB, spec-match) — cheapest 96 GB seen<br><span class="k">no SPD sentence (white-label clone) · eBay.de item 198497557101, Mem-Store (29.886 FB, Gewerblich), ships Santa Clara US, 8 pcs only (cannot fill 12) · landed figure includes US$378,35 shipping (@USD 0.90429) · cheapest 96 GB module of the whole hunt, undercutting CoreWave&#x27;s caveat class</span> <span class="tag rec">2Rx4 (claimed; no datasheet)</span></td>
+      <td data-s="eBay.de (Mem-Store, US)">eBay.de (Mem-Store, US)<br><span class="k">US→PL</span></td>
+      <td class="num" data-s="3362.74">€3 362,74<br><span class="k">gross · VAT 0%</span></td>
+      <td class="num" data-s="3113.34">€3 113,34<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="13720.49">zł13 720,49<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€32.43 net-basis</td>
+      <td>8 verfügbar (12 sold)</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.ebay.de/itm/198497557101">open ↗</a></td>
+    </tr><tr>
+      <td data-s="18452.29">Kingston KSM64R52BD4-96MC (genuine) — eBay.de wave<br><span class="k">SPD-verified · IT-Planet €4.982,58 Best Offer = €43.62/GB; ~D~ listing €6.813,00 = €59.64/GB — both far above the electronis floor, recorded to close the channel</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="eBay.de (genuine listings)">eBay.de (genuine listings)<br><span class="k">DE</span></td>
+      <td class="num" data-s="4982.58">€4 982,58<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="4187.04">€4 187,04<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="18452.29">zł18 452,29<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€43.62 / €59.64</td>
+      <td>listed</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.ebay.de/itm/206689139883">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10494.48">Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — Allegro offer list (22 offers, 17 ship from Poland)<br><span class="k">SPD-verified 2Rx4 · allegro.pl product page (22 oferty) · facet &#x27;wysyłka z Polski (17) ofert · wyszklka z Czech (4) · pozostałe kraje UE (1)&#x27; · PL market band captured: komputera_pl 12.908,19 zl / VIPEGR 13.134,49 / proline_pl 13.162,49 / SuperTechPL 13.244,98 / kubartech_pl 13.372,17 / FACTSTORE 13.535,00 / iiPLUTO 13.665,61 / Elektromaniak_ 15.010,48 zl (delivered) — tight 37.21-39.39 EUR/GB band, i.e. a market level not one lucky listing · title confirms &#x27;2Rx4 Micron D&#x27;</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Allegro.pl (8 named sellers)">Allegro.pl (8 named sellers)<br><span class="k">PL (17/22 ship from Poland)</span></td>
+      <td class="num" data-s="2929.02">€2 929,02<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="2381.32">€2 381,32<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10494.48">zł10 494,48<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.21 (band €37.21–39.39)</td>
+      <td>22 offers; cheapest ships from PL, delivery Fri 20 Nov</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://allegro.pl/oferty-produktu/pamiec-ram-ddr5-kingston-ksm64r52bd4-64md-64-gb-72b7c8e6-1065-4a1b-a613-667e1b5c7460">open ↗</a></td>
+    </tr><tr>
+      <td data-s="14817.96">Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Foletti Computer (CH)<br><span class="k">UNREACHABLE FOR PL: merchant ships to Switzerland+Liechtenstein only (Foletti: &quot;We only ship orders to addresses within Switzerland and Liechtenstein&quot;; orderflow FAQ: &quot;Nein, wir liefern ausschliesslich innerhalb der Schweiz sowie ins Fürstentum Liechtenstein&quot;). Price kept for the record only — not a purchasable route. SPD-verified 2Rx4 · source-verified at superstore.foletti.com (via Toppreise p951885) · CHF 3&#x27;363.90 incl. free shipping · &#x27;&lt; 5 Pcs from our external EU-warehouse&#x27; · &#x27;No right of return&#x27; · delivery 19-30 Nov · FX 1 CHF = 1.08051 EUR (NBP 2026-11-13), CH VAT 8.1%</span> <span class="tag rec">2Rx4</span> <span class="tag warn">unreachable</span></td>
+      <td data-s="Foletti Computer">Foletti Computer<br><span class="k">CH (EU warehouse)</span></td>
+      <td class="num" data-s="3634.72">€3 634,72<br><span class="k">gross · VAT 8%</span></td>
+      <td class="num" data-s="3362.37">€3 362,37<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="14817.96">zł14 817,96<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€35.02</td>
+      <td>&lt; 5 pcs · no returns · external EU warehouse</td>
+      <td class="num" data-s="2026-11-16T06:15Z">2026-11-16T06:15Z</td>
+      <td><a href="https://www.toppreise.ch/preisvergleich/Arbeitsspeicher/KINGSTON-Server-Premier-RDIMM-DDR5-6400-KSM64R52BD4-96MC-p951885">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10249.10">Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — orderflow.ch<br><span class="k">UNREACHABLE FOR PL: merchant ships to Switzerland+Liechtenstein only (Foletti: &quot;We only ship orders to addresses within Switzerland and Liechtenstein&quot;; orderflow FAQ: &quot;Nein, wir liefern ausschliesslich innerhalb der Schweiz sowie ins Fürstentum Liechtenstein&quot;). Price kept for the record only — not a purchasable route. SPD-verified 2Rx4 · source-verified at orderflow.ch/products/19769118 (via Toppreise p953764) · &#x27;20x ab Schweizer Lager, ca. 1-3 Werktage&#x27; · ships from CH so PL import VAT applies on top; Lieferungen page 404s (cross-border terms unconfirmed) · FX 1 CHF = 1.08051 EUR, CH VAT 8.1%</span> <span class="tag rec">2Rx4</span> <span class="tag warn">unreachable</span></td>
+      <td data-s="orderflow.ch">orderflow.ch<br><span class="k">CH</span></td>
+      <td class="num" data-s="2514.02">€2 514,02<br><span class="k">gross · VAT 8%</span></td>
+      <td class="num" data-s="2325.64">€2 325,64<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10249.10">zł10 249,10<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€36.34</td>
+      <td>20x Swiss warehouse · 1-3 Werktage</td>
+      <td class="num" data-s="2026-11-16T06:15Z">2026-11-16T06:15Z</td>
+      <td><a href="https://www.orderflow.ch/products/19769118">open ↗</a></td>
+    </tr><tr>
+      <td data-s="21324.81">Kingston KSM64R52BD4-128MB (128 GB 2Rx4, non-3DS) — first 2Rx4 128 GB part<br><span class="k">SPD-VERIFIED, datasheet pulled pass 49: &#x27;128GB 2Rx4 16G x 80-Bit … SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&#x27; · 32 internal banks · 1.1V · corrects the earlier tracker note that treated 128MB as 3DS-only · board-legal: manual p.40 rates RDIMM 2R at 6400 MT/s @ 12 slots → 12× = 1.5 TB at 6400</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Toppreise.ch (7 Angebote; page floor ab CHF 4&#x27;841.05, best row CHF 5&#x27;061.00)">Toppreise.ch (7 Angebote; page floor ab CHF 4&#x27;841.05, best row CHF 5&#x27;061.00)<br><span class="k">CH</span></td>
+      <td class="num" data-s="5230.79">€5 230,79<br><span class="k">gross · VAT 8%</span></td>
+      <td class="num" data-s="4838.85">€4 838,85<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="21324.81">zł21 324,81<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.80 (ab) – €39.52</td>
+      <td>7 Angebote</td>
+      <td class="num" data-s="2026-11-16T06:15Z">2026-11-16T06:15Z</td>
+      <td><a href="https://www.toppreise.ch/preisvergleich/Arbeitsspeicher/KINGSTON-Server-Premier-RDIMM-DDR5-6400-KSM64R52BD4-128MB-p953222">open ↗</a></td>
+    </tr><tr>
+      <td data-s="">Kingston KSM64R52BD4-96MC / 64MD — MediaMarkt.ch &amp; Interdiscount.ch rows<br><span class="k">SPD-verified parts · MediaMarkt.ch 96MC is a MARKETPLACE offer (seller &#x27;Mediarado CH&#x27;, CHF 4&#x27;223.04 = €43.97/GB net) · 64MD Interdiscount CHF 2&#x27;512.60 = €39.24/GB net — both dearer than the Foletti/orderflow rows and CHF-only</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="MediaMarkt.ch / Interdiscount.ch">MediaMarkt.ch / Interdiscount.ch<br><span class="k">CH</span></td>
+      <td class="num" data-s="">—<br><span class="k">—</span></td>
+      <td class="num" data-s="">—<br><span class="k">—</span></td>
+      <td class="num" data-s="">—<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€43.97 (96MC) · €39.72/€39.24 (64MD)</td>
+      <td>listed</td>
+      <td class="num" data-s="2026-11-16T06:15Z">2026-11-16T06:15Z</td>
+      <td><a href="https://www.mediamarkt.ch/de/search.html?query=KSM64R52BD4">open ↗</a></td>
+    </tr><tr>
+      <td data-s="17561.98">Kingston KSM64R52BD4-96HM (96 GB 2Rx4) — Geizhals product<br><span class="k">SPD-verified (datasheet pass 43: &quot;SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&quot;, 2Rx4) · Geizhals a3973312, 10 Angebote · no beat (€41.51/GB vs the 96MC €35.53)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Geizhals.de offer table">Geizhals.de offer table<br><span class="k">DE/AT</span></td>
+      <td class="num" data-s="4742.17">€4 742,17<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="3985.02">€3 985,02<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="17561.98">zł17 561,98<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€41.51</td>
+      <td>10 Angebote</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96hm-a3973312.html">open ↗</a></td>
+    </tr><tr>
+      <td data-s="17194.70">Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Proshop.de<br><span class="k">SPD-verified 2Rx4 · Proshop.de own listing (new source) · hard cap &quot;Maximale Bestellmenge: 2 Stück pro Kunde&quot; · dearer than the electronis floor by 14%</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Proshop.de">Proshop.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="4643.00">€4 643,00<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="3901.68">€3 901,68<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="17194.70">zł17 194,70<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€40.64</td>
+      <td>2 Stück pro Kunde (stock-limited cap)</td>
+      <td class="num" data-s="2026-11-16T05:05Z">2026-11-16T05:05Z</td>
+      <td><a href="https://www.proshop.de/RAM/Kingston-Server-Premier-DDR5-6400-RegistriertECC-96GB-CL52-Single-Channel-1-pcs/3401661">open ↗</a></td>
+    </tr><tr>
+      <td data-s="18062.84">Kingston KSM64R52BD4-96MC (96 GB 2Rx4, 2nd SKU) — Proshop.de<br><span class="k">SPD-verified 2Rx4 · 2/customer cap</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Proshop.de">Proshop.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="4877.42">€4 877,42<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="4098.67">€4 098,67<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="18062.84">zł18 062,84<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€42.69</td>
+      <td>2 Stück pro Kunde</td>
+      <td class="num" data-s="2026-11-16T05:05Z">2026-11-16T05:05Z</td>
+      <td><a href="https://www.proshop.de/RAM/Kingston-Server-Premier-DDR5-6400-RegistriertECC-96GB-CL52-Single-Channel-1-pcs/3521489">open ↗</a></td>
+    </tr><tr>
+      <td data-s="11040.90">Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — Proshop.de<br><span class="k">SPD-verified 2Rx4 · Proshop.de own listing · 2/customer cap</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Proshop.de">Proshop.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="2981.32">€2 981,32<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2505.31">€2 505,31<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="11040.90">zł11 040,90<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€39.15</td>
+      <td>Maximale Bestellmenge: 2 Stück pro Kunde</td>
+      <td class="num" data-s="2026-11-16T05:05Z">2026-11-16T05:05Z</td>
+      <td><a href="https://www.proshop.de/RAM/Kingston-Server-Premier-DDR5-6400-RegistriertECC-64GB-CL52-Single-Channel-1-pcs/3504787">open ↗</a></td>
+    </tr><tr>
+      <td data-s="14294.91">Micron MTC40F204WS1RC64BC1 (96 GB, DDR5-6400 RDIMM)<br><span class="k">no SPD sentence published (Micron) · CoreWave listing states 2Rx4 · second manufacturer in the 2Rx4 caveat class · twin SKU BC1T $3,804</span> <span class="tag rec">2Rx4 (per listing)</span></td>
+      <td data-s="CoreWave Labs SIA (Riga, LV)">CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
+      <td class="num" data-s="3587.00">$3 587,00<br><span class="k">gross · VAT 21%</span></td>
+      <td class="num" data-s="3587.00">$3 587,00<br><span class="k">net USD</span></td>
+      <td class="num" data-s="14294.91">zł14 294,91<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€33.79 net-basis</td>
+      <td>200 pcs · 3–4 Days</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
       <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
     </tr><tr>
-      <td>KSM64R52BD4-64MD &#x27;Compatible Replacement&#x27; (clone, brand MB)<br><span class="k">NOT Kingston · no SPD datasheet · MPN KSM64R52BD4-64MD-MB · no returns</span> <span class="tag rec">2Rx4</span> <span class="tag bad">reject</span></td>
-      <td>eBay.com (Mem-Store, US)<br><span class="k">US</span></td>
-      <td class="num">US$2,674 + $350 ship = ~€3,344 landed (VAT-neutral)<br><span class="k">net / $2,674</span></td>
-      <td class="num">€52.25 landed</td>
-      <td>4 available · est. Nov 26–Dec 4</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.ebay.com/itm/326661139726">open ↗</a></td>
+      <td data-s="13199.98">SK hynix HMCG94AHBRA480N (64 GB 2Rx4) — Geizhals<br><span class="k">no SPD sentence published (hynix) · the Geizhals route is 6x the eBay business route — do not buy here, recorded to close the page</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Geizhals.de (single offer)">Geizhals.de (single offer)<br><span class="k">DE</span></td>
+      <td class="num" data-s="3564.32">€3 564,32<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2995.23">€2 995,23<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="13199.98">zł13 199,98<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€46.80</td>
+      <td>1 Angebot</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://geizhals.de/sk-hynix-rdimm-64gb-hmcg94ahbra480n-a3657519.html">open ↗</a></td>
     </tr><tr>
-      <td>Samsung M321R8GA0EB2-CCP (64 GB 6400, 2Rx4)<br><span class="k">no SPD sentence published; native JEDEC-6400 bin</span></td>
-      <td>senetic.de<br><span class="k">DE</span></td>
-      <td class="num">3.387,48 € (exkl. MwSt)<br><span class="k">net / 4.031,10 € inkl.</span></td>
-      <td class="num">€52.93</td>
-      <td>41–50 Stück</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://www.senetic.de/product/M321R8GA0EB2-CCP">open ↗</a></td>
+      <td data-s="11516.77">Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — senetic.fr<br><span class="k">SPD-verified 2Rx4 · senetic.fr locale == senetic.de price within 4 cents (same distributor)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="senetic.fr">senetic.fr<br><span class="k">FR</span></td>
+      <td class="num" data-s="3135.95">€3 135,95<br><span class="k">gross · VAT 20%</span></td>
+      <td class="num" data-s="2613.29">€2 613,29<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="11516.77">zł11 516,77<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€40.83</td>
+      <td>listed</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://www.senetic.fr/search/?q=KSM64R52BD4&amp;f_s_category=icecat_106">open ↗</a></td>
     </tr><tr>
-      <td>Samsung M321R8GA0PB2-CCP (QVL family, 64 GB 6400)<br><span class="k">no SPD sentence published · Supermicro QVL MEM-DR564MC-ER64 family · lead-verified by agent, parent blocked by Turnstile</span> <span class="tag rec">2Rx4</span> <span class="tag bad">lead</span></td>
-      <td>smicro.eu (ANAFRA, CZ)<br><span class="k">CZ</span></td>
-      <td class="num">€3.504,44 ex VAT (quote-flagged)<br><span class="k">net / —</span></td>
-      <td class="num">€54.76</td>
-      <td>0 shop + 1 supplier · EU courier 26.11–02.12</td>
-      <td class="num">2026-11-14T02:2xZ</td>
-      <td><a href="https://smicro.eu/samsung-64-gb-ddr5-6400mhz-ecc-rdimm-m321r8ga0pb2-ccp-2">open ↗</a></td>
+      <td data-s="10494.48">Kingston KSM64R52BD4-64MD (64 GB 2Rx4 DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified (datasheet: &quot;SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&quot;) · found via Ceneo.pl (ceneo product 182533999, 23 offers) · seller komputera_pl, Super Sprzedawca, 100% of 5 ratings, 12-mo warranty · Ceneo row carries a BLACK WEEKS promo badge; Allegro PDP states &quot;Oszczędzasz 214 zł kupując na Allegro&quot; -&gt; treat as promo price, re-check at order time · 2nd shop buy-it.pl 12 901,77 zł confirms the level</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Allegro.pl (komputera_pl, via Ceneo)">Allegro.pl (komputera_pl, via Ceneo)<br><span class="k">PL</span></td>
+      <td class="num" data-s="2929.02">€2 929,02<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="2381.32">€2 381,32<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10494.48">zł10 494,48<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.21</td>
+      <td>live offer, dostawa pt. 20 lis., ships from PL</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.ceneo.pl/182533999">open ↗</a></td>
     </tr><tr>
-      <td>Kingston KSM64R52BD8-32MH / -32MD / -96MC (UK direct)<br><span class="k">32MH + 96MC SPD-verified family; 32MD &quot;Discontinued&quot; here; all stock_quantity 0; GBP only (NBP GBP 5.2737 — no verified EUR conversion applied)</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
-      <td>kingstonmemoryshop.co.uk / memorycow.co.uk (Algolia)<br><span class="k">UK</span></td>
-      <td class="num">£1.568,48 / £2.499,99 / £4.853,87 ex-VAT<br><span class="k">net / £1.882,18 / £2.999,99 / £5.824,64</span></td>
-      <td class="num">GBP, not converted</td>
-      <td>0 · Available To Order (32MD: Discontinued)</td>
-      <td class="num">2026-11-16T00:55Z</td>
-      <td><a href="https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm">open ↗</a></td>
-    </tr><tr>
-      <td>32 GB clone brand MB, MPN KSM64R52BD8-32MH-MB (spec-match, not Kingston)<br><span class="k">no SPD sentence (white-label clone); item verified: seller Mem-Store (29.886 FB, Gewerblich), ships Santa Clara CA (USA), condition Neu; shipping not captured this pass</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
-      <td>eBay.de (Mem-Store, US)<br><span class="k">US→DE</span></td>
-      <td class="num">€928,77 net-basis (€1.105,23 inkl. MwSt ÷1.19)<br><span class="k">net / 1.105,23 €</span></td>
-      <td class="num">€29.02 net-basis</td>
-      <td>8 verfügbar (not enough for 12)</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://www.ebay.de/itm/327137019602">open ↗</a></td>
-    </tr><tr>
-      <td>Samsung M321R6GA3PB2-CCP (48 GB, DDR5-6400 RDIMM)<br><span class="k">no SPD sentence published (Samsung); 48 GB 6400 QVL family listed (M321R6GA0PB2-CCPKC / M321R6GA3PB2-CCPWC); CoreWave terms: prices indicative, ex VAT/shipping, confirmed on quotation; 21% LV VAT for private buyers, reverse-charge B2B</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
-      <td>CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
-      <td class="num">$1,630 ≈ €1.474,00 net-basis (@NBP 1 USD = 0.90429 EUR)<br><span class="k">net / $1,630 excl. VAT</span></td>
-      <td class="num">€30.71 net-basis</td>
-      <td>250 pcs · 3–4 Days (row stamp 9 Nov 2026)</td>
-      <td class="num">2026-11-16T09:35Z</td>
-      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BD8-32MD (32 GB, 2Rx8, DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified (same datasheet sentence as -32MH) · only offer on geizhals product a3452629</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
-      <td>barax (via Geizhals)<br><span class="k">DE (barax; AT group)</span></td>
-      <td class="num">€1.050,42 net (€1.250,00 inkl. MwSt ÷1.19) + €5,95 shipping<br><span class="k">net / 1.250,00 €</span></td>
-      <td class="num">€32.83 (net basis)</td>
-      <td>1 Angebot · &#x27;Ab Lager lieferbar – Lieferzeit 1-3 Werktage&#x27;; piece quantity not published (barax.at DNS fails here)</td>
-      <td class="num">2026-11-16T07:10Z</td>
-      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32md-a3452629.html">open ↗</a></td>
-    </tr><tr>
-      <td>Kingston KSM64R52BS8-16MH (16 GB 1Rx8 DDR5-6400 CL52 reg ECC) — the user-supplied Ceneo link<br><span class="k">SPD-verified family (Server Premier 1Rx8 6400, same datasheet sentence) · 8 shops on Ceneo · 12 slots x 16 GB caps the board at 192 GB, so it is a capacity-loser despite the per-GB price</span> <span class="tag bad">1Rx8</span> <span class="tag bad">excluded</span></td>
-      <td>buy-it.pl / empik.com (via Ceneo)<br><span class="k">PL</span></td>
-      <td class="num">€588,93 net (3 192,34 zł ÷1.23 VAT ÷4.4070 NBP)<br><span class="k">net / 3 192,34 zł</span></td>
-      <td class="num">€36.81</td>
+      <td data-s="2595.40">Kingston KSM64R52BS8-16MH (16 GB 1Rx8 DDR5-6400 CL52 reg ECC) — the user-supplied Ceneo link<br><span class="k">SPD-verified family (Server Premier 1Rx8 6400, same datasheet sentence) · 8 shops on Ceneo · 12 slots x 16 GB caps the board at 192 GB, so it is a capacity-loser despite the per-GB price</span> <span class="tag bad">1Rx8</span> <span class="tag bad">excluded</span></td>
+      <td data-s="buy-it.pl / empik.com (via Ceneo)">buy-it.pl / empik.com (via Ceneo)<br><span class="k">PL</span></td>
+      <td class="num" data-s="3192.34">zł3 192,34<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="2595.40">zł2 595,40<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="2595.40">zł2 595,40<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€36.81</td>
       <td>free shipping, 1 day</td>
-      <td class="num">2026-11-16T02:05Z</td>
+      <td class="num" data-s="2026-11-16T02:05Z">2026-11-16T02:05Z</td>
       <td><a href="https://www.ceneo.pl/182533859">open ↗</a></td>
     </tr><tr>
-      <td>Kingston KSM64R52BD8-32MH (32 GB, 2Rx8, DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified: datasheet &#x27;The SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&#x27; · geizhals product a3842215, 27 Angebote · pass 52: ticked UP 2.853,98 -&gt; 2.856,98 (first upward tick; lifecycle signal)</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
-      <td>Geizhals.de offer table (geniuzcom.de ab; Future-X.de / F&amp;M / Jacob Elektronik / e-tec.at in stock band)<br><span class="k">DE/AT</span></td>
-      <td class="num">€2.400,82 net (€2.856,98 inkl. MwSt ÷1.19)<br><span class="k">net / 2.856,98 €</span></td>
-      <td class="num">€37.51</td>
-      <td>27 Angebote; several &#x27;Auf Lager&#x27; / &#x27;Sofort lieferbar&#x27; / &#x27;lagernd&#x27; rows; cheapest = geniuzcom.de 3–5 Werktage</td>
-      <td class="num">2026-11-16T08:55Z</td>
-      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32mh-a3842215.html">open ↗</a></td>
+      <td data-s="15565.85">Kingston KSM64R52BD4-96MC (96 GB 2Rx4) — Polish channel<br><span class="k">SPD-verified · Ceneo product 199487972 (3 shops) — does NOT beat electronis.de €35.53/GB</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="SuperTech.pl (via Ceneo)">SuperTech.pl (via Ceneo)<br><span class="k">PL</span></td>
+      <td class="num" data-s="19145.99">zł19 145,99<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="15565.85">zł15 565,85<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="15565.85">zł15 565,85<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€36.79</td>
+      <td>&quot;U CIEBIE JUŻ POJUTRZE!&quot;</td>
+      <td class="num" data-s="2026-11-16T02:05Z">2026-11-16T02:05Z</td>
+      <td><a href="https://www.ceneo.pl/199487972">open ↗</a></td>
     </tr><tr>
-      <td>Kingston KSM64R52BD8-32MH (eBay.de genuine, cross-check)<br><span class="k">SPD-verified part; landed price incl. €25,00 shipping</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
-      <td>eBay.de (IT-Planet)<br><span class="k">DE</span></td>
-      <td class="num">€1.210,03 net incl. shipping ((1.414,93+25,00)÷1.19)<br><span class="k">net / 1.414,93 € + 25,00 shipping</span></td>
-      <td class="num">€37.70 landed</td>
+      <td data-s="11954.46">Kingston KSM64R52BD4-64HA (64 GB 2Rx4) — Polish channel<br><span class="k">SPD-verified · Ceneo product 199271545</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="SuperTech.pl (via Ceneo)">SuperTech.pl (via Ceneo)<br><span class="k">PL</span></td>
+      <td class="num" data-s="14703.99">zł14 703,99<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="11954.46">zł11 954,46<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="11954.46">zł11 954,46<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€42.39</td>
+      <td>listed</td>
+      <td class="num" data-s="2026-11-16T02:05Z">2026-11-16T02:05Z</td>
+      <td><a href="https://www.ceneo.pl/199271545">open ↗</a></td>
+    </tr><tr>
+      <td data-s="15031.92">Kingston KSM64R52BD4-96MC (96 GB 2Rx4, DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified: datasheet &quot;…2Rx4, ECC, SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&quot; · Geizhals a3590379 (18 Angebote) · shop-level cross-check: electronis own search returns the 96MC card at the same €4.058,99 · 96 GB 2Rx4 at 12 ch still needs H14 manual rank-table confirmation · x12 cart test pass 51: no stock warning, order placeable.</span> <span class="tag rec">BEST</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="electronis.de">electronis.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="4058.99">€4 058,99<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="3410.92">€3 410,92<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="15031.92">zł15 031,92<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€35.53</td>
+      <td>lieferbar, 2-4 Werktage · **12-PIECE ORDER CONFIRMED BUYABLE** (cart accepted 12 = €48.707,88; Gesamtsumme €48.714,78 incl. €6,90 shipping → €40.930,99 net = €35.53/GB) · PDP: dual rank x4, 1.1V, 31.25mm, Micron C-Die</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html">open ↗</a></td>
+    </tr><tr>
+      <td data-s="15031.92">Kingston KSM64R52BD4-96MC wave (same Geizhals product)<br><span class="k">SPD-verified · PC-KING €4.059,00 (1-2 Tage) · Mindfactory €4.091,74 · Future-X.de €4.091,79 · e-tec.at €4.135,00 · JB-Computer €4.135,00 · Jacob €4.160,13 Sofort · galaxus €4.243,12 · Senetic.de €4.436,06</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Geizhals.de offer table">Geizhals.de offer table<br><span class="k">DE/AT</span></td>
+      <td class="num" data-s="4058.99">€4 058,99<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="3410.92">€3 410,92<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="15031.92">zł15 031,92<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€35.53–44.57</td>
+      <td>band; several Sofort/Auf Lager rows</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-96gb-ksm64r52bd4-96mc-a3590379.html">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10594.30">Kingston KSM64R52BD4-64HA (64 GB 2Rx4 DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified (pass 42 datasheet) · new Geizhals page a3590377 (8 Angebote)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Geizhals.de offer table (ab geniuzcom.de)">Geizhals.de offer table (ab geniuzcom.de)<br><span class="k">DE/AT</span></td>
+      <td class="num" data-s="2860.72">€2 860,72<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2403.97">€2 403,97<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10594.30">zł10 594,30<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.56</td>
+      <td>4-6 Werktage (cheapest row); Nexus €3.596,95 sofort</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64ha-a3590377.html">open ↗</a></td>
+    </tr><tr>
+      <td data-s="17168.57">Samsung M321RYGA0PB2-CCP (96 GB, QVL-family 6400 RDIMM)<br><span class="k">no SPD sentence published (Samsung); first EU street price for the 96 GB QVL sibling · Geizhals a3528339</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Geizhals.de offer table (ab Mindfactory)">Geizhals.de offer table (ab Mindfactory)<br><span class="k">DE/AT</span></td>
+      <td class="num" data-s="4635.94">€4 635,94<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="3895.75">€3 895,75<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="17168.57">zł17 168,57<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€40.58</td>
+      <td>2-3 Werktage; Jacob €4.642,88 Sofort</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://geizhals.de/samsung-rdimm-96gb-m321ryga0pb2-ccp-a3528339.html">open ↗</a></td>
+    </tr><tr>
+      <td data-s="6495.88">Samsung M321R6GA3PB2-CCP (48 GB, DDR5-6400 RDIMM)<br><span class="k">no SPD sentence published (Samsung); 48 GB 6400 QVL family listed (M321R6GA0PB2-CCPKC / M321R6GA3PB2-CCPWC); CoreWave terms: prices indicative, ex VAT/shipping, confirmed on quotation; 21% LV VAT for private buyers, reverse-charge B2B</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
+      <td data-s="CoreWave Labs SIA (Riga, LV)">CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
+      <td class="num" data-s="1630.00">$1 630,00<br><span class="k">gross · VAT 21%</span></td>
+      <td class="num" data-s="1630.00">$1 630,00<br><span class="k">net USD</span></td>
+      <td class="num" data-s="6495.88">zł6 495,88<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€30.71 net-basis</td>
+      <td>250 pcs · 3–4 Days (row stamp 9 Nov 2026)</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
+    </tr><tr>
+      <td data-s="13860.53">Samsung M321RYGA0PB2-CCP (96 GB, DDR5-6400 RDIMM)<br><span class="k">no SPD sentence published (Samsung); 96 GB 6400 QVL family (-CCPEC/-CCPPC/-CCPWC/-CCPKC); CoreWave quote-based, EU warehouse</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="CoreWave Labs SIA (Riga, LV)">CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
+      <td class="num" data-s="3478.00">$3 478,00<br><span class="k">gross · VAT 21%</span></td>
+      <td class="num" data-s="3478.00">$3 478,00<br><span class="k">net USD</span></td>
+      <td class="num" data-s="13860.53">zł13 860,53<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€32.76 net-basis</td>
+      <td>230 pcs · 4–5 Days</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
+    </tr><tr>
+      <td data-s="38118.44">Samsung M321RBJA0M22-CLP (256 GB, DDR5-6400 RDIMM)<br><span class="k">no SPD sentence published (Samsung); CoreWave quote-based · H14 manual rates &quot;3DS RDIMM 2Rx4 (8R), 256 GB, 3 TB, 6400&quot; — 3DS class, not the same thing as a plain 2Rx4; keep separate unless deliberately choosing 3DS</span> <span class="tag rec">2Rx4 (3DS, 8R physical)</span></td>
+      <td data-s="CoreWave Labs SIA (Riga, LV)">CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
+      <td class="num" data-s="9565.00">$9 565,00<br><span class="k">gross · VAT 21%</span></td>
+      <td class="num" data-s="9565.00">$9 565,00<br><span class="k">net USD</span></td>
+      <td class="num" data-s="38118.44">zł38 118,44<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€33.79 net-basis</td>
+      <td>50 pcs · 3–4 Days</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
+    </tr><tr>
+      <td data-s="14510.11">Samsung M321R8GA0PB2-CCP — the exact QVL 64 GB part (PB2)<br><span class="k">no SPD sentence published (Samsung); Gigabyte MZ33-CP1 QVL PASS; closes the 7-pass &quot;QVL part has no EU price&quot; gap — and it is ~37% above the floor</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="CoreWave Labs SIA (Riga, LV)">CoreWave Labs SIA (Riga, LV)<br><span class="k">LV (ships EU)</span></td>
+      <td class="num" data-s="3641.00">$3 641,00<br><span class="k">gross · VAT 21%</span></td>
+      <td class="num" data-s="3641.00">$3 641,00<br><span class="k">net USD</span></td>
+      <td class="num" data-s="14510.11">zł14 510,11<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€51.45 net-basis</td>
+      <td>500 pcs · 3–4 Days</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://corewavelabs.com/server-memory/">open ↗</a></td>
+    </tr><tr>
+      <td data-s="8271.69">Kingston KSM64R52BD8-32MH / -32MD / -96MC (UK direct)<br><span class="k">32MH + 96MC SPD-verified family; 32MD &quot;Discontinued&quot; here; all stock_quantity 0; GBP only (NBP GBP 5.2737 — no verified EUR conversion applied)</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
+      <td data-s="kingstonmemoryshop.co.uk / memorycow.co.uk (Algolia)">kingstonmemoryshop.co.uk / memorycow.co.uk (Algolia)<br><span class="k">UK</span></td>
+      <td class="num" data-s="1882.18">£1 882,18<br><span class="k">gross · VAT 20%</span></td>
+      <td class="num" data-s="1568.48">£1 568,48<br><span class="k">net GBP</span></td>
+      <td class="num" data-s="8271.69">zł8 271,69<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">GBP, not converted</td>
+      <td>0 · Available To Order (32MD: Discontinued)</td>
+      <td class="num" data-s="2026-11-16T00:55Z">2026-11-16T00:55Z</td>
+      <td><a href="https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10580.41">Kingston KSM64R52BD4-96MC (96 GB 2Rx4, DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified: datasheet &#x27;…2Rx4, ECC, SPD is programmed to JEDEC standard latency DDR5-6400 timing&#x27;. 96 GB 2Rx4 at 12 ch/6400 needs Supermicro manual/QVL confirmation (manual rank table spells out 2R = 64 GB/channel). · pass 52: ticked UP 2.853,98 -&gt; 2.856,98 (first upward tick; lifecycle signal)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="jacob.de (Jacob Elektronik own shop)">jacob.de (Jacob Elektronik own shop)<br><span class="k">DE</span></td>
+      <td class="num" data-s="2856.98">€2 856,98<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2400.82">€2 400,82<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10580.41">zł10 580,41<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.51</td>
+      <td>Sofort lieferbar (piece count not published)</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://www.jacob.de/search?search=KSM64R52BD4">open ↗</a></td>
+    </tr><tr>
+      <td data-s="4093.09">32 GB clone brand MB, MPN KSM64R52BD8-32MH-MB (spec-match, not Kingston)<br><span class="k">no SPD sentence (white-label clone); item verified: seller Mem-Store (29.886 FB, Gewerblich), ships Santa Clara CA (USA), condition Neu; shipping not captured this pass</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
+      <td data-s="eBay.de (Mem-Store, US)">eBay.de (Mem-Store, US)<br><span class="k">US→DE</span></td>
+      <td class="num" data-s="1105.23">€1 105,23<br><span class="k">gross · VAT 0%</span></td>
+      <td class="num" data-s="928.77">€928,77<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="4093.09">zł4 093,09<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€29.02 net-basis</td>
+      <td>8 verfügbar (not enough for 12)</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.ebay.de/itm/327137019602">open ↗</a></td>
+    </tr><tr>
+      <td data-s="5332.60">Kingston KSM64R52BD8-32MH (eBay.de genuine, cross-check)<br><span class="k">SPD-verified part; landed price incl. €25,00 shipping</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
+      <td data-s="eBay.de (IT-Planet)">eBay.de (IT-Planet)<br><span class="k">DE</span></td>
+      <td class="num" data-s="1439.93">€1 439,93<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="1210.03">€1 210,03<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="5332.60">zł5 332,60<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.70 landed</td>
       <td>Best Offer (listed)</td>
-      <td class="num">2026-11-16T07:10Z</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
       <td><a href="https://www.ebay.de/itm/206689139860">open ↗</a></td>
     </tr><tr>
-      <td>Samsung M321RAJA0MB2-CCP<br><span class="k">128 GB 3DS RDIMM, DDR5-6400 · the capacity route (12× = 1.5 TB @ 6400) · excluded under the 2Rx4 directive (3DS 2Rx2 class). H14 manual does rate it 6400 at 12ch (1.5 TB) if the 3DS class is ever reconsidered.</span> <span class="tag bad">2Rx2 (3DS, 4R physical)</span> <span class="tag bad">excluded</span></td>
-      <td>senetic.de<br><span class="k">DE</span></td>
-      <td class="num">€6,175.58<br><span class="k">net / €7,348.94</span></td>
-      <td class="num">€48.25</td>
+      <td data-s="">Kingston ValueRAM KVR64A52BD8-64 / KVR64V52BD8-32 (cheap-looking traps)<br><span class="k">datasheets: &quot;Clocked Unbuffered DIMM (CUDIMM)&quot; resp. &quot;Clocked SODIMM&quot;, On-Die ECC only → NOT ECC RDIMM → fails the board requirement</span> <span class="tag bad">blocked</span></td>
+      <td data-s="jacob.de">jacob.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="">—<br><span class="k">—</span></td>
+      <td class="num" data-s="">—<br><span class="k">—</span></td>
+      <td class="num" data-s="">—<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">n/a (module type fails)</td>
+      <td>Sofort lieferbar</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://www.jacob.de/search?search=KSM64R52BD4">open ↗</a></td>
+    </tr><tr>
+      <td data-s="16972.51">Kingston KSM64R52BD4-64MD (64 GB, UK direct)<br><span class="k">PDP spec fields: 1.1 V / 6400MT/s / CL52 / Micron D-Die / 2R — spec fields, not an SPD sentence</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="kingstonmemoryshop.co.uk / memorycow.co.uk (Algolia)">kingstonmemoryshop.co.uk / memorycow.co.uk (Algolia)<br><span class="k">UK</span></td>
+      <td class="num" data-s="3861.99">£3 861,99<br><span class="k">gross · VAT 20%</span></td>
+      <td class="num" data-s="3218.33">£3 218,33<br><span class="k">net GBP</span></td>
+      <td class="num" data-s="16972.51">zł16 972,51<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">£50.29/GB ex-VAT (no verified GBP/EUR rate)</td>
+      <td>stock_quantity 0 · &#x27;Available To Order – 4-5 Business Day Delivery&#x27; · FREE Royal Mail</td>
+      <td class="num" data-s="2026-11-15T21:34Z">2026-11-15T21:34Z</td>
+      <td><a href="https://www.kingstonmemoryshop.co.uk/64gb-kingston-ksm64r52bd4-64md-ddr5-6400mt-s-ecc-registered-memory-dimm">open ↗</a></td>
+    </tr><tr>
+      <td data-s="4629.20">Kingston KSM64R52BD8-32MD (32 GB, 2Rx8, DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified (same datasheet sentence as -32MH) · only offer on geizhals product a3452629</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
+      <td data-s="barax (via Geizhals)">barax (via Geizhals)<br><span class="k">DE (barax; AT group)</span></td>
+      <td class="num" data-s="1250.00">€1 250,00<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="1050.42">€1 050,42<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="4629.20">zł4 629,20<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€32.83 (net basis)</td>
+      <td>1 Angebot · &#x27;Ab Lager lieferbar – Lieferzeit 1-3 Werktage&#x27;; piece quantity not published (barax.at DNS fails here)</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32md-a3452629.html">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10580.41">Kingston KSM64R52BD8-32MH (32 GB, 2Rx8, DDR5-6400 CL52 reg ECC)<br><span class="k">SPD-verified: datasheet &#x27;The SPD is programmed to JEDEC standard latency DDR5-6400 timing of 52-52-52 at 1.1V&#x27; · geizhals product a3842215, 27 Angebote · pass 52: ticked UP 2.853,98 -&gt; 2.856,98 (first upward tick; lifecycle signal)</span> <span class="tag bad">2Rx8</span> <span class="tag bad">excluded</span></td>
+      <td data-s="Geizhals.de offer table (geniuzcom.de ab; Future-X.de / F&amp;M / Jacob Elektronik / e-tec.at in stock band)">Geizhals.de offer table (geniuzcom.de ab; Future-X.de / F&amp;M / Jacob Elektronik / e-tec.at in stock band)<br><span class="k">DE/AT</span></td>
+      <td class="num" data-s="2856.98">€2 856,98<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2400.82">€2 400,82<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10580.41">zł10 580,41<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.51</td>
+      <td>27 Angebote; several &#x27;Auf Lager&#x27; / &#x27;Sofort lieferbar&#x27; / &#x27;lagernd&#x27; rows; cheapest = geniuzcom.de 3–5 Werktage</td>
+      <td class="num" data-s="2026-11-16T08:55Z">2026-11-16T08:55Z</td>
+      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32mh-a3842215.html">open ↗</a></td>
+    </tr><tr>
+      <td data-s="22245.53">Kingston FURY Renegade Pro 7600 KF576RH40RBK4-128<br><span class="k">4×32 GB, 1Rx8 · SPD = JEDEC-6400 CL52 @1.1 V (datasheet-verified) · 31.25 mm · WITHDRAWN pass 51: Proshop.pl page reads &quot;Produkt został wycofany&quot; (product discontinued).</span> <span class="tag bad">1Rx8 (4x32GB kit)</span> <span class="tag warn">withdrawn</span></td>
+      <td data-s="Proshop.pl">Proshop.pl<br><span class="k">PL</span></td>
+      <td class="num" data-s="27362.00">zł27 362,00<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="22245.53">zł22 245,53<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="22245.53">zł22 245,53<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€39.44</td>
+      <td>import 5–6 d (lead time moved 3–4 → 5–6 d) · max 2/client</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-128GB-CL38-Quad-Channel-4-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462079">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10933.77">Kingston Server Premier KSM64R52BD4-64MD<br><span class="k">64 GB, 2Rx4 · SPD = JEDEC-6400 CL52 @1.1 V (datasheet-verified)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="ibfusion">ibfusion<br><span class="k">ES/CH</span></td>
+      <td class="num" data-s="2681.96">€2 681,96<br><span class="k">gross · VAT 21%</span></td>
+      <td class="num" data-s="2481.00">€2 481,00<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10933.77">zł10 933,77<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€38.77</td>
+      <td>5 in stock · B2B/VIES 0% VAT</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://ibfusion.com/ram/64gb-ddr5-rdimm-ecc-6400mhz/">open ↗</a></td>
+    </tr><tr>
+      <td data-s="11509.07">Kingston Server Premier KSM64R52BD4-64MD<br><span class="k">64 GB, 2Rx4 · same part, mainline PL distributor</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="senetic.pl">senetic.pl<br><span class="k">PL</span></td>
+      <td class="num" data-s="14156.16">zł14 156,16<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="11509.07">zł11 509,07<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="11509.07">zł11 509,07<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€40.81</td>
+      <td>41–50 pcs · 24 h</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://www.senetic.pl/search/?q=KSM64R52BD4&amp;f_s_category=icecat_106">open ↗</a></td>
+    </tr><tr>
+      <td data-s="11756.33">Samsung M321R8GA0EB2-CCP<br><span class="k">64 GB, 2Rx4, DDR5-6400 CL52 @1.1 V · no SPD sentence published (JEDEC by construction)</span></td>
+      <td data-s="Tonitrus">Tonitrus<br><span class="k">DE</span></td>
+      <td class="num" data-s="3174.50">€3 174,50<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2667.65">€2 667,65<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="11756.33">zł11 756,33<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€41.68</td>
+      <td>50 in stock (last verified 17:4xZ; bot-walled since)</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://www.tonitrus.com/M321R8GA0EB2-CCP">open ↗</a></td>
+    </tr><tr>
+      <td data-s="27215.78">Samsung M321RAJA0MB2-CCP<br><span class="k">128 GB 3DS RDIMM, DDR5-6400 · the capacity route (12× = 1.5 TB @ 6400) · excluded under the 2Rx4 directive (3DS 2Rx2 class). H14 manual does rate it 6400 at 12ch (1.5 TB) if the 3DS class is ever reconsidered.</span> <span class="tag bad">2Rx2 (3DS, 4R physical)</span> <span class="tag bad">excluded</span></td>
+      <td data-s="senetic.de">senetic.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="7348.94">€7 348,94<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="6175.58">€6 175,58<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="27215.78">zł27 215,78<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€48.25</td>
       <td>6 pcs</td>
-      <td class="num">2026-11-16T09:35Z</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
       <td><a href="https://www.senetic.de/search/?q=M321R8GA0PB2-CCP&amp;f_s_category=icecat_106">open ↗</a></td>
+    </tr><tr>
+      <td data-s="23677.05">V-Color RDIMM JEDEC DDR5-6400 CL52 (4×32 GB)<br><span class="k">128 GB kit · JEDEC 6400 CL52 @1.1 V per Caseking product page</span></td>
+      <td data-s="Caseking">Caseking<br><span class="k">DE</span></td>
+      <td class="num" data-s="6392.42">€6 392,42<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="5372.60">€5 372,60<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="23677.05">zł23 677,05<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€41.97 (net basis)</td>
+      <td>OUT OF STOCK (browser-verified)</td>
+      <td class="num" data-s="2026-11-15T18:21Z">2026-11-15T18:21Z</td>
+      <td><a href="https://www.caseking.de/en/v-color-rdimm-jedec-ddr5-6400-ram-cl52-128-gb-4-x-32-gb-quad-channel-kit-black/MEVC-031.html">open ↗</a></td>
+    </tr><tr>
+      <td data-s="11697.06">Micron MTC40F2046S1RC64BH1<br><span class="k">64 GB, 2Rx4, DDR5-6400 CL52 @1.1 V · no SPD sentence published</span></td>
+      <td data-s="Tonitrus">Tonitrus<br><span class="k">DE</span></td>
+      <td class="num" data-s="3158.50">€3 158,50<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2654.20">€2 654,20<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="11697.06">zł11 697,06<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€41.47</td>
+      <td>new stock small (unverified)</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://www.tonitrus.com/MTC40F2046S1RC64BH1_1">open ↗</a></td>
+    </tr><tr>
+      <td data-s="5305.69">Kingston FURY Renegade Pro 7600 KF576RH40RB-32 (single)<br><span class="k">1×32 GB, 1Rx8 · SPD JEDEC-6400 CL52 @1.1V (datasheet) · staging path vs kit cap · WITHDRAWN pass 51: Proshop.pl page reads &quot;Produkt został wycofany&quot; (product discontinued).</span> <span class="tag bad">1Rx8</span> <span class="tag warn">withdrawn</span></td>
+      <td data-s="Proshop.pl">Proshop.pl<br><span class="k">PL</span></td>
+      <td class="num" data-s="6526.00">zł6 526,00<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="5305.69">zł5 305,69<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="5305.69">zł5 305,69<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.62</td>
+      <td>3–4 d · max 2 szt./klienta (per SKU)</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.proshop.pl/RAM/Kingston-FURY-Renegade-PRO-DDR5-7600-32GB-CL38-Single-Channel-1-pcs-AMD-EXPO-Intel-EXPO-Czarny/3462077">open ↗</a></td>
+    </tr><tr>
+      <td data-s="14928.62">Samsung M321R8GA0EB2-CCP (64 GB 6400, 2Rx4)<br><span class="k">no SPD sentence published; native JEDEC-6400 bin</span></td>
+      <td data-s="senetic.de">senetic.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="4031.10">€4 031,10<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="3387.48">€3 387,48<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="14928.62">zł14 928,62<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€52.93</td>
+      <td>41–50 Stück</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://www.senetic.de/product/M321R8GA0EB2-CCP">open ↗</a></td>
+    </tr><tr>
+      <td data-s="15444.07">Samsung M321R8GA0PB2-CCP (QVL family, 64 GB 6400)<br><span class="k">no SPD sentence published · Supermicro QVL MEM-DR564MC-ER64 family · lead-verified by agent, parent blocked by Turnstile</span> <span class="tag rec">2Rx4</span> <span class="tag bad">lead</span></td>
+      <td data-s="smicro.eu (ANAFRA, CZ)">smicro.eu (ANAFRA, CZ)<br><span class="k">CZ</span></td>
+      <td class="num" data-s="4170.28">€4 170,28<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="3504.44">€3 504,44<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="15444.07">zł15 444,07<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€54.76</td>
+      <td>0 shop + 1 supplier · EU courier 26.11–02.12</td>
+      <td class="num" data-s="2026-11-14T02:2xZ">2026-11-14T02:2xZ</td>
+      <td><a href="https://smicro.eu/samsung-64-gb-ddr5-6400mhz-ecc-rdimm-m321r8ga0pb2-ccp-2">open ↗</a></td>
+    </tr><tr>
+      <td data-s="16417.58">Kingston Server Premier KSM64R52BD4-96MC (96 GB 2Rx4)<br><span class="k">SPD = JEDEC-6400 CL52 @1.1V (datasheet-verified, 2Rx4 12G) · 4 szt = 384 GB</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="senetic.pl">senetic.pl<br><span class="k">PL</span></td>
+      <td class="num" data-s="20193.62">zł20 193,62<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="16417.58">zł16 417,58<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="16417.58">zł16 417,58<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€38.81</td>
+      <td>(karta bez statusu — sprawdzić)</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://www.senetic.pl/search/?q=KSM64R52BD4&amp;f_s_category=icecat_106">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10897.27">Kingston Server Premier KSM64R52BD4-64MD<br><span class="k">SPD-verified family, 2Rx4 · marketplace offer (sprzedawca niepotwierdzony)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Amazon.pl">Amazon.pl<br><span class="k">PL</span></td>
+      <td class="num" data-s="13403.64">zł13 403,64<br><span class="k">gross · VAT 23%</span></td>
+      <td class="num" data-s="10897.27">zł10 897,27<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="10897.27">zł10 897,27<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€38.63 (net basis)</td>
+      <td>wysyłka 20–21 XI</td>
+      <td class="num" data-s="2026-11-14T03:0xZ">2026-11-14T03:0xZ</td>
+      <td><a href="https://www.amazon.pl/s?k=KSM64R52BD4-64MD">open ↗</a></td>
+    </tr><tr>
+      <td data-s="12258.48">Kingston Server Premier KSM64R52BD4-64MD<br><span class="k">SPD-verified family 2Rx4 · ships EU from Rīga, USD-quoted net</span> <span class="tag rec">2Rx4</span> <span class="tag bad">verified</span></td>
+      <td data-s="corewavelabs.com">corewavelabs.com<br><span class="k">LV</span></td>
+      <td class="num" data-s="3076.00">$3 076,00<br><span class="k">gross · VAT 21%</span></td>
+      <td class="num" data-s="3076.00">$3 076,00<br><span class="k">net USD</span></td>
+      <td class="num" data-s="12258.48">zł12 258,48<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€43.31</td>
+      <td>100+ pcs · 2–3 d</td>
+      <td class="num" data-s="2026-11-14T03:5xZ">2026-11-14T03:5xZ</td>
+      <td><a href="https://corewavelabs.com/ksm64r52bd4-64md-kingston-64gb-ddr5-6400-rdimm/">open ↗</a></td>
+    </tr><tr>
+      <td data-s="11516.59">Kingston Server Premier KSM64R52BD4-64MD / 96MC<br><span class="k">SPD-verified family · senetic DE storefront (same distributor as senetic.pl)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="senetic.de">senetic.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="2613.25">€2 613,25<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2613.25">€2 613,25<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="11516.59">zł11 516,59<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€40.83 (64MD) / €38.83 (96MC)</td>
+      <td>41–50 Stück (64MD) — DE warehouse</td>
+      <td class="num" data-s="2026-11-16T09:35Z">2026-11-16T09:35Z</td>
+      <td><a href="https://www.senetic.de/search/?q=KSM64R52BD4">open ↗</a></td>
+    </tr><tr>
+      <td data-s="5369.58">Kingston Server Premier DDR5-6400 CL52 ECC Reg singles (1×16/32/64)<br><span class="k">SPD-verified family · Galaxus lists PN-less (&#x27;DIMM&#x27;) — confirm PN + 288-pin RDIMM before ordering</span> <span class="tag bad">lead</span></td>
+      <td data-s="Galaxus.de">Galaxus.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="1449.92">€1 449,92<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="1218.42">€1 218,42<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="5369.58">zł5 369,58<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€38.08 net est. (32GB ÷1.19) / €50.97 gross (64GB)</td>
+      <td>unverifiable (product pages CAPTCHA)</td>
+      <td class="num" data-s="2026-11-15T02:47Z">2026-11-15T02:47Z</td>
+      <td><a href="https://www.galaxus.de/de/s1/product/kingston-ddr5-32gb-pc-6400-cl52-server-premier-ecc-reg-retail-1-x-32gb-6400-mhz-ddr5-ram-dimm-ram-69848466">open ↗</a></td>
+    </tr><tr>
+      <td data-s="8983.76">KSM64R52BD4-64MD &#x27;kompatibler Ersatz&#x27; (unbranded spec-match)<br><span class="k">not Kingston-branded — SPD evidence missing; single eBay.de listing</span> <span class="tag rec">2Rx4</span> <span class="tag bad">lead</span></td>
+      <td data-s="eBay.de (marketplace)">eBay.de (marketplace)<br><span class="k">DE</span></td>
+      <td class="num" data-s="2425.84">€2 425,84<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2038.52">€2 038,52<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="8983.76">zł8 983,76<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€31.85 net est. (lead)</td>
+      <td>single listing, qty unknown</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://picclick.de/search?q=KSM64R52BD4-64MD">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10130.38">KSM64R52BD4-64MD &#x27;Compatible Replacement&#x27; (clone, brand MB)<br><span class="k">NOT Kingston · no SPD datasheet · MPN KSM64R52BD4-64MD-MB · no returns</span> <span class="tag rec">2Rx4</span> <span class="tag bad">reject</span></td>
+      <td data-s="eBay.com (Mem-Store, US)">eBay.com (Mem-Store, US)<br><span class="k">US</span></td>
+      <td class="num" data-s="3024.00">$3 024,00<br><span class="k">gross · VAT 0%</span></td>
+      <td class="num" data-s="2542.00">$2 542,00<br><span class="k">net USD</span></td>
+      <td class="num" data-s="10130.38">zł10 130,38<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€52.25 landed</td>
+      <td>4 available · est. Nov 26–Dec 4</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.ebay.com/itm/326661139726">open ↗</a></td>
+    </tr><tr>
+      <td data-s="11792.21">Samsung M321R8GA0PB2-CCP (QVL family, genuine)<br><span class="k">no SPD sentence published · genuine Samsung · US channel</span> <span class="tag rec">2Rx4</span> <span class="tag bad">reject</span></td>
+      <td data-s="eBay.com (genuine listing)">eBay.com (genuine listing)<br><span class="k">US</span></td>
+      <td class="num" data-s="2959.00">$2 959,00<br><span class="k">gross · VAT 0%</span></td>
+      <td class="num" data-s="2959.00">$2 959,00<br><span class="k">net USD</span></td>
+      <td class="num" data-s="11792.21">zł11 792,21<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€51.1+ pre-shipping</td>
+      <td>(1X64GB listing)</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.ebay.com/itm/326661139726">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10737.30">Kingston KSM64R52BD4-64MD (genuine, eBay.de IT-Planet GmbH)<br><span class="k">VERIFIED: seller IT-Planet GmbH — Gewerblich, 99,4% pos, 2534 Bew., member Nov 2018 · Preisvorschlag enabled · 14-day returns · ships DE→PL EUR 25 Standard Intl</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="eBay.de (marketplace)">eBay.de (marketplace)<br><span class="k">DE</span></td>
+      <td class="num" data-s="2899.34">€2 899,34<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2436.42">€2 436,42<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10737.30">zł10 737,30<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€38.07 net · €38.40/GB landed w/ shipping</td>
+      <td>3 verfügbar · Best Offer — sub-floor confirmed</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.ebay.de/sch/i.html?_nkw=KSM64R52BD4-64MD">open ↗</a></td>
+    </tr><tr>
+      <td data-s="9987.45">SK hynix HMCG94AHBRA480N (used wave, eBay.de Gewerblich)<br><span class="k">Business wave re-mapped (PC5-88/64B-MA0-1110 / HMCG94BDJMA080N listings, all Neu (Sonstige) · Gewerblich): cheapest card = EUR 2.547,80 + EUR 24,52 shipping (items 336558516150/336558516163) -&gt; €33.78/GB net-basis IF VAT-recoverable; other business listings EUR 2.809,52 / 3.432,37–3.618,70. Pass-35&#x27;s EUR 2.416,93 unit NOT in this result set (sold or different title) — re-search &#x27;ECC SK Hynix&#x27; next pass. Item detail open BLOCKED (rate limit) — seller/VAT/stock unconfirmed, card-level only. Private item 336731389651 EUR 2.162 last-one still stands (€34.63/GB gross, no invoice).</span> <span class="tag rec">2Rx4</span> <span class="tag bad">lead</span></td>
+      <td data-s="eBay.de">eBay.de<br><span class="k">DE</span></td>
+      <td class="num" data-s="2696.86">€2 696,86<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2266.27">€2 266,27<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="9987.45">zł9 987,45<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">business floor €33.78/GB net-basis (card-level, VAT-rec. unconfirmed); private €34.63/GB gross</td>
+      <td>multiple listings, Best Offer · one BRAND NEW private at EUR 2.162 (no invoice)</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.ebay.de/sch/i.html?_nkw=HMCG94AHBRA480N">open ↗</a></td>
+    </tr><tr>
+      <td data-s="9526.17">SK hynix HMCG94BDJMA080N 64GB DDR5-6400 ECC RDIMM (PC5-88/64B-MA0-1110)<br><span class="k">no SPD sentence published (hynix) · &#x27;Neu (Sonstige)&#x27; · business seller MemoryPartner_Deals (101.547 FB, 100% positive) · 30-day returns · ships Greater China · item 336558516150 · price shown &#x27;inkl. MwSt.&#x27; at checkout (VAT-invoice feasibility still open)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="eBay.de (business)">eBay.de (business)<br><span class="k">DE (ships CN)</span></td>
+      <td class="num" data-s="2572.32">€2 572,32<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2161.60">€2 161,60<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="9526.17">zł9 526,17<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€33.78 net-basis</td>
+      <td>50 verfügbar · item-level verified: seller MemoryPartner_Deals (Gewerblich, 101.547 FB, 100 % positive), ships 深圳 CN, delivery 8–29 Dec, 30-day returns (buyer pays)</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://www.ebay.de/itm/336558516150">open ↗</a></td>
+    </tr><tr>
+      <td data-s="11040.90">Kingston KSM64R52BD4-64MH (64 GB, die-suffix MH)<br><span class="k">SPD-verified: &#x27;SPD is programmed to JEDEC standard latency DDR5-6400 timing ... 2Rx4&#x27; (datasheet) · geizhals aggregate</span></td>
+      <td data-s="Geizhals.de (12 Angebote)">Geizhals.de (12 Angebote)<br><span class="k">DE</span></td>
+      <td class="num" data-s="2981.32">€2 981,32<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2505.31">€2 505,31<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="11040.90">zł11 040,90<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€39.15 net-basis (÷1.19)</td>
+      <td>12 Angebote</td>
+      <td class="num" data-s="2026-11-16T07:10Z">2026-11-16T07:10Z</td>
+      <td><a href="https://geizhals.de/?fs=KSM64R52BD4">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10580.41">Kingston KSM64R52BD4-64MD (gross listing via Geizhals seller table)<br><span class="k">SPD-verified JEDEC-6400 CL52 @1.1V (datasheet) · German business seller (VAT invoice) · geizhals a3452640 offer table · pass 52: ticked UP 2.853,98 -&gt; 2.856,98 (first upward tick; lifecycle signal)</span> <span class="tag rec">2Rx4</span></td>
+      <td data-s="Jacob Elektronik direkt (DE)">Jacob Elektronik direkt (DE)<br><span class="k">DE</span></td>
+      <td class="num" data-s="2856.98">€2 856,98<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2400.82">€2 400,82<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10580.41">zł10 580,41<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€37.51</td>
+      <td>own shop jacob.de &#x27;Sofort lieferbar&#x27; (no piece count); geizhals rate €2.853,98 valid only entering via geizhals; own-shop price €2.911,06 brutto = €38.22/GB net</td>
+      <td class="num" data-s="2026-11-16T08:55Z">2026-11-16T08:55Z</td>
+      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html">open ↗</a></td>
+    </tr><tr>
+      <td data-s="10569.31">KSM64R52BD4-64MD seller wave (Future-X / unnamed / PC-KING / electronis)<br><span class="k">same CD52 bin, SPD-verified family · names from geizhals offer table</span> <span class="tag rec">2Rx4</span> <span class="tag bad">lead</span></td>
+      <td data-s="geizhals.de seller table">geizhals.de seller table<br><span class="k">DE</span></td>
+      <td class="num" data-s="2853.98">€2 853,98<br><span class="k">gross · VAT 19%</span></td>
+      <td class="num" data-s="2398.30">€2 398,30<br><span class="k">net EUR</span></td>
+      <td class="num" data-s="10569.31">zł10 569,31<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="">€36.88–37.88 net basis</td>
+      <td>electronis &#x27;Auf Lager&#x27;, Future-X &#x27;Sofort lieferbar&#x27;</td>
+      <td class="num" data-s="2026-11-15T21:34Z">2026-11-15T21:34Z</td>
+      <td><a href="https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html">open ↗</a></td>
     </tr>
 </tbody></table>
+<p class="sub" style="margin:10px 0 0">Click a column header to sort (again to reverse). <b>*</b> = value derived from the other side of the VAT split, not read off the page. FX: NBP table A 2026-11-13 — EUR 4.407, USD 3.9852, CHF 4.7618, GBP 5.2737 PLN. Rows showing "—" have no price (status records) or a multi-SKU text cell; their prose cell remains authoritative.</p>
 <footer>Rule reminder: "6400" only counts if JEDEC SPD default = 6400 @ 1.1 V (Kingston datasheet sentence verified per part; Samsung/Micron publish no SPD sentence). Source of truth: docs/research/RECOMMENDATION.md + beam-eu-6400-*.md. This page is generated from docs/research/ram-offers.json.</footer>
-</div></body></html>
+</div>
+<script>
+(function(){
+  var t=document.getElementById('offers'), tb=t.tBodies[0];
+  var dir={};
+  t.querySelectorAll('th').forEach(function(th,i){
+    th.style.cursor='pointer';
+    th.title='sort by this column';
+    th.addEventListener('click',function(){
+      var rows=Array.prototype.slice.call(tb.rows);
+      dir[i]=!dir[i];
+      var num=(th.className||'').indexOf('num')>-1;
+      rows.sort(function(a,b){
+        var x=a.cells[i].getAttribute('data-s'), y=b.cells[i].getAttribute('data-s');
+        var ex=(x===null||x===''), ey=(y===null||y==='');
+        if(ex&&ey) return 0;
+        if(ex) return 1;            // empties always last
+        if(ey) return -1;
+        if(num){var nx=parseFloat(x),ny=parseFloat(y);
+          if(!isNaN(nx)&&!isNaN(ny)) return dir[i]?nx-ny:ny-nx;}
+        return dir[i]? x.localeCompare(y) : y.localeCompare(x);
+      });
+      rows.forEach(function(r){tb.appendChild(r)});
+      t.querySelectorAll('th').forEach(function(h,j){if(j!==i)h.removeAttribute('data-arrow')});
+      th.setAttribute('data-arrow', dir[i]?'▲':'▼');
+      th.textContent = th.textContent.replace(/[▲▼]$/,'').trim() + (dir[i]?' ▲':' ▼');
+    });
+  });
+})();
+</script>
+</body></html>

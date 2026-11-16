@@ -12,22 +12,51 @@ OUT = ROOT / "ram-board.html"
 
 data = json.loads(SRC.read_text())
 EURPLN = data.get("eurpln", 4.4070)
+FX = data.get("fx", {"EUR":4.4070,"USD":3.9852,"CHF":4.7618,"GBP":5.2737,"PLN":1.0})
+for _k,_v in FX.items():  # format for the footnote (comma decimals, like the rest of the board)
+    FX[_k] = _v
 
 def fmt(v):
     return f"€{v:,.0f}" if isinstance(v, (int, float)) else v
 
+def money(v, cur):
+    """format a number in its own currency, European style"""
+    if v is None: return "—"
+    s = f"{v:,.2f}"
+    if cur in ("EUR", "PLN", "CHF", "USD", "GBP"):
+        s = s.replace(",", "\u00a0").replace(".", ",").replace("\u00a0", " ")
+    sym = {"EUR": "€", "PLN": "zł", "CHF": "CHF ", "USD": "$", "GBP": "£"}.get(cur, "")
+    return f"{sym}{s}" if cur in ("EUR", "GBP") else f"{sym}{s}"
+
 rows = ""
-for o in sorted(data["offers"], key=lambda x: (x.get("state") == "excluded", x.get("eur_per_gb", 99))):
+for o in data["offers"]:
+    p = o.get("price") or {}
+    cur = p.get("cur")
+    vatp = p.get("vat")
+    has = cur is not None and (p.get("gross") is not None or p.get("net") is not None)
+    vats = f"{vatp*100:.0f}%" if (has and isinstance(vatp, (int, float))) else "—"
+    gross = money(p.get("gross"), cur) + (f'<span class="k">*</span>' if p.get("gross_derived") else "")
+    net   = money(p.get("net"), cur)   + (f'<span class="k">*</span>' if p.get("net_derived") else "")
+    gl = "gross · VAT " + vats if has else "—"
+    nl = "net " + (cur or "") if has else "—"
+    netpln = money(p.get("net_pln"), "PLN") if p.get("net_pln") is not None else "—"
+    eurgb = o.get("eur_per_gb", "—")
+
+    def sk(v):
+        return "" if v is None else f"{v:.2f}"
     best = ' <span class="tag rec">BEST</span>' if o.get("best") else ""
-    org = f' <span class="tag {"rec" if "2Rx4" in str(o.get("org", "")) else "bad"}">{html.escape(o["org"])}</span>' if o.get("org") else ""
-    flag = "" if o.get("state", "ok") in ("ok", "new") else f' <span class="tag {"warn" if o["state"]=="stale" else "bad"}">{html.escape(o["state"])}</span>'
+    orgv = str(o.get("org", ""))
+    org = f' <span class="tag {"rec" if "2Rx4" in orgv else "bad"}">{html.escape(orgv)}</span>' if orgv else ""
+    flag = "" if o.get("state", "ok") in ("ok", "new") else f' <span class="tag {"warn" if o["state"] in ("stale","unreachable","withdrawn") else "bad"}">{html.escape(o["state"])}</span>'
     rows += f"""<tr>
-      <td>{html.escape(o['part'])}<br><span class="k">{html.escape(o.get('spec',''))}</span>{best}{org}{flag}</td>
-      <td>{html.escape(o['shop'])}<br><span class="k">{html.escape(o.get('country',''))}</span></td>
-      <td class="num">{html.escape(str(o.get('price_net','—')))}<br><span class="k">net / {html.escape(str(o.get('price_gross','—'))) if o.get('price_gross') else '—'}</span></td>
-      <td class="num">{o.get('eur_per_gb','—')}</td>
+      <td data-s="{sk(p.get('net_pln'))}">{html.escape(o['part'])}<br><span class="k">{html.escape(o.get('spec',''))}</span>{best}{org}{flag}</td>
+      <td data-s="{html.escape(o['shop'])}">{html.escape(o['shop'])}<br><span class="k">{html.escape(o.get('country',''))}</span></td>
+      <td class="num" data-s="{sk(p.get('gross'))}">{gross}<br><span class="k">{gl}</span></td>
+      <td class="num" data-s="{sk(p.get('net'))}">{net}<br><span class="k">{nl}</span></td>
+      <td class="num" data-s="{sk(p.get('net_pln'))}">{netpln}<br><span class="k">net PLN</span></td>
+      <td class="num" data-s="{sk(p.get('net_pln') if False else None)}">{eurgb}</td>
       <td>{html.escape(str(o.get('stock','—')))}</td>
-      <td class="num">{html.escape(str(o.get('checked','—')))}</td>
+      <td class="num" data-s="{html.escape(str(o.get('checked','—')))}">{html.escape(str(o.get('checked','—')))}</td>
       <td><a href="{html.escape(o['url'])}">open ↗</a></td>
     </tr>"""
 
@@ -122,13 +151,51 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 </div>
 {LADDER}
 {BOARD_NOTE}
-<table>
-<thead><tr><th>Part / spec</th><th>Shop</th><th class="num">Price (net / gross)</th><th class="num">€/GB net</th><th>Stock</th><th class="num">Checked</th><th>Link</th></tr></thead>
+<table id="offers">
+<thead><tr>
+  <th>Part / spec</th><th>Shop</th>
+  <th class="num">Gross <span class="k">(own currency)</span></th>
+  <th class="num">Net <span class="k">(own currency)</span></th>
+  <th class="num">Net <span class="k">PLN</span></th>
+  <th class="num">€/GB net</th>
+  <th>Stock</th><th class="num">Checked</th><th>Link</th>
+</tr></thead>
 <tbody>
 {rows}
 </tbody></table>
+<p class="sub" style="margin:10px 0 0">Click a column header to sort (again to reverse). <b>*</b> = value derived from the other side of the VAT split, not read off the page. FX: NBP table A 2026-11-13 — EUR {FX['EUR']}, USD {FX['USD']}, CHF {FX['CHF']}, GBP {FX['GBP']} PLN. Rows showing "—" have no price (status records) or a multi-SKU text cell; their prose cell remains authoritative.</p>
 <footer>Rule reminder: "6400" only counts if JEDEC SPD default = 6400 @ 1.1 V (Kingston datasheet sentence verified per part; Samsung/Micron publish no SPD sentence). Source of truth: docs/research/RECOMMENDATION.md + beam-eu-6400-*.md. This page is generated from docs/research/ram-offers.json.</footer>
-</div></body></html>"""
+</div>
+<script>
+(function(){{
+  var t=document.getElementById('offers'), tb=t.tBodies[0];
+  var dir={{}};
+  t.querySelectorAll('th').forEach(function(th,i){{
+    th.style.cursor='pointer';
+    th.title='sort by this column';
+    th.addEventListener('click',function(){{
+      var rows=Array.prototype.slice.call(tb.rows);
+      dir[i]=!dir[i];
+      var num=(th.className||'').indexOf('num')>-1;
+      rows.sort(function(a,b){{
+        var x=a.cells[i].getAttribute('data-s'), y=b.cells[i].getAttribute('data-s');
+        var ex=(x===null||x===''), ey=(y===null||y==='');
+        if(ex&&ey) return 0;
+        if(ex) return 1;            // empties always last
+        if(ey) return -1;
+        if(num){{var nx=parseFloat(x),ny=parseFloat(y);
+          if(!isNaN(nx)&&!isNaN(ny)) return dir[i]?nx-ny:ny-nx;}}
+        return dir[i]? x.localeCompare(y) : y.localeCompare(x);
+      }});
+      rows.forEach(function(r){{tb.appendChild(r)}});
+      t.querySelectorAll('th').forEach(function(h,j){{if(j!==i)h.removeAttribute('data-arrow')}});
+      th.setAttribute('data-arrow', dir[i]?'▲':'▼');
+      th.textContent = th.textContent.replace(/[▲▼]$/,'').trim() + (dir[i]?' ▲':' ▼');
+    }});
+  }});
+}})();
+</script>
+</body></html>"""
 
 OUT.write_text(page)
 print(f"wrote {OUT} ({len(data['offers'])} offers)")
