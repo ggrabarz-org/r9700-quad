@@ -2393,3 +2393,51 @@ Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle,
 **Practical consequence:** the Micron 96 GB at **€33.79/GB (QVL ✓, Brand New)** is now the strongest 96 GB route, and it does not depend on resolving the Kingston question at all.
 
 Coverage: camofox 3 profiles / 5 navigations (tonitrus, ceneo, gigabyte QVL ×2 + Memory click); curl 6 (ibfusion, senetic ×2, brack/digitec/steg). Expansion: MZ23-SU0 QVL re-read with category click + stamp, 5 Samsung 96 GB parts enumerated, new part `MDRRWM4QDBC2-3D000` surfaced — 6 new data points, 1 question narrowed.
+
+---
+
+## Pass 60 — 2026-11-16T15:5xZ (**user question: "the 8800 part, so cheap?" — answered: it is NOT cheap per GB, NOT JEDEC 6400, and NOT 2Rx4. Reject it.**)
+
+### 1. The part, from the user's own link (source-verified)
+
+Galaxus.at filtered list (RAM → R-DIMM, 8800 MHz filter), first row:
+
+| Field | Value |
+|---|---|
+| Part | **Origin Storage `OM32G58800R2RX8E11`** |
+| Title | **"1 × 32GB, 8800 MHz, DDR5-RAM, R-DIMM"** |
+| Price | **EUR 1 159,–** → **EUR 36,22 / 1 GB** (Galaxus's own computed figure) |
+| Delivery | between Fri 27.11 and Thu 3.12 |
+| URL | https://www.galaxus.at/de/s1/product/origin-storage-om32g58800r2rx8e11-1-x-32gb-8800-mhz-ddr5-ram-r-dimm-ram-70401909 |
+
+### 2. Why "so cheap?" is the wrong read — three independent disqualifiers
+
+**(a) It is not cheap per GB — it is mid-market.** €36.22/GB sits *above* every qualified floor on the board:
+
+| Route | €/GB |
+|---|---:|
+| Samsung 96 GB @ CoreWave (used) | €29.90 |
+| Micron 96 GB @ CoreWave (new, QVL ✓) | **€33.79** |
+| Kingston 96MC @ electronis (new, QVL ✗) | €35.53 |
+| **This Origin 32 GB 8800** | **€36.22** |
+| Kingston 64MD @ Allegro (new, SPD ✓, QVL ✓) | €37.21 |
+
+And per **build**, it is worse: **12 × 32 GB = 384 GB for €13 908** vs **12 × 64 GB = 768 GB for €28 575,84** — i.e. *half the capacity* for about half the money, at a *higher* €/GB. There is no capacity win and no price win.
+
+**(b) "8800" is not a JEDEC speed this platform can run.** AMD's own EPYC 9005 page states, verbatim: *"5th Gen EPYC™ processors support **up to DDR5-6400 MT/s** for targeted customers and configurations. DDR5-6400 support requires OEM enablement and a BIOS update from your server or motherboard manufacturer."* And GIGABYTE's MZ23-SU0 memory QVL (pass 59, stamp **Last Update: Oct 27, 2026**) contains **only 4800 / 5600 / 6400 MHz rows** — no 8800 part of any brand. An 8800-rated RDIMM on this board would fall back to the SPD default, which for such modules is typically **not** 6400 (high-bin modules usually carry a 4800/5600 JEDEC base plus an EXPO/XMP profile the BIOS cannot use). **The H14 lesson repeats: a marketing speed is not an SPD default.**
+
+**(c) It is 2Rx8, not 2Rx4.** The PN's organisation code `R2RX8` = **2R ×8** (x8 devices). The standing user directive is **2Rx4 only**, and this fails it on the face of the part number. Independently, no Origin Storage part appears anywhere in the MZ23-SU0 QVL.
+
+### 3. Verdict
+
+**Reject.** Three separate reasons, each sufficient on its own: (1) €36.22/GB is not a price win — it loses to Micron 96 GB (€33.79), Kingston 96MC (€35.53) and only barely beats Allegro while buying *half* the capacity; (2) 8800 MT/s is unreachable on EPYC 9005 (AMD caps at 6400) and the part is absent from the board's QVL, so its real running speed is unknown and probably below 6400; (3) it is **2Rx8**, breaching the 2Rx4-only directive.
+
+**What "cheap" actually looked like here:** a 32 GB module at €1 159 *feels* cheap next to a €4 000 96 GB stick, but per GB it is dearer than most of the board, and per build it buys half the memory. The apparent bargain is an artefact of comparing module prices instead of €/GB and total capacity.
+
+**Standing floors unchanged:** **Micron 96 GB @ CoreWave €33.79/GB** (new, QVL ✓) and **Kingston 64 MD @ Allegro €37.21/GB** (new, SPD-verified, QVL ✓).
+
+---
+
+## Pass 59 addendum — QVL/CoreWave context for the 8800 question
+
+Not needed for the verdict above, but worth stating so the reasoning is complete: the MZ23-SU0 QVL validates **five Samsung 96 GB 2Rx4 6400** parts and **zero** parts above 6400 MHz of any brand. That is the same evidence base that rejected the Kingston 96MC (pass 59) and it rejects this 8800 part more decisively, because here the *speed itself* is outside what the platform supports.

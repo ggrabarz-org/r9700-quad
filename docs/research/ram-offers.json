@@ -1,7 +1,34 @@
 {
  "eurpln": 4.407,
- "updated": "2026-11-16T15:35Z",
+ "updated": "2026-11-16T15:55Z",
  "offers": [
+  {
+   "part": "Origin Storage OM32G58800R2RX8E11 (32 GB, 8800 MHz, DDR5 R-DIMM)",
+   "spec": "REJECTED on three independent grounds: (1) €36.22/GB is NOT cheap - loses to Micron 96GB €33.79, Kingston 96MC €35.53; 12x32GB = 384GB for €13.908 vs 12x64GB = 768GB for €28.575,84 (half the capacity, higher €/GB). (2) 8800 MT/s is unreachable: AMD EPYC 9005 supports 'up to DDR5-6400 MT/s' (AMD's own 9005 page) and the MZ23-SU0 QVL has only 4800/5600/6400 rows - no 8800 part of any brand; SPD default unknown, likely below 6400. (3) PN organisation code R2RX8 = 2Rx8, breaching the 2Rx4-only directive; also absent from the QVL.",
+   "shop": "Galaxus.at",
+   "country": "AT",
+   "org": "2Rx8",
+   "condition": "new",
+   "price_net": "€1.159 net-basis (EU 1.159 incl. VAT ÷1.20 AT)",
+   "price_gross": "EUR 1.159,–",
+   "eur_per_gb": "€36.22 (Galaxus's own figure)",
+   "stock": "delivery 27.11–3.12",
+   "checked": "2026-11-16T15:55Z",
+   "state": "reject",
+   "best": false,
+   "price": {
+    "cur": "EUR",
+    "gross": 1159,
+    "net": 965.83,
+    "vat": 0.2,
+    "gb": 32,
+    "net_pln": 4256.41,
+    "gross_pln": 5107.71,
+    "gross_derived": false,
+    "net_derived": true
+   },
+   "url": "https://www.galaxus.at/de/s1/product/origin-storage-om32g58800r2rx8e11-1-x-32gb-8800-mhz-ddr5-ram-r-dimm-ram-70401909"
+  },
   {
    "part": "Samsung MDRRWM4QDBC2-3D000 (96 GB 2Rx4, 6400) — QVL ✓, unpriced in EU",
    "spec": "no SPD sentence (Samsung) · QVL PASS on MZ23-SU0 (2Rx4 1.1v 6400MHz, Samsung-Renesas) · surfaced from the QVL this pass · NO EU price found yet — listed so the next pass can price it",
@@ -1850,7 +1877,8 @@
   "Pass 56 CORRECTION #2 (same row): CoreWave's \"More stock\" table is a LIST OF INDEPENDENT STOCK LOTS, not quantity breaks (1000 pcs $3,880 vs 250 pcs $3,245 — non-monotonic). Cheapest lot that fills 12 = 250 pcs @ $3,245 = EUR 30.57/GB => 12x = EUR 35.213 for 1152 GB, the cheapest QVL-passing build on the board. Pass 54 used the $3,478 headline; pass 55 wrongly read the first tier row ($3,859 @ 6 pcs) as a ladder. Correct action: read the WHOLE table and check monotonicity. senetic has now fallen 3 passes running (11 515,16 -> 11 377,59 zl; de 2.613,25 -> 2.582,03 EUR), both now EUR 40.34/GB, +8.4% above Allegro.",
   "Pass 57 CONDITION FINDING: CoreWave Samsung M321RYGA0PB2-CCP is now \"Clean Pull • 1 Year\" = PULLED/USED stock (was Brand New in passes 54-56), headline $3,261, best 500-pc lot $3,174 = EUR 29.90/GB. The Micron MTC40F204WS1RC64BC1 sibling is still \"Brand New\" at $3,587 = EUR 33.79/GB. So pass-56's EUR 29.90-30.57 \"floor\" was USED stock. On a NEW like-for-like basis: Kingston 64MD @ Allegro EUR 37.21/GB (new + SPD + QVL) remains the buy; Micron 96GB EUR 33.79/GB is the cheapest NEW 96GB (no SPD). Lesson: price is the last thing to trust, condition the first.",
   "Pass 58: CoreWave carries 9 Kingston KSM64R52 products incl. the 96MC that the MZ23-SU0 QVL omits (quote-only, no firm price - recorded as lead not price) and the 64MD at \"Brand New 3 Years\" $2,857-3,076 = EUR 40.37-43.46/GB (dearer than Allegro 37.21, but 3-yr warranty vs 12 mo). QVL question on the 96MC logged as open - a reseller listing is not QVL evidence. PL band firmed: buy-it.pl +169,45 zl to 13 071,22. Self-corrected a hardcoded /96 capacity bug in my own script for the 64MD page.",
-  "Pass 59 QVL NARROWED: MZ23-SU0 QVL (stamp \"Last Update: Oct 27, 2026\") lists FIVE Samsung 96GB 2Rx4 6400 parts (M321RYGA0PB2-CCPPC/-CCPWC/-CCPKC/-CCPEC + MDRRWM4QDBC2-3D000) and ZERO Kingston 96GB, while validating Kingston 64MD/64MH. So the board supports 96GB@6400 fine; the exclusion is Kingston-96GB-specific. Rules out \"QVL stale\" and \"board cannot do 96GB\". Practical: a 96GB build here is Samsung-or-Micron, not Kingston; Micron 96GB at EUR 33.79/GB (Brand New, QVL pass) is the strongest 96GB route and needs no Kingston answer. New part for next pass: MDRRWM4QDBC2-3D000 (QVL pass, unpriced)."
+  "Pass 59 QVL NARROWED: MZ23-SU0 QVL (stamp \"Last Update: Oct 27, 2026\") lists FIVE Samsung 96GB 2Rx4 6400 parts (M321RYGA0PB2-CCPPC/-CCPWC/-CCPKC/-CCPEC + MDRRWM4QDBC2-3D000) and ZERO Kingston 96GB, while validating Kingston 64MD/64MH. So the board supports 96GB@6400 fine; the exclusion is Kingston-96GB-specific. Rules out \"QVL stale\" and \"board cannot do 96GB\". Practical: a 96GB build here is Samsung-or-Micron, not Kingston; Micron 96GB at EUR 33.79/GB (Brand New, QVL pass) is the strongest 96GB route and needs no Kingston answer. New part for next pass: MDRRWM4QDBC2-3D000 (QVL pass, unpriced).",
+  "Pass 60 (user question): the Galaxus \"8800 MHz\" part is Origin Storage OM32G58800R2RX8E11, 32GB R-DIMM at EUR 1.159 = EUR 36.22/GB. NOT cheap: dearer per GB than Micron 96GB (33.79) and Kingston 96MC (35.53), and per build 12x32GB buys HALF the capacity of 12x64GB for similar money. \"8800\" is unreachable - AMD states EPYC 9005 supports up to DDR5-6400, and the MZ23-SU0 QVL has only 4800/5600/6400 rows, no 8800 of any brand. PN code R2RX8 = 2Rx8, fails the 2Rx4-only directive. Rejected on all three grounds."
  ],
  "ladder": {
   "updated": "2026-11-16T13:35Z",
