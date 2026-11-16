@@ -45,7 +45,7 @@ if fullrows:
     row = min(fullrows, key=lambda r: float(r["net"].replace("€", "").replace(".", "").replace(",", ".")))
     route = row["route"].split(" @ ")
     kit_net, kit_label, kit_url = row["net"], f"12× {route[0].split('× ', 1)[-1]}" + (f" — {route[1]}" if len(route) > 1 else ""), row.get("url")
-    kit_cap = "Cheapest full build 768 GB (12×64, 2Rx4)"
+    kit_cap = "Cheapest qualified 768 GB (12×64, 2Rx4)"
 else:
     kit_net, kit_label, kit_url, kit_cap = best_kit.get("twelve_kit_net", 14372), best_kit["part"], best_kit.get("url"), "Cheapest kit"
 

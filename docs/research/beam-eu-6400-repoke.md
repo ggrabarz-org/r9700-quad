@@ -1564,3 +1564,56 @@ Other rows captured (all no-beat): 64MD superstorage.pl 13 277,55 · SuperTech.p
 **Did anything beat the cheapest verified offer? — The overall floor stands** (96MC @ electronis €35.53/GB net, unchanged this pass). **But the 64 GB class has a new best: Allegro `komputera_pl` 12 908,19 zł delivered = €2.381,32 net = €37.21/GB**, beating Jacob Elektronik's €37.47 and giving a **768 GB route at €28.575,84 net**. The user's Ceneo link answers directly: that part is the **16 GB** `KSM64R52BS8-16MH` at €36.81/GB net — cheaper per GB than the old 64 GB floor, but it cannot beat the 96MC/32MH floors, and 16 GB modules cap a 12-slot board at **192 GB** (12× = €7.067,12 net), so it is a capacity-loser, not the play.
 
 Coverage: camofox 4 profiles / ~14 navigations (proshop, tonitrus, ceneo ×~11 incl. offer-click-out to Allegro and the Allegro product-offers list); trawl 1 background manual job + health checks; curl 8 (ibfusion, senetic ×2, CoreWave, supermicro manual + probes). Expansion: Ceneo as a source (4 product pages + family search), Allegro.pl offer-level verification, empik/buy-it.pl/superstorage/SuperTech/ale/ctistore/sferis row capture — 8 new shops, 5 new parts.
+
+---
+
+## Pass 46b — 2026-11-16T02:35Z (**USER DIRECTIVE: 2Rx4 modules only** — org verified on every tracked part; the 32 GB tier and the Proshop kit are struck)
+
+### 0. What the directive changes
+
+Datasheets pulled this pass to settle the organisation of every tracked part:
+
+| Part | Datasheet says | Under the 2Rx4 directive |
+|---|---|---|
+| `KSM64R52BD4-64MD` | "64GB **2Rx4** 8G x 80-Bit … SPD is programmed to JEDEC standard latency DDR5-6400" | **KEEP — our best qualified part** |
+| `KSM64R52BD4-64HA` | "64GB **2Rx4**" | KEEP |
+| `KSM64R52BD4-64MH` | "64GB **2Rx4**" | KEEP |
+| `KSM64R52BD4-96MC` | "96GB **2Rx4**" | **KEEP — current €/GB floor** |
+| `KSM64R52BD8-32MH` (the 384 GB tier) | "32GB **2Rx8**" | **STRIKE** (2Rx8) |
+| `KSM64R52BD8-32MD` | 2Rx8 family | **STRIKE** |
+| `KSM64R52BS8-16MH` (the user's Ceneo link) | "16GB **1Rx8**" | **STRIKE** (1Rx8) |
+| `KF576RH40RBK4-128` (Proshop 128 GB kit) | "128GB (**32GB 1Rx8** 4G x 80-Bit x 4 pcs)" | **STRIKE — the kit is 4× 1Rx8** |
+| `KF576RH40RB-32` (Renegade single) | "32GB **1Rx8**" | STRIKE |
+| CoreWave Samsung `M321R6GA3PB2-CCP` 48 GB | CoreWave listing: "48GB DDR5-6400 ECC RDIMM **2Rx8**" | STRIKE |
+| CoreWave Samsung `M321RYGA0PB2-CCP` 96 GB | listing: "96GB … **2Rx4**" | KEEP (no-SPD caveat) |
+| Samsung `M321R8GA0PB2-CCP` 64 GB (QVL) | 2Rx4 | KEEP |
+| Samsung `M321RAJA0MB2-CCP` 128 GB | **3DS 2Rx2** | separate class — excluded |
+| Samsung `M321RBJA0M22-CLP` 256 GB | **3DS 2Rx4 (8R)** | separate class — kept with a 3DS label |
+| hynix `HMCG94*` 64 GB | 2Rx4 (title + QVL rows) | KEEP (no-SPD caveat) |
+
+**No 32 GB 2Rx4 part exists** in the Server Premier family (the `-32MD` datasheet 404s; the real 32 GB parts are 1Rx8/2Rx8). So under this directive **12× 64 GB = 768 GB is the smallest full-population build.**
+
+### 1. The 2Rx4 board after the cut
+
+| Route | Part (all verified 2Rx4) | Net total | €/GB |
+|---|---|---:|---:|
+| **768 GB, qualified** | **12× `KSM64R52BD4-64MD` @ Allegro komputera_pl** (12 908,19 zł delivered each) | **€28.575,84** | **€37.21** |
+| 768 GB, SPD caveat | 12× eBay hynix business (HMCG94BDJMA080N) | €25.939 (net-basis) | €33.78 |
+| 1.152 TB, qualified | **12× `KSM64R52BD4-96MC` @ electronis.de** | **€40.930,99** | **€35.53** |
+| 1.152 TB, SPD caveat | 12× CoreWave Samsung `M321RYGA0PB2-CCP` | €37.742 (net-basis) | €32.76 |
+| 768 GB, QVL part | 12× CoreWave Samsung `M321R8GA0PB2-CCP` | €39.510 (net-basis) | €51.45 |
+| 3DS, unclassified here | CoreWave 128/256 GB (2Rx2 / 2Rx4-8R) | — | needs 3DS verification |
+
+**Board changes:** the €13,732 384 GB headline is gone (no 2Rx4 32 GB part exists); KPI card 1 now reads **"Cheapest qualified 768 GB (12×64, 2Rx4) — €28.575,84"**; card 2 stays **€35.53** (96MC, which is 2Rx4 and still the cheapest qualified €/GB). Every offer row now carries an **org badge** (26 rows tagged 2Rx4, 10 excluded); the ladder was reduced to the six 2Rx4 tiers above and asserts no 1Rx8/2Rx8/2Rx2 route remains.
+
+### 2. Blocked / notes
+
+- hynix's own product site returns HTTP 500 for the DDR5 decoder page → the 64 GB hynix org is taken from the eBay title + QVL row ("2Rx4"), consistent across five sources, but not from an hynix datasheet.
+- The 2Rx4 128/256 GB parts (Samsung 3DS `2Rx2 (4R)`, `2Rx4 (8R)`) are a physically different class; the H14 manual lists them separately and rates them 6400 at 1DPC, so they remain available if 3DS is ever on the table — deliberately not mixed into this ladder.
+- Supermicro manual (96 GB 2Rx4 @ 12 channels) still unfetched: 5th pass. Background job attempted again; the client never receives the 61 MB body.
+
+### 3. Verdict + coverage
+
+**Under 2Rx4-only, the buy is: 768 GB qualified at €28.575,84 net (€37.21/GB, Allegro 64MD) or 1.152 TB qualified at €40.930,99 net (€35.53/GB, electronis 96MC).** The 96MC route is both cheaper per GB and 50 % more capacity — its only open question is the 96 GB 2Rx4 @ 12-channel confirmation. If that clears, `12× KSM64R52BD4-96MC @ electronis` is the whole answer.
+
+Coverage: 11 datasheet pulls (Kingston ×8 + kit + 2 404s, CoreWave listing pages ×3), 1 hynix site probe, 44 offers re-classified, board + ladder re-rendered. No price re-checks this pass — the directive turnaround only.
