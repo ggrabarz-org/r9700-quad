@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**SELLER RISK ON THE CHEAP ROUTES (pass 67): the Allegro 64 MD cut HOLDS at 12 736,00 zł (second read; "Oszczędzasz 165 zł" vs 214 confirms the −162,20 cut is real) — but `komputera.pl` is a **parked domain-for-sale page**, so the Allegro storefront is that seller's only presence and it carries just **5 ratings** (the "2 596 opinii" on the Ceneo row is the *product* count, not the seller). And **FOUR QVL-passing parts now have ZERO EU offers** (`M321R8GA0PB2-CCP` 64 GB, `MDRRWM4QDBC2-3*` 96 GB, `M321R4GA0EB2-CCP` 32 GB, `M321R2GA3PB2-CCP` 16 GB) — Gigabyte's QVL is a compatibility document, not a shopping list.**
+
 **NEW 64 GB FLOOR (pass 66, first movement in nine passes): Allegro komputera_pl cut `KSM64R52BD4-64MD` from 12 898,20 to **12 736,00 zł** (−1,26 %) = **€2 349,55 net = €36.71/GB** (was €37.21) → **768 GB build improves to €28 194,61 net** (−€381,23).** Same seller (2 596 reviews), BLACK WEEKS promo — may fall further or snap back. Micron 96 GB ticked €3 207,89 → €3 209,50 (+0,05 %, noise) = €28.09/GB net, single-seller caveat unchanged.
 
 **MICRON ROUTE QUANTIFIED (pass 65): for the IDENTICAL part (`MTC40F204WS1RC64BC1`, 96 GB 2Rx4, QVL ✓) the Geizhals/esus-it route at €28.08/GB net is 11.5 % cheaper than CoreWave's best lot ($3,370 = €31.74/GB) and 16.9 % below its $3,587 headline — a €4 220,96 saving on 12 pieces.** Geizhals's aggregate page re-read confirms **"1 Angebot"**, i.e. genuinely single-seller. **Buy order: Geizhals first, CoreWave as the stocked fallback** (200 pcs, published "Brand New").
@@ -2786,3 +2788,65 @@ Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle,
 **Why this matters:** eight flat passes suggested the market was stuck. One promo-driven cut shows it is not — and that the "BLACK WEEKS" promo is the mechanism. That makes the Allegro price the one to watch: it may fall further, or snap back when the promo ends. **If the 768 GB build is the choice, this is a better moment than any of the last eight passes.**
 
 Coverage: camofox 3 profiles / 4 navigations (tonitrus, ceneo + source confirmation of the new price and seller); trawl 1 scrape (Micron). Re-check: ibfusion, senetic ×2 via curl. 2 price movements, 0 new parts.
+
+---
+
+## Pass 67 — 2026-11-16T22:3xZ (the pass-66 cut **holds**: Allegro stable at 12 736,00 zł for a second read, "Oszczędzasz 165 zł". Two more QVL parts confirmed unsold → **four** QVL-valid-but-unbuyable parts now)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **64MD @ Allegro komputera_pl (QVL ✓)** | **HOLDS at 12 736,00 zł** = €2 349,55 net = **€36.71/GB** — no snap-back after pass 66's cut | camofox `--user ceneo` + offer page |
+| senetic.pl 64MD | unchanged 11 377,59 zł = €40.34/GB (10th pass flat) | curl |
+| senetic.de 64MD | unchanged 2.582,03 € = €40.34/GB | curl |
+| ibfusion 64MD | unchanged **2.481,00 € excl. VAT** · 5 in stock | curl |
+| Tonitrus CCP | unchanged 3.174,50 € brutto / **2.667,65 € netto** · 50 verfügbar | camofox |
+| Micron 96 GB @ Geizhals | unchanged **€3 209,50** = €28.09/GB net · 1 Angebot | trawl |
+
+### 2. The Allegro cut is stable — verified on the offer page itself
+
+The Allegro product page (not just Ceneo) now reads:
+
+> `Kingston RDIMM 64GB DDR5 2Rx4 Micron D 6400MHz PC5-51200 KSM64R52BD4-64MD · od komputera_pl · Poleca sprzedającego: 100,0% · 5 ocen · Stan Nowy · Gwarancja 12 miesięcy · **12 736,00 zł** · **Oszczędzasz 165 zł** kupując na Allegro · 1 273,60 zł × 10 rat · 12 745,99 zł z dostawą · dostawa pt. 20 lis.`
+
+Note the savings figure moved **214 zł → 165 zł**, which is exactly what a −162,20 zł cut should do (the "Allegro reference price" stays fixed). That is independent confirmation the cut is a real price change, not a rendering artefact.
+
+**No price history is published on the offer**, so whether €36.71/GB is the promo floor or mid-slide cannot be determined from the page. Treat it as a live promo price.
+
+### 3. Seller recon — the Allegro storefront is their only shop
+
+| Check | Result |
+|---|---|
+| `komputera.pl` (the seller's implied domain) | **"Domains for sale \| Bolds.net"** — a parked domain-for-sale page, **not** a shop |
+| Allegro storefront | live, 100 % recommendation, **5 ratings**, 12-month warranty, delivery Fri 20 Nov |
+
+So unlike esus-it (real DE shop, part absent from catalogue), komputera_pl has **no independent web shop at all** — the Allegro listing *is* the business presence. At 5 ratings that is a thinner review base than Ceneo's earlier "2 596 opinii" attributed to the row (that figure is the *product's* review count, not the seller's). Worth stating plainly: **the cheapest 64 GB route rests on a 5-rating Allegro seller.**
+
+### 4. Two more QVL parts priced → both unsold
+
+| QVL ✓ part | Geizhals | Result |
+|---|---|---|
+| Samsung `M321R4GA0EB2-CCP` (32 GB) | a3677537 | **"keine Angebote"** — 0 offers |
+| Samsung `M321R2GA3PB2-CCP` (16 GB) | a3633401 | **"keine Angebote"** — 0 offers |
+
+**That brings the QVL-valid-but-unbuyable list to four**: `M321R8GA0PB2-CCP` (64 GB), `MDRRWM4QDBC2-3*` (96 GB), `M321R4GA0EB2-CCP` (32 GB), `M321R2GA3PB2-CCP` (16 GB). The pattern is now overwhelming — **Gigabyte's QVL enumerates far more Samsung SKUs than the EU channel actually stocks.** QVL membership says "validated", not "available".
+
+### 5. NEW listings
+
+No purchasable new listings this pass — two QVL parts closed as unsold, one seller-recon finding.
+
+### 6. Blocked list
+
+- New: **idealo.de** search (403 this pass — the long-standing 404 now a 403, still unusable), **cyberport.de** (403 "Just a moment"), **notebooksbilliger.de** (404 on that path), **komputera.pl** (parked domain).
+- Unchanged: Mindfactory/Kaufland walls, Galaxus PDP robot check, Amazon.de cycle, barax.at DNS, memory.net 403, smicro.pl, CH tier (CH+LI-only), alza 403, gigabyte.com 403 to curl, senetic.it/.es/.nl, esus-it own search, kingston.com compatible-systems (JS-gated), skroutz/geizhals.at/toppreise.
+
+### 7. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No, but the pass-66 cut survived its first re-check, which is itself the news.** Floors hold: **Micron 96 GB @ Geizhals €28.09/GB net** (single seller) and **Kingston 64 MD @ Allegro €36.71/GB net**, €28 194,61 for 768 GB.
+
+**Value of the pass — two risk findings, both about the cheap routes:**
+1. **The Allegro seller has no shop of its own** (`komputera.pl` is a parked domain) and **5 ratings**; the "2 596 opinii" on the Ceneo row is the product's review count, which is easy to misread as seller reputation. The cheapest 64 GB price therefore sits on the thinnest retail footing on the board.
+2. **Four QVL-passing parts have zero EU offers**, doubling the count from pass 63. Gigabyte's QVL is a compatibility document, not a shopping list.
+
+Coverage: camofox 4 profiles / 7 navigations (ceneo, tonitrus, allegro offer page, komputera.pl, title checks); trawl 3 scrapes (Micron, 2 Samsung QVL parts); curl 6 (ibfusion, senetic ×2, idealo/cyberport/nbb). 2 QVL parts closed, 1 seller-recon finding, 0 new prices.
