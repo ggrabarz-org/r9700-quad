@@ -17,8 +17,8 @@
 
 -   **Board, CPU, memory, power**
     ---
-    MZ23-SU0, EPYC 9355P, the RDIMM rule and the PSU cable math are covered in
-    [the build](../build.md) and the [reference](../reference/) pages, because
+    MZ33-CP1, EPYC 9355, the RDIMM rule and the PSU cable math are covered in
+    [the build](../build.md) and the [platform verdict](../reference/epyc-platform.md) pages, because
     each one is a decision rather than a part.
 
 </div>
