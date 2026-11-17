@@ -1,6 +1,27 @@
 {
   "version": 2,
   "skills": {
+    "architect": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/architect/SKILL.md",
+      "computedHash": "53de961f6f525ef7f953cb51d5eb226ac22e6a5d1f407c93c2b3855d190764f7"
+    },
+    "arena": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/arena/SKILL.md",
+      "computedHash": "ed43dc42e29eeeb0417563e60c38660257e8b5bfa0e74e1429e46efec8eb030e"
+    },
+    "automate-me": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/automate-me/SKILL.md",
+      "computedHash": "b12417973647b7ff367d7e4f01c2d125f4d8ae777e770afd01f75e63e0f96b96"
+    },
     "camofox-browser": {
       "source": "redf0x1/camofox-browser",
       "sourceType": "github",
@@ -13,11 +34,109 @@
       "skillPath": "skills/camofox-cli/SKILL.md",
       "computedHash": "781f6d7109582347244385a70f964f7bda42a37379dc0a958656adfc2f5ae5f9"
     },
+    "cancel-ralph": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "ralph-loop/skills/cancel-ralph/SKILL.md",
+      "computedHash": "94893e9136cc347a182afc8f271c40146bae38312921a4ffcd9f45ebec8a1a57"
+    },
+    "check-compiler-errors": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/check-compiler-errors/SKILL.md",
+      "computedHash": "4e0b3a2df37ddab61b01ff171001203edd501228135a98a5f771afb1b29a070c"
+    },
+    "cli-for-agents": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cli-for-agent/skills/cli-for-agents/SKILL.md",
+      "computedHash": "5df9f6410070f67a43a2ee7f7b424ec490bfdb581996c9aaa4cb2acb2c2b51d6"
+    },
+    "continual-learning": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "continual-learning/skills/continual-learning/SKILL.md",
+      "computedHash": "cc03cbd61b7e8408a49c57ac39314807196a4cd06005d1593c22b3612ef816da"
+    },
+    "control-cli": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/control-cli/SKILL.md",
+      "computedHash": "5d995de261563ebd1686c6156bf8ec5009438c27c980384073017bdde4ae1b87"
+    },
+    "control-ui": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/control-ui/SKILL.md",
+      "computedHash": "6f0bd87953f7393fad7bf47889392fe2a10590394a2348bc168fc7d90b1da56a"
+    },
+    "create-learning-path": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "teaching/skills/create-learning-path/SKILL.md",
+      "computedHash": "d9b4ef17b00829311762cccd9ab1b5af8f0f712dde0319e65e1eacaada42e2ba"
+    },
+    "create-plugin-scaffold": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "create-plugin/skills/create-plugin-scaffold/SKILL.md",
+      "computedHash": "6faa2b36c1c324740a5553b475e93b9e51f6ea0580003fd4d84d454c0b5e96cd"
+    },
+    "cursor-sdk": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-sdk/skills/cursor-sdk/SKILL.md",
+      "computedHash": "7d361214737da2efb941c7238fb448816d674087a08d2c40c9077f0c262b590d"
+    },
+    "deslop": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/deslop/SKILL.md",
+      "computedHash": "104e1041830c5ad58da3805289a77dbba4eee7dd96d4547b3eaeecbd761618d8"
+    },
+    "docs-canvas": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "docs-canvas/skills/docs-canvas/SKILL.md",
+      "computedHash": "2cbc923a36ff54c22ccc97d89846f90cc075ff2923e537b31014dbf729c67dd2"
+    },
     "dogfood": {
       "source": "redf0x1/camofox-browser",
       "sourceType": "github",
       "skillPath": "skills/dogfood/SKILL.md",
       "computedHash": "cb1f1f99e3dda5e4f1632ad63f3c56f5f5291e7db21435c24a0d709cc4389b46"
+    },
+    "figure-it-out": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/figure-it-out/SKILL.md",
+      "computedHash": "91b1b9c41b7f5ac07ee1d3dee613c36b130ba518bc939087e3bb961e8adf3ed7"
+    },
+    "fix-ci": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/fix-ci/SKILL.md",
+      "computedHash": "35c2be698e5bf201d05af3babfd0f67fb7928214a54b7e6adea0ad78b7a3981b"
+    },
+    "fix-merge-conflicts": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/fix-merge-conflicts/SKILL.md",
+      "computedHash": "45612c4b50cfd2e7325261b2d8170c70dfe8aeacdc71985a93b215f9a36006d1"
     },
     "gemini-image": {
       "source": "redf0x1/camofox-browser",
@@ -25,11 +144,354 @@
       "skillPath": "skills/gemini-image/SKILL.md",
       "computedHash": "d7b6be90110188643ee11292963ccdee2818ec07c37eb46ea2845549d321a332"
     },
+    "get-pr-comments": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/get-pr-comments/SKILL.md",
+      "computedHash": "65fd32bdab4cbc3c8b4c5652b30b6f12f51ad140c735ea61314c73063571965e"
+    },
+    "how": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/how/SKILL.md",
+      "computedHash": "54c7cd81e0e11c6e2d5f9624f91a1c69f604ee92b88368d301b44705cc188ee0"
+    },
+    "interrogate": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/interrogate/SKILL.md",
+      "computedHash": "045f246dfe39773180d8c66deaf2532fcecaf4b3b738a0ab711001d50ef6305a"
+    },
+    "loop-on-ci": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/loop-on-ci/SKILL.md",
+      "computedHash": "b6bda463415c631b29a880340c663e99e3f4fc5dbd5f0cd345cd36f3630da71f"
+    },
+    "make-pr-easy-to-review": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/make-pr-easy-to-review/SKILL.md",
+      "computedHash": "192b5123bc85091be3c195a53e4c9bacd2ccaf23e13e11cf697fb7e3be8c331d"
+    },
+    "new-branch-and-pr": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/new-branch-and-pr/SKILL.md",
+      "computedHash": "412a05903ea8a15e0a9cc1264f73061a7064ef8a5b6199f29f5c3018bccf5877"
+    },
+    "orchestrate": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "orchestrate/skills/orchestrate/SKILL.md",
+      "computedHash": "8e8d09ac43fdefe6b6bc60ca7cb0fba3c21a1e8cc09191c6ffc74414d56a78b9"
+    },
+    "poteto-mode": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/poteto-mode/SKILL.md",
+      "computedHash": "313223dcdf8cdceac63c8fd70bfb2cf705f601a0832a8c9480c0fba07f3e0ab2"
+    },
+    "pr-review-canvas": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/pr-review-canvas/SKILL.md",
+      "computedHash": "90f164ecb26da3bb70d1bf9e40e41e686f02abd89ee615eed7c583cca736b6b0"
+    },
+    "principle-boundary-discipline": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-boundary-discipline/SKILL.md",
+      "computedHash": "df77b174306c40eb928ed625e5e8470c42df67c3cb683f411c61b621b6597f6f"
+    },
+    "principle-build-the-lever": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-build-the-lever/SKILL.md",
+      "computedHash": "59797ba268f393ece1fc3c8eff184e7600ee1c3369bfcf57bbb274ea0aa6bcd0"
+    },
+    "principle-encode-lessons-in-structure": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+      "computedHash": "37ea93d32aaa006e210ab7d7eac965fe9b81fa502a4046a92194f8caee47654b"
+    },
+    "principle-exhaust-the-design-space": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+      "computedHash": "b08836202d1b61bd27b6f90f2c86a0fa4627b290c91f1da2982d2de7feec1a30"
+    },
+    "principle-experience-first": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-experience-first/SKILL.md",
+      "computedHash": "0a440a7ab04ebb5879621cef7bf1f1b079407916dd9feb58be33ea615681cf36"
+    },
+    "principle-fix-root-causes": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-fix-root-causes/SKILL.md",
+      "computedHash": "36f13720c9d74fd8cfd212a69f78c894ea13d6f30f530e0de34fa7e49e774661"
+    },
+    "principle-foundational-thinking": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-foundational-thinking/SKILL.md",
+      "computedHash": "0c56997c2f37ba58f5fdea3e863530be3b702fe9a94b81ed1a1ac5a4ee82dde6"
+    },
+    "principle-guard-the-context-window": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-guard-the-context-window/SKILL.md",
+      "computedHash": "c7085ee6a9bad23fa2ce0b20787d5a4ee4dd0588daca57c298ae13bdfe9a7b32"
+    },
+    "principle-laziness-protocol": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-laziness-protocol/SKILL.md",
+      "computedHash": "0e48a9f60c80b0f0d2cff50e19db23e5601b5fa823bea4c469e46dce36f974f2"
+    },
+    "principle-make-operations-idempotent": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
+      "computedHash": "217e2fd7ad4a8849b85031b69f5861dfd0b98759068afd8e6a6da89d897a6cfd"
+    },
+    "principle-migrate-callers-then-delete-legacy-apis": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "computedHash": "321228b0c6a0819fa9e482cab03675d3fa09092274b345ae38f03fc21925b0c4"
+    },
+    "principle-minimize-reader-load": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-minimize-reader-load/SKILL.md",
+      "computedHash": "6253f364bb5098109fd558bc191798305bbcf97174a6c049de074aa63da6fe26"
+    },
+    "principle-never-block-on-the-human": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
+      "computedHash": "43cab73e61231b7e3d42320b4b9a155f030e8b0cb12f5b4f3fa3ecbb33bf7f87"
+    },
+    "principle-outcome-oriented-execution": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+      "computedHash": "2d6e6e88cbcaf3a41109121c4413cb7ac798d06bec8bfe090e62cfd024c74e61"
+    },
+    "principle-prove-it-works": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-prove-it-works/SKILL.md",
+      "computedHash": "254562aeadc6bfde954fd0796f6ef92fef65433d85914c125226190c86fd3683"
+    },
+    "principle-redesign-from-first-principles": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+      "computedHash": "7c1c3a0179a5d212ae1d2383862fc23db9f391f391db6cfab55e94e815e57b03"
+    },
+    "principle-separate-before-serializing-shared-state": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+      "computedHash": "7b80f80ec8b663b7c361b41ba8b12fc819ccd626ccbda564178d7e7416297249"
+    },
+    "principle-sequence-verifiable-units": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+      "computedHash": "8ab15e99857fe0a7f219ef3406790de460ece93aef6feac8fe129254dffc881a"
+    },
+    "principle-subtract-before-you-add": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
+      "computedHash": "33cdba57824aa912487bb97c90137f2a0a883c0140a16166ab874bd1b9ef4165"
+    },
+    "principle-type-system-discipline": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/principle-type-system-discipline/SKILL.md",
+      "computedHash": "d8cbd4d0a52864135d6a16face00c3baf154e22d0d76ba8281594ebf0a26a87c"
+    },
+    "ralph-loop": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "ralph-loop/skills/ralph-loop/SKILL.md",
+      "computedHash": "af6c837394cf61536017617a72f312a5838d5ab2b21036b70817cb74d015a8b1"
+    },
+    "ralph-loop-help": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "ralph-loop/skills/ralph-loop-help/SKILL.md",
+      "computedHash": "cd7571d80fb6d5d1c22258113288eb20fca90089bc3466dd748f838f973be286"
+    },
     "reddit": {
       "source": "redf0x1/camofox-browser",
       "sourceType": "github",
       "skillPath": "skills/reddit/SKILL.md",
       "computedHash": "b29e00fcd2908938c837decd72ca782e8de3ab9883cdf0b02614cd34f5a13696"
+    },
+    "reflect": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/reflect/SKILL.md",
+      "computedHash": "a9a3c0cd67c8b8b8385996d6d3b131b00f3d88c250389fae0ecb68cfc69a10fb"
+    },
+    "review-and-ship": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/review-and-ship/SKILL.md",
+      "computedHash": "ec5b3a9c99dc73944482136bdc3dddae3b7e624f3f8e16b7ea93766ec447aabb"
+    },
+    "review-plugin-submission": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "create-plugin/skills/review-plugin-submission/SKILL.md",
+      "computedHash": "ab3c0ce4c499e8b6a79856119b1a1abbe8b59f4b947650ae4031e7db0e863f40"
+    },
+    "run-learning-retrospective": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "teaching/skills/run-learning-retrospective/SKILL.md",
+      "computedHash": "c41234462e8714d37bdce475ee9b0eb2ae636d41f2b86dc6c80881b8decf21ef"
+    },
+    "run-smoke-tests": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/run-smoke-tests/SKILL.md",
+      "computedHash": "537620ef1b9751f87ead1bb646e5e0b13fc60d174bfdc80fe04783c6bf3d624d"
+    },
+    "setup-pstack": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/setup-pstack/SKILL.md",
+      "computedHash": "8ae5b563cfd2da33bf6d1ccc6b27d0c1da634d56db75e1780a944d2d8acbc762"
+    },
+    "show-me-your-work": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/show-me-your-work/SKILL.md",
+      "computedHash": "9ef1ac232e30fe06ba5632aa73c3fda1bae853986db8fe77be33a35c247019c5"
+    },
+    "tdd": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/tdd/SKILL.md",
+      "computedHash": "68e88858fbba684d45d84ae985b6e249d4214205d3a21b43160e13051e0bf33f"
+    },
+    "thermo-nuclear-code-quality-review": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/thermo-nuclear-code-quality-review/SKILL.md",
+      "computedHash": "705eb32106f0fec9c9e9b4afccb6156f17f6e8829368e54cd5b53f10e4374340"
+    },
+    "thermo-nuclear-review": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "thermos/skills/thermo-nuclear-review/SKILL.md",
+      "computedHash": "1a0407b118f3b6ec39e2b6f3d19bce61d83d211427166c221ddd630e580807c0"
+    },
+    "thermos": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "thermos/skills/thermos/SKILL.md",
+      "computedHash": "aad6fd22c9524ba7cb9fd5ccf3523a2caac126e849cac27af09d2335964da116"
+    },
+    "typescript-best-practices": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/typescript-best-practices/SKILL.md",
+      "computedHash": "5a47e1f482fe717f49c3bed02b2de938e49709e67f4148d2e7811b0949df6dc9"
+    },
+    "unslop": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/unslop/SKILL.md",
+      "computedHash": "95677977105bf83a3d83d5bb700c2241e9c24063ccadd8cdce13a75a23a9e9f1"
+    },
+    "verify-this": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/verify-this/SKILL.md",
+      "computedHash": "7958491f09111eef93ced1aa3d5ab4533b5a37c0c4a5932f0cf05e251e873c83"
+    },
+    "weekly-review": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/weekly-review/SKILL.md",
+      "computedHash": "e19f126aa3096264224c7d792edb23d994123020063aa24c5234d79350d04e6f"
+    },
+    "what-did-i-get-done": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/what-did-i-get-done/SKILL.md",
+      "computedHash": "d4c421903b43074f6d5f75e7055a06c2476735b2bb691285e3217504cd038627"
+    },
+    "why": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "pstack/skills/why/SKILL.md",
+      "computedHash": "09f83d75568846484cac9727ef939fc588e105910e7d50056210a7fdcc5497ed"
+    },
+    "workflow-from-chats": {
+      "source": "poteto/plugins",
+      "commit": "74dd2291e8e37b12fd6dc49b2acbd655c6bdaf12",
+      "sourceType": "github",
+      "skillPath": "cursor-team-kit/skills/workflow-from-chats/SKILL.md",
+      "computedHash": "3e0bd1b734e224f94d99f3177acf1bb11d6afd50ec0ad54c96b33765e31c8301"
     }
   }
 }
