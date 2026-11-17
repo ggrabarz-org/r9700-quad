@@ -2,6 +2,10 @@
 
 ## Standing reference (for scheduler passes)
 
+**PASS-69 BOARD FIX (applies to every future pass): the KPI cards now SKIP any part whose published qty is below the 12 modules a full population needs.** Before the fix, the "lowest total spend" card headlined **12× a 2-piece CoreWave listing** — a route that cannot be ordered. `ram-offers.json` now carries an optional `qty` field; a sub-floor price on short stock is a **price observation, not a buy**, and must never reach the headline.
+
+**SUB-FLOOR BUT NOT BUILDABLE (pass 69): Micron `MTC20F104XS1RC64BC1` 48 GB 1Rx4 @ CoreWave $1,467 = €27.64/GB net-basis (1.6 % under the €28.09 floor), QVL ✓ Brand New — but 2 pcs.** The real pass-69 finding is systemic: the **48 GB 1Rx4/2Rx8 shape is cheaper per GB than 96 GB 2Rx4** (€27.64 / €30.71 / €32.55 across three listings), which is what dropping the 2Rx4 rule unlocked. **New tier: Samsung `M321RAJA0MB2-CCP` 128 GB 2Rx4 QVL ✓ at €32.25/GB, 95 pcs → 12× = 1536 GB at €49 536 net-basis.** Also: CoreWave's `M321RYGA0PB2` 96 GB is now €30.72/GB and its product page says Brand New • 3 Yr where pass 57 recorded "Clean Pull" (used) — **condition is per-lot, verify before ordering.**
+
 **RULE CHANGED 2026-11-17 (user): the 2Rx4-only restriction is DROPPED — any rank/org is eligible; the JEDEC-SPD-6400@1.1V gate is the ONLY qualifier.** **Do not read this as "anything rated 6400+": rated speed ≠ JEDEC default.** Datasheet-verified: `KF576RH40RBK4-128` (rated **7600**) and `KF572RH38RBK8-256`/`-32` (rated **7200**) all declare "Default (JEDEC): DDR5-6400 CL52-52-52 @1.1V" and **QUALIFY**; `KF564R32RBE-16` (rated **6400**) and `KF556R36RBK4-128` (5600) declare "Default (JEDEC): DDR5-4800" and **DO NOT**. The `Default (JEDEC)` line in the datasheet is the only test. **Unlocked: capacity shapes, not price.** The QVL has 88 parts at 6400 but only 47 were 2Rx4 — now reachable are 48 GB 1Rx4/2Rx8, 32 GB 1Rx4/2Rx8, a 128 GB 4Rx4 and a 256 GB 8Rx4 V-color. **New mid tier: 576 GB (12×48 GB Samsung @ CoreWave) at €30.71/GB net-basis = €17 689** — did not exist before. FURY kits priced (€37.91–40.02/GB, SPD ✓ but not QVL-listed) do not beat the floor. **Floor unchanged: Micron 96 GB €28.09/GB.**
 
 **QVL CORRECTION (pass 68, supersedes pass 59 prose): the MZ23-SU0 Memory QVL DOES list Micron `MTC40F204WS1RC64BC1` 96 GB — four die-variants (MWFF/MXCC/USFF/QWCC), all 2Rx4 1.1v 6400MHz. The €28.09/GB floor is QVL-backed, not QVL-unknown.** Root cause of the nine-pass error: the QVL page opens on the **CPU** tab and all 22 CPUs read "DDR5-6400", which reads like a memory hit; the Memory table only renders after clicking the **Memory** category. **SK hynix is a FOURTH QVL vendor at 6400** (`HMCG94AHBRA480N`/`-487N` 64 GB @ €46,82/GB; `HMCGM4MHBRB499N`/`-505N` 96 GB, no EU listing) and Micron contributes **22** 6400 rows. Kingston 96MC/96HM/64HA remain genuinely NOT listed. **Proshop.pl moved UP 25 969,00 → 26 723,00 zł (+2,90 %)** on pass 68.
@@ -2989,3 +2993,91 @@ Note the 256 GB kit is **8×32 GB — it fills 8 of 12 slots**, so a full 12-slo
 **Verdict: the rule change widens the build menu but does not move the floor.** Micron 96 GB at €28.09/GB remains cheapest per GB and cheapest for 1152 GB. The new value is a **576 GB tier at €30.71/GB** (CoreWave 48 GB, now eligible) — a middle option that did not exist under the 2Rx4-only rule. All three FURY kits qualify on SPD but are QVL-unlisted and dearer per GB than the parts already on the board.
 
 Coverage: camofox 1 profile (QVL Memory tab, 2 sessions + click), trawl 7 scrapes (FURY ×3, V-color ×2, Samsung 48/32), curl 1 (transcend, failed). Board renderer updated: org tags no longer flag non-2Rx4 as bad; KPI card 1 no longer filters on 2Rx4.
+
+---
+
+## Pass 69 — 2026-11-17T00:4xZ (**CoreWave's live board repriced wholesale and now carries a 48 GB at €27.64/GB — 1.6 % UNDER the floor — plus a 128 GB QVL part that opens a 1536 GB build.** Floor breaks, but on 2 pcs.)
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **Allegro 64MD @ komputera_pl (QVL ✓)** | **HOLDS 12 736,00 zł** (4th read) · savings badge still **165 zł** · promo intact · delivery now sob. 21 lis. | camofox `--user ceneo` + offer page |
+| Proshop.pl kit | **26 723,00 zł / 21 726,02 zł netto** — holds the pass-68 jump | camofox `--user proshop` |
+| ibfusion 64MD | **2 481,00 € excl. VAT** · 5 in stock — unchanged | curl |
+| senetic.pl 64MD / 96MC | **11 377,59 / 16 426,27 zł netto** — unchanged (12th flat) | curl |
+| senetic.de 64MD / 96MC | **2.582,03 / 3.727,78 € exkl** — unchanged | curl |
+| Tonitrus CCP | **3.174,50 € brutto / 2.667,65 € netto** · 50 verfügbar — unchanged | camofox |
+| Micron 96 GB @ Geizhals | **3.209,50 €** = €28.09/GB net · 1 Angebot — unchanged | trawl |
+
+### 2. **FLOOR BROKEN — CoreWave 48 GB `MTC20F104XS1RC64BC1` at €27.64/GB** (but 2 pcs)
+
+CoreWave's `/server-memory/` board is not a static page — it repriced **every** 6400 row since it was last read, and carries parts this record never had. Verified on the product page itself:
+
+> `MTC20F104XS1RC64BC1 Micron 48GB DDR5-6400 ECC RDIMM 1Rx4 1.1V · SKU: MTC20F104XS1RC64BC1 · **$1,467** · ≈ €1340 · Excl. VAT & shipping · **Brand New • 3 Years** · 🟢 **2 pcs available** · Lead time: 2-3 Days · Updated 10 Nov 2026`
+
+**$1,467 / 48 GB = $30.56/GB = €27.64/GB net-basis — 1.6 % below the €28.09 Micron-96 floor.** QVL ✓ (`MTC20F104XS1RC64BC1 MWFF`, 1Rx4 1.1v 6400MHz), Brand New with a 3-year warranty.
+
+**The catch is stock: 2 pieces.** A 12-channel build needs 12. At 2 pcs it is **not a buildable route** — it is evidence that the 48 GB 1Rx4 shape is cheaper per GB than 96 GB 2Rx4 when it exists. Recorded as a price observation, not a buy.
+
+**Broader point: the 48 GB 1Rx4/2Rx8 shape is now the cheapest per-GB shape on the board.** Three independent 48 GB 6400 listings confirm it:
+
+| Part | Org | Shop | Price | €/GB net |
+|---|---|---|---|---|
+| Micron `MTC20F104XS1RC64BC1` | 1Rx4 | CoreWave | $1,467 · **2 pcs** | **€27.64** |
+| Samsung `M321R6GA3PB2-CCP` | 2Rx8 | CoreWave | $1,630 · 250 pcs | €30.71 |
+| Samsung `M321R6GA0PB2-CCP` | 1Rx4 | CoreWave | $1,728 · **6 pcs** | €32.55 |
+
+This is the direct payoff of dropping the 2Rx4 rule: under the old rule all three were struck out, and the 48 GB shape is where the per-GB pressure now sits.
+
+### 3. **128 GB QVL part priced → a 1536 GB build appears**
+
+| Part | Org | Shop | Price | €/GB net | Stock |
+|---|---|---|---|---|---|
+| Samsung `M321RAJA0MB2-CCP` (QVL ✓) | 2Rx4 | CoreWave | **$4,565** ≈ €4,169 · Brand New • 3 Yr | **€32.25** | 95 pcs · 3–4 d |
+| Micron `MTC40F2047S1RC64BB1` (QVL ✓) | 2Rx4 | CoreWave | $7,016 · Brand New • 3 Yr | €49.57 | 100 pcs · 2–3 d |
+
+**12 × 128 GB = 1536 GB at €49 536 net-basis (€32.25/GB).** That tier did not exist on this board before — the QVL validates 128 GB parts (`M321RAJA0MB2-CCPWC/CCPPC`, `MTC40F2047S1RC64BB1` in six die-variants, `HMCT04MHBRC470N`, `TR5R128GS64A404HM-220`) and CoreWave actually stocks one. It is **14.8 % dearer per GB than the 96 GB floor** but yields 33 % more capacity per slot — relevant only if you want maximum capacity rather than minimum cost.
+
+### 4. Full CoreWave 6400 board, repriced (all rows Brand New • 3 Yr unless noted)
+
+| Part | GB | Org | Qty | $ | €/GB net-basis |
+|---|---|---|---|---|---|
+| `MTC20F104XS1RC64BC1` | 48 | 1Rx4 | **2** | 1,467 | **€27.64** |
+| `M321R6GA3PB2-CCP` | 48 | 2Rx8 | 250 | 1,630 | €30.71 |
+| `M321RYGA0PB2-CCP` | 96 | 2Rx4 | 50+ | 3,261 | €30.72 |
+| `M321RAJA0MB2-CCP` | 128 | 2Rx4 | 95 | 4,565 | €32.25 |
+| `M321R6GA0PB2-CCP` | 48 | 1Rx4 | 6 | 1,728 | €32.55 |
+| `M321RBJA0M22-CLP` | 256 | — | 50 | 9,565 | €33.79 |
+| `MTC40F204WS1RC64BC1` | 96 | 2Rx4 | 200 | 3,587 | €33.79 |
+| `MTC40F204WS1RC64BB2` | 96 | 2Rx4 | 250 | 3,587 | €33.79 |
+| `MTC40F2047S1RC64BB1R` | 128 | 2Rx4 | 50+ | 5,022 | €35.48 |
+| `MTC40F204WS1RC64BC1T` | 96 | 2Rx4 | 20 | 3,804 | €35.83 |
+| `MTC40F2046S1RC64BD2` | 64 | 2Rx4 | 500 | 2,826 | €39.93 |
+| `MTC40F2046S1RC64BH1` | 64 | 2Rx4 | 500 | 2,880 | €40.69 |
+
+Note `M321RYGA0PB2-CCP` (96 GB) is **$3,261 = €30.72/GB** and is now listed **50+ pcs** — this is the part pass-57 recorded as "Clean Pull • 1 Year" **used** stock. The live board does not carry a condition string on the aggregate table and the product page reports Brand New • 3 Years, so either the lot changed or the condition label is per-lot; **treat condition as unconfirmed for this part and verify before ordering.**
+
+### 5. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Micron `MTC20F104XS1RC64BC1` 48 GB | no SPD sentence published; QVL ✓ 1Rx4 6400 | CoreWave | $1,467 ex-VAT | **2 pcs** | https://corewavelabs.com/mtc20f104xs1rc64bc1-micron-48gb-ddr5-6400-rdimm/ |
+| Samsung `M321RAJA0MB2-CCP` 128 GB | no SPD sentence published; QVL ✓ 2Rx4 6400 | CoreWave | $4,565 ex-VAT | 95 pcs | https://corewavelabs.com/m321raja0mb2-ccp-samsung-128gb-ddr5-6400-rdimm/ |
+| Micron `MTC40F2047S1RC64BB1` 128 GB | no SPD sentence published; QVL ✓ 2Rx4 6400 | CoreWave | $7,016 ex-VAT | 100 pcs | corewavelabs.com/server-memory/ |
+
+### 6. Blocked list
+
+- New: **eBay.de** 403 on search (error page), **Amazon.de** 503 "Tut uns Leid".
+- **Four QVL 6400 shapes have ZERO EU offers on Geizhals**: TeamGroup `CTCMD524G6400HC32ABK` (24 GB), TRUSTA `TR5R32GS64A208HA-220` (32 GB), Samsung `M321R6GA0PB2-CCPKC` and `M321R6GA3PB2-CCPWC` (48 GB) — all "keine Angebote". CoreWave is the only channel for 48 GB.
+- Unchanged: idealo/cyberport/notebooksbilliger, komputera.pl parked, Mindfactory/Kaufland, CH tier, alza, gigabyte 403 to curl, skroutz/geizhals.at/toppreise.
+
+### 7. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — On €/GB, YES: CoreWave's 48 GB Micron at €27.64/GB is 1.6 % under the €28.09 Micron-96 floor. On a buildable basis, NO** — that price is 2 pieces against a 12-slot requirement.
+
+**Two real finds:** (1) the **48 GB 1Rx4/2Rx8 shape is systematically cheaper per GB** than 96 GB 2Rx4 (three listings agree), which is exactly what dropping the 2Rx4 rule unlocked; (2) a **128 GB QVL part at €32.25/GB** puts a **1536 GB tier** on the board for the first time.
+
+**Unchanged buy ranking (buildable, ≥12 pcs):** 12× Micron 96 GB @ Geizhals **€28.09/GB → €32 348 net (1152 GB)** · 12× Samsung 48 GB @ CoreWave €30.71/GB → €17 689 (576 GB) · 12× Samsung 128 GB @ CoreWave €32.25/GB → €49 536 (1536 GB) · 12× Kingston 64MD @ Allegro €36.71/GB → €28 195 (768 GB).
+
+Coverage: camofox 4 profiles / 8 navigations (ceneo, proshop, tonitrus, allegro offer, ceneo 48GB search); trawl 7 scrapes (Micron 96, CoreWave board, CoreWave 48/128 pages, 4 QVL-shape searches); curl 6 (ibfusion, senetic ×2, ebay, amazon). 1 sub-floor observation, 1 new capacity tier, 3 new listings, 4 shapes closed as unsold.

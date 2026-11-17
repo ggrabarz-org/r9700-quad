@@ -82,7 +82,9 @@ gen = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
 # (2Rx4-only filter dropped 2026-11-17 by user directive — only the JEDEC-SPD-6400@1.1V gate counts now.)
 _q = [o for o in data["offers"]
       if o.get("qvl_mz23su0") == "pass"
-      and (o.get("price") or {}).get("net_pln") and (o.get("price") or {}).get("gb")]
+      and (o.get("price") or {}).get("net_pln") and (o.get("price") or {}).get("gb")
+      # a 12-slot build needs 12 modules: a cheap part with a published qty < 12 cannot fill it
+      and (o.get("qty") is None or o["qty"] >= 12)]
 if _q:
     def _pergb(o):
         p = o["price"]
