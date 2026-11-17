@@ -3327,3 +3327,45 @@ The part is electrically correct (Geizhals: `1.1V (JEDEC-Normspannung)` + `JEDEC
 Verdict unchanged and strengthened: **192 GB is not worth building** — the 384 GB tier costs only €3 657–5 657 more for double the capacity, at a better €/GB. The row is now labelled **"✗ Kingston NOT QVL"** on the board.
 
 **Process note:** this is the second badge error this hunt (the first was the 9-pass Micron 96 GB QVL miss at pass 68). Both came from asserting a QVL status without re-reading the 88-row table. **Every QVL ✓ badge must trace to a row in `qvl6400.json`; when in doubt, check, don't assume.**
+
+---
+
+## Pass 73 — 2026-11-17T01:42Z (rebuild pass: the ladder becomes a sortable 12-channel price matrix, and four record errors fall out)
+
+### 0. Sweep + bests re-check — nothing moved
+
+The Geizhals category sweep returned **55 products**, the same catalogue pass 71 settled at (one withdrawal, no new SKU). The qualifying slice is unchanged:
+
+| Product | Gross | Net | €/GB | Stock |
+|---|---|---|---|---|
+| Micron `MTC40F204WS1RC64BC1` 96 GB | 3 209,50 € | 2 697,06 € | **€28.09** | 1 offer, esus it — out of budget |
+| Kingston `KSM64R52BD8-32MD` 32 GB | 1 250,00 € | 1 050,42 € | €32.83 | 1 offer, barax |
+| Kingston `KSM64R52BD4-96MC` 96 GB | 4 058,99 € | 3 410,92 € | €35.53 | not QVL |
+| Kingston `KSM64R52BD8-32MH` 32 GB | 1 369,34 € | 1 150,71 € | €35.96 | 26 offers |
+| Kingston `KSM64R52BS8-16MD` 16 GB | 689,00 € | 579,00 € | €36.19 | QVL ✗ |
+| Kingston `KSM64R52BD4-64MD` 64 GB | 2 861,74 € | 2 404,82 € | €37.58 | Geizhals offer table |
+
+The **≥7200-rated aisle is still three FURY RDIMMs** — the 128 GB 7600 kit, the 256 GB 7200 kit and the 32 GB 7600 single. All three declare JEDEC 6400 in their datasheets and all three are €37.91–40.02/GB, so the headline rating buys nothing here. G.Skill's 192/384 GB kits remain disqualified (EXPO, 1.40 V).
+
+Bests re-checked, all flat: **Proshop.pl** 96MC 25 881,00 zł / 21 041,46 netto; **Tonitrus** 64MD 3 174,50 € brutto / 2 667,65 € netto, 50 pcs; **ibfusion** 64MD €2 481,00 net, 5 pcs; **senetic.pl** 64MD 11 377,59 zł; **senetic.de** 64MD 2 582,03 €. No new shop was opened this pass — the rebuild took the expansion slot.
+
+### 1. Four record corrections
+
+1. **24 GB QVL — pass 72 was wrong.** The MZ23-SU0 QVL does list a Micron 24 GB: `MTC10F108YS1RC64BC1 QSFF`, 1Rx8, 1.1v, 6400MHz. Pass 72's “the only QVL 24 GB part is TeamGroup” is false. The conclusion survives: CoreWave has **10 pcs**, a 12-slot build needs 12, so 288 GB is still not buildable. The offer now carries QVL ✓ + qty 10.
+2. **16 GB QVL-safe price — the €39.96 lower bound was the wrong part.** CoreWave's live board: Samsung `M321R2GA3PB2-CCP` **$815, 50+ pcs** → €736,99/module = **€46.06/GB**, 12× = **€8 843,88**. The $707 / €39.96 row is Micron `MTC10F1084S1RC64BD1`, but the QVL row is `…BD2`, not BD1. The QVL-safe 192 GB build is **€8 844**, not €7 700. Added as an offer row.
+3. **48 GB QVL status restored.** `M321R6GA3PB2-CCP` was still carrying the old 2Rx4-rule exclusion (`state: excluded`, qvl null). The QVL row is `M321R6GA3PB2-CCPWC` (2Rx8, 1.1v, 6400). CoreWave: **$1 630, 250 pcs, 3–4 days**. Now QVL ✓, qty 250 — the 576 GB tier is legitimate.
+4. **32MH total was €8 too low.** 12 × €1 150,71 ≈ **€13 808,47**, not €13 800,71. The delta to the 32MD build is **+€1 203**, not +€1 195. The renderer now derives €/GB and the alternative totals from the per-module price, so a display string cannot drift again.
+
+Also cleaned: a duplicate barax 32MD row, a 32MH row carrying a 64 GB price, G.Skill/clone rows still marked buyable, and the stale `fails the 2Rx4 directive` reasons the dropped rule left behind.
+
+### 2. The site rebuild
+
+`ram-board.html` is now a five-row **12-channel price matrix** — 12×16, 12×24, 12×32, 12×48, 12×64 — one cheapest route per row, 12 modules each, sorted by €/GB by default and sortable on every column. Each row carries QVL, supply and the next-best alternative (the QVL-safe 16 GB Samsung, the 26-offer 32MH). The 91 tracked offers moved behind a closed `<details>`, buyable-first, with €/GB computed from the price object rather than parsed from a display string.
+
+The JEDEC gate is stated in the header in both directions: a 7600-rated `KF576RH40RB` declaring JEDEC 6400 qualifies; a 6400-rated `KF564R32RBE` declaring JEDEC 4800 does not. The FURY rows carry that note in the offer table.
+
+### 3. Verdict
+
+**Floor unchanged: €28.09/GB** (Micron 96 GB, esus it, single seller) — still outside the €32k ceiling. **In-budget best €/GB: 576 GB at €30.71/GB (€17 688).** Lowest total spend: 192 GB at €6 948, but QVL ✗. **Budget baseline: 384 GB at €12 605, €32.83/GB.** 288 GB remains unbuildable (10 pcs). 768 GB remains the worst step (+€54.72/GB marginal).
+
+**Coverage:** 1 Geizhals sweep (55 products), 5 shop reads (Proshop, Tonitrus, ibfusion, senetic.pl, senetic.de), 1 CoreWave live board, 1 rebuild. No expansion shop opened.
