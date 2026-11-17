@@ -3656,3 +3656,11 @@ Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € v
 No route changed its rank this pass; nothing to buy that was not available at pass 77. The three new G.Skill SKUs are the closest any part has come to the floor in 15 passes (€29,18/GB) and they fail the JEDEC gate — the gate is the only thing standing between a €2 666 12-module build and the current €6 948 baseline.
 
 **Coverage:** 1 Geizhals category sweep (60 products, 3 new G.Skill SKUs, 9 price moves under 5 %, 0 catalogue withdrawals); camofox 2 profiles / 2 navigations (proshop, tonitrus); curl 8 probes (4 bests re-verified, 5 expansion shops, 0 new prices).
+
+---
+
+## Pass 79 — 2026-11-17T17:xxZ (fast path: flat, no change, 60 products swept)
+
+---
+
+## Pass 80 — 2026-11-17T18:xxZ (fast path: flat, no change, 60 products swept)
