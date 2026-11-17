@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**SWEEP FIRST (pass 70 — METHOD CHANGE, supersedes per-PN searching): run the Geizhals CATEGORY SWEEP before anything else — one fetch returns the ENTIRE DDR5-6400-RDIMM catalogue (56 products, price-sorted):** `https://geizhals.de/?cat=ramddr3&xf=7500_DDR5~7571_7600MT/s~7571_7200MT/s~7571_6800MT/s~7571_6400MT/s~7761_RDIMM&pagesize=100&sort=r&promode=false&hloc=at&hloc=de&hloc=eu` — trawl: `body.data` is a list of **ints** → `bytes(d['body']['data']).decode('utf-8','ignore')`; grid is Svelte but present in the HTML (split on `<div class="galleryview__item card">`, `galleryview__name-link` for name/URL, first `€ x,xx` for price). **JEDEC DISCRIMINATOR (Geizhals spec tables): QUALIFIES = `Spannung: 1.1V (JEDEC-Normspannung)` + `Besonderheiten: JEDEC-Standardprofil (DDR5-6400/CL52)`; FAILS = `OC-Profile: AMD EXPO` + `Spannung: 1.4V` + no JEDEC-profile line.** The sweep found two products 68 passes of per-PN searching missed, and proved the €28.09 floor against all 56 products at once.
+
 **PASS-69 BOARD FIX (applies to every future pass): the KPI cards now SKIP any part whose published qty is below the 12 modules a full population needs.** Before the fix, the "lowest total spend" card headlined **12× a 2-piece CoreWave listing** — a route that cannot be ordered. `ram-offers.json` now carries an optional `qty` field; a sub-floor price on short stock is a **price observation, not a buy**, and must never reach the headline.
 
 **SUB-FLOOR BUT NOT BUILDABLE (pass 69): Micron `MTC20F104XS1RC64BC1` 48 GB 1Rx4 @ CoreWave $1,467 = €27.64/GB net-basis (1.6 % under the €28.09 floor), QVL ✓ Brand New — but 2 pcs.** The real pass-69 finding is systemic: the **48 GB 1Rx4/2Rx8 shape is cheaper per GB than 96 GB 2Rx4** (€27.64 / €30.71 / €32.55 across three listings), which is what dropping the 2Rx4 rule unlocked. **New tier: Samsung `M321RAJA0MB2-CCP` 128 GB 2Rx4 QVL ✓ at €32.25/GB, 95 pcs → 12× = 1536 GB at €49 536 net-basis.** Also: CoreWave's `M321RYGA0PB2` 96 GB is now €30.72/GB and its product page says Brand New • 3 Yr where pass 57 recorded "Clean Pull" (used) — **condition is per-lot, verify before ordering.**
@@ -3081,3 +3083,104 @@ Note `M321RYGA0PB2-CCP` (96 GB) is **$3,261 = €30.72/GB** and is now listed **
 **Unchanged buy ranking (buildable, ≥12 pcs):** 12× Micron 96 GB @ Geizhals **€28.09/GB → €32 348 net (1152 GB)** · 12× Samsung 48 GB @ CoreWave €30.71/GB → €17 689 (576 GB) · 12× Samsung 128 GB @ CoreWave €32.25/GB → €49 536 (1536 GB) · 12× Kingston 64MD @ Allegro €36.71/GB → €28 195 (768 GB).
 
 Coverage: camofox 4 profiles / 8 navigations (ceneo, proshop, tonitrus, allegro offer, ceneo 48GB search); trawl 7 scrapes (Micron 96, CoreWave board, CoreWave 48/128 pages, 4 QVL-shape searches); curl 6 (ibfusion, senetic ×2, ebay, amazon). 1 sub-floor observation, 1 new capacity tier, 3 new listings, 4 shapes closed as unsold.
+
+---
+
+## Pass 70 — 2026-11-17T01:2xZ (**methodology change: the Geizhals CATEGORY SWEEP replaces one-PN-at-a-time search.** 56 DDR5-6400 RDIMM products in one fetch, sorted by price. It found two never-seen products, both correctly disqualified — and proved the floor is real.)
+
+### 0. The sweep query (use this every pass from now on)
+
+```
+https://geizhals.de/?cat=ramddr3
+  &xf=7500_DDR5~7571_7600MT/s~7571_7200MT/s~7571_6800MT/s~7571_6400MT/s~7761_RDIMM
+  &pagesize=100&sort=r&promode=false&hloc=at&hloc=de&hloc=eu
+```
+
+- Page title confirms the filter: *"Arbeitsspeicher (RAM) Speicher mit Datenrate: 6400MT/s, 6800MT/s, 7200MT/s, 7600MT/s | DIMM-Bezeichnung: RDIMM"*.
+- **Returns the entire DDR5-6400-RDIMM catalogue: 56 products, price-sorted.** This replaces the `?fs=<PN>` searches, which only ever found the one part number you thought to ask for.
+- **Parsing note (trawl):** the body arrives as `body.data` = a list of **ints**, not hex strings — decode with `bytes(d['body']['data']).decode('utf-8','ignore')`. The grid is Svelte-rendered but present in the HTML: split on `<div class="galleryview__item card">`, take `galleryview__name-link` for name/URL and the first `€ x,xx` for the price.
+- `hloc=at&hloc=de&hloc=eu` widens the merchant pool to AT/DE/EU.
+
+### 1. Re-check of the bests
+
+| Offer | Result | Route |
+|---|---|---|
+| **Allegro 64MD @ komputera_pl (QVL ✓)** | **HOLDS 12 736,00 zł** (5th read) · savings **165 zł** · BLACK WEEKS badge **still on the offer page** · delivery sob. 21 lis. | camofox `--user ceneo` + offer page |
+| Proshop.pl kit | **26 723,00 zł / 21 726,02 zł netto** — holds | camofox `--user proshop` |
+| ibfusion 64MD | **2 481,00 € excl. VAT** · 5 in stock — unchanged | curl |
+| senetic.pl / .de | **11 377,59 / 16 426,27 zł** · **2.582,03 / 3.727,78 €** — unchanged (13th flat) | curl |
+| Tonitrus CCP | **3.174,50 € brutto / 2.667,65 € netto** · 50 verfügbar — unchanged | camofox |
+| Micron 96 GB @ Geizhals | **3.209,50 €** = €28.09/GB net · 1 Angebot — unchanged | trawl |
+
+### 2. The whole catalogue, net €/GB — and the near-miss that is correctly excluded
+
+| net €/GB | gross € | Product | Verdict |
+|---|---|---|---|
+| **28.09** | 3.209,50 | Micron 96 GB 2Rx4 (esus it) | **the floor — unchanged** |
+| 28.47 | 6.504,00 | **G.Skill T5 Neo 192 GB (4×48 GB)** | ❌ **disqualified (see below)** |
+| 28.47 | 6.504,00 | G.Skill Zeta R5 Neo 192 GB | ❌ same |
+| 28.52 | 13.033,00 | **G.Skill Zeta R5 Neo 384 GB (8×48 GB)** | ❌ same |
+| 32.83 | 1.250,00 | Kingston Server Premier 32 GB 2Rx8 (barax) | QVL ✓, qty unverified |
+| 35.53 | 4.058,99 | Kingston Server Premier 96 GB 2Rx4 (electronis) | QVL ✗ |
+| 37.58 | 2.861,74 | Kingston Server Premier 64 GB 2Rx4 | QVL ✓ |
+| 37.91 | 11.550,39 | Kingston FURY Renegade Pro 256 GB (7200-rated) | SPD ✓, QVL ✗ |
+| 39.39 | 2.999,81 | Micron 64 GB 2Rx4 tray (serverandmore) | QVL ✓ |
+| 40.30 | 3.069,00 | Samsung 64 GB 2Rx4 | QVL ✓ family |
+| 40.58 | 4.635,94 | Samsung 96 GB 2Rx4 | QVL ✓ |
+| **45.61** | 6.946,90 | **Samsung 128 GB 2Rx8** (electronis) | QVL ✓, new shape — see §4 |
+| 46.82 | 3.566,11 | SK hynix 64 GB 2Rx4 (esus it) | QVL ✓ |
+
+**Only the G.Skill kits sit near the floor — and they are excluded.** G.Skill's own product page (`/products/1/400/452/T5-Neo-AMD-EXPO`, read via camofox) states for the exact kit in question:
+
+> `F5-6400R3239G48GQ4-T5N  T5 Neo  **Up to DDR5-6400***  CL32-39-39-102  **1.40V**  192GB (4x48GB)  AMD EXPO  * Requires overclocking/BIOS adjustments. Maximum speed and performance depends on system components, including motherboard and CPU.`
+
+**"Up to DDR5-6400\*" + "\* Requires overclocking/BIOS adjustments" + 1.40 V + CL32** = the 6400 is the **EXPO overclock profile**, not the JEDEC SPD default. A JEDEC-only BIOS will not apply it. Geizhals's own spec table agrees independently: **`OC-Profile: AMD EXPO`**, **`Spannung: 1.4V`**, and — decisively — **no "JEDEC-Standardprofil" line**, which the qualifying products do carry.
+
+Corroboration from Geizhals's spec tables (the discriminator, worth remembering):
+- Samsung 128 GB: **`Spannung: 1.1V (JEDEC-Normspannung)`**, **`Besonderheiten: JEDEC-Standardprofil (DDR5-6400/CL52)`** ← qualifies
+- G.Skill 192 GB: `Spannung: 1.4V`, `OC-Profile: AMD EXPO`, no JEDEC-profile line ← does not qualify
+
+**Also decisive: G.Skill appears NOWHERE on the MZ23-SU0 QVL** (checked all 88 rows at 6400 — no G.Skill entry at all, while TeamGroup, TRUSTA and V-color are all present). So the kit fails on board validation independently of the SPD question.
+
+⇒ **The G.Skill 192/384 GB kits at €28.47/GB are not a build.** They are the closest thing to a counter-offer this hunt has produced, and they fall to the same rule that killed `KF564R32RBE-16`.
+
+### 3. Two products the per-PN search had never surfaced
+
+| Product | Why it matters | Verdict |
+|---|---|---|
+| **Samsung 128 GB 2Rx8** `M321RAJA0MB2-CCP` | a **128 GB 2Rx8** — the record only ever had 128 GB 2Rx4 (QVL lists `-CCPWC`/`-CCPPC` as 2Rx4) | QVL-listed family, 4 EU offers, **no beat** |
+| **G.Skill 192/384 GB kits (4×48 / 8×48)** | 48 GB module kits at the floor price | ❌ EXPO-only + no QVL row |
+
+### 4. Samsung 128 GB 2Rx8 priced — 4 EU offers, no beat
+
+| Merchant | Gross | Net | €/GB net |
+|---|---|---|---|
+| electronis.de | 6.946,90 | 5.837,73 | **€45.61** |
+| Senetic.de | 7.348,94 | 6.175,58 | €48.25 |
+| IT Planet | 7.811,63 | 6.564,39 | €51.28 |
+| esus it | 8.585,98 | 7.215,11 | €56.37 |
+
+Geizhals's spec table for this part is the cleanest JEDEC evidence seen anywhere in this record: **1.1V (JEDEC-Normspannung)**, **JEDEC-Standardprofil (DDR5-6400/CL52)**, dual rank x8, 31.25 mm JEDEC height. Still **€45.61/GB vs the €28.09 floor** — a 12× build would be €70 053 net for 1536 GB, against CoreWave's $4,565 (€32.25/GB, €49 536).
+
+### 5. NEW listings
+
+| Part | JEDEC verdict | Shop | Exact price | Stock | URL |
+|---|---|---|---|---|---|
+| Samsung `M321RAJA0MB2-CCP` 128 GB 2Rx8 | **JEDEC-Standardprofil DDR5-6400/CL52, 1.1V** (Geizhals spec) · no SPD sentence (Samsung) | electronis.de (via Geizhals) | 6.946,90 € inkl. MwSt | listed | https://geizhals.de/samsung-rdimm-128gb-m321raja0mb2-ccp-a3937268.html |
+| G.Skill T5 Neo 192 GB (4×48) | **FAILS — "Up to DDR5-6400*" EXPO profile @1.40V, needs OC; not on QVL** | Alternate (via Geizhals) | 6.504,00 € inkl. MwSt | listed | https://geizhals.de/g-skill-t5-neo-rdimm-192gb-kit-f5-6400r3239g48gq4-t5n-a3573607.html |
+| G.Skill Zeta R5 Neo 384 GB (8×48) | **FAILS — same** | Alternate (via Geizhals) | 13.033,00 € inkl. MwSt | listed | https://geizhals.de/?cat=ramddr3 |
+
+### 6. Blocked list
+
+- New: **G.Skill product pages** — `gskill.com/product/165/...` 404s ("File not found."); the live path is `/products/1/400/452/T5-Neo-AMD-EXPO` (category id 400 = R-DIMM enterprise). trawl alone returns a near-empty body for the search page; camofox renders it.
+- Unchanged: idealo 403, cyberport 403, nbb 404, eBay 403, Amazon 503, komputera.pl parked, Mindfactory/Kaufland, CH tier, gigabyte 403 to curl.
+
+### 7. Verdict + coverage
+
+**Did anything beat the cheapest verified offer? — No.** The full-catalogue sweep confirms the floor: **Micron 96 GB @ €28.09/GB net**, with the next three entries all disqualified for the same structural reason (OC profile, not a JEDEC default) or simply dearer.
+
+**The value of the sweep is methodological, not a price win:** it proves the €28.09 floor against **all 56** qualifying-shape products in one shot, and it caught two products (Samsung 128 GB 2Rx8, G.Skill 48 GB kits) that 68 passes of per-PN searching had missed. It also gives a reusable **discriminator**: Geizhals's `Spannung: 1.1V (JEDEC-Normspannung)` + `Besonderheiten: JEDEC-Standardprofil` ⇒ qualifies; `OC-Profile: AMD EXPO` + `1.4V` ⇒ does not.
+
+**Standing instruction for future passes: run the category sweep FIRST, before per-PN searches.** It is one fetch and it is exhaustive.
+
+Coverage: trawl 4 (category sweep, G.Skill 192 GB product page, Samsung 128 GB page, G.Skill search); camofox 4 profiles / 6 navigations (ceneo, proshop, tonitrus, allegro offer, G.Skill T5 Neo category ×3 evals); curl 4 (ibfusion, senetic ×2, gskill). 56 products enumerated, 2 never-seen products found, 1 JEDEC-profile discriminator established, 0 beats.
