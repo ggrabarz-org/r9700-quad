@@ -105,13 +105,15 @@ if lad and lad.get("rows"):
         rt = html.escape(r["route"])
         return f'<a href="{html.escape(r["url"])}">{rt}</a>' if r.get("url") else rt
 
+    # sort by TOTAL SPEND (cheapest build first), not by EUR/GB -- the ladder answers "what can I afford"
+    _lrows = sorted(lad["rows"], key=lambda r: (r.get("total_net_eur") is None, r.get("total_net_eur") or 0))
     lrows = "".join(
         f"<tr><td><b>{html.escape(r['cap'])}</b><br><span class='k'>{html.escape(r['caveat'])}</span></td>"
         f"<td>{_lroute(r)}</td>"
         f"<td class='num'>{html.escape(r['net'])}</td>"
         f"<td class='num'>{html.escape(r['per_gb'])}</td></tr>"
-        for r in lad["rows"])
-    LADDER = (f"<h1 style='font-size:18px;margin:0 0 6px'>Capacity ladder — cheapest verified route</h1>"
+        for r in _lrows)
+    LADDER = (f"<h1 style='font-size:18px;margin:0 0 6px'>Capacity ladder — cheapest build first</h1>"
               f"<p class='sub' style='margin:0 0 10px'>{html.escape(lad.get('rule',''))} · ladder updated {html.escape(lad.get('updated',''))}</p>"
               f"<table style='margin-bottom:22px'><thead><tr><th>Capacity</th><th>Route</th><th class='num'>Net total</th><th class='num'>€/GB</th></tr></thead>"
               f"<tbody>{lrows}</tbody></table>")
@@ -180,7 +182,7 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
   code {{ color:#4cc9f0; }}
 </style></head><body><div class="wrap">
 <h1>RAM offer board — DDR5-6400 RDIMM (JEDEC-SPD rule)</h1>
-<p class="sub">Board: <b>GIGABYTE MZ23-SU0 (Rev. 3.x)</b> · CPU: EPYC 9555 · 12-channel, 12 DIMM slots (2DPC capable, up to 9 TB) · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). <b>Any rank/org (directive 2026-11-17)</b> — the rated speed on the box is irrelevant; a 7600-rated kit with a 6400 JEDEC default qualifies, a 6400-rated kit defaulting to 4800 does not. Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
+<p class="sub">Board: <b>GIGABYTE MZ23-SU0 (Rev. 3.x)</b> · CPU: EPYC 9355P · 12-channel, 12 DIMM slots (2DPC capable, up to 9 TB) · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). <b>Any rank/org (directive 2026-11-17)</b> — the rated speed on the box is irrelevant; a 7600-rated kit with a 6400 JEDEC default qualifies, a 6400-rated kit defaulting to 4800 does not. Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
 <div class="kpi">
   <div class="card"><h2>{kit_cap}</h2><div class="big">{kit_net}</div><span class="k">{html.escape(kit_label)}{f' — <a href="{html.escape(kit_url)}">source ↗</a>' if kit_url else ''}</span></div>
   <div class="card"><h2>Cheapest per GB — QVL-passing</h2><div class="big">{gb_best}</div><span class="k"><a href="{html.escape(gb_url)}">open the offer ↗</a> · {html.escape(gb_label)}</span></div>

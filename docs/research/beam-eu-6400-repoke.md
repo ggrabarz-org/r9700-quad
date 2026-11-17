@@ -3267,3 +3267,63 @@ This is a recurring failure mode in this file: structured numbers and prose stri
 **Was anything new learned? — Yes, two things:** (a) **morele.net** is a real, major PL retailer selling the QVL 64 MD at €37.57/GB — the best non-Allegro price on that module, still 2.3 % behind komputera_pl's €36.71; (b) **Geizhals `?fs=` has stopped working** (JS-only shell), so the category sweep is now load-bearing and must not be skipped.
 
 **Coverage:** trawl 4 (category sweep, Micron 96 GB page, 2 × `?fs=`), camofox 5 profiles / 7 navigations (allegro, proshop ×2, tonitrus, alternate ×2), curl 5 (morele, bora, x-kom, dcs, CoreWave, ibfusion, senetic). 55 products enumerated, 1 shop added (morele), 4 shops probed without result, 1 record string corrected, 0 beats.
+
+---
+
+## Pass 72 — 2026-11-17T01:40Z (user directive: **budget ceiling**. The ladder was sorted by €/GB, which put 96 GB modules on top of an affordability page; re-sorted by total spend and extended down to 16/24/32 GB. Two findings: **64 GB modules are the worst purchase in the matrix**, and **24 GB does not exist in buildable quantity.**)
+
+### 0. The Allegro link bug (user-reported)
+
+The ladder's 768 GB row pointed at **`ceneo.pl/182533999`** — a price-comparison page — while the offer itself lives on Allegro. The correct URL was already in the offers table (`allegro.pl/oferty-produktu/...-72b7c8e6-...`) and in the KPI card, so the two disagreed. **Fixed: the ladder row now links Allegro directly.** Ceneo remains useful only as a price history signal, never as the buy link.
+
+### 1. Ladder re-sorted by TOTAL SPEND, not €/GB (renderer fix)
+
+`tools/render_ram_board.py` built the ladder in JSON order, and the JSON was ordered by €/GB — so the page led with 12×96 GB (€32 k) on a question that was really "what can I afford". The renderer now sorts `lad["rows"]` by `total_net_eur` ascending (unbuildable rows last) and the heading reads **"Capacity ladder — cheapest build first"**.
+
+### 2. The full marginal-cost matrix — this is the decisive table
+
+| Tier | Net total | €/GB | Marginal cost of getting there |
+|---|---|---|---|
+| **192 GB** (12×16) | €6 948,31 | €36.19 | — |
+| **384 GB** (12×32) | €12 605,04 | €32.83 | +192 GB for **+€5 657** = €29.46/GB |
+| **576 GB** (12×48) | €17 687,64 | €30.71 | +192 GB for **+€5 083** = €26.47/GB |
+| 768 GB (12×64) | €28 194,61 | €36.71 | +192 GB for **+€10 507** = **€54.72/GB** ← worst |
+| **1152 GB** (12×96) | €32 364,71 | €28.09 | +384 GB for **+€4 170** = **€10.86/GB** ← best |
+
+**Two structural facts fall out:**
+
+1. **64 GB modules are the single worst purchase in the matrix.** The 576→768 step costs **€54.72/GB marginal** — dearer than buying 16 GB modules. It is the only tier where spending more per GB *and* more in total both happen at once. The 768 GB row is now labelled **POOR VALUE / DOMINATED** on the board.
+2. **768→1152 GB is almost free.** For **€4 170 more (+14.8 %)** you get **50 % more capacity** — €10.86/GB marginal. The 96 GB tier is not "car money" *relative to 64 GB*; the 64 GB tier is the expensive mistake that makes 96 GB look unreachable.
+
+### 3. Budget tiers priced
+
+| Tier | Part | Gross | Net | €/GB | Stock reality |
+|---|---|---|---|---|---|
+| **192 GB** | Kingston `KSM64R52BS8-16MD` 16 GB 1Rx8 | 689,00 € | €579,00 | €36.19 | QVL ✓ · JEDEC-Standardprofil 6400/CL52 @1.1V · **cheapest full population, worst €/GB** |
+| **288 GB** | Micron `MTC10F108YS1RC64BC1` 24 GB | $1 087 | — | €40.96 | ✗ **only 10 pcs at CoreWave — needs 12. NOT BUILDABLE** |
+| **384 GB** | Kingston `KSM64R52BD8-32MD` 32 GB 2Rx8 | 1 250,00 € | €1 050,42 | **€32.83** | QVL ✓ · JEDEC-Standardprofil 6400/CL52 @1.1V · **'1 Angebot' — barax only** |
+| 384 GB alt | Kingston `KSM64R52BD8-32MH` 32 GB 2Rx8 | 1 369,34 € | €1 150,71 | €35.96 | **26 Angebote** — buy supply certainty for +€1 195 total |
+
+**The 32 GB tier is the budget answer**, and it is genuinely good: **€32.83/GB**, only €4.74/GB worse than the 96 GB floor, for **€12 605 net** — 39 % of the 96 GB build's cost for a third of its capacity. It clears the 256 GB threshold in `DECISIONS.md §1.6` (every load except DeepSeek UD-Q8 has multiple times headroom at 512 GB; at 384 GB the Qwen3.8 and DeepSeek 2.00/2.25 loads still fit, UD-Q8 does not).
+
+**The single sourcing risk**: the €1 250,00 price is **one merchant (barax)**, "Ab Lager lieferbar, 1-3 Werktage". Twelve modules from one small merchant is a real ask. The `-32MH` variant at €1 369,34 has **26 offers** — for **+€1 195** you remove that risk entirely. Recommended if ordering today.
+
+**24 GB is dead as a shape.** The only QVL 24 GB part is TeamGroup `CTCMD524G6400HC32ABK` with zero EU offers and 1.35 V (not JEDEC 1.1 V); CoreWave's Micron 24 GB has 10 pcs. Do not plan a 288 GB build.
+
+### 4. Verdict
+
+**Budget answer: 12× Kingston `KSM64R52BD8-32MD` @ €1 250,00 inkl. (barax) = €12 605,04 net for 384 GB at €32.83/GB.** If the 1-offer risk is unacceptable, `-32MH` at €13 800,71 net (€35.96/GB, 26 sellers).
+
+**Structural answer: skip 64 GB entirely.** Either stop at 48 GB × 12 = 576 GB (€17 688, €30.71/GB — best value below 96 GB) or go to 96 GB × 12 (€32 365, €28.09/GB). The 64 GB tier is dominated on every axis and should not be bought at any of the prices found so far.
+
+**Coverage:** trawl 3 (32MD, 32MH pages, plus 2 earlier), curl 4 (barax root/search ×3, CoreWave reuse), camofox 0 (reused p71 reads). 11 × 32 GB SKUs compared across the whole catalogue, 5 marginal steps computed, 1 renderer bug fixed, 1 wrong link fixed.
+
+### 5. CORRECTION — the 192 GB row carried a false QVL badge
+
+Written in error this pass and caught before commit: I marked Kingston `KSM64R52BS8-16MD` **QVL ✓**. **It is not.** The MZ23-SU0 QVL lists exactly four Kingston 6400 SKUs — `KSM64R52BD8-32MD`, `-32MH`, `KSM64R52BD4-64MD`, `-64MH` — and **no 16 GB Kingston row at any speed**.
+
+The part is electrically correct (Geizhals: `1.1V (JEDEC-Normspannung)` + `JEDEC-Standardprofil (DDR5-6400/CL52)`, 1Rx8) but **unvalidated on this board**. QVL-valid 16 GB alternatives exist and are all 1Rx8 6400 1.1v on the QVL: Samsung `M321R2GA3PB2-CCP` (CoreWave, $815, 50+ pcs → €39.96–46.06/GB) and Micron `MTC10F1084S1RC64B*`. A **QVL-safe 192 GB build therefore costs €7 700–8 850, not €6 948.**
+
+Verdict unchanged and strengthened: **192 GB is not worth building** — the 384 GB tier costs only €3 657–5 657 more for double the capacity, at a better €/GB. The row is now labelled **"✗ Kingston NOT QVL"** on the board.
+
+**Process note:** this is the second badge error this hunt (the first was the 9-pass Micron 96 GB QVL miss at pass 68). Both came from asserting a QVL status without re-reading the 88-row table. **Every QVL ✓ badge must trace to a row in `qvl6400.json`; when in doubt, check, don't assume.**

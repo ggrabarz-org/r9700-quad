@@ -1,7 +1,91 @@
 {
  "eurpln": 4.407,
- "updated": "2026-11-17T01:05Z",
+ "updated": "2026-11-17T01:40Z",
  "offers": [
+  {
+   "part": "Kingston KSM64R52BD8-32MD (32 GB 2Rx8) — **BUDGET BASELINE, 12×=384 GB**",
+   "spec": "**JEDEC-Standardprofil (DDR5-6400/CL52) at 1.1V** per Geizhals spec table ('Spannung: 1.1V (JEDEC-Normspannung)', 'Besonderheiten: JEDEC-Standardprofil (DDR5-6400/CL52), Micron D-die'), dual rank x8, PC5-51200R. QVL ✓ on MZ23-SU0. **12 modules = 384 GB = EUR 12,605.04 net at EUR 32.83/GB** — the budget answer after the 2026-11-17 ceiling directive. CAVEAT: single merchant ('1 Angebot', barax, 'Ab Lager lieferbar 1-3 Werktage'). The -32MH twin has 26 merchants at EUR 35.96/GB (EUR 13,800.71 total, +EUR 1,195) if supply certainty matters more than price.",
+   "shop": "barax (via Geizhals)",
+   "country": "DE",
+   "org": "2Rx8",
+   "qvl_mz23su0": "pass",
+   "condition": "new",
+   "price_net": "€1.050,42 net (1250,00 ÷1.19)",
+   "price_gross": "€1.250,00 inkl. MwSt",
+   "eur_per_gb": "€32.83",
+   "stock": "'1 Angebot' (barax only) · Ab Lager, 1-3 Werktage · 12 pcs is a real ask — confirm before committing",
+   "checked": "2026-11-17T01:45Z",
+   "state": "new",
+   "best": false,
+   "price": {
+    "cur": "EUR",
+    "gross": 1250.0,
+    "net": 1050.42,
+    "vat": 0.19,
+    "gb": 32,
+    "net_pln": 4629.2,
+    "gross_pln": 5508.75,
+    "gross_derived": false,
+    "net_derived": true
+   },
+   "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32md-a3452629.html"
+  },
+  {
+   "part": "Kingston KSM64R52BD8-32MH (32 GB 2Rx8) — the supply-safe 32 GB twin",
+   "spec": "Same JEDEC-Standardprofil DDR5-6400/CL52 @1.1V + QVL pass as -32MD, but Micron H-die and **26 Angebote** instead of 1. **12 modules = 384 GB = EUR 13,800.71 net at EUR 35.96/GB** — EUR 1,195 more than -32MD buys certainty of supply for a 12-piece order.",
+   "shop": "BA-Computer / Jacob / Future-X / e-tec / F&M / PC-KING (26 Angebote)",
+   "country": "DE/AT",
+   "org": "2Rx8",
+   "qvl_mz23su0": "pass",
+   "condition": "new",
+   "price_net": "€1.150,71 net (1369,34 ÷1.19)",
+   "price_gross": "€1.369,34 inkl. MwSt",
+   "eur_per_gb": "€35.96",
+   "stock": "26 Angebote — best-supplied 6400 part on the German board",
+   "checked": "2026-11-17T01:45Z",
+   "state": "new",
+   "best": false,
+   "price": {
+    "cur": "EUR",
+    "gross": 1369.34,
+    "net": 1150.71,
+    "vat": 0.19,
+    "gb": 32,
+    "net_pln": 5071.18,
+    "gross_pln": 6034.68,
+    "gross_derived": false,
+    "net_derived": true
+   },
+   "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32mh-a3842215.html"
+  },
+  {
+   "part": "Micron MTC10F108YS1RC64BC1 (24 GB) — **24 GB tier does NOT exist as a build**",
+   "spec": "The 288 GB tier idea dies here. CoreWave holds only **10 pcs** of this 24 GB part — a 12-channel build needs 12. The only QVL-listed 24 GB part is TeamGroup CTCMD524G6400HC32ABK, which has **zero EU offers** and runs **1.35 V** (not JEDEC 1.1 V) = fails the gate anyway. **Do not plan a 24 GB build.** Price recorded as an observation only.",
+   "shop": "CoreWave Labs SIA (Riga, LV)",
+   "country": "LV",
+   "org": "1Rx8",
+   "qvl_mz23su0": "unknown",
+   "condition": "new",
+   "price_net": "$1.087 (ex-VAT) ÷1.19 not applicable — quote currency USD",
+   "price_gross": "—",
+   "eur_per_gb": "€40.96",
+   "stock": "**10 pcs** — below the 12 needed. NOT BUILDABLE.",
+   "checked": "2026-11-17T01:45Z",
+   "state": "ok",
+   "best": false,
+   "price": {
+    "cur": "USD",
+    "gross": null,
+    "net": 1087.0,
+    "vat": 0.0,
+    "gb": 24,
+    "net_pln": 4331.22,
+    "gross_pln": null,
+    "gross_derived": false,
+    "net_derived": false
+   },
+   "url": "https://corewavelabs.com/server-memory/"
+  },
   {
    "part": "Kingston KSM64R52BD4-64MD (64 GB 2Rx4) — **NEW SHOP: morele.net**",
    "spec": "SPD-verified 2Rx4 (same MPN as the Allegro floor offer). morele.net is a major PL retailer with real retail presence — unlike komputera_pl (5 ratings, parked domain). **13 035,31 zł brutto / 10 597,81 zł netto = €2 404,78 net = €37.57/GB** — 2.3 % dearer than Allegro's €36.71/GB, so **no beat**, but a genuine second source at a real shop. Catalogue row mislabels the speed as '3200 MHz' — the MPN is authoritative, the part is DDR5-6400. Also listed: 96MC 19 498,99 zł (€37.47/GB, **not QVL**), 64HA 14 539,22 zł (**not QVL**), 32MH 32 GB 6 368,05 zł (€36.70/GB).",
@@ -2427,67 +2511,78 @@
   "Pass 69: CoreWave live board repriced wholesale. FLOOR BROKEN ON EUR/GB but not buildably - Micron MTC20F104XS1RC64BC1 48GB 1Rx4 at $1,467 = EUR 27.64/GB net-basis (1.6% under the 28.09 Micron-96 floor), QVL PASS, Brand New 3yr, but only 2 PCS so it cannot fill 12 slots; logged as a price observation. Systemic finding: the 48GB 1Rx4/2Rx8 shape is cheaper per GB than 96GB 2Rx4 across three independent listings (EUR 27.64 / 30.71 / 32.55) - the direct payoff of dropping the 2Rx4 rule. NEW TIER: Samsung M321RAJA0MB2-CCP 128GB 2Rx4 QVL PASS at $4,565 = EUR 32.25/GB, 95 pcs => 12x = 1536GB at EUR 49,536 net-basis. Also flagged: CoreWave M321RYGA0PB2 96GB was Clean Pull/used at pass 57 but the product page now says Brand New 3yr at EUR 30.72/GB 50+ pcs - condition is per-lot, verify before ordering. Four QVL 6400 shapes closed as unsold on Geizhals (TeamGroup 24GB, TRUSTA 32GB, 2 Samsung 48GB). ebay.de 403, amazon.de 503.",
   "Pass 69 board fix: KPI cards now exclude parts whose published qty is below the 12 modules a full population needs (ram-offers.json carries an optional qty field). Before the fix the \"lowest total spend\" card headlined 12x a 2-piece CoreWave listing, which is not orderable.",
   "Pass 70 - METHODOLOGY: adopted the Geizhals CATEGORY SWEEP (see sweep_method) as the primary enumeration route; it returns all 56 DDR5-6400 RDIMM products price-sorted in ONE fetch and found two products that 68 passes of per-PN searching never surfaced. Samsung 128GB 2Rx8 M321RAJA0MB2-CCP: cleanest JEDEC evidence yet (\"1.1V (JEDEC-Normspannung)\" + \"JEDEC-Standardprofil DDR5-6400/CL52\"), 4 EU offers, EUR 45.61/GB net - no beat. G.Skill T5 Neo / Zeta R5 Neo 192GB+384GB kits at EUR 28.47/GB are DISQUALIFIED: G.Skill's own page says \"Up to DDR5-6400*\" + \"* Requires overclocking/BIOS adjustments\" at 1.40V (EXPO profile, not JEDEC default), Geizhals spec says \"OC-Profile: AMD EXPO\" with no JEDEC-Standardprofil line, and G.Skill is absent from all 88 QVL rows at 6400. Floor holds: Micron 96GB EUR 28.09/GB.",
-  "Pass 71 - SWEEP: catalogue 55 products (was 56) - the dearest Kingston 32GB 2Rx8 listing at 1 895,46 EUR withdrew; no new products, no price moves elsewhere. Floor unchanged: Micron 96GB MTC40F204WS1RC64BC1 3 209,50 EUR inkl. (esus it, sole offer) = EUR 28.09/GB. Bests flat: Allegro 64MD 12 736,00 zl (6th consecutive read, 'Oszczedzasz 165 zl', delivery sob. 21 lis.), Proshop.pl 96GB 25 881,00 / 21 041,46 zl netto (RECORD FIX: the display string claimed 21 726,02 and 'moved up pass 68' while price.net already held 21 041,46 - string corrected), ibfusion 2481.00 EUR (JSON-LD), senetic.pl 11 377,59 zl, Tonitrus 3 174,50 / 2 667,65 EUR netto (50 pcs), CoreWave unchanged (48GB Micron $1,467 x2 sub-floor not buildable; Samsung 48GB $1,630/250 = EUR 30.71/GB; Samsung 128GB $4,565/95 = EUR 32.25/GB). NEW SHOP: morele.net (PL, major retailer) - KSM64R52BD4-64MD 13 035,31 zl brutto / 10 597,81 netto = EUR 37.57/GB, 2.3% above Allegro's EUR 36.71/GB => no beat but a real second source. PROBED, NO RESULT: alternate.de (search returns 872/922 mixed hits, DDR5-6400 64GB not in the visible 24 - JS paging), x-kom.pl 403, bora-computer.de JS-only, dcs-shop.de connection failed, geizhals ?fs= now returns a JS-only shell (no grid) - the category sweep is the only working Geizhals enumeration."
+  "Pass 71 - SWEEP: catalogue 55 products (was 56) - the dearest Kingston 32GB 2Rx8 listing at 1 895,46 EUR withdrew; no new products, no price moves elsewhere. Floor unchanged: Micron 96GB MTC40F204WS1RC64BC1 3 209,50 EUR inkl. (esus it, sole offer) = EUR 28.09/GB. Bests flat: Allegro 64MD 12 736,00 zl (6th consecutive read, 'Oszczedzasz 165 zl', delivery sob. 21 lis.), Proshop.pl 96GB 25 881,00 / 21 041,46 zl netto (RECORD FIX: the display string claimed 21 726,02 and 'moved up pass 68' while price.net already held 21 041,46 - string corrected), ibfusion 2481.00 EUR (JSON-LD), senetic.pl 11 377,59 zl, Tonitrus 3 174,50 / 2 667,65 EUR netto (50 pcs), CoreWave unchanged (48GB Micron $1,467 x2 sub-floor not buildable; Samsung 48GB $1,630/250 = EUR 30.71/GB; Samsung 128GB $4,565/95 = EUR 32.25/GB). NEW SHOP: morele.net (PL, major retailer) - KSM64R52BD4-64MD 13 035,31 zl brutto / 10 597,81 netto = EUR 37.57/GB, 2.3% above Allegro's EUR 36.71/GB => no beat but a real second source. PROBED, NO RESULT: alternate.de (search returns 872/922 mixed hits, DDR5-6400 64GB not in the visible 24 - JS paging), x-kom.pl 403, bora-computer.de JS-only, dcs-shop.de connection failed, geizhals ?fs= now returns a JS-only shell (no grid) - the category sweep is the only working Geizhals enumeration.",
+  "Pass 72 - BUDGET RULE (user 2026-11-17): ceiling at 64GB-and-below, 96GB x12 rejected as car money. Two fixes: (1) ladder LINK BUG - the 768GB row pointed at ceneo.pl while the offer lives on Allegro; now links Allegro directly. (2) ladder SORT - renderer built it in JSON order which was EUR/GB ascending, leading the page with 12x96GB on an affordability question; now sorts by total_net_eur and reads 'cheapest build first'. Budget tiers priced: 192GB 12x16 = EUR 6,948 (EUR 36.19/GB); 384GB 12x32 KSM64R52BD8-32MD = EUR 12,605 (EUR 32.83/GB, '1 Angebot' barax, -32MH twin at EUR 35.96 with 26 offers = EUR 13,801); 576GB 12x48 = EUR 17,688 (EUR 30.71/GB); 24GB tier DEAD (CoreWave 10 pcs only, TeamGroup QVL part zero EU offers + 1.35V). MARGINAL ANALYSIS: 576->768 costs EUR 54.72/GB (worst in matrix, dearer than 16GB modules), while 768->1152 costs only EUR 10.86/GB (+EUR 4,170 for +50% capacity). 64GB tier is dominated on every axis - do not buy it."
  ],
  "ladder": {
-  "updated": "2026-11-17T00:50Z",
-  "rule": "cheapest route per capacity on GIGABYTE MZ23-SU0 (user-selected 2026-11-16) · QVL-PASSING 2Rx4 preferred · JEDEC-SPD-6400@1.1V · net/VAT-less · zł @ 4.4070",
+  "updated": "2026-11-17T01:40Z",
+  "rule": "cheapest route per capacity on GIGABYTE MZ23-SU0 (user-selected 2026-11-16) · QVL-PASSING preferred · JEDEC-SPD-6400@1.1V · net/VAT-less · zł @ 4.4070 · **SORTED BY TOTAL SPEND, NOT €/GB** (pass 71 fix, user request) — 12 DIMM slots, full 12-channel population on every row",
   "rows": [
    {
-    "cap": "1152 GB (12×96, 2Rx4) — QVL ✓ NEW, cheapest €/GB",
-    "route": "12× Micron MTC40F204WS1RC64BC1 @ Geizhals (esus it)",
-    "net": "€32.348,47",
-    "per_gb": "€28.09",
-    "caveat": "QVL ✓ · **Brand New** · no SPD sentence · **cheapest of the two Micron routes: 11.5% / €4.220,96 below CoreWave's best lot for the identical part** · BUT single-seller: Geizhals aggregate confirms \"1 Angebot\" · single-review merchant with the part absent from their own catalogue => verify stock BEFORE ordering",
-    "url": "https://geizhals.de/micron-rdimm-96gb-mtc40f204ws1rc64bc1-a3632953.html"
+    "cap": "192 GB (12×16, 1Rx8) — ✗ Kingston NOT QVL",
+    "tier_gb": 192,
+    "total_net_eur": 6948.31,
+    "route": "12× Kingston KSM64R52BS8-16MD @ Geizhals (barax) — fails QVL",
+    "net": "€6.948,31 (unvalidated) / €7.700+ QVL-safe",
+    "per_gb": "€36.19 (unvalidated) / €40+ QVL-safe",
+    "caveat": "**CORRECTION (pass 72): the Kingston 16 GB parts are NOT on the MZ23-SU0 QVL.** The QVL lists only four Kingston 6400 SKUs — `KSM64R52BD8-32MD`, `-32MH`, `KSM64R52BD4-64MD`, `-64MH`. No 16 GB Kingston row exists at any speed. The part itself is fine electrically (Geizhals: 'Spannung: 1.1V (JEDEC-Normspannung)', 'Besonderheiten: JEDEC-Standardprofil DDR5-6400/CL52', 1Rx8) but it is **unvalidated on this board**. **QVL-valid 16 GB alternatives** (all 1Rx8 6400 1.1v on the QVL): Samsung `M321R2GA3PB2-CCP` @ CoreWave $815/50+pcs = €39.96–46.06/GB, Micron `MTC10F1084S1RC64B*` — so a QVL-safe 192 GB build costs **€7 700–8 850**, not €6 948. Either way the worst €/GB of any tier. **192 GB is not worth building** — the 384 GB tier costs only €3 657–5 657 more for double the capacity.",
+    "url": "https://geizhals.de/kingston-server-premier-rdimm-16gb-ksm64r52bs8-16md-a3452654.html",
+    "budget": true
    },
    {
-    "cap": "576 GB (12×48, 1Rx4/2Rx8) — QVL ✓ NEW, cheapest BUILDABLE mid tier",
+    "cap": "288 GB (12×24, 1Rx8) — ✗ NOT BUILDABLE",
+    "tier_gb": 288,
+    "total_net_eur": null,
+    "route": "12× Micron MTC10F108YS1RC64BC1 24 GB @ CoreWave — only 10 pcs",
+    "net": "—",
+    "per_gb": "€40.96 (if it existed)",
+    "caveat": "**No buildable 24 GB route exists.** CoreWave holds only **10 pcs** of the Micron 24 GB (needs 12). The only QVL-listed 24 GB part is TeamGroup `CTCMD524G6400HC32ABK` and it has **zero EU offers** (and is 1.35 V, i.e. not JEDEC 1.1 V). 24 GB is a dead shape for a 12-slot build — do not plan around it.",
+    "url": "https://corewavelabs.com/server-memory/",
+    "budget": true
+   },
+   {
+    "cap": "384 GB (12×32, 2Rx8) — QVL ✓ NEW · THE BUDGET BASELINE",
+    "tier_gb": 384,
+    "total_net_eur": 12605.04,
+    "route": "12× Kingston KSM64R52BD8-32MD @ Geizhals (barax)",
+    "net": "€12.605,04",
+    "per_gb": "€32.83",
+    "caveat": "QVL ✓ · JEDEC-Standardprofil DDR5-6400/CL52 at 1.1V (Geizhals spec) · 2Rx8 · Micron D-die · **the cheapest sensible full-population build** · **CAVEAT: '1 Angebot' — barax is the ONLY merchant, €1 250,00 inkl., 'Ab Lager lieferbar, 1-3 Werktage'; 12 pcs is a real ask for a single small merchant, so confirm stock before committing.** Multi-seller alternative: `-32MH` (Micron H-die) at €1 369,34 with **26 Angebote** = €35.96/GB = €13 800,71 total — €1 195 more buys certainty of supply.",
+    "url": "https://geizhals.de/kingston-server-premier-rdimm-32gb-ksm64r52bd8-32md-a3452629.html",
+    "budget": true
+   },
+   {
+    "cap": "576 GB (12×48, 1Rx4/2Rx8) — QVL ✓ NEW · BEST VALUE",
+    "tier_gb": 576,
+    "total_net_eur": 17687.64,
     "route": "12× Samsung M321R6GA3PB2-CCP @ CoreWave",
-    "net": "$19.560 ≈ €17.689 net-basis",
+    "net": "$19.560 ≈ €17.687,64 net-basis",
     "per_gb": "€30.71",
-    "caveat": "QVL ✓ · Brand New · 250 pcs · no SPD sentence · **48 GB is the cheapest per-GB shape on the board** (pass 69) — newly eligible under the 2026-11-17 rule change",
-    "url": "https://corewavelabs.com/server-memory/"
+    "caveat": "QVL ✓ · Brand New · **250 pcs — enough for 12 with room to spare** · no SPD sentence (Samsung) · **cheapest per-GB of any tier under 96 GB, and cheaper per GB than the 32 GB tier** · €5 083 more than the 384 GB build for **50 % more capacity** — the best money-per-GB trade on the board short of doubling to 96 GB modules · quote-only, ships from Riga LV",
+    "url": "https://corewavelabs.com/server-memory/",
+    "budget": true
    },
    {
-    "cap": "1536 GB (12×128, 2Rx4) — QVL ✓ NEW, new tier",
-    "route": "12× Samsung M321RAJA0MB2-CCP @ CoreWave",
-    "net": "$54.780 ≈ €49.536 net-basis",
-    "per_gb": "€32.25",
-    "caveat": "QVL ✓ · Brand New • 3 Yr · 95 pcs · 33 % more capacity per slot than 96 GB, 14.8 % dearer per GB · 2DPC-capable board, 12 slots",
-    "url": "https://corewavelabs.com/m321raja0mb2-ccp-samsung-128gb-ddr5-6400-rdimm/"
-   },
-   {
-    "cap": "768 GB (12×64, 2Rx4) — QVL ✓ NEW + SPD-verified",
+    "cap": "768 GB (12×64, 2Rx4) — QVL ✓ NEW + SPD-verified · POOR VALUE",
+    "tier_gb": 768,
+    "total_net_eur": 28194.61,
     "route": "12× KSM64R52BD4-64MD @ Allegro komputera_pl",
     "net": "€28.194,61",
     "per_gb": "€36.71",
-    "caveat": "QVL ✓ · **Brand New, SPD-verified** · PL-shipped · **cheapest TOTAL spend** · **PRICE CUT pass 66: 12 898,20 -> 12 736,00 zł (-1,26%), first movement in nine passes** · BLACK WEEKS promo — may fall further or snap back",
-    "url": "https://www.ceneo.pl/182533999"
+    "caveat": "QVL ✓ · Brand New, SPD-verified · PL-shipped · **DOMINATED: only €4 170,35 cheaper than the 1152 GB Micron build while holding 384 GB less — see the 96 GB row. Do not buy this tier unless you specifically need 64 GB modules.** · BLACK WEEKS promo 12 736,00 zł, 6 identical reads",
+    "url": "https://allegro.pl/oferty-produktu/pamiec-ram-ddr5-kingston-ksm64r52bd4-64md-64-gb-72b7c8e6-1065-4a1b-a613-667e1b5c7460",
+    "budget": true
    },
    {
-    "cap": "1152 GB (12×96, 2Rx4) — QVL ✓ NEW (quote-based)",
-    "route": "12× Micron MTC40F204WS1RC64BC1 @ CoreWave",
-    "net": "$43.044 ≈ €38.924 net-basis",
-    "per_gb": "€33.79",
-    "caveat": "QVL ✓ · Brand New · no SPD · quote-confirmed at CoreWave (200 pcs, 3-4 d) — the safer fulfilment of the two Micron routes",
-    "url": "https://corewavelabs.com/mtc40f204ws1rc64bc1-micron-96gb-ddr5-6400-rdimm/"
-   },
-   {
-    "cap": "1152 GB (12×96, 2Rx4) — QVL ✓ USED",
-    "route": "12× Samsung M321RYGA0PB2-CCP @ CoreWave (500-pc lot)",
-    "net": "$38.088 ≈ €34.442 net-basis",
-    "per_gb": "€29.90",
-    "caveat": "QVL ✓ BUT **'Clean Pull' = PULLED/USED**, 1-yr warranty · no SPD sentence",
-    "url": "https://corewavelabs.com/m321ryga0pb2-ccp-samsung-96gb-ddr5-6400-rdimm/"
-   },
-   {
-    "cap": "768 GB (12×64, 2Rx4) — QVL ✓ NEW fallback",
-    "route": "12× KSM64R52BD4-64MD @ Jacob Elektronik (geizhals entry)",
-    "net": "€28.809,84",
-    "per_gb": "€37.51",
-    "caveat": "QVL ✓ · new · SPD-verified · DE in stock · non-promo fallback",
-    "url": "https://geizhals.de/kingston-server-premier-rdimm-64gb-ksm64r52bd4-64md-a3452640.html"
+    "cap": "1152 GB (12×96, 2Rx4) — QVL ✓ NEW, cheapest €/GB OVERALL",
+    "tier_gb": 1152,
+    "total_net_eur": 32364.71,
+    "route": "12× Micron MTC40F204WS1RC64BC1 @ Geizhals (esus it)",
+    "net": "€32.364,71",
+    "per_gb": "€28.09",
+    "caveat": "QVL ✓ (four die-variants) · Brand New · no SPD sentence (Micron) · **cheapest €/GB on the board and only €4 170 more than the 768 GB tier for 50 % more capacity** · BUT single-seller: Geizhals confirms '1 Angebot', single-review merchant, part absent from their own catalogue ⇒ verify stock BEFORE ordering · €32 k is car money, which is why the budget tiers above exist",
+    "url": "https://geizhals.de/micron-rdimm-96gb-mtc40f204ws1rc64bc1-a3632953.html",
+    "budget": true
    }
   ]
  },
@@ -2527,5 +2622,36 @@
   "url": "https://geizhals.de/?cat=ramddr3&xf=7500_DDR5~7571_7600MT/s~7571_7200MT/s~7571_6800MT/s~7571_6400MT/s~7761_RDIMM&pagesize=100&sort=r&promode=false&hloc=at&hloc=de&hloc=eu",
   "note": "RUN THIS FIRST every pass — one fetch returns the ENTIRE DDR5-6400-RDIMM catalogue (56 products, price-sorted), replacing one-PN-at-a-time ?fs= searches. trawl parsing: body.data is a list of ints -> bytes(d[\"body\"][\"data\"]).decode(\"utf-8\",\"ignore\"); grid is Svelte but present in HTML — split on \"<div class=\"galleryview__item card\">\", name/URL from galleryview__name-link, price from the first \"€ x,xx\". hloc=at/de/eu widens the merchant pool.",
   "jadec_discriminator": "Geizhals spec tables discriminate the qualifying from the disqualifying: QUALIFIES = \"Spannung: 1.1V (JEDEC-Normspannung)\" + \"Besonderheiten: JEDEC-Standardprofil (DDR5-6400/CL52)\"; FAILS = \"OC-Profile: AMD EXPO\" + \"Spannung: 1.4V\" + no JEDEC-profile line. Same signal as the Kingston datasheet \"Default (JEDEC):\" line."
+ },
+ "budget_directive": {
+  "set": "2026-11-17",
+  "rule": "User ceiling: 96 GB x12 (EUR 32k) is car money and out of scope. Max out at 64 GB and below, 32 GB being the baseline candidate. Ladder re-sorted by TOTAL SPEND not EUR/GB. The decisive number is MARGINAL EUR/GB per step, not headline EUR/GB.",
+  "marginal_costs": [
+   {
+    "step": "192->384 GB",
+    "added_gb": 192,
+    "added_eur": 5656.73,
+    "marginal_eur_per_gb": 29.46
+   },
+   {
+    "step": "384->576 GB",
+    "added_gb": 192,
+    "added_eur": 5082.6,
+    "marginal_eur_per_gb": 26.47
+   },
+   {
+    "step": "576->768 GB",
+    "added_gb": 192,
+    "added_eur": 10506.97,
+    "marginal_eur_per_gb": 54.72
+   },
+   {
+    "step": "768->1152 GB",
+    "added_gb": 384,
+    "added_eur": 4170.1,
+    "marginal_eur_per_gb": 10.86
+   }
+  ],
+  "conclusion": "64 GB modules are the WORST purchase in the matrix (EUR 54.72/GB marginal, dearer than 16 GB modules). 768->1152 GB costs only EUR 4,170 more (+14.8%) for +50% capacity (EUR 10.86/GB marginal). Within the stated budget: 384 GB @ EUR 12,605 (EUR 32.83/GB) is the baseline; 576 GB @ EUR 17,688 (EUR 30.71/GB) is best value below 96 GB and only EUR 5,083 more."
  }
 }
