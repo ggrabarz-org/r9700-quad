@@ -148,6 +148,9 @@ marginal = " · ".join(
 
 UNBUYABLE = {"excluded", "reject", "qvl-fail", "withdrawn", "unavailable", "blocked", "unreachable", "lead"}
 
+def is_available(o):
+    return not (bool(o.get("excluded_reason")) or o.get("state") in UNBUYABLE)
+
 offers = []
 for i, o in enumerate(D["offers"]):
     p = o.get("price") or {}
@@ -160,22 +163,23 @@ for i, o in enumerate(D["offers"]):
     offers.append((rank, i, o, p))
 offers.sort()
 
-rows = ""
-for _, _, o, p in offers:
-    cur = p.get("cur")
-    gb = per_gb(p)
-    np_ = net_pln(p)
-    part_short = plain(o["part"]).split(" — ")[0]
-    tags = condition_tag(o.get("condition")) + qvl_tag(o.get("qvl_mz23su0")) + state_tag(o.get("state"))
-    extra = f'<div class="note">{esc(o["excluded_reason"])}</div>' if o.get("excluded_reason") else ""
-    extra += f'<div class="note">{esc(o["spd_note"])}</div>' if o.get("spd_note") else ""
-    gross = money(p.get("gross"), cur) if p.get("gross") is not None else "—"
-    net = money(p.get("net"), cur) if p.get("net") is not None else "—"
-    gross_eur = eur(p["gross"], cur) if p.get("gross") is not None and cur else None
-    net_eur = eur(p["net"], cur) if p.get("net") is not None and cur else None
-    if p.get("gross_derived") or p.get("net_derived"):
-        net += '<span class="k">*</span>'
-    rows += f"""<tr>
+def render_rows(items):
+    out = ""
+    for _, _, o, p in items:
+        cur = p.get("cur")
+        gb = per_gb(p)
+        np_ = net_pln(p)
+        part_short = plain(o["part"]).split(" — ")[0]
+        tags = condition_tag(o.get("condition")) + qvl_tag(o.get("qvl_mz23su0")) + state_tag(o.get("state"))
+        extra = f'<div class="note">{esc(o["excluded_reason"])}</div>' if o.get("excluded_reason") else ""
+        extra += f'<div class="note">{esc(o["spd_note"])}</div>' if o.get("spd_note") else ""
+        gross = money(p.get("gross"), cur) if p.get("gross") is not None else "—"
+        net = money(p.get("net"), cur) if p.get("net") is not None else "—"
+        gross_eur = eur(p["gross"], cur) if p.get("gross") is not None and cur else None
+        net_eur = eur(p["net"], cur) if p.get("net") is not None and cur else None
+        if p.get("gross_derived") or p.get("net_derived"):
+            net += '<span class="k">*</span>'
+        out += f"""<tr>
       <td data-v="{esc(plain(o['part']))}" title="{esc(plain(o["part"]))}"><b>{esc(part_short)}</b>
         <div class="tags">{tags}</div>{extra}</td>
       <td data-v="{esc(o['shop'])}" title="{esc(o['shop'])}">{esc(o['shop'].split(' (')[0])}<div class="k">{esc(o.get('country', ''))}</div></td>
@@ -186,6 +190,13 @@ for _, _, o, p in offers:
       <td data-v="{esc(plain(o.get('stock', '')))}" title="{esc(plain(o.get('stock', '—')))}">{esc(plain(o.get('stock', '—'))[:64])}{'…' if len(plain(o.get('stock', ''))) > 64 else ''}</td>
       <td><a href="{esc(o['url'])}">open ↗</a></td>
     </tr>"""
+    return out
+
+avail_offers = [x for x in offers if is_available(x[2])]
+unavail_offers = [x for x in offers if not is_available(x[2])]
+
+rows = render_rows(avail_offers)
+unavail_rows = render_rows(unavail_offers)
 
 # ---------------------------------------------------------------- page
 
@@ -215,6 +226,8 @@ CSS = """
   .offers td:first-child { min-width:200px; max-width:220px; }
   .offers td:nth-child(2) { min-width:140px; max-width:175px; }
   .offers td:nth-child(7) { max-width:180px; }
+  .no-go tr { opacity:.45; filter:grayscale(.6); }
+  .no-go tr:hover { opacity:.85; filter:none; }
   tr:last-child td { border-bottom:0; }
   .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
   tr.best { background:#171d23; box-shadow:inset 3px 0 0 var(--accent); }
@@ -315,8 +328,8 @@ budget ceiling 64 GB modules · net prices, VAT removed · zł @ {num(FX['EUR'],
 <p class="ref">Outside the ceiling: 12×96 GB {esc(ref['part'])} @ {esc(ref['shop'])} — {money(ref['total_net_eur'], 'EUR', 0)},
 {money(ref_gb, 'EUR')}/GB. Cheapest per GB overall, but a €32k build.</p>
 
-<details>
-<summary>All {len(D['offers'])} tracked offers — buyable first · latest check {esc(D.get('updated', NOW)).replace('T', ' ')}</summary>
+<details open>
+<summary>Available offers ({len(avail_offers)}) — buyable or quoteable · latest check {esc(D.get('updated', NOW)).replace('T', ' ')}</summary>
 <div class="scroll"><table class="offers" data-sortable>
 <thead><tr>
   <th data-sortable>Part</th><th data-sortable>Shop</th>
@@ -327,6 +340,21 @@ budget ceiling 64 GB modules · net prices, VAT removed · zł @ {num(FX['EUR'],
   <th>Stock</th><th>Link</th>
 </tr></thead>
 <tbody>{rows}</tbody>
+</table></div>
+</details>
+
+<details>
+<summary>No-go ({len(unavail_offers)}) — unavailable, withdrawn, blocked, excluded, QVL-fail (gray = no-go)</summary>
+<div class="scroll"><table class="offers no-go" data-sortable>
+<thead><tr>
+  <th data-sortable>Part</th><th data-sortable>Shop</th>
+  <th class="num" data-sortable>Gross</th>
+  <th class="num" data-sortable>Net</th>
+  <th class="num" data-sortable>Net PLN</th>
+  <th class="num" data-sortable>€/GB</th>
+  <th>Stock</th><th>Link</th>
+</tr></thead>
+<tbody>{unavail_rows}</tbody>
 </table></div>
 </details>
 
