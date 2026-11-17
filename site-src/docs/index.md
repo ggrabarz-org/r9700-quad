@@ -1,13 +1,13 @@
-# Four R9700s. One 128 GB VRAM box. Three priced answers.
+# Four R9700s. One 128 GB VRAM box. One build.
 
 <div class="hero" markdown>
-<span class="eyebrow">R9700 ×4 · EPYC 9355 / MZ33-CP1 · 2026-11-17</span>
+<span class="eyebrow">R9700 ×4 · EPYC 9355P / MZ23-SU0 · 2026-11-17</span>
 
-# Four cards you own. One platform, three prices.
+# Four cards you own. One platform decision, already made.
 
-Four PowerColor AI PRO R9700 32 GB cards, 128 GB of VRAM, on an EPYC 9355 in a
-GIGABYTE MZ33-CP1 with 12 channels of DDR5-6400. Three memory tiers, priced:
-**€18,035 / €34,093 / €19,572** before the GPUs you already own.
+Four PowerColor AI PRO R9700 32 GB cards, 128 GB of VRAM, on an EPYC 9355P in a
+GIGABYTE MZ23-SU0 with 12 channels of DDR5-6400. This site is that build: what
+it is, why each part is that part, and what has to be true before you order.
 
 <div class="hero-meta" markdown>
 <span class="chip accent">4× 32 GB = 128 GB VRAM</span>
@@ -22,22 +22,22 @@ GIGABYTE MZ33-CP1 with 12 channels of DDR5-6400. Three memory tiers, priced:
 
 <div class="grid cards" markdown>
 
--   **Board — MZ33-CP1**
+-   **Board — MZ23-SU0**
     ---
-    E-ATX 304.8 × 330.2 mm, single SP5, **3× Gen5 x16 at 2-slot pitch** + 1,
-    12 DIMM, 4× Gen5 MCIO, AST2600 IPMI. **€896.97, in stock.**
+    CEB 304.8 × 266.7 mm, single SP5, **5× PCIe 5.0 x16**, 12 DIMM, 4× MCIO 8i,
+    AST2600 IPMI, **no native SATA**, 2× M.2 at **Gen3 x2**.
     [:octicons-arrow-right-24: The build](build.md)
 
--   **CPU — EPYC 9355**
+-   **CPU — EPYC 9355P**
     ---
-    32C / **8 CCDs**, 256 MB L3, 3.55 GHz, **280 W**, 128× Gen5, 12-channel. **€2,329 tray.**
+    32C / **8 CCDs**, 256 MB L3, 3.55 GHz, **280 W**, 128× Gen5, 12-channel.
     The CCD count is the Infinity Fabric link count — see
     [the platform verdict](reference/epyc-platform.md).
 
--   **Memory — three tiers**
+-   **Memory — 12× RDIMM**
     ---
-    **A** 12×32 GB = 384 GB (**€18,035**) · **B** 12×64 GB = 768 GB (**€34,093**)
-    · **C** 6×64 GB = 384 GB (€19,572). JEDEC SPD 6400 @ 1.1 V, QVL-passing.
+    **JEDEC SPD 6400 @ 1.1 V**, any rank or organisation. The BIOS has no
+    EXPO/XMP and pins the PMIC at 1.1 V, so a 7200 kit runs at its JEDEC default.
     Live offers: <a href="ram-board.html">RAM board</a>.
 
 -   **GPUs — 4× R9700**
@@ -46,28 +46,26 @@ GIGABYTE MZ33-CP1 with 12 channels of DDR5-6400. Three memory tiers, priced:
     1–4** — five slots at 1.0 pitch cannot hold four 2-slot cards natively.
     [:octicons-arrow-right-24: R9700 dossier](parts/radeon-r9700.md)
 
--   **Storage — 2× 2 TB Gen5**
+-   **Storage — 2× 2 TB M.2**
     ---
-    Samsung 9100 PRO, **€399.99 each**, on the MCIO 8i port via the KALEA
-    adapter — 4 TB of Gen5, not two throttled Gen3 slots.
+    XPG Mars 980 or Samsung 9100 PRO, in the two onboard slots. Those slots are
+    Gen3 x2, so a Gen5 drive runs at a fifth of its rating. Accepted: the disk
+    is read once at start, not per token.
     [:octicons-arrow-right-24: 9100 PRO dossier](parts/samsung-9100-pro.md)
 
 -   **Power**
     ---
-    **1,306 W capped / 1,666 W stock.** 1600 W unit (€349.88) at a 210 W GPU
-    cap; 2000 W (€520.89) at stock. Connectors are the real limit, not watts.
-    [:octicons-arrow-right-24: Power & connectors](build.md#power)
+    **1 306 W capped / 1 666 W stock.** 1600 W PSU at a 210 W GPU cap, or 2000 W
+    at stock. Connector count is the real limit, not watts.
+    [:octicons-arrow-right-24: Power & connectors](build.md#power-and-connectors)
 
 </div>
 
-## What changed
+## What changed, and why there is only one build
 
 The earlier book on this site priced a Threadripper PRO platform across eight
-variants (A–H, plus a used W790 bundle), then collapsed to a single build on a
-board that cannot be bought in the EU. This revision keeps the platform finding
-and restores the priced options — three of them, differing only in memory,
-because memory is 72–85 % of the bill. Three findings retired the Threadripper
-book:
+variants (A–H, plus a used W790 bundle). Those pages are gone. Three findings
+retired them:
 
 - **CCD count decides the CPU lane.** A spilling MoE feeds the CPU-side expert
   lane over the Infinity Fabric, one link per CCD. A 2-CCD part cannot feed a
@@ -85,17 +83,17 @@ book:
 
 ## Read before ordering
 
-!!! warning "The board was the weak line"
-    The previous revision specified the **MZ23-SU0**, which is **not buyable new
-    in the EU** (Galaxus: *Aktuell nicht lieferbar*; zero Geizhals listings; only
-    a used offer at €1,290). The **MZ33-CP1 at €896.97 is in stock** and gives
-    three natively-spaced 2-slot x16 slots plus a documented MCIO path for the
-    fourth card — no risers.
+!!! warning "Five slots, all at 1.0 pitch"
+    A 40 mm two-slot card blocks the slot beside it. Three cards fit natively in
+    slots 1/3/5 and bury slots 2 and 4 under their coolers. **Four cards need
+    four risers.** Passive Gen4 x16 at 20–30 cm is the reliable choice; Gen5
+    passive past ~20 cm is not. Tensor-parallel engines all-reduce over PCIe and
+    would not accept this — a layer split does.
 
-!!! note "No SATA, and that is fine here"
-    The CP1 has **no native SATA** (its one M.2 is Gen3). The build has no
-    spinning disks: storage is 4× Gen5 NVMe on the MCIO ports. A cold in-box
-    archive would be an MCIO→SATA or USB decision, priced separately.
+!!! warning "No SATA on this board"
+    The MZ23-SU0 has **no native SATA ports**; `SATA_SGP1/2` are backplane SGPIO
+    headers. This build has no spinning disks, so that is not a gap here. Adding
+    one would need MCIO→SATA or USB, and that is a separate decision.
 
 !!! note "The RAM rule is JEDEC, not the label"
     A module counts only if its **JEDEC SPD default is 6400 at 1.1 V**. The rated
@@ -105,7 +103,7 @@ book:
 
 ## Reference
 
-- [The build](build.md) — **three priced options**, parts, power, connectors, slots, storage.
+- [The build](build.md) — parts, power, connectors, slots, storage.
 - [Platform verdict](reference/epyc-platform.md) — why SP5 and why 8 CCDs.
 - [Memory ladder](reference/memory-ladder.md) — capacity against workload.
 - [Power connectors](reference/power-connectors.md) — the cable math.
