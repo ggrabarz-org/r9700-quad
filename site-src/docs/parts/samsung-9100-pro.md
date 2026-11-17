@@ -15,7 +15,7 @@ Samsung’s Gen5 consumer/workstation SSD, 1 TB, PCIe 5.0 x4. It is the array dr
 | Sequential read / write | 14,800 / 13,400 MB/s |
 | 4K random IOPS | 1.85M read / 2.6M write |
 | Form factor | M.2 2280 |
-| Price | **€264.00** |
+| Price | **€213.90** (Geizhals DE, 2026-11-17) |
 
 ## Assessment
 

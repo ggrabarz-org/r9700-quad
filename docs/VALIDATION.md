@@ -62,13 +62,19 @@ sudo mount /dev/md0 /srv/models
 Sequential and random reads:
 
 ```bash
+# Expert-record shape: ~2 MB scattered reads at QD ≈ top-k (10).
+# This is the number that predicts decode if experts spill (see WRX90-ASROCK.md §4).
+sudo fio --name=expert --rw=randread --bs=2M --iodepth=10 --numjobs=1 \
+  --size=64G --filename=/dev/md0 --direct=1 --runtime=60 --time_based
+# Cold start / model load is sequential.
 sudo fio --name=seqread --rw=read --bs=1M --iodepth=32 --numjobs=4 \
   --size=16G --filename=/dev/md0 --direct=1 --runtime=60 --time_based
-sudo fio --name=randread --rw=randread --bs=4k --iodepth=256 --numjobs=4 \
+# Reference only — spec-sheet-style 4K/QD256, not the access pattern we generate.
+sudo fio --name=rand4k --rw=randread --bs=4k --iodepth=256 --numjobs=4 \
   --size=8G --filename=/dev/md0 --direct=1 --runtime=60 --time_based
 ```
 
-Targets: **A (3× Gen5) ≥35 GB/s and ≥4M IOPS; B (6× Gen4) ≥40 GB/s and ≥6M IOPS; C (4× Gen4) ≥25 GB/s and ≥3M IOPS**. Record the exact numbers.
+Targets: **expert (2M/QD10) ≥ 50 % of the sequential number** (the array's effective scattered-read ceiling); **seqread A ≥35 GB/s, B ≥40 GB/s, C ≥25 GB/s**. Record the exact numbers, including rand4k for the record.
 
 Thermals under load:
 
