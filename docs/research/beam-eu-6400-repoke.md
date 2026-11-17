@@ -3612,3 +3612,47 @@ Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € v
 **Floor unchanged: €28,09/GB** (Micron 96 GB, esus it, single seller, €32 365 — over the ceiling). **In-budget best €/GB unchanged: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline unchanged: 384 GB at €12 605 (€32,83/GB, barax, quantity unpublished). 64 GB tier unchanged at €36,71/GB (Allegro). 12×24 still unbuildable (10 pcs). 768 GB still the worst marginal step (+€54,72/GB). No route changed its rank; nothing to buy that was not available at pass 76.
 
 **Coverage:** 1 Geizhals category sweep (55 products, 0 price moves, 0 catalogue changes); camofox 0 this pass (reused pass-75 reads, all flat); curl 8 probes (4 bests re-verified, 5 expansion shops, 0 new prices).
+
+---
+
+## Pass 78 — 2026-11-17T16:xxZ (three new G.Skill SKUs, all EXPO, none of them a beat)
+
+### 0. Sweep — 60 products (was 55): three new G.Skill SKUs, all disqualified
+
+Catalogue grew for the first time in 14 passes: **3 new SKUs**, all G.Skill, all priced, all 6400-rated:
+
+| Product | Gross | Net | €/GB | OC-Profile |
+|---|---|---|---|---|
+| G.Skill Zeta R5 Neo 64 GB kit `F5-6400R3239G16GQ4-G5N` | 2 222,00 € | 1 867,23 € | **€29,18** | AMD EXPO |
+| G.Skill Zeta R5 64 GB kit `F5-6400R3239G16GQ4-G5` | 2 702,11 € | 2 270,68 € | €35,48 | Intel XMP 3.0 |
+| G.Skill T5 Neo 512 GB kit `F5-6400R3848F64GE8-T5N` | 28 205,19 € | 23 701,84 € | €46,29 | AMD EXPO |
+
+**The €29,18/GB kit is the closest any part has come to the floor in 15 passes, and it does not qualify.** Both new 64 GB kits carry `OC-Profile: AMD EXPO` / `Intel XMP 3.0` with no JEDEC-profile line — the same discriminator that disqualified every other G.Skill RDIMM in the sweep. The gate is on the SPD, not the headline. **The floor stands at €28,09/GB.** The 512 GB kit is not competitive at any reading of its profile.
+
+The three FURY "6400-rated" trap parts also ticked up this pass (`KF564R32RBEK8-128` +4,92 %, `KF564R32RBE2K8-256` +1,09 %, `KF564R32RBE-16` +0,03 %) — all fail the JEDEC gate and are not on the board. The relevant tier parts are flat: `KSM64R52BD4-64MD` 2 889,00 € (+0,39 %), `KSM64R52BD4-96MC` 4 694,98 € (−0,15 %), `KSM64R52BD8-32MD` 1 250,00 € (flat).
+
+### 1. Bests — flat, all four
+
+| Route | Pass 77 | Pass 78 | Δ |
+|---|---|---|---|
+| Proshop.pl 96MC | 25 881,00 zł / 21 041,46 zł netto | **25 881,00 zł / 21 041,46 zł netto** | flat — still capped at 2 per customer |
+| Tonitrus `M321R8GA0EB2-CCP` | 3 174,50 € / 2 667,65 € netto | **3 174,50 € / 2 667,65 € netto** | flat, 50 pcs, 3–4 Werktage |
+| ibfusion 64MD | 2 481,00 € net | **2 481,00 € net** | flat, 5 in stock |
+| senetic.de 64MD | 2 574,29 € | **2 574,29 €** | flat, 41–50 Stück |
+| senetic.pl 64MD | 11 332,00 zł | **11 332,00 zł** | flat, 41–50 szt. |
+| Allegro komputera_pl 64MD | 12 736,00 zł | **12 736,00 zł** | flat, 5 ratings, promo badge still shown |
+| CoreWave 48 GB `M321R6GA3PB2` | $1 630, 250 pcs | **$1 630, 250 pcs** | flat — still the best €/GB on the board |
+
+Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € vs 3 174,50 €). Proshop.pl still caps the 96MC at 2 per customer.
+
+### 2. Expansion — 5 shops probed, 0 prices
+
+**mediamarkt.de / saturn.de / conrad.de** 403, **notebooksbilliger.de** 404, **expert.de** 200 but no KSM64 hits. Consistent with the conclusion that the EU channel for this PN has been enumerated.
+
+### 3. Verdict
+
+**Floor unchanged: €28,09/GB** (Micron 96 GB, esus it, single seller, €32 365 — over the ceiling). **In-budget best €/GB unchanged: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline unchanged: 384 GB at €12 605 (€32,83/GB, barax, quantity unpublished). 64 GB tier unchanged at €36,71/GB (Allegro). 12×24 still unbuildable (10 pcs). 768 GB still the worst marginal step (+€54,72/GB).
+
+No route changed its rank this pass; nothing to buy that was not available at pass 77. The three new G.Skill SKUs are the closest any part has come to the floor in 15 passes (€29,18/GB) and they fail the JEDEC gate — the gate is the only thing standing between a €2 666 12-module build and the current €6 948 baseline.
+
+**Coverage:** 1 Geizhals category sweep (60 products, 3 new G.Skill SKUs, 9 price moves under 5 %, 0 catalogue withdrawals); camofox 2 profiles / 2 navigations (proshop, tonitrus); curl 8 probes (4 bests re-verified, 5 expansion shops, 0 new prices).
