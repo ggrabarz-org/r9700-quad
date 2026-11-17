@@ -3369,3 +3369,62 @@ The JEDEC gate is stated in the header in both directions: a 7600-rated `KF576RH
 **Floor unchanged: €28.09/GB** (Micron 96 GB, esus it, single seller) — still outside the €32k ceiling. **In-budget best €/GB: 576 GB at €30.71/GB (€17 688).** Lowest total spend: 192 GB at €6 948, but QVL ✗. **Budget baseline: 384 GB at €12 605, €32.83/GB.** 288 GB remains unbuildable (10 pcs). 768 GB remains the worst step (+€54.72/GB marginal).
 
 **Coverage:** 1 Geizhals sweep (55 products), 5 shop reads (Proshop, Tonitrus, ibfusion, senetic.pl, senetic.de), 1 CoreWave live board, 1 rebuild. No expansion shop opened.
+
+---
+
+## Pass 74 — 2026-11-17T04:44Z (flat market, one price tick down, and the shop pool exhausted)
+
+### 0. Sweep — catalogue identical, floor identical
+
+The Geizhals category sweep returned the **same 55 products** as pass 73 — same 46 named rows, nothing new, nothing withdrawn (set comparison against the pass-73 capture: `NEW: ∅`, `GONE: ∅`). The broad all-RDIMM sweep (no speed filter) returned 100 products; **all 55 that are absent from the 6400 sweep are 4800/5600/6000 parts**, so the 6400 catalogue is fully enumerated and nothing 6400-rated is hiding outside it.
+
+| Product | Gross | Net | €/GB | Offers |
+|---|---|---|---|---|
+| Micron `MTC40F204WS1RC64BC1` 96 GB | 3 209,50 € | 2 697,06 € | **€28,09** | 1 (esus it) — over budget |
+| Kingston `KSM64R52BD8-32MD` 32 GB | 1 250,00 € | 1 050,42 € | €32,83 | 1 (barax) |
+| Kingston `KSM64R52BD4-96MC` 96 GB | 4 058,99 € | 3 410,92 € | €35,53 | 19 |
+| Kingston `KSM64R52BD8-32MH` 32 GB | 1 370,74 € | 1 151,88 € | €36,00 | 26 |
+| Kingston `KSM64R52BS8-16MD` 16 GB | 689,00 € | 578,99 € | €36,19 | 1 |
+| Kingston `KSM64R52BD4-64MD` 64 GB | 2 861,74 € | 2 404,82 € | €37,58 | 17 |
+
+Both Kingston 32 GB rows drifted by cents only (32MH 1 369,34 → 1 370,74 gross, +0,10 %), i.e. noise, not movement.
+
+### 1. The G.Skill question — closed, not open
+
+The three 192 GB G.Skill kits sit at **€28,47/GB**, which would undercut the floor if they qualified. They do not, and pass 74 read every one of their spec tables rather than trusting the pass-70 verdict: **all 13 G.Skill RDIMM listings on Geizhals carry `OC-Profile: AMD EXPO` or `Intel XMP 3.0` and no JEDEC-profile line.** No `Spannung: 1.1V (JEDEC-Normspannung)`, no `Besonderheiten: JEDEC-Standardprofil`. They stay disqualified, and the €28,09 floor stands against them.
+
+### 2. Bests — flat, with two cent-level ticks
+
+| Route | Pass 73 | Pass 74 | Δ |
+|---|---|---|---|
+| Proshop.pl 96MC | 25 881,00 zł | **25 881,00 zł** | flat (page also now prints the SPD sentence verbatim) |
+| Tonitrus `M321R8GA0EB2-CCP` | 3 174,50 € / 2 667,65 € netto | **3 174,50 € / 2 667,65 € netto** | flat, 50 pcs |
+| ibfusion 64MD | 2 481,00 € net | **2 481,00 € net** | flat, 5 in stock |
+| senetic.pl 64MD | 11 377,59 zł | **11 366,07 zł netto** | −11,52 zł (−0,10 %) |
+| senetic.de 64MD | 2 582,03 € | **2 582,03 €** | flat, 41–50 Stück |
+| **senetic.fr 64MD (new row)** | 2 613,29 € | **2 582,07 € HT** | −31,22 € — now matches .de |
+| Allegro komputera_pl 64MD | 12 736,00 zł | **12 736,00 zł** | flat, promo badge "Oszczędzasz 165 zł" still shown |
+| CoreWave 48 GB `M321R6GA3PB2` | $1 630, 250 pcs | **$1 630, 250 pcs** | flat |
+| CoreWave 96 GB Micron | $3 587, 200 pcs | **$3 587, 200 pcs** | flat |
+
+**New listing:** Kingston `KSM64R52BD4-64MD` @ **senetic.fr** — 2 582,07 € HT / 3 098,48 € TTC, 41–50 unités, FR warehouse, `france` VAT 20 %. **JEDEC verdict: no SPD sentence published on the French card; qualifies via the Kingston datasheet line already on record** (`Default (JEDEC) DDR5-6400 CL52-52-52 @1.1V`). It matches senetic.de to 4 cents and does not beat the Allegro €36,71/GB.
+
+### 3. barax stock — checked, still unpublished
+
+The 12×32 budget-baseline tier rests on a single Geizhals offer. Pass 74 re-read it directly: **`Ab Lager lieferbar - Lieferzeit 1-3 Werktage`, merchant rated 4.6 from 95 reviews, €5,95 shipping, payment by Vorkasse/PayPal/Klarna.** That is a live, orderable listing — **but the quantity is still not published**, and barax's own storefront does not index the PN (its `/search?sSearch=KSM64R52BD8-32MD` returns a full unfiltered catalogue: 0 product boxes, no KSM64R52 string; the same for `KSM64R52` and the bare `KSM64R52BD8`). So the tier note now says exactly that instead of implying a verified 12-piece stock. Do not order this route without confirming quantity.
+
+### 4. Expansion — 14 shops probed, 13 walls, 1 price
+
+Probed this pass, in rotation from the pool and new: **reichelt.de** (0 Treffer — does not stock the PN), **pcbilliger.de** (0 real hits; 37 "found" items are unrelated), **2direct.de** / **serverschmiede.com** (JS-only search, no results without JS), **materiel.net** / **grosbill.com** / **topachat.com** (search page renders, 0 matching products), **ldlc.com** (0), **megekko.nl** (empty), **azerty.nl** 403, **computersalg.dk** 403, **tsbohemia.cz** 403, **fnac.com** 403, **galaxus.de** 403, **komplett.se** DNS fail, **hoh.de** / **bttn.de** / **speichershop24.de** / **itsco.de** connection fail, **serverando.de** 400, **mironet.cz** 404, **net-s.pl** 0, **alan.pl** 0, **server-discount.de** / **pc-handel.de** 1,7 KB stub, **green-data.de** parked domain-for-sale.
+
+Only **senetic.fr** produced a price. Conclusion: the EU channel for this part has been enumerated — the shops that stock Kingston Server Premier 6400 are the ones already on the board.
+
+### 5. Verdict
+
+**Floor unchanged at €28,09/GB** (Micron 96 GB, esus it, single seller, €32 365 for 12 — outside the ceiling). **In-budget best €/GB: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline: 384 GB at €12 605 (€32,83/GB, barax, quantity unconfirmed). 288 GB still unbuildable (10 pcs). 768 GB still the worst marginal step (+€54,72/GB). **No route changed its rank this pass; nothing to buy that was not available at pass 73.**
+
+**Coverage:** 1 Geizhals category sweep (55 products) + 1 broad RDIMM sweep (100 products, all non-6400 additions accounted for) + 3 product pages (Micron 96 GB, Kingston 32MD, G.Skill spec tables); camofox 4 profiles / 4 navigations (proshop, tonitrus, allegro, barax); curl 22 probes (2 new prices found: senetic.fr + senetic.pl tick); 1 CoreWave live board. 14 shops probed for expansion, 1 new price, 0 beats.
+
+### 6. CORRECTION — one QVL badge withdrawn
+
+Re-validating every `QVL ✓` row against `/tmp/opencode/ramcheck/p68/qvl6400.json` (the pass-68 88-row 6400 extract) found one badge that does not trace: **Micron `MTC40F2046S1RC64BH1T`** was marked QVL ✓, but the sheet names **`MTC40F2046S1RC64BH1` and `-BD2`** — not the `T`-suffix tray variant that serverandmore-muc lists. Badge withdrawn, row now reads "QVL unverified (T-suffix)". The price is unchanged (€2 999,81 inkl. = €39,39/GB) and it was never a tier winner, so no ladder row moved. All other 5 QVL ✓ ladder/offer rows trace to the extract: `MTC10F108YS1RC64BC1`, `KSM64R52BD8-32MD`, `M321R6GA3PB2-CCPWC`, `KSM64R52BD4-64MD`, `MTC40F204WS1RC64BC1`.
