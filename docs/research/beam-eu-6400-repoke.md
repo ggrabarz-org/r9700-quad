@@ -3428,3 +3428,99 @@ Only **senetic.fr** produced a price. Conclusion: the EU channel for this part h
 ### 6. CORRECTION — one QVL badge withdrawn
 
 Re-validating every `QVL ✓` row against `/tmp/opencode/ramcheck/p68/qvl6400.json` (the pass-68 88-row 6400 extract) found one badge that does not trace: **Micron `MTC40F2046S1RC64BH1T`** was marked QVL ✓, but the sheet names **`MTC40F2046S1RC64BH1` and `-BD2`** — not the `T`-suffix tray variant that serverandmore-muc lists. Badge withdrawn, row now reads "QVL unverified (T-suffix)". The price is unchanged (€2 999,81 inkl. = €39,39/GB) and it was never a tier winner, so no ladder row moved. All other 5 QVL ✓ ladder/offer rows trace to the extract: `MTC10F108YS1RC64BC1`, `KSM64R52BD8-32MD`, `M321R6GA3PB2-CCPWC`, `KSM64R52BD4-64MD`, `MTC40F204WS1RC64BC1`.
+
+---
+
+## Pass 75 — 2026-11-17T09:58Z (first real price movement in eight passes: FURY kits cut 18 %, senetic family repriced down, and two QVL parts come into stock)
+
+### 0. Sweep — same 55 products, but 13 prices moved
+
+Catalogue unchanged again (set-compared by name against pass 74: **NEW: ∅, GONE: ∅**, offer counts identical). Prices did not stay put:
+
+| Product | Pass 74 | Pass 75 | Δ |
+|---|---|---|---|
+| FURY `KF572RH38RBK8-128` 128 GB kit (7200) | 7 558,40 € | **6 151,14 €** | **−18,62 %** |
+| FURY `KF576RH40RBK8-128` 128 GB kit (7600) | 7 688,36 € | **6 256,88 €** | **−18,62 %** |
+| FURY `KF572RH38RBK4-64` 64 GB kit (7200) | 3 781,94 € | **3 100,92 €** | −18,01 % |
+| FURY `KF572RH38RB-16` 16 GB (7200) | 949,59 € | **790,23 €** | −16,78 % |
+| FURY `KF576RH40RB-16` 16 GB (7600) | 965,64 € | **805,51 €** | −16,58 % |
+| FURY `KF576RH40RB-32` 32 GB (7600) | 1 530,12 € | **1 488,57 €** | −2,72 % |
+| Kingston `KSM64R52BD8-32MH` 32 GB | 1 370,74 € | 1 372,84 € | +0,15 % |
+| Kingston `KSM64R52BD4-96HM` 96 GB | 4 701,98 € | 4 742,17 € | +0,85 % |
+| Micron `MTC20F2085S1RC64BD2R` 32 GB | 1 848,95 € | 1 843,41 € | −0,30 % |
+
+**The FURY cut is real and large — and it still changes nothing.** Ordering every FURY RDIMM by €/GB after the cut: 256 GB `KF572RH38RBK8-256` at **€38,01**, 128 GB `KF576RH40RBK4-128` at €38,78, 32 GB `KF576RH40RB-32` at €39,09, then the two cut 128 GB kits at €40,38 and €41,08. **Even the best of them is 3,5 % above the Allegro 64 MD (€36,71) and 15,8 % above the 32 MD tier (€32,83).** Checked against the JEDEC gate again before dismissing them: these are the same SKUs pass 73 verified as declaring `Default (JEDEC) DDR5-6400 CL52-52-52 @1.1V`, so the SPD is fine — **the price simply does not compete.** The deepest cut of the pass (−18,62 %) landed on the two kits that were furthest above the floor, which is why it moved them from €49–50/GB to €40–41/GB and no further.
+
+**Correction, written in error this pass and fixed before commit:** the first draft called the 128 GB kit "best FURY at €40,38/GB". It is not — the 256 GB `KF572RH38RBK8-256` at €38,01/GB is cheaper, and it did not fall this pass (it rose 0,26 %). The conclusion is unchanged either way; the ranking was wrong.
+
+### 1. Proshop.pl — price flat, but the route is now DEAD
+
+25 881,00 zł / 21 041,46 zł netto, unchanged. **But the page now carries a purchase cap:** *"Ze względu na ogromne zainteresowanie produktem możliwy jest zakup jedynie 2 szt. na klienta"* — **max 2 units per customer.** A 12-module build needs 12. **Proshop.pl can no longer supply any full tier**, and the 96MC row is downgraded from "buyable" to "capped at 2". Delivery also reads *"Produkt sprowadzany, 5-6 dni"* (back-ordered, not stocked).
+
+### 2. senetic family — nine country stores, one repricing
+
+All nine senetic storefronts are readable and all sell `KSM64R52BD4-64MD`. They moved together this pass:
+
+| Store | Net | €/GB | 12× | Stock |
+|---|---|---|---|---|
+| senetic.pl | **11 332,00 zł** | €40,18 | €30 856,36 | 41–50 szt. |
+| senetic.de | **2 574,29 €** | €40,22 | €30 891,48 | 41–50 Stück |
+| senetic.fr | **2 574,33 €** | €40,22 | €30 891,96 | 41–50 unités |
+| senetic.it | **2 574,29 €** | €40,22 | €30 891,48 | 41–50 pz. |
+| senetic.nl | **2 574,29 €** | €40,22 | €30 891,48 | 41–50 st. |
+| **senetic.co.uk (NEW)** | **£2 147,70** | **€40,16** | €30 840,91 | 41–50 |
+
+The spread across nine shops is **0,06 €/GB** — this is one supplier's price list, not six independent merchants. **Do not treat the nine as a price band; treat them as one route at ~€40,20/GB.** The UK store is marginally cheapest and confirms the level. All remain ~9 % above Allegro and ~5 % above the fresh CoreWave 64 GB.
+
+### 3. NEW STOCK — two parts the record called "zero EU offers" are now buyable
+
+CoreWave's live board has changed materially. Pass 63 recorded four QVL-valid parts with **no EU offers**; two of them are now stocked:
+
+| Part | QVL row | CoreWave | €/GB | 12× |
+|---|---|---|---|---|
+| Samsung `M321R4GA0EB2-CCP` 32 GB 1Rx4 | `-CCPPC`, `-CCPWC` ✓ | **$2 074, 70 pcs** | €58,61 | €22 505,97 |
+| Samsung `M321R4GA3PB2-CCP` 32 GB 2Rx8 | `-CCPPC`, `-CCPWC` ✓ | **$2 011, 500 pcs** | €56,83 | €21 822,33 |
+| Samsung `M321R2GA3EB2-CCP` 16 GB 1Rx8 | `-CCPWC` ✓ | $1 304, 500 pcs | €73,70 | €14 150,33 |
+| Micron `MTC20F2085S1RC64BD2` 32 GB 2Rx8 | 3 die-variants ✓ | **$1 739, 1 000 pcs** | €49,14 | €18 870,72 |
+| Micron `MTC40F2046S1RC64BD2` 64 GB 2Rx4 | 6 die-variants ✓ | **$2 826, 500 pcs** | €39,93 | €30 666,28 |
+| Micron `MTC40F2046S1RC64BH1` 64 GB 2Rx4 | 4 die-variants ✓ | **$2 880, 500 pcs** | €40,69 | €31 252,26 |
+
+**Every one of them is more expensive per GB than the route already on the board.** The best is the Micron 64 GB BD2 at €39,93/GB — 8,8 % above the Allegro Kingston (€36,71) and 21,6 % above the 32 GB tier (€32,83). The 32 GB Samsung parts are catastrophically priced (€57–59/GB) despite 500–1 000 pcs of availability.
+
+**What does change:** `M321R4GA0EB2-CCP` and `M321R4GA3PB2-CCP` are no longer "QVL-valid but unbuyable" — they are buyable and simply not competitive. That distinction matters for anyone who needs QVL certainty over price: **a fully QVL-validated 384 GB build is now available on 1 000-pc stock at €49,14/GB (Micron BD2 32 GB, €18 871)**, where the barax baseline relies on a single unpriced-quantity offer.
+
+### 4. Bests — the four tracked shops
+
+| Route | Pass 74 | Pass 75 | Δ |
+|---|---|---|---|
+| Proshop.pl 96MC | 25 881,00 zł | **25 881,00 zł** | flat — **but capped at 2 per customer** |
+| Tonitrus `M321R8GA0EB2-CCP` | 3 174,50 € / 2 667,65 € netto | **3 174,50 € / 2 667,65 € netto** | flat, 50 pcs, 3–4 Werktage |
+| ibfusion 64MD | 2 481,00 € net | **2 481,00 € net** | flat, 5 in stock |
+| senetic.de 64MD | 2 582,03 € | **2 574,29 €** | −7,74 € (−0,30 %) |
+| Allegro komputera_pl 64MD | 12 736,00 zł | **12 736,00 zł** | flat, 5 ratings, new, 12-month warranty |
+| CoreWave 48 GB `M321R6GA3PB2` | $1 630, 250 pcs | **$1 630, 250 pcs** | flat — still the best €/GB on the board |
+
+Tonitrus still lists its Refurbished lot at 3 693,50 € — **above** its own new price of 3 174,50 €, the anomaly noted in pass 73 and unchanged.
+
+### 5. Expansion — 11 shops probed, 5 senetic stores opened
+
+New this pass: **senetic.co.uk / .it / .nl / .es / .se** (all readable; UK, IT and NL priced in their own currency and converted above — ES and SE render the same 41–50 stock block but I have **no exchange rate for SEK and did not convert them**, so no price is claimed for those two). Blocked or empty: **pccomponentes.com** 403, **coolblue.de** 404, **prokiller.de** / **nextware.de** connection fail, **server-store.de** parked domain-for-sale (€450), **dell.com** 2,7 MB page with 0 KSM64 hits (Dell sells its own SKUs, not Kingston retail).
+
+### 6. Verdict
+
+**Floor unchanged: €28,09/GB** (Micron 96 GB, esus it, single seller, €32 365 — over the ceiling). **In-budget best €/GB unchanged: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline unchanged: 384 GB at €12 605 (€32,83/GB, barax, quantity still unpublished). 64 GB tier unchanged at €36,71/GB (Allegro).
+
+**Two operational changes matter more than any price:** **Proshop.pl is now capped at 2 units per customer** (it can no longer fill any tier), and **a fully QVL-validated 384 GB route now exists on 1 000-pc stock at €49,14/GB** if QVL certainty outranks price. The FURY 18 % cut is the largest single move in eight passes and still leaves the best FURY (€38,01/GB) 3,5 % above the buy.
+
+**Coverage:** 1 Geizhals category sweep (55 products, 13 price moves, 0 catalogue changes) + 6 product pages (2 FURY kits, 32MD, 96HM, 2 Micron 32 GB); camofox 3 profiles / 3 navigations (proshop, tonitrus, allegro); curl 15 (ibfusion, 4 senetic stores priced, 6 senetic stores opened, CoreWave board); 11 shops probed for expansion, 0 beats, 2 dead ends closed.
+
+### 7. TWO MORE RECORD ERRORS, caught writing this pass up
+
+1. **`KF572RH38RB-32` carried an invented price.** The row was marked `state: ok` at €1 280,53 net (€40,02/GB) — but its own Geizhals page lists **0 offers**, and the record's own spec string admitted the number came *"from the 7600 sibling band"*. Borrowing a sibling's price is exactly the thing this board forbids. **Row excluded, price nulled.** The genuine 7600 32 GB single (`KF576RH40RB-32`) keeps its real €1 488,57.
+2. **Proshop.pl `KF576RH40RB-32` price string contradicted its own object.** Display said *"21 726,02 zł netto"*; the price object said gross 6 526,00 zł. The object is right; string replaced. (The row is withdrawn anyway.)
+
+**Also reconciled, no error:** the `Allegro` and `senetic` rows whose gross differs from the Geizhals sweep figure. Those are per-shop quotes for the same MPN — the sweep shows the cheapest offer across all merchants, the rows show their own shop's price. Not a defect.
+
+**Re-validated:** all 6 QVL ✓ rows still trace to the pass-68 extract, including the four added this pass (`M321R4GA0EB2-CCP` → `-CCPPC`/`-CCPWC`, `MTC20F2085S1RC64BD2` → 3 die-variants, `MTC40F2046S1RC64BD2` → 6 die-variants, `senetic.co.uk 64MD` → `KSM64R52BD4-64MD`).
+
+**Final coverage, pass 75:** 1 Geizhals category sweep (55 products, 13 price moves, 0 catalogue changes); camofox 3 profiles / 3 navigations (proshop, tonitrus, allegro); curl 21 (ibfusion, CoreWave board, 9 senetic storefronts, 6 product pages); 11 expansion shops probed, 5 senetic stores opened, 2 closed as dead (server-store.de parked, dell.com no Kingston retail), 0 beats.
