@@ -3184,3 +3184,86 @@ Geizhals's spec table for this part is the cleanest JEDEC evidence seen anywhere
 **Standing instruction for future passes: run the category sweep FIRST, before per-PN searches.** It is one fetch and it is exhaustive.
 
 Coverage: trawl 4 (category sweep, G.Skill 192 GB product page, Samsung 128 GB page, G.Skill search); camofox 4 profiles / 6 navigations (ceneo, proshop, tonitrus, allegro offer, G.Skill T5 Neo category ×3 evals); curl 4 (ibfusion, senetic ×2, gskill). 56 products enumerated, 2 never-seen products found, 1 JEDEC-profile discriminator established, 0 beats.
+
+---
+
+## Pass 71 — 2026-11-17T01:05Z (sweep-first pass. Floor unchanged at €28.09/GB; catalogue 56 → 55; **new shop found: morele.net**, a real PL retailer at €37.57/GB — 2.3 % above Allegro, so no beat. Corrected a stale display string on the Proshop record.)
+
+### 1. Geizhals category sweep (run first)
+
+| | p70 | p71 | Δ |
+|---|---|---|---|
+| products | 56 | **55** | −1 |
+| cheapest | 3 209,50 € (Micron 96 GB) | **3 209,50 €** | flat |
+| floor | €28.09/GB net | **€28.09/GB net** | flat |
+
+The one product gone is the **dearest of the three Kingston 32 GB 2Rx8 listings, at 1 895,46 €** — a merchant withdrew. (The 1 250,00 € and 1 369,34 € listings are untouched.) No new products, no other price moves. The ordering is otherwise identical to p70, top to bottom.
+
+⇒ **The floor is unchanged and re-confirmed against the whole catalogue.**
+
+### 2. Bests re-checked
+
+| Offer | Read | Change |
+|---|---|---|
+| **Allegro 64MD @ komputera_pl (QVL ✓)** | **12 736,00 zł** · „Oszczędzasz 165 zł" · dostawa sob. 21 lis. · seller 5 ratings | **6th consecutive identical read** |
+| Proshop.pl 96MC | **25 881,00 zł brutto / 21 041,46 zł netto** · „Wariant", sprowadzany | flat — **see §4** |
+| Proshop.pl 64MD | 16 682,00 zł / 13 562,60 zł netto (€48.08/GB) | irrelevant to the floor |
+| ibfusion 64MD | **2 481,00 € excl. VAT** (JSON-LD `"price":"2481"`) | flat |
+| senetic.pl 64MD | **11 377,59 zł** (also 16 426,27 zł on the 96 GB row) | flat |
+| Tonitrus 64MD (`M321R8GA0EB2-CCP` family) | **3 174,50 € brutto / 2 667,65 € netto** · Verfügbar: 50 | flat |
+| Micron 96 GB @ Geizhals | **3 209,50 €**, **1 Angebot: esus it** | flat — the floor |
+
+### 3. NEW SHOP — morele.net (PL), 7 Kingston DDR5 SKUs
+
+Found by direct search; the shop is a major Polish retailer (real retail presence, unlike komputera_pl's 5 ratings and parked domain).
+
+| Part | Gross | Net | €/GB net | Verdict |
+|---|---|---|---|---|
+| **`KSM64R52BD4-64MD` 64 GB** | **13 035,31 zł** | 10 597,81 zł | **€37.57** | QVL ✓ — **2.3 % above Allegro (€36.71), no beat** |
+| `KSM64R52BD4-96MC` 96 GB | 19 498,99 zł | 15 852,84 zł | €37.47 | **not QVL** |
+| `KSM64R52BD4-64HA` 64 GB | 14 539,22 zł | 11 820,50 zł | €41.95 | **not QVL** |
+| `KSM64R52BD4-64MH` 64 GB | 14 347,99 zł | 11 665,03 zł | €41.39 | **not QVL** |
+| `KSM64R52BD8-32MH` 32 GB | 6 368,05 zł | 5 177,28 zł | €36.70 | QVL ✓, 384 GB build only |
+| `KSM56R46BD4-64MD` 5600 | 14 043,99 zł | 11 417,07 zł | — | wrong speed |
+| `KSM64R52BD4-64MD` labelled "3200 MHz" | 13 035,31 zł | — | — | **catalogue label error** — the MPN is authoritative, the part is 6400 |
+
+**Two things worth noting:**
+- Their row for `KSM64R52BD4-64MD` is mistitled **"3200 MHz"**. It is the 6400 part; the MPN and price band confirm it. Don't let a future pass trust shop-side speed labels over the MPN.
+- morele is nonetheless **the best non-Allegro price on this exact module found to date** (next best PL: Allegro's other sellers 12 745,99 / 13 218,00 / 13 228,49 zł — morele slots between the first and second).
+
+### 4. RECORD FIX — Proshop's display string contradicted its own numbers
+
+`ram-offers.json` held `price.net = 21 041,46` (i.e. 25 881,00 ÷ 1.23, today's live figure) while `price_net` read *"21 726,02 zł netto **MOVED UP pass 68 from 21 113,01**"*. The structured field was right; the human-readable string was stale. Corrected to *"21 041,46 zł netto (25 881,00 ÷1.23) — flat, pass 71 re-read"*.
+
+This is a recurring failure mode in this file: structured numbers and prose strings drifting apart. **Future passes: when a display string and a `price` object disagree, the object wins and the string gets fixed.**
+
+### 5. CoreWave live quote board — unchanged
+
+| Part | $ | qty | €/GB net |
+|---|---|---|---|
+| Micron `MTC20F104XS1RC64BC1` 48 GB | 1 467 | **2** | €27.64 — **sub-floor, not buildable** |
+| Samsung `M321R6GA3PB2-CCP` 48 GB | 1 630 | 250 | €30.71 (the 576 GB tier) |
+| Samsung `M321RYGA0PB2-CCP` 96 GB | 3 261 | 50+ | €30.72 |
+| Samsung `M321RAJA0MB2-CCP` 128 GB | 4 565 | 95 | €32.25 (the 1536 GB tier) |
+| Micron `MTC40F204WS1RC64BC1` 96 GB | 3 587 | 200 | €33.79 |
+
+48 rows read; the four buildable tiers hold. The 2-pc 48 GB listing is still the price observation it was at pass 69 — never a build.
+
+### 6. Probed, no result
+
+| Shop | What happened |
+|---|---|
+| **alternate.de** | search returns **872 / 922** results; the Kingston 64 GB DDR5-6400 part is **not in the visible first 24** (they are JS-paged). Their own search is unreliable for MPN lookups. |
+| **x-kom.pl** | **403** |
+| **bora-computer.de** | JS-only shell, no prices or matches in HTML |
+| **dcs-shop.de** | connection failed |
+| **geizhals `?fs=<PN>`** | **new breakage:** returns a 210 KB JS-only shell with **no product grid** (only CSS). The category sweep is now the *only* working Geizhals enumeration route. |
+| **morele.net** | ✅ see §3 |
+
+### 7. Verdict
+
+**Did anything beat the cheapest verified offer? — No.** The floor stands at **Micron 96 GB @ €28.09/GB net (€3 209,50 inkl., sole offer: esus it)**.
+
+**Was anything new learned? — Yes, two things:** (a) **morele.net** is a real, major PL retailer selling the QVL 64 MD at €37.57/GB — the best non-Allegro price on that module, still 2.3 % behind komputera_pl's €36.71; (b) **Geizhals `?fs=` has stopped working** (JS-only shell), so the category sweep is now load-bearing and must not be skipped.
+
+**Coverage:** trawl 4 (category sweep, Micron 96 GB page, 2 × `?fs=`), camofox 5 profiles / 7 navigations (allegro, proshop ×2, tonitrus, alternate ×2), curl 5 (morele, bora, x-kom, dcs, CoreWave, ibfusion, senetic). 55 products enumerated, 1 shop added (morele), 4 shops probed without result, 1 record string corrected, 0 beats.
