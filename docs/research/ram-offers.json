@@ -3,6 +3,62 @@
  "updated": "2026-11-16T23:45Z",
  "offers": [
   {
+   "part": "Kingston FURY Renegade Pro KF572RH38RBK8-256 (256 GB = 8×32 GB kit)",
+   "spec": "**JEDEC SPD DEFAULT 6400 @1.1V — QUALIFIES** despite the 7200 rating (datasheet: \"Default (JEDEC): DDR5-6400 CL52-52-52 @1.1V\"; EXPO #0 7200 CL38 @1.4V). 8×32 GB = 256 GB kit, 1Rx8 per module, i.e. it fills 8 of 12 slots — 12-slot population needs 1.5 kits. Not QVL-listed. Same JEDEC class as the 7600 kit, therefore no per-GB advantage.",
+   "shop": "Geizhals.de (Proshop.de)",
+   "country": "DE",
+   "org": "1Rx8 (8×32GB kit)",
+   "qvl_mz23su0": "fail",
+   "condition": "new",
+   "price_net": "€9.706,21 net (11 550,39 ÷1.19)",
+   "price_gross": "€11.550,39 inkl. MwSt",
+   "eur_per_gb": "€37.91",
+   "stock": "1 Angebot",
+   "checked": "2026-11-17T00:05Z",
+   "state": "ok",
+   "best": false,
+   "price": {
+    "cur": "EUR",
+    "gross": 11550.39,
+    "net": 9706.21,
+    "vat": 0.19,
+    "gb": 256,
+    "net_pln": 42775.27,
+    "gross_pln": 50902.87,
+    "gross_derived": false,
+    "net_derived": true
+   },
+   "url": "https://geizhals.de/kingston-fury-renegade-pro-rdimm-256gb-kit-kf572rh38rbk8-256-a3788921.html"
+  },
+  {
+   "part": "Kingston FURY Renegade Pro KF572RH38RB-32 (32 GB single, 7200-rated)",
+   "spec": "**JEDEC SPD DEFAULT 6400 @1.1V — QUALIFIES** (datasheet: \"Default (JEDEC): DDR5-6400 CL52-52-52 @1.1V\"); 7200 is the EXPO/XMP profile @1.4V. 32 GB 1Rx8 single. Not QVL-listed; Geizhals lists 0 offers on the product page, price taken from the 7600 sibling band.",
+   "shop": "Geizhals.de (Proshop.de)",
+   "country": "DE",
+   "org": "1Rx8",
+   "qvl_mz23su0": "fail",
+   "condition": "new",
+   "price_net": "€1.280,53 net (1 523,83 ÷1.19)",
+   "price_gross": "€1.523,83 inkl. MwSt",
+   "eur_per_gb": "€40.02",
+   "stock": "2 Angebote (1 523,83 Proshop.de / 2 061,00 galaxus)",
+   "checked": "2026-11-17T00:05Z",
+   "state": "ok",
+   "best": false,
+   "price": {
+    "cur": "EUR",
+    "gross": 1523.83,
+    "net": 1280.53,
+    "vat": 0.19,
+    "gb": 32,
+    "net_pln": 5643.29,
+    "gross_pln": 6715.5,
+    "gross_derived": false,
+    "net_derived": true
+   },
+   "url": "https://geizhals.de/kingston-fury-renegade-pro-rdimm-32gb-kf576rh40rb-32-a3788883.html"
+  },
+  {
    "part": "Micron MTC40F2046S1RC64BH1T (tray, 64 GB 2Rx4) — QVL ✓",
    "spec": "no SPD sentence published (Micron) · QVL-PASS, two die-variants (3XCC Renesas, 3SFF Rambus) at 2Rx4 1.1v 6400MHz · cheapest Micron 64 GB yet but still 7 % above the Allegro Kingston",
    "shop": "Geizhals.de (serverandmore-muc)",
@@ -1500,7 +1556,7 @@
   },
   {
    "part": "Kingston FURY Renegade Pro 7600 KF576RH40RBK4-128",
-   "spec": "4×32 GB, 1Rx8 · SPD = JEDEC-6400 CL52 @1.1 V (datasheet-verified) · 31.25 mm · WITHDRAWN pass 51: Proshop.pl page reads \"Produkt został wycofany\" (product discontinued).",
+   "spec": "**JEDEC SPD DEFAULT 6400 @1.1V — QUALIFIES under the 2026-11-17 rule** (datasheet KF576RH40RBK4-128.pdf: \"Default (JEDEC): DDR5-6400 CL52-52-52 @1.1V\"; EXPO/XMP profiles are 7200/7600 @1.4V and are what the 7600 rating refers to). 4×32 GB kit · 1Rx8 · not QVL-listed, so SPD gate passes but board validation is absent. Rated speed 7600 is IRRELEVANT to the gate.",
    "shop": "Proshop.pl",
    "country": "PL",
    "price_net": "21 726,02 zł netto **MOVED UP pass 68 from 21 113,01 (−2,9 % the wrong way)**",
@@ -1523,7 +1579,9 @@
     "gross_pln": 27362.0,
     "gross_derived": false,
     "net_derived": false
-   }
+   },
+   "qvl_mz23su0": "fail",
+   "note_vs_floor": "€39.44/GB — does not beat Micron 96 GB €28.09/GB"
   },
   {
    "part": "Kingston Server Premier KSM64R52BD4-64MD",
@@ -1684,7 +1742,7 @@
   },
   {
    "part": "Kingston FURY Renegade Pro 7600 KF576RH40RB-32 (single)",
-   "spec": "1×32 GB, 1Rx8 · SPD JEDEC-6400 CL52 @1.1V (datasheet) · staging path vs kit cap · WITHDRAWN pass 51: Proshop.pl page reads \"Produkt został wycofany\" (product discontinued).",
+   "spec": "**JEDEC SPD DEFAULT 6400 @1.1V — QUALIFIES** (datasheet KF576RH40RB-32.pdf: \"Default (JEDEC): DDR5-6400 CL52-52-52 @1.1V\"; the 7600 figure is the XMP/EXPO profile at 1.4V). 32 GB 1Rx8 single · not QVL-listed.",
    "shop": "Proshop.pl",
    "country": "PL",
    "price_net": "21 726,02 zł netto **MOVED UP pass 68 from 21 113,01 (−2,9 % the wrong way)**",
@@ -1707,7 +1765,8 @@
     "gross_pln": 6526.0,
     "gross_derived": false,
     "net_derived": false
-   }
+   },
+   "qvl_mz23su0": "fail"
   },
   {
    "part": "Samsung M321R8GA0EB2-CCP (64 GB 6400, 2Rx4)",
@@ -2165,7 +2224,8 @@
   "Pass 65: quantified the Micron route choice — for the IDENTICAL part (MTC40F204WS1RC64BC1, 96GB 2Rx4, QVL pass) Geizhals/esus it at EUR 3.207,89 gross = 28.08/GB net is 11.5% cheaper than CoreWave best lot (50+ pcs $3,370 = 31.74/GB) and 16.9% below its $3,587 headline => EUR 4.220,96 saved on 12 pcs. CoreWave stays the stocked fallback (200 pcs, Brand New, published). Geizhals aggregate re-read confirms \"1 Angebot\" = genuinely single seller. Three new aggregators walled: skroutz (403 CF), geizhals.at (challenge), toppreise (?q= short-check). Eighth flat pass on all floors.",
   "Pass 66 MOVEMENT: Allegro komputera_pl cut KSM64R52BD4-64MD from 12 898,20 to 12 736,00 zl (-162,20 = -1.26%) = EUR 2.349,55 net = 36.71 EUR/GB (was 37.21); 12x768GB total improves to EUR 28.194,61 net (-EUR 381,23). First real movement after eight flat passes - the BLACK WEEKS promo is the mechanism, so it may fall further or snap back. Micron 96GB ticked +EUR 1,61 (0.05%, noise) to 3.209,50 = 28.09/GB net, single-seller caveat unchanged.",
   "Pass 67: the pass-66 Allegro cut HOLDS at 12 736,00 zl on a second read, confirmed on the offer page itself (\"Oszczedzasz 165 zl\" vs 214 before = independent confirmation of the -162,20 cut). SELLER RECON: komputera.pl is a PARKED domain-for-sale page, so the Allegro storefront is the seller sole presence and it has only 5 ratings - the \"2596 opinii\" on the Ceneo row is the PRODUCT review count, easy to misread as seller reputation. Also closed two more QVL parts as unsold (M321R4GA0EB2-CCP 32GB, M321R2GA3PB2-CCP 16GB) => FOUR QVL-valid-but-unbuyable parts now; Gigabyte QVL is a compatibility doc, not a shopping list. No new prices.",
-  "Pass 68 RECORD CORRECTION: the MZ23-SU0 Memory QVL DOES list Micron MTC40F204WS1RC64BC1 96GB - four die-variants (MWFF/MXCC/USFF/QWCC) all 2Rx4 1.1v 6400MHz - so the EUR 28.09/GB floor is QVL-backed, not QVL-unknown as passes 59-67 prose claimed. Root cause: the QVL page opens on the CPU tab (all 22 CPUs read \"DDR5-6400\", which looks like a memory hit) and the Memory table only renders after clicking the Memory category. Also NEW: SK hynix is a fourth QVL vendor at 6400 (HMCG94AHBRA480N/-487N 64GB at EUR 46.82/GB; HMCGM4MHBRB499N/-505N 96GB with no EU listing) and Micron 6400 rows total 22. Proshop.pl MOVED UP 25 969,00 -> 26 723,00 zl (+2,90%). Allegro 64MD holds 12 736,00 for a third read. New listings: Micron BH1T EUR 39.39/GB, BH1 EUR 43.51/GB, hynix 480N EUR 46.82/GB - none beat. bargainhardware.co.uk has zero 6400 RDIMMs (40x4800 only)."
+  "Pass 68 RECORD CORRECTION: the MZ23-SU0 Memory QVL DOES list Micron MTC40F204WS1RC64BC1 96GB - four die-variants (MWFF/MXCC/USFF/QWCC) all 2Rx4 1.1v 6400MHz - so the EUR 28.09/GB floor is QVL-backed, not QVL-unknown as passes 59-67 prose claimed. Root cause: the QVL page opens on the CPU tab (all 22 CPUs read \"DDR5-6400\", which looks like a memory hit) and the Memory table only renders after clicking the Memory category. Also NEW: SK hynix is a fourth QVL vendor at 6400 (HMCG94AHBRA480N/-487N 64GB at EUR 46.82/GB; HMCGM4MHBRB499N/-505N 96GB with no EU listing) and Micron 6400 rows total 22. Proshop.pl MOVED UP 25 969,00 -> 26 723,00 zl (+2,90%). Allegro 64MD holds 12 736,00 for a third read. New listings: Micron BH1T EUR 39.39/GB, BH1 EUR 43.51/GB, hynix 480N EUR 46.82/GB - none beat. bargainhardware.co.uk has zero 6400 RDIMMs (40x4800 only).",
+  "2026-11-17 USER DIRECTIVE: 2Rx4-only rule DROPPED - the JEDEC-SPD-6400@1.1V gate is now the only qualifier, any org. Applying it correctly required a distinction that changes answers: rated speed is NOT the JEDEC default. Verified from the Kingston datasheets already in record - KF576RH40RBK4-128 (rated 7600) and KF572RH38RB/256GB (rated 7200) BOTH declare \"Default (JEDEC): DDR5-6400 CL52-52-52 @1.1V\" and therefore QUALIFY, while KF564R32RBE-16 (rated 6400!) and KF556R36RBK4-128 (rated 5600) declare \"Default (JEDEC): DDR5-4800\" and do NOT qualify. So a 7200/7600/8800 label is neither necessary nor sufficient. Newly eligible and priced: FURY 256GB kit KF572RH38RBK8-256 at EUR 37.91/GB, FURY 32GB KF576RH40RB-32 at EUR 40.02/GB, FURY 32GB KF572RH38RB @ EUR 37.51-37.62 - none beat the Micron 96GB floor of EUR 28.09/GB. The unlock is CAPACITY-SHAPE, not price: the QVL carries 88 parts at 6400 of which only 47 are 2Rx4 - now reachable are 48GB 1Rx4/2Rx8 (Samsung M321R6GA0PB2, Micron MTC20F104XS1RC64BC1), 32GB 1Rx4/2Rx8 Samsungs, TeamGroup/TRUSTA/V-color parts, plus a 256GB 8Rx4 (V-color TR5256G64O460) and 128GB 4Rx4 (TR5128G64Q460). None of those have an EU offer yet except the Samsung 48GB at CoreWave (EUR 30.71/GB net-basis, 250 pcs) which is now ELIGIBLE but does not beat the floor. Board renderer no longer flags non-2Rx4 as bad."
  ],
  "ladder": {
   "updated": "2026-11-16T21:35Z",

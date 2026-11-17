@@ -46,7 +46,9 @@ for o in data["offers"]:
         return "" if v is None else f"{v:.2f}"
     best = ' <span class="tag rec">BEST</span>' if o.get("best") else ""
     orgv = str(o.get("org", ""))
-    org = f' <span class="tag {"rec" if "2Rx4" in orgv else "bad"}">{html.escape(orgv)}</span>' if orgv else ""
+    # org is informational since the 2026-11-17 directive dropped the 2Rx4-only rule; only the
+    # JEDEC-SPD-6400@1.1V gate decides eligibility, so no org value is flagged bad.
+    org = f' <span class="tag {"rec" if "2Rx4" in orgv else ""}">{html.escape(orgv)}</span>' if orgv else ""
     cd = o.get("condition") or ""
     ctag = ""
     if cd:
@@ -76,11 +78,10 @@ for o in data["offers"]:
 best_kit = next((o for o in data["offers"] if o.get("best")), data["offers"][0])
 gen = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
 
-# KPI card 1 is the cheapest full 2Rx4 build (user directive 2026-11-16: 2Rx4 only, so the 384 GB
-# 12x32 tier is gone). Read it from the ladder so the card cannot drift from the table below.
-# KPI 1: cheapest build made only of QVL-PASSING 2Rx4 parts, priced per 12 modules.
+# KPI 1: cheapest total-spend build from QVL-PASSING parts, priced per 12 modules.
+# (2Rx4-only filter dropped 2026-11-17 by user directive — only the JEDEC-SPD-6400@1.1V gate counts now.)
 _q = [o for o in data["offers"]
-      if o.get("qvl_mz23su0") == "pass" and "2Rx4" in str(o.get("org", ""))
+      if o.get("qvl_mz23su0") == "pass"
       and (o.get("price") or {}).get("net_pln") and (o.get("price") or {}).get("gb")]
 if _q:
     def _pergb(o):
@@ -177,7 +178,7 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
   code {{ color:#4cc9f0; }}
 </style></head><body><div class="wrap">
 <h1>RAM offer board — DDR5-6400 RDIMM (JEDEC-SPD rule)</h1>
-<p class="sub">Board: <b>GIGABYTE MZ23-SU0 (Rev. 3.x)</b> · CPU: EPYC 9555 · 12-channel, 12 DIMM slots (2DPC capable, up to 9 TB) · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). <b>Module type: 2Rx4 only</b> (directive 2026-11-16) — 1Rx8/2Rx8 rows are struck from the ladder. Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
+<p class="sub">Board: <b>GIGABYTE MZ23-SU0 (Rev. 3.x)</b> · CPU: EPYC 9555 · 12-channel, 12 DIMM slots (2DPC capable, up to 9 TB) · JEDEC-only BIOS → a module counts only if its <b>JEDEC SPD default is 6400 @ 1.1 V</b> (no EXPO/XMP). <b>Any rank/org (directive 2026-11-17)</b> — the rated speed on the box is irrelevant; a 7600-rated kit with a 6400 JEDEC default qualifies, a 6400-rated kit defaulting to 4800 does not. Net = VAT-less where the shop allows it. PLN→EUR @ {EURPLN}.</p>
 <div class="kpi">
   <div class="card"><h2>{kit_cap}</h2><div class="big">{kit_net}</div><span class="k">{html.escape(kit_label)}{f' — <a href="{html.escape(kit_url)}">source ↗</a>' if kit_url else ''}</span></div>
   <div class="card"><h2>Cheapest per GB — QVL-passing</h2><div class="big">{gb_best}</div><span class="k"><a href="{html.escape(gb_url)}">open the offer ↗</a> · {html.escape(gb_label)}</span></div>

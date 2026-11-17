@@ -2,6 +2,8 @@
 
 ## Standing reference (for scheduler passes)
 
+**RULE CHANGED 2026-11-17 (user): the 2Rx4-only restriction is DROPPED — any rank/org is eligible; the JEDEC-SPD-6400@1.1V gate is the ONLY qualifier.** **Do not read this as "anything rated 6400+": rated speed ≠ JEDEC default.** Datasheet-verified: `KF576RH40RBK4-128` (rated **7600**) and `KF572RH38RBK8-256`/`-32` (rated **7200**) all declare "Default (JEDEC): DDR5-6400 CL52-52-52 @1.1V" and **QUALIFY**; `KF564R32RBE-16` (rated **6400**) and `KF556R36RBK4-128` (5600) declare "Default (JEDEC): DDR5-4800" and **DO NOT**. The `Default (JEDEC)` line in the datasheet is the only test. **Unlocked: capacity shapes, not price.** The QVL has 88 parts at 6400 but only 47 were 2Rx4 — now reachable are 48 GB 1Rx4/2Rx8, 32 GB 1Rx4/2Rx8, a 128 GB 4Rx4 and a 256 GB 8Rx4 V-color. **New mid tier: 576 GB (12×48 GB Samsung @ CoreWave) at €30.71/GB net-basis = €17 689** — did not exist before. FURY kits priced (€37.91–40.02/GB, SPD ✓ but not QVL-listed) do not beat the floor. **Floor unchanged: Micron 96 GB €28.09/GB.**
+
 **QVL CORRECTION (pass 68, supersedes pass 59 prose): the MZ23-SU0 Memory QVL DOES list Micron `MTC40F204WS1RC64BC1` 96 GB — four die-variants (MWFF/MXCC/USFF/QWCC), all 2Rx4 1.1v 6400MHz. The €28.09/GB floor is QVL-backed, not QVL-unknown.** Root cause of the nine-pass error: the QVL page opens on the **CPU** tab and all 22 CPUs read "DDR5-6400", which reads like a memory hit; the Memory table only renders after clicking the **Memory** category. **SK hynix is a FOURTH QVL vendor at 6400** (`HMCG94AHBRA480N`/`-487N` 64 GB @ €46,82/GB; `HMCGM4MHBRB499N`/`-505N` 96 GB, no EU listing) and Micron contributes **22** 6400 rows. Kingston 96MC/96HM/64HA remain genuinely NOT listed. **Proshop.pl moved UP 25 969,00 → 26 723,00 zł (+2,90 %)** on pass 68.
 
 **SELLER RISK ON THE CHEAP ROUTES (pass 67): the Allegro 64 MD cut HOLDS at 12 736,00 zł (second read; "Oszczędzasz 165 zł" vs 214 confirms the −162,20 cut is real) — but `komputera.pl` is a **parked domain-for-sale page**, so the Allegro storefront is that seller's only presence and it carries just **5 ratings** (the "2 596 opinii" on the Ceneo row is the *product* count, not the seller). And **FOUR QVL-passing parts now have ZERO EU offers** (`M321R8GA0PB2-CCP` 64 GB, `MDRRWM4QDBC2-3*` 96 GB, `M321R4GA0EB2-CCP` 32 GB, `M321R2GA3PB2-CCP` 16 GB) — Gigabyte's QVL is a compatibility document, not a shopping list.**
@@ -2925,3 +2927,65 @@ The tray variant is the cheapest Micron 64 GB yet — but still **7 % above the 
 Floors unchanged: **Micron 96 GB @ Geizhals €28.09/GB net** and **Kingston 64MD @ Allegro €36.71/GB net** (768 GB, €28 194,61 net).
 
 Coverage: camofox 3 profiles / 8 navigations (ceneo, proshop, tonitrus, + QVL Memory-tab read ×5 evals); trawl 6 scrapes (Micron 96, 2 Micron 64, 2 hynix 64, bargainhardware); curl 8 (ibfusion, senetic ×2, geniuz ×2, e-tec ×2, itpro, mem-tek). 1 record correction (QVL), 1 new vendor family, 3 new listings priced, 0 beats.
+
+---
+
+## Rule change — 2026-11-17 (user directive): **2Rx4 restriction DROPPED.** JEDEC-SPD-6400 @ 1.1 V is now the only gate, any rank/org.
+
+### The distinction that decides it: rated speed ≠ JEDEC default
+
+The directive mentions "may be 6400, 7200, 7600, 8800 whatever", which reads as "any module rated at 6400 or above". **That reading is wrong, and acting on it would put non-qualifying modules on the board.** A DDR5 module carries two independent speed facts:
+
+| Fact | Where it lives | What a JEDEC-only BIOS runs |
+|---|---|---|
+| **Rated speed** (7200/7600/8800) | EXPO/XMP profile, typically @ **1.4 V** | ignored — the profile is never applied |
+| **JEDEC SPD default** | SPD bytes, @ **1.1 V** | **this** — always |
+
+The two are independent, and the datasheets already in this record prove it in both directions:
+
+| Kingston part | Rated | `Default (JEDEC)` line | Qualifies? |
+|---|---|---|---|
+| `KF576RH40RBK4-128` (4×32 kit) | 7600 | **DDR5-6400 CL52-52-52 @1.1V** | **YES** |
+| `KF572RH38RBK8-256` (8×32, 256 GB) | 7200 | **DDR5-6400 CL52-52-52 @1.1V** | **YES** |
+| `KF572RH38RB-32` (32 GB) | 7200 | **DDR5-6400 CL52-52-52 @1.1V** | **YES** |
+| `KF564R32RBE-16` | **6400** | DDR5-4800 CL40-39-39 @1.1V | **NO** |
+| `KF556R36RBK4-128` | 5600 | DDR5-4800 CL40-39-39 @1.1V | **NO** |
+
+**⇒ A 7200 or 7600 label is neither necessary nor sufficient. `KF564R32RBE-16` is rated 6400 and does NOT qualify (JEDEC default 4800); `KF576RH40RBK4-128` is rated 7600 and DOES (JEDEC default 6400).** The board now reflects the datasheet line, not the marketing number.
+
+This is the same class of error as the pass-61 gross/net slip and the pass-55 stock-lot misread: a number that looks like the answer but measures something else.
+
+### What the rule change actually unlocks — capacity shapes, not price
+
+The QVL holds **88 parts at 6400, of which only 47 were 2Rx4** (2Rx8 19, 1Rx8 11, 1Rx4 9, 4Rx4 1, 8Rx4 1). Newly reachable:
+
+| Shape | QVL ✓ examples | Status |
+|---|---|---|
+| **48 GB** 1Rx4 / 2Rx8 | Samsung `M321R6GA0PB2-CCPKC`, `M321R6GA3PB2-CCPWC`; Micron `MTC20F104XS1RC64BC1` / `MTC20F208XS1RC64BC1` | CoreWave 48 GB **now eligible** at €30.71/GB net-basis (250 pcs) |
+| **32 GB** 1Rx4 / 2Rx8 | Samsung `M321R4GA0PB2-CCPPC/WC`, `M321R4GA3PB2`; Micron `MTC20F2085S1RC64BD2`; Kingston `KSM64R52BD8-32MD/-32MH` | previously barred, now eligible |
+| **128 GB** 4Rx4 | V-color `TR5128G64Q460` | no EU offer |
+| **256 GB** 8Rx4 | V-color `TR5256G64O460` | **Geizhals: keine Angebote** |
+| 24/16 GB 1Rx8 | Samsung, Micron, TeamGroup, TRUSTA, SK hynix | 16 GB units only fill half the slots per GB |
+
+### Newly-priced FURY RDIMMs (SPD pass, **not** QVL-listed) — none beats the floor
+
+| Part | Rated | JEDEC default | Shop | Price | €/GB net |
+|---|---|---|---|---|---|
+| `KF572RH38RBK8-256` 256 GB (8×32) | 7200 | **6400 @1.1V** ✓ | Geizhals / Proshop.de | €11 550,39 inkl. | **€37.91** |
+| `KF576RH40RB-32` 32 GB | 7600 | **6400 @1.1V** ✓ | Geizhals / Proshop.de | €1 523,83 inkl. | **€40.02** |
+| `KF572RH38RB-32` 32 GB | 7200 | **6400 @1.1V** ✓ | Geizhals (0 offers on page) | ~€1 523,83 band | €37.51–37.62 |
+
+Note the 256 GB kit is **8×32 GB — it fills 8 of 12 slots**, so a full 12-slot population needs 1.5 kits. QVL status for all three: **not listed**.
+
+### Tier comparison after the rule change
+
+| Build | €/GB net | 12-module total | Change |
+|---|---|---|---|
+| 384 GB (12×32 2Rx8 Kingston 32MD) | €32.83 | €12 607 | newly eligible |
+| **576 GB (12×48 2Rx8 Samsung @ CoreWave)** | **€30.71** | **€17 689** | **newly eligible — cheapest mid tier** |
+| 768 GB (12×64 2Rx4 Kingston 64MD) | €36.71 | €28 193 | unchanged |
+| **1152 GB (12×96 2Rx4 Micron)** | **€28.09** | **€32 360** | unchanged — still the €/GB floor |
+
+**Verdict: the rule change widens the build menu but does not move the floor.** Micron 96 GB at €28.09/GB remains cheapest per GB and cheapest for 1152 GB. The new value is a **576 GB tier at €30.71/GB** (CoreWave 48 GB, now eligible) — a middle option that did not exist under the 2Rx4-only rule. All three FURY kits qualify on SPD but are QVL-unlisted and dearer per GB than the parts already on the board.
+
+Coverage: camofox 1 profile (QVL Memory tab, 2 sessions + click), trawl 7 scrapes (FURY ×3, V-color ×2, Samsung 48/32), curl 1 (transcend, failed). Board renderer updated: org tags no longer flag non-2Rx4 as bad; KPI card 1 no longer filters on 2Rx4.
