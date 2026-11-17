@@ -1,6 +1,6 @@
 # Samsung 9100 PRO 1 TB
 
-<p class="muted"><strong>€264.00</strong> · Alternate DE · PCIe 5.0 x4, 1 TB. Used in <a href="../../builds/a-balanced/">A</a>, <a href="../../builds/d-staged-6400/">D</a>–<a href="../../builds/h-asus-4x-gen5/">H</a>.</p>
+<p class="muted"><strong>2 TB</strong> · PCIe 5.0 x4. In this build: <b>the storage pick</b> (or XPG Mars 980). Onboard M.2 slots are Gen3 x2 — see the trap below.</p>
 
 ## What it is
 
@@ -25,7 +25,8 @@ Samsung’s Gen5 consumer/workstation SSD, 1 TB, PCIe 5.0 x4. It is the array dr
 
 - **Gen5 at Gen4 price** (€264 vs €262 for the 990 PRO).
 - **~14.8 GB/s read** per drive; a 3-drive array is ~42–44 GB/s.
-- **M.2 2280**, fits both the ASRock M.2/MCIO and the ASUS four M.2 sockets.
+- **M.2 2280**, fits the MZ23-SU0's onboard slot. Reads at ~2 GB/s there, the
+  slot's Gen3 x2 ceiling, not the drive's.
 - **The fastest array drive in the book.**
 </div>
 <div markdown>
@@ -40,4 +41,4 @@ Samsung’s Gen5 consumer/workstation SSD, 1 TB, PCIe 5.0 x4. It is the array dr
 
 ## Where it is used
 
-[A](../builds/a-balanced.md) · [D](../builds/d-staged-6400.md) · [E](../builds/e-fast-ram.md) · [F](../builds/f-full-speed.md) · [G](../builds/g-asus-premium.md) · [H](../builds/h-asus-4x-gen5.md)
+- [The build](../build.md)

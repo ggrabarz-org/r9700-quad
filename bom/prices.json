@@ -1,4 +1,5 @@
 {
+  "status": "SUPERSEDED 2026-11-17 - WRX90 prices kept for history only. The live build is site-src/docs/build.md (EPYC 9355P + MZ23-SU0). 'options' A-G are retired; do not treat them as builds.",
   "as_of": "2026-11-06/07",
   "currency": "EUR",
   "tax": "incl. VAT",
@@ -23,7 +24,7 @@
     },
     "mainboard_asus_sage": {
       "name": "ASUS Pro WS WRX90E-SAGE SE (WRX90, EEB, 7x PCIe 5.0 x16, 4x Gen5 M.2, 2x SlimSAS Gen4, IPMI)",
-      "price": 1288.00,
+      "price": 1288.0,
       "qty": 1,
       "source": "https://www.alternate.de/ASUS/PRO-WS-WRX90E-SAGE-SE-Mainboard/html/product/100042953",
       "vendor": "Alternate DE (in stock)",
@@ -32,7 +33,7 @@
     },
     "cpu": {
       "name": "AMD Ryzen Threadripper PRO 9955WX (16C/32T, 4.5-5.4 GHz, 350 W, 128 PCIe 5.0 lanes, 8-channel DDR5 ECC)",
-      "price": 1637.70,
+      "price": 1637.7,
       "qty": 1,
       "source": "https://geizhals.de/amd-ryzen-threadripper-pro-9955wx-100-100000725wof-a3531872.html",
       "vendor": "Geizhals DE (from)",
@@ -41,7 +42,7 @@
     },
     "ram_64gb": {
       "name": "Samsung M321R8GA0PB0-CWM 64 GB DDR5-5600 CL46 2Rx4 ECC RDIMM",
-      "price": 2499.00,
+      "price": 2499.0,
       "qty": 2,
       "source": "https://geizhals.eu/samsung-rdimm-64gb-m321r8ga0pb0-cwm-a3528359.html",
       "vendor": "Geizhals EU (28 offers)",
@@ -68,7 +69,7 @@
     },
     "ram_64gb_6400_8x": {
       "name": "G.Skill T5 Neo F5-6400R3848F64GE8-T5N 512 GB (8×64 GB) DDR5-6400 CL38 ECC R-DIMM kit",
-      "price": 23094.00,
+      "price": 23094.0,
       "qty": 1,
       "source": "https://www.alternate.de/G-Skill/RIMM-512-GB-DDR5-6400-8x-64-GB-Octa-Kit-ECC-Arbeitsspeicher/html/product/100203342",
       "vendor": "Alternate DE (notify only at snapshot)",
@@ -77,7 +78,7 @@
     },
     "nvme_gen5_1tb": {
       "name": "Samsung 9100 PRO 1 TB (PCIe 5.0 x4, 14,800/13,400 MB/s, 1.85M/2.6M IOPS)",
-      "price": 264.00,
+      "price": 264.0,
       "qty": 3,
       "source": "https://www.alternate.de/Samsung/9100-PRO-1-TB-SSD/html/product/100118126",
       "vendor": "Alternate DE",
@@ -86,7 +87,7 @@
     },
     "nvme_gen4_1tb": {
       "name": "Samsung 990 PRO 1 TB (PCIe 4.0 x4, 7,450/6,900 MB/s, 1.2M/1.55M IOPS)",
-      "price": 262.00,
+      "price": 262.0,
       "qty": 4,
       "source": "https://www.alternate.de/Samsung/990-PRO-1-TB-SSD/html/product/1864239",
       "vendor": "Alternate DE",
@@ -95,7 +96,7 @@
     },
     "sata_4tb": {
       "name": "Samsung 870 EVO 4 TB SATA SSD",
-      "price": 665.00,
+      "price": 665.0,
       "qty": 1,
       "source": "https://www.alternate.de/Samsung/870-EVO-4-TB-SSD/html/product/1706407",
       "vendor": "Alternate DE",
@@ -104,7 +105,7 @@
     },
     "sata_8tb": {
       "name": "Toshiba N300 8 TB SATA HDD (archive/image)",
-      "price": 389.00,
+      "price": 389.0,
       "qty": 1,
       "source": "https://www.alternate.de/Toshiba/N300-8-TB-Festplatte/html/product/100111191",
       "vendor": "Alternate DE",
@@ -113,7 +114,7 @@
     },
     "mcio_cable": {
       "name": "MCIO 8i/x4 to M.2 NVMe adapter cable",
-      "price": 40.00,
+      "price": 40.0,
       "qty": 2,
       "source": "estimate",
       "vendor": "estimate",
@@ -122,7 +123,7 @@
     },
     "slimsas_cable": {
       "name": "SlimSAS SFF-8654 to NVMe adapter cable",
-      "price": 40.00,
+      "price": 40.0,
       "qty": 2,
       "source": "estimate",
       "vendor": "estimate",
@@ -131,7 +132,7 @@
     },
     "psu": {
       "name": "Seasonic PRIME PX-2200 (2200 W, ATX 3.1, 80+ Platinum, 2x native 12V-2x6 + 2x adapters, 4x PCIe 8-pin)",
-      "price": 489.90,
+      "price": 489.9,
       "qty": 1,
       "source": "https://www.alternate.de/Seasonic/PRIME-PX-2200-2200W-ATX-3-1-PC-Netzteil/html/product/100076188",
       "vendor": "Alternate DE (sale, was 579.90)",
@@ -140,7 +141,7 @@
     },
     "cooler_aio": {
       "name": "SilverStone SST-XE360-TR5 (360 mm AIO, sTR5/SP6, 350 W class)",
-      "price": 389.90,
+      "price": 389.9,
       "qty": 1,
       "source": "https://www.alternate.de/SilverStone/SST-XE360-TR5-Wasserk%C3%BChlung/html/product/100114775",
       "vendor": "Alternate DE (sale, was 462.91)",
@@ -149,7 +150,7 @@
     },
     "case_meshify": {
       "name": "Fractal Design Meshify 2 XL (EEB 305x330, 9+3 slots, 6x 3.5\", 2x 2.5\", 250 mm PSU, 480 mm top rad)",
-      "price": 209.90,
+      "price": 209.9,
       "qty": 1,
       "source": "https://www.alternate.de/Fractal-Design/Meshify-2-XL-Black-TG-Light-Tint-Big-Tower-Geh%C3%A4use/html/product/1669747",
       "vendor": "Alternate DE",
@@ -158,7 +159,7 @@
     },
     "fan_140": {
       "name": "140 mm PWM case fan (Fractal/Arctic class)",
-      "price": 15.00,
+      "price": 15.0,
       "qty": 1,
       "source": "estimate",
       "vendor": "estimate",
@@ -192,7 +193,7 @@
     },
     "ram_64gb_6400_oem": {
       "name": "Micron MTC40F2046S1RC64BD2 64 GB DDR5-6400 CL52 2Rx4 ECC RDIMM (single module, US price)",
-      "price": 4270.00,
+      "price": 4270.0,
       "currency": "USD",
       "source": "https://www.serversupply.com/MEMORY/PC5-51200/64GB/MICRON/MTC40F2046S1RC64BD2_387264.htm",
       "verified": true,

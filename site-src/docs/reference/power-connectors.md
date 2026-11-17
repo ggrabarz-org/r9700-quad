@@ -1,45 +1,70 @@
 # Power connectors
 
-<p class="muted">The PX-2200 has the watts. It does not have the PCIe 8-pin count for four GPUs plus board aux. This is the build’s hidden limit and the first thing to solve before ordering.</p>
+<p class="muted">Connector count is the limit, not wattage. The MZ23-SU0 wants a 24-pin, two 8-pin EPS and a 6-pin aux; the four cards want a 12V-2x6 each. Count the plugs before you count the watts.</p>
 
-## The PSU outputs
+## What the MZ23-SU0 needs
 
-Seasonic PRIME PX-2200:
+Verified against the datasheet and manual (Internal I/O and PSU Connectors), not
+the product page.
 
-| Output | Count | Notes |
+| Connector | Purpose | Qty |
+|---|---|---:|
+| 24-pin ATX (`ATX1`) | main | 1 |
+| 8-pin ATX 12V (`P12V_AUX1`, `P12V_AUX2`) | CPU (EPS) | **2** |
+| 6-pin ATX 12V (`P12V_PCIE`) | board aux — **mandatory** | **1** |
+| Molex (`FAN1_PWR`) | fan rail, only if a hub is used | 1 |
+
+The 6-pin `P12V_PCIE` is easy to miss: the manual's power-connector section
+states that the 12 V connector feeds the CPU and that **the system will not
+start without it**.
+
+## What the GPUs need
+
+| Connector | Qty |
+|---|---:|
+| 12V-2x6 (16-pin) per R9700 | **4** |
+
+Risers carry data only, so every card takes its 12 V from its own 16-pin feed.
+Nothing is shared, nothing needs a splitter.
+
+## The count
+
+| Rail | Needed | Note |
 |---|---:|---|
-| Native 12V-2x6 | **2** | 600 W class each |
-| 12V-2x6 adapters | **2** | Each is **2× PCIe 8-pin → one 12V-2x6** |
-| PCIe 8-pin (8P/6P) | **4** | The only PCIe 8-pin outputs |
-| EPS 8-pin | 3 | CPU |
-| SATA | 16 | drives |
-| 24-pin | 1 | main |
+| 24-pin | 1 | |
+| EPS 8-pin | 2 | |
+| PCIe 6-pin | 1 | board aux |
+| 12V-2x6 | **4** | one per card |
+| Molex | 1 | fan hub, optional |
+| SATA | — | the board has no SATA ports |
 
-## The four-GPU consumption
+A 1600 W unit with **2× EPS, 8× PCIe 8-pin, 2× native 16-pin** covers this: two
+cards on the native 16-pin, two on 2×8-pin→16-pin adapters (4 of the 8 PCIe
+cables), leaving 4 PCIe 8-pin for the board aux. The Gigabyte GP-UD1600PM PG5
+is one such unit and is the one priced in this book.
 
-Four R9700s need four 12V-2x6 feeds:
+!!! danger "Do not split a 12V-2x6"
+    Two 300 W cards from one output is not a supported configuration. One feed
+    per card.
 
-- 2 GPUs on the **2 native** 12V-2x6.
-- 2 GPUs on the **2 adapters**.
-- Those two adapters consume **all four PCIe 8-pin**.
+!!! warning "Adapter limit is 300 W"
+    A 2×8-pin→12V-2x6 adapter is rated 300 W by PCI-SIG — exactly the card's
+    TDP. That is why the build defaults to a **210 W cap**, which also matches
+    the engine's own reference configuration.
 
-That leaves **zero PCIe 8-pin cables** for the board aux.
+## Watts
 
-| Board | Board aux | Cables short |
-|---|---|---|
-| ASUS WRX90E-SAGE SE (single PSU) | 2× CPU 8-pin + **2× PCIE_8P** | **2 PCIe 8-pin** |
-| ASRock WRX90 WS EVO | 2× ATX12V + **2× PCIE12V 6-pin + 2× GFX 6-pin** | **4 PCIe 8-pin** |
-| ASUS W790E-SAGE SE | 2× 24-pin, 4× 8-pin +12V, 1× 8-pin PCIe, 1× 6-pin PCIe | check the single-PSU table; still 1× 8-pin + 1× 6-pin |
+| | Stock (300 W/card) | Capped (210 W/card) |
+|---|---:|---:|
+| 4× R9700 | 1 200 W | 840 W |
+| EPYC 9355P | 280 W | 280 W |
+| 12× DDR5 RDIMM | 96 W | 96 W |
+| Board, BMC, NIC, VRM loss | 40 W | 40 W |
+| 2× M.2 | 20 W | 20 W |
+| Fans | 30 W | 30 W |
+| **Total** | **≈1 666 W** | **≈1 306 W** |
+| **PSU** | **2 000 W** | **1 600 W** |
 
-## The options
-
-1. **Second PSU for the board aux.** The ASUS WRX90 has documented dual-PSU wiring (`PCIE_CPU_12V` headers); the ASRock does not. This is the clean ASUS path.
-2. **A single PSU with ≥6 PCIe 8-pin for the ASUS, ≥8 for the ASRock.** The PX-2200 has 4. Check the 2,000 W class units’ connector counts, not just the wattage.
-3. **Do not use splitters on 300 W cards.** A 12V-2x6 splitter is not a standard, safe way to run two 300 W GPUs from one output.
-
-!!! danger "Do not assume the 4 PCIe cables cover the board GFX inputs"
-    They cannot also feed the two 12V-2x6 adapters. The earlier book claimed they could; that was wrong. Budget the second PSU or a higher-connector PSU before buying the board.
-
-## The ASUS advantage
-
-The ASUS WRX90 needs **2** PCIe 8-pin for board aux; the ASRock needs **4** 6-pin. The ASUS is the lighter aux load and the only one with documented dual-PSU wiring. If you are building a four-GPU box with the PX-2200, the ASUS path is the more coherent one — after you add the second PSU or change the PSU.
+The CPU is not idle in this build: the expert pool runs across the 32 cores
+during decode, so the 280 W is a sustained load, not a burst. Size the cooler
+for continuous output.

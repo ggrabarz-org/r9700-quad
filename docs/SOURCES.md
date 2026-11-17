@@ -113,7 +113,8 @@ The following are **derived**, not quoted:
 - 4×300 + 350 + 80 = 1,630 W; 2,200 − 1,630 = 570 W headroom.
 - 1,630 W / 0.94 / 230 V = 7.54 A.
 - 1,630 W × 8,760 h × €0.25/kWh = €3,569.70/year at 100% load.
-- All BOM totals come from `tools/calc.py` reading `bom/prices.json`; run it to reproduce them.
+- The BOM totals in the retired WRX90 book came from `tools/calc.py` reading
+  `bom/prices.json`. Both are superseded; the live build is `site-src/docs/build.md`.
 
 ## What is **not** verified
 

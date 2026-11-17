@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Cost, power, lane and VRAM/KV model for the 4x R9700 ASRock WRX90 WS EVO platform.
+"""Cost, power, lane and VRAM/KV model — SUPERSEDED WRX90 figures, kept for history.
+
+The live build is site-src/docs/build.md (EPYC 9355P + MZ23-SU0). Do not use the
+A-G option totals below as builds; they are retired.
 
 Reads bom/prices.json and prints Markdown tables. No third-party packages.
 Run from the repository root: python3 tools/calc.py

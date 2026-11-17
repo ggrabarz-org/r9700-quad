@@ -3,3 +3,4 @@ site/
 __pycache__/
 *.pyc
 .codegraph*/
+site-src/docs/ram-board.html

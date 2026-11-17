@@ -253,8 +253,7 @@ oversized for four cards.
   direct vs RAM on gfx1201)
 - `/root/git/strata/docs/MODELS.md` 141-142 (`--low-ram` is a setup flag)
 - `README.md` §3 (2×64 GB 5600 value; 2× / 4× / 8× GB 6400 fast path),
-  `bom/option-c.csv`, `bom/option-d.csv`, `bom/option-e.csv`,
-  `bom/option-f.csv`, `configs/strata-4x-r9700-8x262k.json`
+  `configs/strata-4x-r9700-8x262k.json`
 - Micron `MTC40F2046S1RC64BH1` single-module listing: Galaxus DE, €3,279.97;
   Micron part page confirms 64 GB, x80 ECC, dual rank, 4Gb x4, CL52, 1.1 V
 - G.Skill T5 Neo kit listings: Proshop DE (4×64, €12,135.01) and Alternate DE

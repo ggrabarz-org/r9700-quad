@@ -1,175 +1,120 @@
-# Four R9700s. One 128 GB VRAM box. Priced.
-
-> **⚠️ SUPERSEDED 2026-11-15 — platform replaced by EPYC/SP5.** The chosen TR PRO
-> 9955WX is a **2-CCD** CPU: 2 Infinity Fabric links to the IOD cannot feed the
-> 8-channel sTR5 platform's 409.6 GB/s from the CPU side, and sTR5 is 33 % below
-> SP5's 614 GB/s on every SKU. For a workload whose experts spill to RAM
-> (DeepSeek 2.00/2.25, UD-Q8), the platform is the decision — see the EPYC/SP5
-> analysis in [the platform verdict](reference/epyc-platform.md). The builds
-> below are valid **only** for a strictly VRAM-resident workload (IQ3_S/IQ3_XXS).
+# Four R9700s. One 128 GB VRAM box. One build.
 
 <div class="hero" markdown>
-<span class="eyebrow">R9700 ×4 · WRX90 build book · 2026-11-06/07</span>
+<span class="eyebrow">R9700 ×4 · EPYC 9355P / MZ23-SU0 · 2026-11-17</span>
 
-# The GPU budget is already spent. The platform is the decision.
+# Four cards you own. One platform decision, already made.
 
-Four Radeon AI PRO R9700 32 GB cards, 128 GB of VRAM, and a workstation around them. This site prices the platform, compares the boards and memory paths, and gives every part its own dossier — so you can choose the middle instead of guessing at it.
+Four PowerColor AI PRO R9700 32 GB cards, 128 GB of VRAM, on an EPYC 9355P in a
+GIGABYTE MZ23-SU0 with 12 channels of DDR5-6400. This site is that build: what
+it is, why each part is that part, and what has to be true before you order.
 
 <div class="hero-meta" markdown>
 <span class="chip accent">4× 32 GB = 128 GB VRAM</span>
-<span class="chip">WRX90 · 8-channel</span>
-<span class="chip">DDR5-6400 fast path</span>
+<span class="chip">12-channel · 614 GB/s</span>
+<span class="chip">8 CCDs</span>
+<span class="chip">JEDEC 6400 @ 1.1 V</span>
 <span class="chip">IPMI</span>
-<span class="chip">EU prices</span>
 </div>
 </div>
 
-## Start with the decision, not the parts list
+## The build
 
 <div class="grid cards" markdown>
 
--   **A — the value middle**
+-   **Board — MZ23-SU0**
     ---
-    **€10,418.91** platform · 3× Gen5 3 TB · 2×64 GB 5600
-    All-Gen5, a full image on the 4 TB SATA, IPMI, the cheapest proper WRX90 board.
-    [:octicons-arrow-right-24: Build A](builds/a-balanced.md)
+    CEB 304.8 × 266.7 mm, single SP5, **5× PCIe 5.0 x16**, 12 DIMM, 4× MCIO 8i,
+    AST2600 IPMI, **no native SATA**, 2× M.2 at **Gen3 x2**.
+    [:octicons-arrow-right-24: The build](build.md)
 
--   **D — 2× now, 8× later**
+-   **CPU — EPYC 9355P**
     ---
-    **€12,027.71** platform · 2×64 GB 6400 Micron · 3 TB Gen5
-    The only literal 2×64 GB 6400 start that reaches 8×64 at full 6400 with JEDEC 2Rx4 modules.
-    [:octicons-arrow-right-24: Build D](builds/d-staged-6400.md)
+    32C / **8 CCDs**, 256 MB L3, 3.55 GHz, **280 W**, 128× Gen5, 12-channel.
+    The CCD count is the Infinity Fabric link count — see
+    [the platform verdict](reference/epyc-platform.md).
 
--   **F — 512 GB**
+-   **Memory — 12× RDIMM**
     ---
-    **€29,057.79*** platform · 8×64 GB 6400 · 8 channels
-    G.Skill’s 8-DIMM 6400 octa kit, 409.6 GB/s. The DeepSeek UD-Q8 / large-model endgame.
-    [:octicons-arrow-right-24: Build F](builds/f-full-speed.md)
+    **JEDEC SPD 6400 @ 1.1 V**, any rank or organisation. The BIOS has no
+    EXPO/XMP and pins the PMIC at 1.1 V, so a 7200 kit runs at its JEDEC default.
+    Live offers: <a href="ram-board.html">RAM board</a>.
 
--   **G — the premium board**
+-   **GPUs — 4× R9700**
     ---
-    **€10,830.86** platform · ASUS WRX90E-SAGE SE · no MCIO
-    Four Gen5 M.2, 32+3+3+3 VRM, dual-PSU, and a public 4× R9700 reference build.
-    [:octicons-arrow-right-24: Build G](builds/g-asus-premium.md)
+    32 GB, 40 mm, 2-slot blower, 12V-2x6, 300 W. All four on **risers in slots
+    1–4** — five slots at 1.0 pitch cannot hold four 2-slot cards natively.
+    [:octicons-arrow-right-24: R9700 dossier](parts/radeon-r9700.md)
 
--   **Parts wiki**
+-   **Storage — 2× 2 TB M.2**
     ---
-    **23 dossiers** · boards, CPU, memory, storage, power, cooling, case, GPU
-    Every part has its own spec table, pros, cons and the builds it appears in.
-    [:octicons-arrow-right-24: Open the Parts wiki](parts/index.md)
+    XPG Mars 980 or Samsung 9100 PRO, in the two onboard slots. Those slots are
+    Gen3 x2, so a Gen5 drive runs at a fifth of its rating. Accepted: the disk
+    is read once at start, not per token.
+    [:octicons-arrow-right-24: 9100 PRO dossier](parts/samsung-9100-pro.md)
+
+-   **Power**
+    ---
+    **1 306 W capped / 1 666 W stock.** 1600 W PSU at a 210 W GPU cap, or 2000 W
+    at stock. Connector count is the real limit, not watts.
+    [:octicons-arrow-right-24: Power & connectors](build.md#power-and-connectors)
 
 </div>
 
-<p class="small muted">* F uses Alternate’s notify-only €23,094 price; orderable at Proshop for €33,766.02. Every platform total excludes the four owned GPUs and includes 3% contingency.</p>
+## What changed, and why there is only one build
 
-## All builds
+The earlier book on this site priced a Threadripper PRO platform across eight
+variants (A–H, plus a used W790 bundle). Those pages are gone. Three findings
+retired them:
 
-<div class="grid cards" markdown>
-
--   **A — Balanced 3× Gen5**
-    ---
-    **€10,418.91** · ASRock WRX90 · 2×64 GB 5600 · 3× Gen5 / 3 TB
-    The all-Gen5 value middle, with a full image on the 4 TB SATA.
-    [:octicons-arrow-right-24: Build A](builds/a-balanced.md)
-
--   **B — Capacity 6× Gen4**
-    ---
-    **€11,705.38** · ASRock WRX90 · 2×64 GB 5600 · 6× Gen4 / 6 TB
-    The model-library build; 8 TB HDD for the image.
-    [:octicons-arrow-right-24: Build B](builds/b-capacity.md)
-
--   **C — Value 4× Gen4**
-    ---
-    **€10,682.59** · ASRock WRX90 · 2×64 GB 5600 · 4× Gen4 / 4 TB
-    Cheapest per TB; no full image on the 4 TB SATA.
-    [:octicons-arrow-right-24: Build C](builds/c-value.md)
-
--   **D — Staged 6400 2×64**
-    ---
-    **€12,027.71** · ASRock WRX90 · 2×64 GB 6400 · 3× Gen5 / 3 TB
-    The literal 2×64 GB 6400 start; six more modules later.
-    [:octicons-arrow-right-24: Build D](builds/d-staged-6400.md)
-
--   **E — Fast RAM 4×64**
-    ---
-    **€17,770.03** · ASRock WRX90 · 4×64 GB 6400 · 3× Gen5 / 3 TB
-    256 GB, four channels, 204.8 GB/s.
-    [:octicons-arrow-right-24: Build E](builds/e-fast-ram.md)
-
--   **F — Full Speed 8×64**
-    ---
-    **€29,057.79*** · ASRock WRX90 · 8×64 GB 6400 · 3× Gen5 / 3 TB
-    512 GB, eight channels, 409.6 GB/s. The endgame.
-    [:octicons-arrow-right-24: Build F](builds/f-full-speed.md)
-
--   **G — ASUS Premium 3× Gen5**
-    ---
-    **€10,830.86** · ASUS WRX90E-SAGE · 2×64 GB 5600 · 3× Gen5 M.2 / 3 TB
-    Four Gen5 M.2, no MCIO, 32+3+3+3 VRM, dual-PSU.
-    [:octicons-arrow-right-24: Build G](builds/g-asus-premium.md)
-
--   **H — ASUS 4× Gen5**
-    ---
-    **€11,503.45** · ASUS WRX90E-SAGE · 2×64 GB 5600 · 4× Gen5 / 4 TB
-    Four Gen5 M.2 drives plus an 8 TB image HDD.
-    [:octicons-arrow-right-24: Build H](builds/h-asus-4x-gen5.md)
-
--   **Used W790 bundle**
-    ---
-    **CHF 1,100–1,200**** · ASUS W790E-SAGE · 8ch DDR5-4800 · your choice
-    The cheap older 16-core platform; LGA4677 cooler required.
-    [:octicons-arrow-right-24: W790 alternative](builds/w790-used.md)
-
-</div>
-
-<p class="small muted">* F uses Alternate’s notify-only €23,094 price; orderable at Proshop for €33,766.02. ** Board + CPU only, used; add LGA4677 cooler, RAM, storage and PSU. Every platform total excludes the four owned GPUs and includes 3% contingency.</p>
-
-## The three constraints
-
-<div class="grid cards" markdown>
-
--   **VRAM is fixed**
-    ---
-    128 GB across four cards. IQ3_S uses ≈50 GB of experts plus ≈3.5 GiB of dense weights per card; the rest is KV. The platform does not change that.
-
--   **Host memory is the lever**
-    ---
-    2×64 GB 5600 is the value floor. 2×64 GB 6400 is the staged fast path. 4×64 / 8×64 GB 6400 is where DeepSeek and 512 GB live. The [memory ladder](reference/memory-ladder.md) is the whole argument.
-
--   **Power connectors are the hidden limit**
-    ---
-    The PX-2200 has the watts, not the PCIe 8-pin count. Four GPUs consume all four PCIe cables; the board aux needs a second PSU or a different PSU. Read [Power connectors](reference/power-connectors.md) before buying anything.
-
-</div>
-
-## The boards in one paragraph
-
-**ASRock WRX90 WS EVO** is the value pick: €808.05, IPMI, 3 Gen5 + 3 Gen4 NVMe ports, MCIO drives in the 2.5" bays. **ASUS WRX90E-SAGE SE** is the premium pick: €1,288.00, four Gen5 M.2, two SlimSAS, 32+3+3+3 VRM, dual-PSU, and the public 4× R9700 reference build. Both run four 2-slot GPUs at x16 in slots 1/3/5/7; slot 6 is x8 on both. The **used W790E-SAGE SE + W5-3435X** bundle is the cheap older route: 16 cores, 8-channel DDR5-4800, 112 lanes, two Gen5 M.2, 8 SATA.
-
-[Compare the boards →](parts/asrock-wrx90-ws-evo.md){ .md-button } [ASUS board dossier →](parts/asus-wrx90e-sage-se.md){ .md-button }
+- **CCD count decides the CPU lane.** A spilling MoE feeds the CPU-side expert
+  lane over the Infinity Fabric, one link per CCD. A 2-CCD part cannot feed a
+  multi-channel socket, whatever its core count. sTR5 also tops out at 8
+  channels — 410 GB/s against SP5's **614 GB/s**, on a workload where that ratio
+  *is* the decode ratio.
+- **The engine already owns this path.** On gfx12 (R9700) `--pcie-frac` defaults
+  to **0.15** — only 15 % of missing expert rows are fetched over PCIe, the rest
+  are computed by a CPU pool reading `--resident-cpu-experts` from host RAM.
+  Host bandwidth is on the decode path; PCIe is not.
+- **VRAM-resident is not the workload.** A TensTorrent-parallel build would fit
+  IQ3_S entirely in 128 GB and make host RAM idle. That is not what runs here.
+  That assumption was wrong in four earlier answers on this site, and it is why
+  the platform moved to SP5.
 
 ## Read before ordering
 
-!!! warning "The four-GPU power connector budget"
-    Four R9700s use the PSU’s two native 12V-2x6 outputs and both 2×8-pin adapters. Those adapters consume **all four PCIe 8-pin cables**. The ASUS board still wants 2× PCIE_8P; the ASRock wants 4× 6-pin. The PX-2200 is **connector-short**. Budget a second PSU or a PSU with more PCIe 8-pin.
+!!! warning "Five slots, all at 1.0 pitch"
+    A 40 mm two-slot card blocks the slot beside it. Three cards fit natively in
+    slots 1/3/5 and bury slots 2 and 4 under their coolers. **Four cards need
+    four risers.** Passive Gen4 x16 at 20–30 cm is the reliable choice; Gen5
+    passive past ~20 cm is not. Tensor-parallel engines all-reduce over PCIe and
+    would not accept this — a layer split does.
 
-!!! note "The prices are a snapshot"
-    EU retail, 2026-11-06/07, incl. VAT. Stock moves. The four GPUs are owned and excluded from platform totals; the “with GPUs” column is replacement value only.
+!!! warning "No SATA on this board"
+    The MZ23-SU0 has **no native SATA ports**; `SATA_SGP1/2` are backplane SGPIO
+    headers. This build has no spinning disks, so that is not a gap here. Adding
+    one would need MCIO→SATA or USB, and that is a separate decision.
 
-!!! tip "The 6400 QVL is not proven"
-    The G.Skill 2Rx4 rank is not printed on the retail listing, the ASRock/ASUS 8×64 6400 QVL is unverified, and the 512 GB training is the stress case. Confirm the module label and the board QVL before ordering.
+!!! note "The RAM rule is JEDEC, not the label"
+    A module counts only if its **JEDEC SPD default is 6400 at 1.1 V**. The rated
+    speed on the box is irrelevant: a 7200-rated kit with a 6400 JEDEC default
+    qualifies, a 6400-rated kit that defaults to 4800 does not. Rank and
+    organisation are free choices.
 
 ## Reference
 
-- [Memory ladder](reference/memory-ladder.md) — 5600 vs 6400, 2×/4×/8×, €/GB, platform totals.
-- [Power connectors](reference/power-connectors.md) — the PSU cable math and the second-PSU options.
-- [Storage & lanes](reference/storage-lanes.md) — Gen5 vs Gen4 arrays, port maps, lane budget.
-- [Acceptance protocol](reference/validation.md) — what to measure when the hardware arrives.
+- [The build](build.md) — parts, power, connectors, slots, storage.
+- [Platform verdict](reference/epyc-platform.md) — why SP5 and why 8 CCDs.
+- [Memory ladder](reference/memory-ladder.md) — capacity against workload.
+- [Power connectors](reference/power-connectors.md) — the cable math.
+- [Storage & lanes](reference/storage-lanes.md) — port map and lane budget.
+- [Acceptance protocol](reference/validation.md) — what to measure first.
+- <a href="ram-board.html">RAM offer board</a> — live DDR5-6400 RDIMM offers.
 - [Sources](reference/sources.md) — every price and spec link.
-- [Visual summary](report.html) — the one-page report.html.
 
 ## Parts wiki
 
-Every part in every BOM has its own dossier: description, specification table, pros, cons and the builds it appears in.
+A dossier per part that is actually in the build: the spec that matters, the
+pros and cons, and the trap in each one.
 
 [Open the Parts wiki →](parts/index.md){ .md-button .md-button--primary }

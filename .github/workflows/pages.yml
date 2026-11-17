@@ -24,10 +24,8 @@ jobs:
           python-version: "3.12"
       - name: Install docs builder
         run: pip install -r requirements-docs.txt
-      - name: Regenerate BOM snippets
-        run: python tools/export_site_bom.py
       - name: Build
-        run: mkdocs build --strict
+        run: ./tools/build-site.sh
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

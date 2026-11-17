@@ -1,48 +1,61 @@
 # Memory ladder
 
-<p class="muted">The host memory decision is the second-biggest line after the GPUs, and the one that changes with the workload. This is the whole ladder, from the 5600 value floor to the 512 GB 6400 endgame.</p>
+<p class="muted">12 channels on SP5, all at DDR5-6400 — 614 GB/s when all twelve are populated. Capacity is the only variable; bandwidth is not. This page is the capacity decision.</p>
 
-## The population
+## The rule
 
-| DIMMs | Slots | Channels | DDR5-5600 | DDR5-6400 | Capacity |
-|---|---|---:|---:|---:|---:|
-| 2 | A1 + E1 | 2 | 89.6 GB/s | 102.4 GB/s | 128 GB |
-| 4 | A1 + C1 + E1 + G1 | 4 | 179.2 GB/s | 204.8 GB/s | 256 GB |
-| 8 | all | 8 | 358.4 GB/s | 409.6 GB/s | 512 GB |
+A module counts only if its **JEDEC SPD default is 6400 MT/s at 1.1 V**.
 
-WRX90 has **8 slots for 8 channels**, so 8 DIMMs is **1 DIMM per channel**. The 9955WX’s official DDR5-6400 is the 8-DIMM, 1DPC ceiling — not a 2-DIMM-per-channel overclock.
+The MZ23-SU0 BIOS exposes `Memory Target Speed` (options end at `DDR5600`),
+`PMIC SWC VDDIO = 1100` and `PMIC SWA/SWB VDD Core = 1100`. There is **no
+EXPO/XMP menu and no DIMM voltage control**. So:
 
-## The parts
+- A **7200-rated** kit whose JEDEC default is 6400 @ 1.1 V **qualifies** — it
+  simply runs at its JEDEC default.
+- A **6400-rated** kit that defaults to 4800 **does not**.
 
-| Part | Type | Capacity | Speed / timings | Voltage | Rank | Price | €/GB |
-|---|---|---|---:|---:|---|---:|---:|
-| [Samsung 64 GB DDR5-5600](../parts/samsung-64gb-5600.md) | single | 64 GB | 5600 CL46 | 1.1 V | 2Rx4 | €2,499.00 | €39.05 |
-| [Micron 64 GB DDR5-6400](../parts/micron-64gb-6400.md) | single | 64 GB | 6400 CL52 | 1.1 V | **2Rx4** | €3,279.97 | €51.25 |
-| [Kingston 64 GB DDR5-6400](../parts/kingston-64gb-6400.md) | single | 64 GB | 6400 CL52 | 1.1 V | not confirmed | €3,202.74 | €50.04 |
-| [G.Skill 4×64 GB DDR5-6400](../parts/gskill-4x64-6400.md) | 4×64 kit | 256 GB | 6400 CL36 | 1.30 V | not printed | €12,135.01 | €47.40 |
-| [G.Skill 8×64 GB DDR5-6400](../parts/gskill-8x64-6400.md) | 8×64 kit | 512 GB | 6400 CL38 | 1.35 V | not printed | €23,094.00* | €45.11 |
+Rank and organisation are free choices. The earlier rule restricting this to
+2Rx4 was dropped on 2026-11-17; the SPD default is the whole gate.
 
-<p class="small muted">* Notify-only at Alternate; Proshop orderable €27,666.06 (€54.04/GB).</p>
+## Bandwidth by population
 
-## The ladder
+Every DIMM is one channel at 6400 = 51.2 GB/s. There is no partial-channel mode
+worth using: 12 DIMMs is 1 DIMM per channel and the full 614 GB/s.
 
-| Config | Capacity | Channels | Bandwidth | RAM price | €/GB | Platform | With GPUs |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| 2×64 5600 (A) | 128 GB | 2 | 89.6 GB/s | €4,998.00 | €39.05 | €10,418.91 | €18,139.75 |
-| 2×64 6400 Micron (D) | 128 GB | 2 | 102.4 GB/s | €6,559.94 | €51.25 | €12,027.71 | €19,748.55 |
-| 4×64 6400 G.Skill (E) | 256 GB | 4 | 204.8 GB/s | €12,135.01 | €47.40 | €17,770.03 | €25,490.87 |
-| 8×64 6400 G.Skill (F) | 512 GB | 8 | 409.6 GB/s | €23,094.00* | €45.11 | €29,057.79* | €36,778.63* |
-| 8×64 6400 Micron | 512 GB | 8 | 409.6 GB/s | €26,239.76 | €51.25 | €32,297.93 | €40,018.77 |
+| DIMMs | Channels | Bandwidth |
+|---:|---:|---:|
+| 6 | 6 | 307 GB/s |
+| 8 | 8 | 410 GB/s |
+| **12** | **12** | **614 GB/s** |
+
+Populating fewer than twelve is a capacity decision only — it costs bandwidth
+linearly, and on a spilling MoE that bandwidth is on the decode path.
+
+## Capacity against workload
+
+| Model | Expert bytes outside VRAM | Plus PLE if `--ple-io ram` | Minimum useful |
+|---|---:|---:|---:|
+| IQ2_XXS 2.00 bpw (138 GB) | ~3.7 GB | +26.8 GiB | 128 GB total |
+| IQ2_XS 2.25 bpw (155 GB) | ~20.7 GB | +26.8 GiB | 192 GB |
+| **UD-Q8 (508 GB set)** | **~171.5 GB** | +26.8 GiB | **384 GB** |
+
+`--ple-io ram` is not optional: it measured **+22.5 %** on an 8K prompt on this
+card (2506 vs 2045 tok/s) because the PLE rows are random reads in a 26.8 GiB
+table. Budget the RAM for it.
 
 ## What to buy
 
-- **If the 2× start is the requirement:** 2× Micron. It is the only path that starts at 2 DIMMs and reaches 8× at full 6400 with JEDEC 2Rx4 modules. It costs +31.2% per GB over the 5600 pair.
-- **If 256 GB is enough:** 4× G.Skill. €47.40/GB, 204.8 GB/s, four slots left.
-- **If 512 GB is the target:** G.Skill octa at the notify-only price, or eight Micron singles if you need an orderable price. Eight Micron is €26,239.76 / €32,297.93 platform.
-- **If 128 GB is enough and budget is the constraint:** 2× 5600. It cannot reach 6400; the fast upgrade replaces the pair.
+- **Never running UD-Q8:** 192 GB (12× 16 GB) gives the full 614 GB/s and costs
+  the least. This is the rational default.
+- **Running UD-Q8, or expecting to:** 384 GB (12× 32 GB). Nothing smaller holds
+  a 508 GB set with the PLE table resident.
+- **Do not buy 12× 64 GB** unless the model set grows past UD-Q8; at 768 GB the
+  marginal €/GB is the worst in the catalogue.
 
-!!! warning "QVL and rank"
-    G.Skill does not print 2Rx4/2Rx8 on the retail listing, and the ASRock/ASUS 8×64 6400 QVL is unverified. Confirm the module label and the board QVL before ordering. The 512 GB 8-DIMM 6400 training is the stress case.
+Live offers, ranked by €/GB and tagged for QVL, are on the
+<a href="../../ram-board.html">RAM offer board</a>.
 
-!!! note "DeepSeek is different"
-    IQ3_S fully resident is GPU-bound. DeepSeek V4.1 spill puts host RAM bandwidth on the decode path; the 6400 ladder is worth more there. See [build F](../builds/f-full-speed.md).
+!!! warning "12 modules is not a kit"
+    Vendors sell kits of 8 and 4. Twelve modules means 8+4 of the same part
+    number, ordered in one go so they are the same die revision. Mixing
+    revisions across twelve channels at 6400 is the training risk, not the rank.

@@ -31,7 +31,7 @@ The blower is what makes a four-card tower possible: each card exhausts out the 
 - **32 GB per card**, 128 GB total; the IQ3_S expert set fits in VRAM.
 - **2-slot blower**, the only sane four-card stacking layout.
 - **PCIe 5.0 x16**, 64 GB/s per direction; no NVLink needed for layer split.
-- **300 W** per card, 1,200 W total; the PX-2200 has the watts.
+- **300 W** per card, 1,200 W total; capped to 210 W in this build, 840 W.
 - **ROCm/HIP support**; Strata’s `rx9070` package carries its own runtime.
 </div>
 <div markdown>
@@ -45,6 +45,8 @@ The blower is what makes a four-card tower possible: each card exhausts out the 
 </div>
 </div>
 
-## Where it is used
+## In this build
 
-All builds. The four cards are owned and excluded from the platform totals; the €1,930.21 is replacement value only.
+Four cards, on risers in slots 1–4. They are owned, so the €1,930.21 is
+replacement value, not a budget line. The 210 W cap is the engine's own
+reference configuration, not a performance compromise on a layer split.

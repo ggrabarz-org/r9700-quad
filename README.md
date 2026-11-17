@@ -20,7 +20,7 @@
 
 **Scope:** a four-GPU AMD Radeon AI PRO R9700 (32 GB) inference platform for the Strata engine, serving Qwen3.8-Flash-Next Swift 1.5 IQ3_S (or IQ3_XXS) at up to 262,144 tokens of context with as many full-context streams as 128 GB of VRAM will hold. The four GPUs are already owned; this book prices and specifies everything else.
 
-**Price snapshot:** 2026-11-06/07 (platform 06, RAM retail 07), EUR including VAT, EU (Germany/Austria comparison; Geizhals EU/DE, Alternate DE, Proshop DE, Galaxus DE). Prices are listed offers, not quotes; stock moves. The machine-readable snapshot is [`bom/prices.json`](bom/prices.json), the arithmetic is [`tools/calc.py`](tools/calc.py), the build sheets are [`bom/`](bom/), and the one-page visual is [`report.html`](report.html).
+**Price snapshot:** 2026-11-06/07 (platform 06, RAM retail 07), EUR including VAT, EU (Germany/Austria comparison; Geizhals EU/DE, Alternate DE, Proshop DE, Galaxus DE). Prices are listed offers, not quotes; stock moves. The machine-readable snapshot is [`bom/prices.json`](bom/prices.json), the arithmetic is [`tools/calc.py`](tools/calc.py), the build sheets are [`bom/`](bom/), and the one-page visual is [`ram-board.html`](ram-board.html).
 
 ---
 
@@ -761,8 +761,10 @@ Full protocol in [`docs/VALIDATION.md`](docs/VALIDATION.md). Short version:
 The site in `site/` is built from `site-src/docs/` with MkDocs Material (dark “space” theme, no external fonts or trackers). Local build:
 
 ```bash
-.venv-docs/bin/mkdocs build --strict
+./tools/build-site.sh
 ```
+
+It copies `ram-board.html` into `site-src/docs/` first, because the RAM sweeper writes that file at the repo root and the site links it relatively.
 
 GitHub Pages deploys it on every push to `main` through `.github/workflows/pages.yml`; the Pages source must be **GitHub Actions**, not a branch.
 
@@ -770,20 +772,10 @@ GitHub Pages deploys it on every push to `main` through `.github/workflows/pages
 
 | File | Purpose |
 |---|---|
-| [`report.html`](report.html) | One-page visual summary. |
-| [`bom/prices.json`](bom/prices.json) | Price snapshot, options, assumptions. |
-| [`bom/option-a.csv`](bom/option-a.csv) | Balanced 3× Gen5 build sheet. |
-| [`bom/option-b.csv`](bom/option-b.csv) | Capacity 6× Gen4 build sheet. |
-| [`bom/option-c.csv`](bom/option-c.csv) | Value 4× Gen4 build sheet. |
-| [`bom/option-d.csv`](bom/option-d.csv) | Staged 6400, 2×64 GB DDR5-6400 Micron build sheet. |
-| [`bom/option-e.csv`](bom/option-e.csv) | Fast RAM 4×64 GB DDR5-6400 G.Skill build sheet. |
-| [`bom/option-f.csv`](bom/option-f.csv) | Full speed 8×64 GB DDR5-6400 G.Skill build sheet. |
-| [`bom/option-g.csv`](bom/option-g.csv) | ASUS WRX90E-SAGE SE premium, 3× Gen5 M.2 build sheet. |
+| [`bom/prices.json`](bom/prices.json) | Historical WRX90 price snapshot. **Superseded.** |
 | [`site-src/docs/`](site-src/docs/) | MkDocs source for the static build book. |
 | [`mkdocs.yml`](mkdocs.yml) | MkDocs Material config and navigation. |
-| [`tools/export_site_bom.py`](tools/export_site_bom.py) | Generates the site BOM snippets from the CSVs. |
-| [`tools/calc.py`](tools/calc.py) | Totals, power, lanes, memory, VRAM/KV/streams. |
-| [`tools/export_bom.py`](tools/export_bom.py) | Regenerates CSVs. |
+| [`tools/calc.py`](tools/calc.py) | Historical WRX90 totals. **Superseded.** |
 | [`configs/strata-4x-r9700-8x262k.json`](configs/strata-4x-r9700-8x262k.json) | 8×262K Strata preset. |
 | [`configs/strata-4x-r9700-16x131k.json`](configs/strata-4x-r9700-16x131k.json) | 16×131K preset. |
 | [`docs/RAM-START.md`](docs/RAM-START.md) | 1×64 vs 2×64, one-stick test plan. |
