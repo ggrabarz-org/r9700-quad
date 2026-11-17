@@ -3578,3 +3578,37 @@ Read the Geizhals offer table directly: **19 offers**, band €4 058,99 – €4
 No route changed its rank this pass; nothing to buy that was not available at pass 75. The FURY 18 % cut from pass 75 did not extend — the moved SKUs are flat to within 0,35 %.
 
 **Coverage:** 1 Geizhals category sweep (55 products, 9 price moves under 1 %, 0 catalogue changes) + 1 96MC offer-list read; camofox 0 this pass (reused pass-75 reads, all flat); curl 10 probes (4 bests re-verified, 6 expansion shops, 0 new prices).
+
+---
+
+## Pass 77 — 2026-11-17T14:xxZ (second consecutive flat pass; catalogue, prices and bests all unchanged)
+
+### 0. Sweep — 55 products, zero price moves, zero catalogue changes
+
+Set-compared against pass 76: **NEW: ∅, GONE: ∅.** For the first time in two passes, **no SKU moved at all** — not even the ±0,35 % drift of pass 76. Offer counts identical. The market has settled.
+
+### 1. Bests — flat, all four
+
+| Route | Pass 76 | Pass 77 | Δ |
+|---|---|---|---|
+| Proshop.pl 96MC | 25 881,00 zł / 21 041,46 zł netto | **25 881,00 zł / 21 041,46 zł netto** | flat — still capped at 2 per customer |
+| Tonitrus `M321R8GA0EB2-CCP` | 3 174,50 € / 2 667,65 € netto | **3 174,50 € / 2 667,65 € netto** | flat, 50 pcs, 3–4 Werktage |
+| ibfusion 64MD | 2 481,00 € net | **2 481,00 € net** | flat, 5 in stock |
+| senetic.de 64MD | 2 574,29 € | **2 574,29 €** | flat, 41–50 Stück |
+| senetic.pl 64MD | 11 332,00 zł | **11 332,00 zł** | flat, 41–50 szt. |
+| senetic.fr 64MD | 2 574,33 € | **2 574,33 €** | flat, 41–50 unités |
+| senetic.co.uk 64MD | £2 147,70 | **£2 147,70** | flat, 41–50 units |
+| Allegro komputera_pl 64MD | 12 736,00 zł | **12 736,00 zł** | flat, 5 ratings, promo badge still shown |
+| CoreWave 48 GB `M321R6GA3PB2` | $1 630, 250 pcs | **$1 630, 250 pcs** | flat — still the best €/GB on the board |
+
+Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € vs 3 174,50 €). Proshop.pl still caps the 96MC at 2 per customer. No route's price, stock or cap changed this pass.
+
+### 2. Expansion — 5 shops probed, 0 prices
+
+**alternate.de** 404, **cyberport.de** 403, **nbb.de** 200 but renders a generic catalogue with 0 matching products, **office-partner.de** 200 with 0 matches, **voelkner.de** 403. Consistent with the conclusion that the EU channel for this PN has been enumerated — the shops that stock Kingston Server Premier 6400 are the ones already on the board.
+
+### 3. Verdict
+
+**Floor unchanged: €28,09/GB** (Micron 96 GB, esus it, single seller, €32 365 — over the ceiling). **In-budget best €/GB unchanged: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline unchanged: 384 GB at €12 605 (€32,83/GB, barax, quantity unpublished). 64 GB tier unchanged at €36,71/GB (Allegro). 12×24 still unbuildable (10 pcs). 768 GB still the worst marginal step (+€54,72/GB). No route changed its rank; nothing to buy that was not available at pass 76.
+
+**Coverage:** 1 Geizhals category sweep (55 products, 0 price moves, 0 catalogue changes); camofox 0 this pass (reused pass-75 reads, all flat); curl 8 probes (4 bests re-verified, 5 expansion shops, 0 new prices).
