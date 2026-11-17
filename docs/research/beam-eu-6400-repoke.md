@@ -3524,3 +3524,57 @@ New this pass: **senetic.co.uk / .it / .nl / .es / .se** (all readable; UK, IT a
 **Re-validated:** all 6 QVL ✓ rows still trace to the pass-68 extract, including the four added this pass (`M321R4GA0EB2-CCP` → `-CCPPC`/`-CCPWC`, `MTC20F2085S1RC64BD2` → 3 die-variants, `MTC40F2046S1RC64BD2` → 6 die-variants, `senetic.co.uk 64MD` → `KSM64R52BD4-64MD`).
 
 **Final coverage, pass 75:** 1 Geizhals category sweep (55 products, 13 price moves, 0 catalogue changes); camofox 3 profiles / 3 navigations (proshop, tonitrus, allegro); curl 21 (ibfusion, CoreWave board, 9 senetic storefronts, 6 product pages); 11 expansion shops probed, 5 senetic stores opened, 2 closed as dead (server-store.de parked, dell.com no Kingston retail), 0 beats.
+
+---
+
+## Pass 76 — 2026-11-17T12:xxZ (noise only: catalogue unchanged, every price move under 1 %, no beats)
+
+### 0. Sweep — same 55 products, all movement under 1 %
+
+Set-compared against pass 75: **NEW: ∅, GONE: ∅.** Nine SKUs moved, all by less than 1 %:
+
+| Product | Pass 75 | Pass 76 | Δ |
+|---|---|---|---|
+| Kingston `KSM64R52BD4-64HA` 64 GB | 2 879,00 € | **2 889,00 €** | +0,35 % |
+| Kingston `KSM64R52BD4-96HM` 96 GB | 4 742,17 € | **4 701,95 €** | −0,85 % |
+| Kingston `KSM64R52BD4-64MD` 64 GB | 2 861,71 € | **2 861,71 €** | flat |
+| Kingston `KSM64R52BD8-32MH` 32 GB | 1 372,84 € | **1 372,84 €** | flat |
+| Kingston `KSM64R52BD4-64MD` 64 GB (64HA variant) | 2 878,99 € | 2 879,00 € | +0,00 % |
+| G.Skill `KF564R32RBEK8-128` 128 GB | 5 879,00 € | **5 889,00 €** | +0,17 % |
+| G.Skill `KF564R32RBE2-32` 32 GB | 1 755,79 € | 1 758,50 € | +0,15 % |
+| Samsung `M321R4GA3EB2-CCP` 32 GB | 1 847,12 € | 1 847,18 € | +0,00 % |
+| Samsung `M321RYGA0PB2-CCP` 96 GB | 4 548,89 € | 4 548,94 € | +0,00 % |
+
+Offer-count drift is the only other signal: every G.Skill kit picked up a second offer (1 → 2), the 192 GB kit 9 → 10, the 256 GB kit 6 → 7; the 32 MH went 26 → 30 offers; the Samsung 96 GB dropped 8 → 7. None of that changes a price.
+
+### 1. Bests — flat, all four
+
+| Route | Pass 75 | Pass 76 | Δ |
+|---|---|---|---|
+| Proshop.pl 96MC | 25 881,00 zł / 21 041,46 zł netto | **25 881,00 zł / 21 041,46 zł netto** | flat — still capped at 2 per customer |
+| Tonitrus `M321R8GA0EB2-CCP` | 3 174,50 € / 2 667,65 € netto | **3 174,50 € / 2 667,65 € netto** | flat, 50 pcs, 3–4 Werktage |
+| ibfusion 64MD | 2 481,00 € net | **2 481,00 € net** | flat, 5 in stock |
+| senetic.de 64MD | 2 574,29 € | **2 574,29 €** | flat, 41–50 Stück |
+| senetic.pl 64MD | 11 332,00 zł | **11 332,00 zł** | flat, 41–50 szt. |
+| senetic.fr 64MD | 2 574,33 € | **2 574,33 €** | flat, 41–50 unités |
+| senetic.co.uk 64MD | £2 147,70 | **£2 147,70** | flat, 41–50 units |
+| Allegro komputera_pl 64MD | 12 736,00 zł | **12 736,00 zł** | flat, 5 ratings, promo badge still shown |
+| CoreWave 48 GB `M321R6GA3PB2` | $1 630, 250 pcs | **$1 630, 250 pcs** | flat — still the best €/GB on the board |
+
+Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € vs 3 174,50 €). Proshop.pl still caps the 96MC at 2 per customer.
+
+### 2. 96MC offer list — still no quantity, still the cheapest buyable is electronis.de
+
+Read the Geizhals offer table directly: **19 offers**, band €4 058,99 – €4 160,13, best seller **electronis.de** (rating 4,8 / 443, 2–4 days, 6,90 € shipping). No offer publishes a stock quantity, so a 12-piece order has to be confirmed by email before paying. **QVL status unchanged: NOT listed** (pass 68). The cheapest 96 GB that *is* QVL-verified with published stock is still the Micron at €33,79/GB (CoreWave, 200 pcs, 3–4 days).
+
+### 3. Expansion — 7 shops probed, 0 prices
+
+**datacomp.pl** 404 on the search path, **mediaexpert.pl / saturn.de / mediamarkt.de** 403, **idealo.de** 403, **proline.pl** 500, **dell.com** 2,7 MB page with 0 KSM64 hits (Dell sells its own SKUs, not Kingston retail). Consistent with pass 75's conclusion: the EU channel for this PN has been enumerated.
+
+### 4. Verdict
+
+**Floor unchanged: €28,09/GB** (Micron 96 GB, esus it, single seller, €32 365 — over the ceiling). **In-budget best €/GB unchanged: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline unchanged: 384 GB at €12 605 (€32,83/GB, barax, quantity unpublished). 64 GB tier unchanged at €36,71/GB (Allegro). 12×24 still unbuildable (10 pcs). 768 GB still the worst marginal step (+€54,72/GB).
+
+No route changed its rank this pass; nothing to buy that was not available at pass 75. The FURY 18 % cut from pass 75 did not extend — the moved SKUs are flat to within 0,35 %.
+
+**Coverage:** 1 Geizhals category sweep (55 products, 9 price moves under 1 %, 0 catalogue changes) + 1 96MC offer-list read; camofox 0 this pass (reused pass-75 reads, all flat); curl 10 probes (4 bests re-verified, 6 expansion shops, 0 new prices).
