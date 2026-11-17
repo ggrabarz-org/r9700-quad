@@ -1,13 +1,13 @@
-# Four R9700s. One 128 GB VRAM box. One build.
+# Four R9700s. Four TB of Gen5. Three memory tiers.
 
 <div class="hero" markdown>
-<span class="eyebrow">R9700 ×4 · EPYC 9355P / MZ23-SU0 · 2026-11-17</span>
+<span class="eyebrow">R9700 ×4 · EPYC 9355 / MZ33-CP1 · 2026-11-17</span>
 
 # Four cards you own. One platform decision, already made.
 
-Four PowerColor AI PRO R9700 32 GB cards, 128 GB of VRAM, on an EPYC 9355P in a
-GIGABYTE MZ23-SU0 with 12 channels of DDR5-6400. This site is that build: what
-it is, why each part is that part, and what has to be true before you order.
+Four PowerColor AI PRO R9700 32 GB cards, 128 GB of VRAM, on an EPYC 9355 in a
+GIGABYTE MZ33-CP1 with up to 12 channels of DDR5-6400. Three memory tiers,
+priced: **€10,098 / €24,618 / €34,298** before the GPUs you already own.
 
 <div class="hero-meta" markdown>
 <span class="chip accent">4× 32 GB = 128 GB VRAM</span>
@@ -22,42 +22,45 @@ it is, why each part is that part, and what has to be true before you order.
 
 <div class="grid cards" markdown>
 
--   **Board — MZ23-SU0**
+-   **Board — MZ33-CP1**
     ---
-    CEB 304.8 × 266.7 mm, single SP5, **5× PCIe 5.0 x16**, 12 DIMM, 4× MCIO 8i,
-    AST2600 IPMI, **no native SATA**, 2× M.2 at **Gen3 x2**.
+    E-ATX 304.8 × 330.2 mm, single SP5, **3× Gen5 x16 at 2-slot pitch** + 1,
+    12 DIMM, 4× Gen5 MCIO + 2× MCIO (Gen4 **or SATA**), AST2600 IPMI.
+    **€896.97, in stock.** The MZ23-SU0 was the earlier pick — it has **no
+    buyable EU listing** (Geizhals: none; Galaxus: *Aktuell nicht lieferbar*).
     [:octicons-arrow-right-24: The build](build.md)
 
--   **CPU — EPYC 9355P**
+-   **CPU — EPYC 9355**
     ---
     32C / **8 CCDs**, 256 MB L3, 3.55 GHz, **280 W**, 128× Gen5, 12-channel.
-    The CCD count is the Infinity Fabric link count — see
+    **€2,329 tray.** The CCD count is the Infinity Fabric link count — see
     [the platform verdict](reference/epyc-platform.md).
 
--   **Memory — 12× RDIMM**
+-   **Memory — three tiers**
     ---
-    **JEDEC SPD 6400 @ 1.1 V**, any rank or organisation. The BIOS has no
-    EXPO/XMP and pins the PMIC at 1.1 V, so a 7200 kit runs at its JEDEC default.
+    **A** 2×64 GB = 128 GB, 2 of 12 channels (**€10,098**) · **B** 8×64 GB =
+    512 GB, 8ch (**€24,618**) · **C** 12×64 GB = 768 GB, **614 GB/s**
+    (**€34,298**). JEDEC SPD 6400 @ 1.1 V, QVL-passing.
     Live offers: <a href="ram-board.html">RAM board</a>.
 
 -   **GPUs — 4× R9700**
     ---
-    32 GB, 40 mm, 2-slot blower, 12V-2x6, 300 W. All four on **risers in slots
-    1–4** — five slots at 1.0 pitch cannot hold four 2-slot cards natively.
+    32 GB, 40 mm, 2-slot blower, 12V-2x6, 300 W. Three natively spaced plus
+    the fourth on a documented MCIO→x16 adapter — **no risers**.
     [:octicons-arrow-right-24: R9700 dossier](parts/radeon-r9700.md)
 
--   **Storage — 2× 2 TB M.2**
+-   **Storage — 4× 1 TB Gen5 + SATA cold**
     ---
-    XPG Mars 980 or Samsung 9100 PRO, in the two onboard slots. Those slots are
-    Gen3 x2, so a Gen5 drive runs at a fifth of its rating. Accepted: the disk
-    is read once at start, not per token.
+    **4× Samsung 9100 PRO 1 TB** (€213.90 each), RAID 0 = **4 TB at ~56–59 GB/s**
+    on one MCIO 8i port. **1 TB 870 EVO** (€103.99) on the G3 MCIO group as
+    OS/archive — the board has no native SATA.
     [:octicons-arrow-right-24: 9100 PRO dossier](parts/samsung-9100-pro.md)
 
 -   **Power**
     ---
-    **1 306 W capped / 1 666 W stock.** 1600 W PSU at a 210 W GPU cap, or 2000 W
-    at stock. Connector count is the real limit, not watts.
-    [:octicons-arrow-right-24: Power & connectors](build.md#power-and-connectors)
+    **1,316 W capped / 1,676 W stock.** 1600 W (€349.88) at a 210 W GPU cap; 2000 W
+    (€520.89) at stock. Connector count is the real limit, not watts.
+    [:octicons-arrow-right-24: Power & connectors](build.md#power)
 
 </div>
 
@@ -83,17 +86,12 @@ retired them:
 
 ## Read before ordering
 
-!!! warning "Five slots, all at 1.0 pitch"
-    A 40 mm two-slot card blocks the slot beside it. Three cards fit natively in
-    slots 1/3/5 and bury slots 2 and 4 under their coolers. **Four cards need
-    four risers.** Passive Gen4 x16 at 20–30 cm is the reliable choice; Gen5
-    passive past ~20 cm is not. Tensor-parallel engines all-reduce over PCIe and
-    would not accept this — a layer split does.
-
-!!! warning "No SATA on this board"
-    The MZ23-SU0 has **no native SATA ports**; `SATA_SGP1/2` are backplane SGPIO
-    headers. This build has no spinning disks, so that is not a gap here. Adding
-    one would need MCIO→SATA or USB, and that is a separate decision.
+!!! warning "The board was the weak line"
+    The earlier revision specified the **MZ23-SU0**, which is **not buyable new
+    in the EU**: Geizhals returns **no MZ23 listing at all**, Galaxus shows
+    *Aktuell nicht lieferbar*, and the only offer found was used at €1,290. The
+    **MZ33-CP1 at €896.97 is in stock** and gives three natively-spaced 2-slot
+    x16 slots plus a documented MCIO path for the fourth card — no risers.
 
 !!! note "The RAM rule is JEDEC, not the label"
     A module counts only if its **JEDEC SPD default is 6400 at 1.1 V**. The rated
