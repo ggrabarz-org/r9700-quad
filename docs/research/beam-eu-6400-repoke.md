@@ -3664,3 +3664,48 @@ No route changed its rank this pass; nothing to buy that was not available at pa
 ---
 
 ## Pass 80 — 2026-11-17T18:xxZ (fast path: flat, no change, 60 products swept)
+
+---
+
+## Pass 81 — 2026-11-17T20:xxZ (slow path: sweep moved two tracked parts, bests flat)
+
+### 0. Sweep — 60 products, two tracked parts moved
+
+Catalogue unchanged (60 products, no new SKUs, no withdrawals). But the sweep shows real movement on two tracked parts:
+
+| Product | Pass 80 | Pass 81 | Δ |
+|---|---|---|---|
+| Kingston `KSM64R52BD4-64MD` 64 GB (Geizhals best) | 2 900,40 € | **2 872,38 €** | −0,97 % |
+| Kingston `KSM64R52BD8-32MH` 32 GB (Geizhals best) | 1 372,84 € | **1 361,82 €** | −0,80 % |
+| Micron `MTC40F204WS1RC64BC1` 96 GB | 4 546,51 € | 4 532,92 € | −0,30 % |
+| Samsung `M321RYGA0PB2-CCP` 96 GB | 4 555,83 € | 4 558,80 € | +0,07 % |
+| FURY `KF564R32RBE-16` 16 GB (JEDEC 4800 trap) | 859,89 € | 859,89 € | flat |
+| FURY `KF564R32RBE2-32` 32 GB (JEDEC 4800 trap) | 1 699,38 € | 1 699,38 € | flat |
+
+The 64MD moved from €37,80 to €37,71/GB at Geizhals, but the Allegro route (€36,71/GB) is still 2,7 % cheaper — no tier change. The 32MH improved from €36,05 to €35,76/GB (still above the barax 32MD at €32,83). The 64MD move is the first real movement on a tier-relevant part in 3 passes.
+
+### 1. Bests — flat, all four
+
+| Route | Pass 80 | Pass 81 | Δ |
+|---|---|---|---|
+| Proshop.pl 96MC | 25 881,00 zł / 21 041,46 zł netto | **25 881,00 zł / 21 041,46 zł netto** | flat — still capped at 2 per customer |
+| Tonitrus `M321R8GA0EB2-CCP` | 3 174,50 € / 2 667,65 € netto | **3 174,50 € / 2 667,65 € netto** | flat, 50 pcs, 3–4 Werktage |
+| ibfusion 64MD | 2 481,00 € net | **2 481,00 € net** | flat, 5 in stock |
+| senetic.de 64MD | 2 574,29 € | **2 574,29 €** | flat, 41–50 Stück |
+| senetic.pl 64MD | 11 332,00 zł | **11 332,00 zł** | flat, 41–50 szt. |
+| Allegro komputera_pl 64MD | 12 736,00 zł | **12 736,00 zł** | flat, 5 ratings, promo badge still shown |
+| CoreWave 48 GB `M321R6GA3PB2` | $1 630, 250 pcs | **$1 630, 250 pcs** | flat — still the best €/GB on the board |
+
+Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € vs 3 174,50 €). Proshop.pl still caps the 96MC at 2 per customer.
+
+### 2. Expansion — 5 shops probed, 0 prices
+
+**kaufhof.de** 000, **galaxus.de** 403, **achtung.de** 404, **serverhero.de** 0 hits, **mindfactory.de** SECURITY CHECK wall. Consistent with the conclusion that the EU channel for this PN has been enumerated.
+
+### 3. Verdict
+
+**Floor unchanged: €28,09/GB** (Micron 96 GB, esus it, single seller, €32 365 — over the ceiling). **In-budget best €/GB unchanged: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline unchanged: 384 GB at €12 605 (€32,83/GB, barax, quantity unpublished). 64 GB tier unchanged at €36,71/GB (Allegro, even though the Geizhals 64MD route improved 0,97 % — it is still 2,7 % above Allegro). 12×24 still unbuildable (10 pcs). 768 GB still the worst marginal step (+€54,72/GB).
+
+The two tracked-part moves (64MD −0,97 %, 32MH −0,80 %) are the first real movement since pass 78 and confirm the slow path was correct. Neither changes a tier's ranking. The FURY trap parts did not extend their pass-78 increase.
+
+**Coverage:** 1 Geizhals category sweep (60 products, 6 price moves, 2 on tracked parts, 0 catalogue changes); camofox 2 profiles / 2 navigations (proshop, tonitrus); curl 8 probes (4 bests re-verified, 5 expansion shops, 0 new prices).
