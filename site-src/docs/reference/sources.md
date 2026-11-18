@@ -10,6 +10,9 @@
 | [MZ23-SU0 datasheet (PDF)](https://download.gigabyte.com/FileList/DataSheet/GIGABYTE%20MZ23-SU0%20(Rev.%203.x)_datasheet.pdf) | Internal I/O list: 24-pin, **2× 8-pin**, **1× 6-pin**, 1× CPU + 5× SYS fan, **2× M.2 Gen3 x2**, no SATA ports. |
 | [MZ23-SU0 user manual (PDF)](https://download.gigabyte.com/FileList/Manual/server_manual_mz23_su0_e.pdf) | Connector legend; `P12V_PCIE` pinout; `Memory Target Speed` options ending at DDR5600; `PMIC SWC VDDIO 1100`; no EXPO/XMP menu; fan header pinout. |
 | [MZ23-SU0 QVL](https://www.gigabyte.com/Enterprise/Server-Motherboard/MZ23-SU0-rev-3x/Support-QVL) | CPU and memory qualification lists. The memory tab needs a category click; the direct spreadsheet URL 404s. |
+| [Multitronic FI — MZ23-SU0, `9MZ23SU0MR-000-3`](https://www.multitronic.fi/en/products/4624349) | **€1,030.90 incl. VAT, "no delivery date yet", not in stock** (2026-11-18). The only new-in-box EU listing found. Confirms 5× PCIe x16 Gen5, 12 DIMM, CEB, EAN 4719331881696. |
+| [Newegg US — MZ23-SU0, `N82E16813145624`](https://www.newegg.com/gigabyte-mz23-su0/p/N82E16813145624) | **$869.00, in stock, sold and shipped by Newegg** (2026-11-18). Does not ship to the EU. |
+| [Samsung 9100 PRO 2 TB (`MZ-VAP2T0BW`)](https://geizhals.de/samsung-ssd-9100-pro-2tb-mz-vap2t0bw-a3427162.html) | **€415.99** (Geizhals DE, 2026-11-18); 14,800 / 13,400 MB/s, PCIe 5.0 x4, M.2 2280. |
 
 ## CPU
 

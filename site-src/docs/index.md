@@ -1,16 +1,18 @@
-# Four R9700s. Four TB of Gen5. Three memory tiers.
+# Four R9700s. Four native Gen5 x16. Three memory tiers.
 
 <div class="hero" markdown>
-<span class="eyebrow">R9700 ×4 · EPYC 9355 / MZ33-CP1 · 2026-11-17</span>
+<span class="eyebrow">R9700 ×4 · EPYC 9355 / MZ23-SU0 · 2026-11-18</span>
 
 # Four cards you own. One platform decision, already made.
 
 Four PowerColor AI PRO R9700 32 GB cards, 128 GB of VRAM, on an EPYC 9355 in a
-GIGABYTE MZ33-CP1 with up to 12 channels of DDR5-6400. Three memory tiers,
-priced: **€10,098 / €24,618 / €34,298** before the GPUs you already own.
+GIGABYTE MZ23-SU0 — **four native PCIe Gen5 x16 links**, 12 channels of
+DDR5-6400. Three memory tiers, priced: **€10,150 / €24,670 / €34,350** before the
+GPUs you already own.
 
 <div class="hero-meta" markdown>
 <span class="chip accent">4× 32 GB = 128 GB VRAM</span>
+<span class="chip">4× native Gen5 x16</span>
 <span class="chip">12-channel · 614 GB/s</span>
 <span class="chip">8 CCDs</span>
 <span class="chip">JEDEC 6400 @ 1.1 V</span>
@@ -22,12 +24,12 @@ priced: **€10,098 / €24,618 / €34,298** before the GPUs you already own.
 
 <div class="grid cards" markdown>
 
--   **Board — MZ33-CP1**
+-   **Board — MZ23-SU0**
     ---
-    E-ATX 304.8 × 330.2 mm, single SP5, **3× Gen5 x16 at 2-slot pitch** + 1,
-    12 DIMM, 4× Gen5 MCIO + 2× MCIO (Gen4 **or SATA**), AST2600 IPMI.
-    **€896.97, in stock.** The MZ23-SU0 was the earlier pick — it has **no
-    buyable EU listing** (Geizhals: none; Galaxus: *Aktuell nicht lieferbar*).
+    CEB 304.8 × 266.7 mm, single SP5, **5× PCIe Gen5 x16 — every one wired x16**,
+    12 DIMM / 12 channel, 4× MCIO 8i, AST2600 IPMI. **€1,030.90 (EU list)**;
+    in stock at **$869 Newegg US**. The only board found with four native Gen5
+    x16 links — the fourth card is a slot, not an adapter.
     [:octicons-arrow-right-24: The build](build.md)
 
 -   **CPU — EPYC 9355**
@@ -38,27 +40,28 @@ priced: **€10,098 / €24,618 / €34,298** before the GPUs you already own.
 
 -   **Memory — three tiers**
     ---
-    **A** 2×64 GB = 128 GB, 2 of 12 channels (**€10,098**) · **B** 8×64 GB =
-    512 GB, 8ch (**€24,618**) · **C** 12×64 GB = 768 GB, **614 GB/s**
-    (**€34,298**). JEDEC SPD 6400 @ 1.1 V, QVL-passing.
+    **A** 2×64 GB = 128 GB, 2 of 12 channels (**€10,150**) · **B** 8×64 GB =
+    512 GB, 8ch (**€24,670**) · **C** 12×64 GB = 768 GB, **614 GB/s**
+    (**€34,350**). JEDEC SPD 6400 @ 1.1 V, QVL-passing.
     Live offers: <a href="ram-board.html">RAM board</a>.
 
 -   **GPUs — 4× R9700**
     ---
-    32 GB, 40 mm, 2-slot blower, 12V-2x6, 300 W. Three natively spaced plus
-    the fourth on a documented MCIO→x16 adapter — **no risers**.
+    32 GB, 40 mm, 2-slot blower, 12V-2x6, 300 W. **Four native Gen5 x16 slots.**
+    Three 40 mm cards seat directly; the fourth sits on a Gen5 x16 extender
+    because the slots are at 1.0 pitch — still a native x16 link.
     [:octicons-arrow-right-24: R9700 dossier](parts/radeon-r9700.md)
 
--   **Storage — 4× 1 TB Gen5 + SATA cold**
+-   **Storage — 2× 2 TB now, 4× 2 TB later**
     ---
-    **4× Samsung 9100 PRO 1 TB** (€213.90 each), RAID 0 = **4 TB at ~56–59 GB/s**
-    on one MCIO 8i port. **1 TB 870 EVO** (€103.99) on the G3 MCIO group as
-    OS/archive — the board has no native SATA.
+    **2× Samsung 9100 PRO 2 TB** (€415.99 each) on one MCIO 8i = **4 TB at
+    ~29 GB/s**; add two more on the second MCIO group for **8 TB at ~59 GB/s**.
+    **1 TB 870 EVO** (€103.99) on SATA — the board ships an MCIO→8× SATA cable.
     [:octicons-arrow-right-24: 9100 PRO dossier](parts/samsung-9100-pro.md)
 
 -   **Power**
     ---
-    **1,316 W capped / 1,676 W stock.** 1600 W (€349.88) at a 210 W GPU cap; 2000 W
+    **1,306 W capped / 1,666 W stock.** 1600 W (€349.88) at a 210 W GPU cap; 2000 W
     (€520.89) at stock. Connector count is the real limit, not watts.
     [:octicons-arrow-right-24: Power & connectors](build.md#power)
 
@@ -79,19 +82,26 @@ retired them:
   to **0.15** — only 15 % of missing expert rows are fetched over PCIe, the rest
   are computed by a CPU pool reading `--resident-cpu-experts` from host RAM.
   Host bandwidth is on the decode path; PCIe is not.
-- **VRAM-resident is not the workload.** A TensTorrent-parallel build would fit
+- **VRAM-resident is not the workload.** A tensor-parallel build would fit
   IQ3_S entirely in 128 GB and make host RAM idle. That is not what runs here.
   That assumption was wrong in four earlier answers on this site, and it is why
   the platform moved to SP5.
 
 ## Read before ordering
 
-!!! warning "The board was the weak line"
-    The earlier revision specified the **MZ23-SU0**, which is **not buyable new
-    in the EU**: Geizhals returns **no MZ23 listing at all**, Galaxus shows
-    *Aktuell nicht lieferbar*, and the only offer found was used at €1,290. The
-    **MZ33-CP1 at €896.97 is in stock** and gives three natively-spaced 2-slot
-    x16 slots plus a documented MCIO path for the fourth card — no risers.
+!!! warning "The board is four slots, and only this one has them"
+    Every other SP5 board found gives **three** Gen5 x16 lanes for cards plus a
+    MCIO adapter for the fourth. The **MZ23-SU0 gives five x16 slots, all native
+    Gen5** — the thing this build is actually for. Its catch is mechanical, not
+    electrical: the slots are at **1.0 pitch**, so three 40 mm cards seat
+    directly and the fourth needs a **Gen5 x16 extender**. All four still train
+    on native Gen5 x16. See [four native x16 slots](build.md#four-native-x16-slots).
+
+!!! warning "And it is the hardest part to buy in the EU"
+    The live in-stock offer is **Newegg US at $869**, which does not ship to the
+    EU. The only new EU listing is **Multitronic (FI) at €1,030.90 with no
+    delivery date**. Confirm stock, or get a distributor quote on part
+    `9MZ23SU0MR-000-3`.
 
 !!! note "The RAM rule is JEDEC, not the label"
     A module counts only if its **JEDEC SPD default is 6400 at 1.1 V**. The rated
