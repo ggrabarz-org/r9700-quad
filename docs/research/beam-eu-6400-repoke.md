@@ -3772,3 +3772,58 @@ No new shops probed this pass (the 300-min cadence and the 5-day gap since pass 
 No rank change at the top, but the 64 GB tier is now competitive and the floor dropped below €28 for the first time. The 5-day gap between passes 82 and 83 saw more movement than the previous 10 passes combined.
 
 **Coverage:** 1 Geizhals category sweep (60 products, 6 price moves, 2 on tracked parts, 0 catalogue changes) + CoreWave live board + senetic.de/fr/pl verified; camofox 2 profiles / 2 navigations (proshop, tonitrus); curl 7 probes (3 bests re-verified, CoreWave board, 4 senetic stores, 0 new prices).
+
+---
+
+## Pass 84 — 2026-11-22 (slow path: new Geizhals listing for M321R4GA0EB2-CCP, floor drops again, 96MC cheaper)
+
+### 0. Sweep — 60 products, 6 price moves, 0 new SKUs, 0 withdrawals
+
+Catalogue unchanged (60 products). Six SKUs moved:
+
+| Product | Pass 83 | Pass 84 | Δ |
+|---|---|---|---|
+| Micron `MTC40F204WS1RC64BC1` 96 GB | 3 172,69 € | **3 172,69 €** | flat (verified) |
+| Kingston `KSM64R52BD4-64MD` 64 GB | 2 871,62 € | 2 873,02 € | +0,05 % |
+| Kingston `KSM64R52BD8-32MH` 32 GB | 1 393,98 € | 1 393,98 € | flat |
+| Samsung `M321RYGA0PB2-CCP` 96 GB | 4 445,73 € | 4 448,71 € | +0,07 % |
+| Micron `MTC40F2046S1RC64BH1` 64 GB | 3 355,98 € | 3 358,98 € | +0,09 % |
+| FURY `KF572RH38RB-16` 16 GB | 797,24 € | 793,04 € | −0,53 % |
+
+### 1. NEW LISTING — Samsung M321R4GA0EB2-CCP now on Geizhals
+
+**Samsung `M321R4GA0EB2-CCP` (32 GB 1Rx4) is now buyable on Geizhals at €1 499,00 gross = €1 259,66 net = €39,36/GB** (1 offer). It was on the "QVL-valid, zero EU offers" list since pass 63. Now it has a Geizhals listing. QVL ✓ (rows `M321R4GA0EB2-CCPPC` / `-CCPWC`, 1Rx4, 1.1v, 6400MHz). No SPD sentence published (Samsung). Geizhals discriminator: Spannung 1.1V (JEDEC-Normspannung), Besonderheiten JEDEC-Standardprofil (DDR5-6400/CL52) → qualifies.
+
+At €39,36/GB it is 20 % above the barax baseline (€32,83/GB) but it is **QVL-verified with a published Geizhals listing** — the second QVL-verified 32 GB route after the CoreWave Micron BD2 (€49,14/GB, 1 000 pcs). Still not competitive on price.
+
+The "QVL-valid, zero EU offers" list now has only **one** member: `M321R2GA3PB2-CCP` (16 GB). Updated the no-seller row accordingly.
+
+### 2. THE FLOOR DROPPED AGAIN (over budget, unverified stock)
+
+**Micron `MTC40F204WS1RC64BC1` at esus it: €3 172,69 gross = €2 666,13 net = €27,77/GB** (verified on the Geizhals product page: "ab € 3 172,69", "1 Angebot", esus it, rating 4,8, 2–4 days, €6,90 shipping). esus it is a real German shop (pass 62 verified) but the part is **not in their own catalogue** — the price is live-listed on Geizhals, not stock-confirmed. Treat as unverified. Either way, 96 GB is over the 64 GB ceiling, so it doesn't change any in-budget tier. The floor reference is now €27,77/GB.
+
+### 3. Bests — flat
+
+| Route | Pass 83 | Pass 84 | Δ |
+|---|---|---|---|
+| Proshop.pl 96MC | 21 654,00 zł / 17 604,88 zł netto | **21 654,00 zł / 17 604,88 zł netto** | flat — still capped at 2 per customer |
+| Tonitrus `M321R8GA0EB2-CCP` | 3 174,50 € / 2 667,65 € netto | **3 174,50 € / 2 667,65 € netto** | flat, 50 pcs, 3–4 Werktage |
+| ibfusion 64MD | 2 481,00 € net | **2 481,00 € net** | flat, 5 in stock |
+| senetic.de 64MD | 2 551,20 € | **2 551,20 €** | flat, 41–50 Stück |
+| senetic.pl 64MD | 11 382,69 zł | **11 382,69 zł** | flat, 41–50 szt. |
+| Allegro komputera_pl 64MD | 12 736,00 zł | **12 736,00 zł** | flat, 5 ratings, promo badge still shown |
+| CoreWave 48 GB `M321R6GA3PB2` | $1 630, 250 pcs | **$1 630, 250 pcs** | flat — still the best €/GB on the board |
+
+Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € vs 3 174,50 €). Proshop.pl still caps the 96MC at 2 per customer.
+
+### 4. Expansion — 5 shops probed, 0 prices
+
+**kaufhof.de** 000, **mediamarkt.de / saturn.de / conrad.de** 403, **notebooksbilliger.de** 404, **expert.de** 307 (redirects to store locator). Consistent with the conclusion that the EU channel for this PN has been enumerated.
+
+### 5. Verdict
+
+**Floor: €27,77/GB** (Micron 96 GB, esus it, single seller, unverified stock, €32 365 — over the ceiling). **In-budget best €/GB: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline: 384 GB at €12 605 (€32,83/GB, barax, quantity unpublished). **64 GB tier: €33,50/GB (senetic.de, 41–50 pcs, QVL ✓).** 12×24 still unbuildable (10 pcs). 768 GB still the worst marginal step (+€41,87/GB).
+
+No rank change at the top, but the QVL-verified 32 GB pool grew (M321R4GA0EB2-CCP now on Geizhals at €39,36/GB) and the floor dropped below €28 for the second time. The 5-day gap between passes 83 and 84 saw the floor drop and a new QVL listing appear.
+
+**Coverage:** 1 Geizhals category sweep (60 products, 6 price moves, 0 new SKUs, 0 catalogue withdrawals) + 1 product page (M321R4GA0EB2-CCP JEDEC verification) + CoreWave live board; camofox 2 profiles / 2 navigations (proshop, tonitrus); curl 9 probes (4 bests re-verified, CoreWave board, 4 senetic stores + esus it, 5 expansion shops, 0 new prices).
