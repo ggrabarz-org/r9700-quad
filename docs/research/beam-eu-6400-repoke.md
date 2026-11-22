@@ -3709,3 +3709,66 @@ Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € v
 The two tracked-part moves (64MD −0,97 %, 32MH −0,80 %) are the first real movement since pass 78 and confirm the slow path was correct. Neither changes a tier's ranking. The FURY trap parts did not extend their pass-78 increase.
 
 **Coverage:** 1 Geizhals category sweep (60 products, 6 price moves, 2 on tracked parts, 0 catalogue changes); camofox 2 profiles / 2 navigations (proshop, tonitrus); curl 8 probes (4 bests re-verified, 5 expansion shops, 0 new prices).
+
+---
+
+## Pass 82 — 2026-11-17T22:xxZ (fast path: flat, no change, 60 products swept)
+
+---
+
+## Pass 83 — 2026-11-22 (slow path: 64 GB tier changes hands, floor drops, Proshop.pl 96MC drops 16 %)
+
+### 0. Sweep — 60 products, 64MD and 32MH moved, plus a 30 % Micron drop
+
+Catalogue unchanged (60 products, no new SKUs, no withdrawals). But the sweep shows significant movement:
+
+| Product | Pass 81 | Pass 83 | Δ |
+|---|---|---|---|
+| Micron `MTC40F204WS1RC64BC1` 96 GB | 4 532,92 € | **3 172,69 €** | **−29,99 %** |
+| Kingston `KSM64R52BD4-96MC` 96 GB | 4 694,98 € | **4 456,74 €** | −5,07 % |
+| Kingston `KSM64R52BD8-32MH` 32 GB | 1 361,82 € | **1 393,98 €** | +2,33 % |
+| Kingston `KSM64R52BD4-64MD` 64 GB | 2 872,38 € | 2 871,62 € | −0,03 % |
+| Kingston `KSM64R52BD8-32MD` 32 GB | 1 250,00 € | 1 250,00 € | flat |
+
+### 1. THE 64 GB TIER CHANGES HANDS
+
+**senetic.de 64MD dropped to 2 551,20 € exkl. = €2 143,87 net = €33,50/GB** (41–50 Stück). That beats:
+- Allegro komputera_pl: €36,71/GB (−8,7 %)
+- Geizhals best: €37,71/GB (−11,2 %)
+- ibfusion: €38,77/GB
+- CoreWave Micron BD2: €39,93/GB
+
+**The 64 GB tier is no longer the worst purchase in the matrix.** The ladder row now points at senetic.de (€33,50/GB, 41–50 pcs, QVL ✓), with Allegro as the alt. The marginal cost of the 576→768 GB step dropped from €54,72 to **€41,87/GB**. Still above the 384→576 step (€26,47/GB), so 576 GB remains best value below 96 GB, but the 64 GB route is now genuinely competitive.
+
+senetic.fr matched at 2 551,24 € HT. senetic.pl ticked up to 11 382,69 zł (+0,45 %). The nine senetic storefronts still span only 0,06 €/GB.
+
+### 2. THE FLOOR DROPPED (over budget, but notable)
+
+**Micron `MTC40F204WS1RC64BC1` at esus it: €3 172,69 gross = €2 666,13 net = €27,77/GB** (was €28,09). That's a 30 % drop on a single-seller listing. esus it is a real German shop (pass 62 verified) but the part is **not in their own catalogue** — the price is live-listed on Geizhals, not stock-confirmed. Treat as unverified. Either way, 96 GB is over the 64 GB ceiling, so it doesn't change any in-budget tier. The floor reference is now €27,77/GB.
+
+### 3. Proshop.pl 96MC dropped 16 %
+
+25 881,00 → **21 654,00 zł** (−16,3 %) = €4 913,55 gross = €4 161,23 net = €41,61/GB (was €35,53). Still capped at 2 per customer, still QVL ✗. Not a buy.
+
+### 4. Bests — flat otherwise
+
+| Route | Pass 81 | Pass 83 | Δ |
+|---|---|---|---|
+| Tonitrus `M321R8GA0EB2-CCP` | 3 174,50 € / 2 667,65 € netto | **3 174,50 € / 2 667,65 € netto** | flat, 50 pcs, 3–4 Werktage |
+| ibfusion 64MD | 2 481,00 € net | **2 481,00 € net** | flat, 5 in stock |
+| Allegro komputera_pl 64MD | 12 736,00 zł | **12 736,00 zł** | flat, 5 ratings, promo badge still shown |
+| CoreWave 48 GB `M321R6GA3PB2` | $1 630, 250 pcs | **$1 630, 250 pcs** | flat — still the best €/GB on the board |
+
+Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € vs 3 174,50 €). Proshop.pl still caps the 96MC at 2 per customer.
+
+### 5. Expansion — 0 new prices
+
+No new shops probed this pass (the 300-min cadence and the 5-day gap since pass 82 meant the market had already moved; the slow path was triggered by the sweep alone). The 96MC offer list was last read in pass 76 (19 offers, €4 058,99 – 4 160,13, best seller electronis.de).
+
+### 6. Verdict
+
+**Floor: €27,77/GB** (Micron 96 GB, esus it, single seller, unverified stock, €32 365 — over the ceiling). **In-budget best €/GB: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline: 384 GB at €12 605 (€32,83/GB, barax, quantity unpublished). **64 GB tier: €33,50/GB (senetic.de, 41–50 pcs, QVL ✓) — down from €36,71, no longer the worst step.** 12×24 still unbuildable (10 pcs). 768 GB still the worst marginal step (+€41,87/GB, down from +€54,72).
+
+No rank change at the top, but the 64 GB tier is now competitive and the floor dropped below €28 for the first time. The 5-day gap between passes 82 and 83 saw more movement than the previous 10 passes combined.
+
+**Coverage:** 1 Geizhals category sweep (60 products, 6 price moves, 2 on tracked parts, 0 catalogue changes) + CoreWave live board + senetic.de/fr/pl verified; camofox 2 profiles / 2 navigations (proshop, tonitrus); curl 7 probes (3 bests re-verified, CoreWave board, 4 senetic stores, 0 new prices).
