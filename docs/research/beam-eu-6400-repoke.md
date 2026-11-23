@@ -3827,3 +3827,62 @@ Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € v
 No rank change at the top, but the QVL-verified 32 GB pool grew (M321R4GA0EB2-CCP now on Geizhals at €39,36/GB) and the floor dropped below €28 for the second time. The 5-day gap between passes 83 and 84 saw the floor drop and a new QVL listing appear.
 
 **Coverage:** 1 Geizhals category sweep (60 products, 6 price moves, 0 new SKUs, 0 catalogue withdrawals) + 1 product page (M321R4GA0EB2-CCP JEDEC verification) + CoreWave live board; camofox 2 profiles / 2 navigations (proshop, tonitrus); curl 9 probes (4 bests re-verified, CoreWave board, 4 senetic stores + esus it, 5 expansion shops, 0 new prices).
+
+---
+
+## Pass 85 — 2026-11-23 (fast path: flat, no change, 61 products swept)
+
+---
+
+## Pass 86 — 2026-11-23 (fast path: flat, no change, 61 products swept)
+
+---
+
+## Pass 87 — 2026-11-23 (slow path: 3 new ADATA TRUSTA SKUs, all JEDEC, none competitive)
+
+### 0. Sweep — 64 products (was 61): three new ADATA TRUSTA SKUs
+
+Catalogue grew 61 → 64 products. Three new SKUs, all ADATA TRUSTA, all 6400-rated:
+
+| Product | MPN | Gross | Net | €/GB | OC-Profile | Offers |
+|---|---|---|---|---|---|---|
+| ADATA TRUSTA RDIMM 64 GB | TR5R64GS64A208HM-22S | 3 140,00 € | 2 638,66 € | €41,23 | — | 1 |
+| ADATA TRUSTA RDIMM 32 GB | TR5R32GS64A208HA-22S | 1 894,00 € | 1 591,60 € | €49,74 | — | 1 |
+| ADATA TRUSTA RDIMM 16 GB | TR5R16GS64A108HA-22S | 900,00 € | 756,30 € | €47,27 | — | 1 |
+
+**All three qualify on the JEDEC discriminator:** Spannung 1.1V (JEDEC-Normspannung), Besonderheiten JEDEC-Standardprofil (DDR5-6400/CL52), OC-Profile "-". No XMP/EXPO. Datenrate 6400MT/s. Modultyp RDIMM (Registered). ADATA TRUSTA is a known QVL vendor (pass 68 listed `TR5R32GS64A208HA-220` as a QVL part with no EU listing at the time). These new `-22S` variants are on Geizhals but their QVL status against the specific MZ23-SU0 QVL extract is unverified (the extract file was lost after pass 74; TRUSTA was confirmed as a QVL vendor but individual MPNs need re-verification).
+
+**None of them beat any tier.** €41,23 / €49,74 / €47,27 per GB are all above the current routes (€30,71 / €32,83 / €36,19). The 64 GB kit at €41,23 is 23 % above senetic.de (€33,50); the 32 GB at €49,74 is 51 % above barax (€32,83); the 16 GB at €47,27 is 31 % above barax 16MD (€36,19).
+
+Price moves on tracked parts this pass:
+- KSM64R52BD4-64MD: 2 872,99 → 2 872,96 (−0,00 %, noise)
+- KSM64R52BD4-96MC: 4 436,70 → 4 436,69 (−0,00 %, noise)
+- KSM64R52BD8-32MH: 1 395,38 → 1 395,35 (−0,00 %, noise)
+- MTC40F204WS1RC64BC1: flat at 3 172,69 (€27,77/GB floor unchanged)
+- M321RYGA0PB2-CCP: 4 448,71 → 4 451,67 (+0,07 %, noise)
+
+### 1. Bests — flat, all four
+
+| Route | Pass 84 | Pass 87 | Δ |
+|---|---|---|---|
+| Proshop.pl 96MC | 21 654,00 zł / 17 604,88 zł netto | **21 654,00 zł / 17 604,88 zł netto** | flat — still capped at 2 per customer |
+| Tonitrus `M321R8GA0EB2-CCP` | 3 174,50 € / 2 667,65 € netto | **3 174,50 € / 2 667,65 € netto** | flat, 50 pcs, 3–4 Werktage |
+| ibfusion 64MD | 2 481,00 € net | **2 481,00 € net** | flat, 5 in stock |
+| senetic.de 64MD | 2 551,20 € | **2 551,20 €** | flat, 41–50 Stück |
+| senetic.pl 64MD | 11 382,69 zł | **11 382,69 zł** | flat, 41–50 szt. |
+| Allegro komputera_pl 64MD | 12 736,00 zł | **12 736,00 zł** | flat, 5 ratings, promo badge still shown |
+| CoreWave 48 GB `M321R6GA3PB2` | $1 630, 250 pcs | **$1 630, 250 pcs** | flat — still the best €/GB on the board |
+
+Tonitrus still lists its Refurbished lot above its own new price (3 693,50 € vs 3 174,50 €). Proshop.pl still caps the 96MC at 2 per customer.
+
+### 2. Expansion — 0 new prices
+
+No new shops probed this pass (the sweep itself was the expansion: 3 new SKUs appeared on Geizhals, all ADATA TRUSTA, all JEDEC-qualified, none competitive). The EU channel for Kingston Server Premier 6400 has been enumerated since pass 74; the ADATA TRUSTA arrivals are the first new vendor SKUs in 5 passes.
+
+### 3. Verdict
+
+**Floor: €27,77/GB** (Micron 96 GB, esus it, single seller, unverified stock, €32 365 — over the ceiling). **In-budget best €/GB: 576 GB at €30,71/GB (€17 688, CoreWave 48 GB, 250 pcs).** Budget baseline: 384 GB at €12 605 (€32,83/GB, barax, quantity unpublished). **64 GB tier: €33,50/GB (senetic.de, 41–50 pcs, QVL ✓).** 12×24 still unbuildable (10 pcs). 768 GB still the worst marginal step (+€41,87/GB).
+
+No rank change at the top. The 3 new ADATA TRUSTA SKUs are JEDEC-qualified (1.1V, JEDEC-Standardprofil) but priced 23–51 % above the current routes. The ADATA TRUSTA 64 GB at €41,23/GB is the closest to a tier at 23 % above senetic.de; the 32 GB at €49,74/GB is 51 % above barax.
+
+**Coverage:** 1 Geizhals category sweep (64 products, 3 new ADATA SKUs, 6 price moves under 0.5 %, 0 catalogue withdrawals) + 1 product page (ADATA TRUSTA 64 GB JEDEC verification); camofox 2 profiles / 2 navigations (proshop, tonitrus); curl 7 probes (4 bests re-verified, CoreWave board, 3 senetic stores, 0 new prices).
